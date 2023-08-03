@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>【转载】FFMpeg 耻辱柱 | 猫 の 窝</title><meta name="author" content="OldcatY"><meta name="copyright" content="OldcatY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="FFmpeg官方的“Hall of Shame”，有你熟悉的软件吗？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【转载】FFMpeg 耻辱柱">
+<meta property="og:url" content="https://nekoss.top/posts/39021/">
+<meta property="og:site_name" content="猫 の 窝">
+<meta property="og:description" content="FFmpeg官方的“Hall of Shame”，有你熟悉的软件吗？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://nekoss.top/upload/post_img/ffmpeg.webp">
+<meta property="article:published_time" content="2023-03-25T10:12:30.000Z">
+<meta property="article:modified_time" content="2023-08-03T14:49:08.647Z">
+<meta property="article:author" content="OldcatY">
+<meta property="article:tag" content="ffmpeg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nekoss.top/upload/post_img/ffmpeg.webp"><link rel="shortcut icon" href="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp"><link rel="canonical" href="https://nekoss.top/posts/39021/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;b370e5e94cf04246a2de8e2687489b47&quot;}"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":470},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【转载】FFMpeg 耻辱柱',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-03 22:49:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/VPS/"><i class="fa-fw fas fa-server"></i><span> VPS</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E5%B7%A7/"><i class="fa-fw fas fa-lightbulb"></i><span> 技巧</span></a></li><li><a class="site-page child" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"><i class="fa-fw fas fa-paper-plane"></i><span> 科学上网</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E5%B8%B8/"><i class="fa-fw fas fa-heart"></i><span> 日常</span></a></li><li><a class="site-page child" href="/categories/%E6%8E%A8%E8%8D%90/"><i class="fa-fw fas fa-thumbs-up"></i><span> 推荐</span></a></li><li><a class="site-page child" href="/categories/%E8%BD%AC%E8%BD%BD/"><i class="fa-fw fas fa-globe"></i><span> 转载</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/upload/post_img/ffmpeg.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="猫 の 窝"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp"/><span class="site-name">猫 の 窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/VPS/"><i class="fa-fw fas fa-server"></i><span> VPS</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E5%B7%A7/"><i class="fa-fw fas fa-lightbulb"></i><span> 技巧</span></a></li><li><a class="site-page child" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"><i class="fa-fw fas fa-paper-plane"></i><span> 科学上网</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E5%B8%B8/"><i class="fa-fw fas fa-heart"></i><span> 日常</span></a></li><li><a class="site-page child" href="/categories/%E6%8E%A8%E8%8D%90/"><i class="fa-fw fas fa-thumbs-up"></i><span> 推荐</span></a></li><li><a class="site-page child" href="/categories/%E8%BD%AC%E8%BD%BD/"><i class="fa-fw fas fa-globe"></i><span> 转载</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【转载】FFMpeg 耻辱柱</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-25T10:12:30.000Z" title="发表于 2023-03-25 18:12:30">2023-03-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-03T14:49:08.647Z" title="更新于 2023-08-03 22:49:08">2023-08-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【转载】FFMpeg 耻辱柱"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>FFmpeg是一套可以用来记录、转换数字音频、视频，并能将其转化为流的开源计算机程序。采用LGPL或GPL许可证。</p>
+</blockquote>
+<p>可能很多朋友知道，现在市面上很多视频编辑软件、本地播放器、浏览器、甚至是编码格式等等都使用到了FFmpeg。<br>FFmpeg被许多开源项目采用，比如ffmpeg2theora,VLC, MPlayer, HandBrake, Blender, Google Chrome等。还有DirectShow&#x2F;VFW的ffdshow(external project)和QuickTime的Perian (external project)也采用了FFmpeg。<br>也可能有朋友知道FFempeg官方有个叫“耻辱柱(Hall Of Shame)”的东西，FFmpeg官方会将发现的那些不遵守开源协议（LGPL或GPL许可证）的软件或其母公司公诸于世。<br>由于FFmpeg是在LGPL&#x2F;GPL协议下发布的（如果使用了其中一些使用GPL协议发布的模块则必须使用GPL协议），任何人都可以自由使用，但必须严格遵守LGPL&#x2F;GPL协议。有很多播放软件都使用了FFmpeg的代码，但它们并没有遵守LGPL&#x2F;GPL协议，没有公开任何源代码。我们应该对这种侵权行为表示耻辱。<br>虽然没有物质上的惩罚，FFmpeg耻辱柱更多的是一种精神层面的降维打击。这东西虽然对于普罗大众来说没什么用处，但是在这里我还是想来做个记录者……</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/FFmpeg/web/blob/master/src/shame">官方Github</a></li>
+</ul>
+<h2 id="官方正文"><a href="#官方正文" class="headerlink" title="官方正文"></a><a href="#%E5%AE%98%E6%96%B9%E6%AD%A3%E6%96%87" title="官方正文"></a>官方正文</h2><p>Shame page will be offline until entries are updated.</p>
+<p>This is a list of projects or companies violating FFmpeg’s license. The list<br>is part of an effort to get them to comply with the licensing terms by shaming<br>them in public.</p>
+<p>A good way to help us is to link to this page, thereby boosting its<br>pagerank, possibly near or past the homepage of the offender. We discourage<br>you from using or buying the software listed here, unless you do so to pester<br>its producers and demand that they comply with the license of FFmpeg.</p>
+<p>Our issue tracker also contains a list of<br><a target="_blank" rel="noopener" href="https://trac.ffmpeg.org/report/1">license violations</a>.<br>If you become aware of license infringements, please notify us on the<br><a href="contact.html">ffmpeg-devel mailing list</a> and&#x2F;or add<br>it to our<br><a target="_blank" rel="noopener" href="https://trac.ffmpeg.org/">issue tracker</a>.</p>
+<p>(in alphabetical order)</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.alivemedia.net/">alive</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1160">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.alloksoft.com/">Alloksoft</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue438">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.amrplayer.com/">AMR Player</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1070">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://anvsoft.com/">AnvSoft</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1246">issue tracker entry</a>,<br>reproduced 2009-11-03</li>
+<li><a target="_blank" rel="noopener" href="http://www.any-video-converter.com/">Any DVD&#x2F;Video Converter</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue922">issue tracker entry</a>,<br>reproduced 2009-11-03</li>
+<li><a target="_blank" rel="noopener" href="http://www.aone-media.com/">Aone</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1308">issue tracker entry</a>,<br>reproduced 2009-11-14</li>
+<li><a target="_blank" rel="noopener" href="http://www.tomp4.com/html/videoconverter.html">Aplus Video Converter</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1213">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://applian.com/replay-converter/index.php">Applian Replay Converter</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue110">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.avcware.com/">AVCWare</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue932">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.avs4you.com/AVS-Video-Converter.aspx">AVS Video Converter</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue733">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.alltoaudio.com/">Aya Media Techologies</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue930">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.baofeng.com/">Baofeng Storm(暴风影音)</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue866">issue tracker entry</a>,<br>reproduced 2009-11-03</li>
+<li><a target="_blank" rel="noopener" href="http://www.cinemaforge.com/">CinemaForge</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue933">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://potplayer.daum.net/">Daum tv PotPlayer(姜龙喜“力作”)</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue2112">issue tracker entry</a>,<br>reproduced 2010-11-03</li>
+<li><a target="_blank" rel="noopener" href="http://www.doremilabs.com/v1control.html">Doremi Asset Manager</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue727">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.downloadhelper.net/install-converter.php">DownloadHelper ConvertHelper</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1096">issue tracker entry</a>,<br>reproduced 2009-11-04</li>
+<li><a target="_blank" rel="noopener" href="http://www.dvdfab.com/">DVDFab</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue382">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.dvdxdv.com/">DVDxDV</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1105">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.eatcam.com/">EatCam</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1513">issue tracker entry</a>,<br>reproduced 2009-11-03</li>
+<li><a target="_blank" rel="noopener" href="http://www.effectmatrix.com/">EffectMatrix Software</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue456">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.eztoosoft.com/">Eztoo</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue828">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.formatoz.com/">Format Factory(格式工厂)</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1214">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.winxdvd.com/">FreeTime Soft</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue722">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.sourcemac.com/?page=fstream&lang=en">FStream</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1471">issue tracker entry</a>,<br>reproduced 2009-11-03</li>
+<li><a target="_blank" rel="noopener" href="http://www.geovid.com/">GeoVid</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue918">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.getflv.net/index.html">GetFLV</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1085">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.gomlab.com/">GOM Player</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue112">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.h264encoder.com/">H264Encoder.com</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue787">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.imtoo.com/">ImTOO</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1311">issue tracker entry</a>,<br>reproduced 2009-11-14</li>
+<li><a target="_blank" rel="noopener" href="http://www.iskysoft.net/">iSkysoft</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue927">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.kmplayer.com/forums/">The KMPlayer(姜龙喜在PotPlayer之前的作品)</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue820">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.koyotesoft.com/">Koyote Software</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue931">issue tracker entry</a></li>
+<li><a href="www.livestation.com">Livestation</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue920">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.alldj.com/">MasterSoft Inc.</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue723">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://mediacoderhq.com/">MediaCoder(国外知名格式转换工具)</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1162">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.moyea.com/">Moyea</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue926">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.mp4converter.net/dvd-to-appletv-converter-mac.html">MP4Converter</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue111">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.netgem.com/">Netgem</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue678">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.opellsoft.com/">Opell Video Converter Pro</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue493">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://liveradio.orange.fr/">Orange Liveradio</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1502">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.themediamall.com/playon/">PlayOn</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1403">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.powerpoint-dvd-converter.com/">PowerPoint DVD Converter(著名DVD文件提取工具)</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue924">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.presentersoft.com/">PresenterSoft</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue925">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://player.qzone.qq.com/">QQPlayer(QQ影音)</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1519">issue tracker entry</a>,<br>reproduced 2009-11-04</li>
+<li><a target="_blank" rel="noopener" href="http://www.redkawa.com/">Red Kawa</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue923">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.riptiger.com/">RipTiger</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1450">issue tracker entry</a>,<br>reproduced 2009-11-03</li>
+<li><a target="_blank" rel="noopener" href="http://www.rhozet.com/carbon_coder.html">Rhozet Carbon Coder</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue484">issue tracker entry</a>,<br>reproduced 2009-09-18</li>
+<li><a target="_blank" rel="noopener" href="http://sagetv.com/">SageTV</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue2375">issue tracker entry</a>,<br>reproduced 2011-01-03</li>
+<li><a target="_blank" rel="noopener" href="http://www.cctvhw.com/english/">ShenZhen Hawell</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue513">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.skypecap.com/">SkypeCap</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue321">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.softservice.org/products_flashcam.html">Soft Service, Ltd. FlashCam</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue559">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.sothinkmedia.com/">SourceTec Software</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1158">issue tracker entry</a>,<br>reproduced 2009-11-04</li>
+<li><a target="_blank" rel="noopener" href="http://www.video-convert-master.com/index.htm">Video Convert Master</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue413">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://vio.thepiratebay.org/">ViO mobile video converter</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue763">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.virtualdj.com/">VirtualDJ</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1412">issue tracker entry</a>,<br>reproduced 2009-11-04</li>
+<li><a target="_blank" rel="noopener" href="http://www.mzys.cn/">WisMencoder</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1133">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.wondershare.com/">Wondershare(万兴格式转换工具)</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue928">issue tracker entry</a>,<br>reproduced 2009-11-14</li>
+<li><a target="_blank" rel="noopener" href="http://www.xilisoft.com/">Xilisoft Video Converter</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue929">issue tracker entry</a>,<br>reproduced 2010-03-08</li>
+<li><a target="_blank" rel="noopener" href="http://www.xlinksoft.com/">XlinkSoft</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1509">issue tracker entry</a>,<br>reproduced 2009-11-03</li>
+<li><a target="_blank" rel="noopener" href="http://www.xmedia-recode.de/">XMedia Recode</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1144">issue tracker entry</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.zoiper.com/">ZoIPer</a>,<br><a target="_blank" rel="noopener" href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1045">issue tracker entry</a></li>
+</ul>
+<p>The companies below are not yet in full compliance, but we are in negotiations<br>with them and making good progress towards compliance.</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://nekoss.top">OldcatY</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nekoss.top/posts/39021/">https://nekoss.top/posts/39021/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nekoss.top" target="_blank">猫 の 窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ffmpeg/">ffmpeg</a></div><div class="post_share"><div class="social-share" data-image="/upload/post_img/ffmpeg.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/36875/" title="【日常】备份一个多年前看到的笑话"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230624/mia.6q7oyozdls3k.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【日常】备份一个多年前看到的笑话</div></div></a></div><div class="next-post pull-right"><a href="/posts/34608/" title="【日常】My First Blog"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230623/stage-1.4o0gong5xjwg.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【日常】My First Blog</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">OldcatY</div><div class="author-info__description">猫窝：介绍国外各类云服、VPS、机场搭建方法论，and more...</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/imbalaomao" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E6%AD%A3%E6%96%87"><span class="toc-number">1.</span> <span class="toc-text">官方正文</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/8486/" title="【技巧】关于开启Clash后Epicgames登录弹验证码的解决方案"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230803/hexo-image.5refyxshy500.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【技巧】关于开启Clash后Epicgames登录弹验证码的解决方案"/></a><div class="content"><a class="title" href="/posts/8486/" title="【技巧】关于开启Clash后Epicgames登录弹验证码的解决方案">【技巧】关于开启Clash后Epicgames登录弹验证码的解决方案</a><time datetime="2023-08-03T14:39:05.000Z" title="发表于 2023-08-03 22:39:05">2023-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/57935/" title="【科学上网】跨越长城，走向世界"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.t3vc8awp7hc.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【科学上网】跨越长城，走向世界"/></a><div class="content"><a class="title" href="/posts/57935/" title="【科学上网】跨越长城，走向世界">【科学上网】跨越长城，走向世界</a><time datetime="2023-08-03T14:31:37.000Z" title="发表于 2023-08-03 22:31:37">2023-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/29105/" title="【小鸡测评】Wikihost-L1"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【小鸡测评】Wikihost-L1"/></a><div class="content"><a class="title" href="/posts/29105/" title="【小鸡测评】Wikihost-L1">【小鸡测评】Wikihost-L1</a><time datetime="2023-08-03T14:19:04.000Z" title="发表于 2023-08-03 22:19:04">2023-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/16107/" title="Hello World"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230624/tennoji-rina-2.38fxadaej4ow.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/posts/16107/" title="Hello World">Hello World</a><time datetime="2023-08-03T06:02:18.870Z" title="发表于 2023-08-03 14:02:18">2023-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/34948/" title="【日常】2023年7月新番开播！"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230624/%E5%9B%BE%E7%89%87.686m9v08vtkw.83rk1cs34o0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【日常】2023年7月新番开播！"/></a><div class="content"><a class="title" href="/posts/34948/" title="【日常】2023年7月新番开播！">【日常】2023年7月新番开播！</a><time datetime="2023-07-08T14:42:04.000Z" title="发表于 2023-07-08 22:42:04">2023-07-08</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/upload/post_img/ffmpeg.webp')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By OldcatY</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

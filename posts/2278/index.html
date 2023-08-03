@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>【技巧】使用在线解析种子+PikPak+Aria2c实现高速种子下载 | 猫 の 窝</title><meta name="author" content="OldcatY"><meta name="copyright" content="OldcatY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="高速BT下载！使用IDM亦可！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【技巧】使用在线解析种子+PikPak+Aria2c实现高速种子下载">
+<meta property="og:url" content="https://nekoss.top/posts/2278/">
+<meta property="og:site_name" content="猫 の 窝">
+<meta property="og:description" content="高速BT下载！使用IDM亦可！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.2zhy3smde88w.webp">
+<meta property="article:published_time" content="2023-03-26T11:13:29.000Z">
+<meta property="article:modified_time" content="2023-08-03T14:47:23.479Z">
+<meta property="article:author" content="OldcatY">
+<meta property="article:tag" content="下载,pikpak,bt">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.2zhy3smde88w.webp"><link rel="shortcut icon" href="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp"><link rel="canonical" href="https://nekoss.top/posts/2278/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;b370e5e94cf04246a2de8e2687489b47&quot;}"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":470},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【技巧】使用在线解析种子+PikPak+Aria2c实现高速种子下载',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-03 22:47:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/VPS/"><i class="fa-fw fas fa-server"></i><span> VPS</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E5%B7%A7/"><i class="fa-fw fas fa-lightbulb"></i><span> 技巧</span></a></li><li><a class="site-page child" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"><i class="fa-fw fas fa-paper-plane"></i><span> 科学上网</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E5%B8%B8/"><i class="fa-fw fas fa-heart"></i><span> 日常</span></a></li><li><a class="site-page child" href="/categories/%E6%8E%A8%E8%8D%90/"><i class="fa-fw fas fa-thumbs-up"></i><span> 推荐</span></a></li><li><a class="site-page child" href="/categories/%E8%BD%AC%E8%BD%BD/"><i class="fa-fw fas fa-globe"></i><span> 转载</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.2zhy3smde88w.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="猫 の 窝"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp"/><span class="site-name">猫 の 窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/VPS/"><i class="fa-fw fas fa-server"></i><span> VPS</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E5%B7%A7/"><i class="fa-fw fas fa-lightbulb"></i><span> 技巧</span></a></li><li><a class="site-page child" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"><i class="fa-fw fas fa-paper-plane"></i><span> 科学上网</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E5%B8%B8/"><i class="fa-fw fas fa-heart"></i><span> 日常</span></a></li><li><a class="site-page child" href="/categories/%E6%8E%A8%E8%8D%90/"><i class="fa-fw fas fa-thumbs-up"></i><span> 推荐</span></a></li><li><a class="site-page child" href="/categories/%E8%BD%AC%E8%BD%BD/"><i class="fa-fw fas fa-globe"></i><span> 转载</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【技巧】使用在线解析种子+PikPak+Aria2c实现高速种子下载</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-26T11:13:29.000Z" title="发表于 2023-03-26 19:13:29">2023-03-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-03T14:47:23.479Z" title="更新于 2023-08-03 22:47:23">2023-08-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E5%B7%A7/">技巧</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【技巧】使用在线解析种子+PikPak+Aria2c实现高速种子下载"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a><a href="#%E5%87%86%E5%A4%87" title="准备"></a>准备</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.mypikpak.com/">PikPak账号</a></li>
+<li><a target="_blank" rel="noopener" href="https://crappy.lanzouj.com/iuCCD01iszzi">aria2c懒人包</a></li>
+</ul>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a><a href="#%E5%BC%80%E5%A7%8B" title="开始"></a>开始</h2><h3 id="1-下载Aria2"><a href="#1-下载Aria2" class="headerlink" title="1. 下载Aria2"></a><a href="#1-%E4%B8%8B%E8%BD%BDAria2" title="1. 下载Aria2"></a>1. 下载Aria2</h3><p>下载好并解压后，双击 <code>install.bat</code> 安装aria2服务</p>
+<h3 id="2-在线解析种子为磁力链接（可选）"><a href="#2-在线解析种子为磁力链接（可选）" class="headerlink" title="2. 在线解析种子为磁力链接（可选）"></a><a href="#2-%E5%9C%A8%E7%BA%BF%E8%A7%A3%E6%9E%90%E7%A7%8D%E5%AD%90%E4%B8%BA%E7%A3%81%E5%8A%9B%E9%93%BE%E6%8E%A5%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89" title="2. 在线解析种子为磁力链接（可选）"></a>2. 在线解析种子为磁力链接（可选）</h3><p>在 <strong><a target="_blank" rel="noopener" href="https://tool.lu/torrent/">https://tool.lu/torrent/</a></strong> 中，上传种子文件（.torrent），网页会自动解析出磁力链接，复制到剪贴板进行下一步操作</p>
+<h3 id="3-复制Magnet磁链-Pikpak分享链接"><a href="#3-复制Magnet磁链-Pikpak分享链接" class="headerlink" title="3. 复制Magnet磁链&#x2F;Pikpak分享链接"></a><a href="#3-%E5%A4%8D%E5%88%B6Magnet%E7%A3%81%E9%93%BE-x2F-Pikpak%E5%88%86%E4%BA%AB%E9%93%BE%E6%8E%A5" title="3. 复制Magnet磁链/Pikpak分享链接"></a>3. 复制Magnet磁链&#x2F;Pikpak分享链接</h3><p>除了磁力链接以外，PikPak还支持导入类似百度盘的秒传链接（以 <code>pikpak://</code> 开头），目前仅支持这两种方式导入，其他方式暂不支持！</p>
+<p><strong>注意：不支持ED2K&#x2F;迅雷专有链接等，但有网站可以将这类链接转化为普通磁力链接</strong></p>
+<h3 id="4-导入复制好的链接"><a href="#4-导入复制好的链接" class="headerlink" title="4. 导入复制好的链接"></a><a href="#4-%E5%AF%BC%E5%85%A5%E5%A4%8D%E5%88%B6%E5%A5%BD%E7%9A%84%E9%93%BE%E6%8E%A5" title="4. 导入复制好的链接"></a>4. 导入复制好的链接</h3><p>登录 <strong><a target="_blank" rel="noopener" href="https://mumuchenchen.github.io/pikpak/">pikpak第三方网页端</a></strong> 并粘贴磁链，此时pikpak会自动把种子离线好</p>
+<p>接下来是设置Aria2</p>
+<h3 id="5-设置Aria2并开始下载"><a href="#5-设置Aria2并开始下载" class="headerlink" title="5. 设置Aria2并开始下载"></a><a href="#5-%E8%AE%BE%E7%BD%AEAria2%E5%B9%B6%E5%BC%80%E5%A7%8B%E4%B8%8B%E8%BD%BD" title="5. 设置Aria2并开始下载"></a>5. 设置Aria2并开始下载</h3><p>点击左侧的 <code>设置</code> ，看到 <code>aria2设置</code> ，一般情况下如果是本地的aria2，则填写 <code>http://localhost:6800/jsonrpc</code> ，并将aria2token留空，之后点击 <code>测试并保存</code></p>
+<p>最后，选择已经离线好的文件&#x2F;文件夹，点击推送到Aria即可开始下载</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a><a href="#%E6%B3%A8%E6%84%8F" title="注意"></a>注意</h2><ul>
+<li>PikPak的服务器不一定可以做到满速下载，但速度已经很快了</li>
+<li>PikPak需要充值会员才能使用，点击 <em><strong><a target="_blank" rel="noopener" href="https://toapp.mypikpak.com/activity/invited?code=037413">AFF链接</a></strong></em> 我可以获得返利哦</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://nekoss.top">OldcatY</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nekoss.top/posts/2278/">https://nekoss.top/posts/2278/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nekoss.top" target="_blank">猫 の 窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%B8%8B%E8%BD%BD-pikpak-bt/">下载,pikpak,bt</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.2zhy3smde88w.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/19492/" title="【技巧】与宝塔配合搭建Alist在线存储"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://opengraph.githubassets.com/9b7ec1bb7702fab2c2ec2ce32e582968299272376fb83168ff45263138e52bab/alist-org/alist" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【技巧】与宝塔配合搭建Alist在线存储</div></div></a></div><div class="next-post pull-right"><a href="/posts/18914/" title="【转载】Film Riot 2021年度好片推荐"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230803/hexo-image.1zslje5f489s.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【转载】Film Riot 2021年度好片推荐</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">OldcatY</div><div class="author-info__description">猫窝：介绍国外各类云服、VPS、机场搭建方法论，and more...</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/imbalaomao" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-number">1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">2.</span> <span class="toc-text">开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BDAria2"><span class="toc-number">2.1.</span> <span class="toc-text">1. 下载Aria2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9C%A8%E7%BA%BF%E8%A7%A3%E6%9E%90%E7%A7%8D%E5%AD%90%E4%B8%BA%E7%A3%81%E5%8A%9B%E9%93%BE%E6%8E%A5%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">2. 在线解析种子为磁力链接（可选）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A4%8D%E5%88%B6Magnet%E7%A3%81%E9%93%BE-Pikpak%E5%88%86%E4%BA%AB%E9%93%BE%E6%8E%A5"><span class="toc-number">2.3.</span> <span class="toc-text">3. 复制Magnet磁链&#x2F;Pikpak分享链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AF%BC%E5%85%A5%E5%A4%8D%E5%88%B6%E5%A5%BD%E7%9A%84%E9%93%BE%E6%8E%A5"><span class="toc-number">2.4.</span> <span class="toc-text">4. 导入复制好的链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%AE%BE%E7%BD%AEAria2%E5%B9%B6%E5%BC%80%E5%A7%8B%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.5.</span> <span class="toc-text">5. 设置Aria2并开始下载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">3.</span> <span class="toc-text">注意</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/8486/" title="【技巧】关于开启Clash后Epicgames登录弹验证码的解决方案"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230803/hexo-image.5refyxshy500.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【技巧】关于开启Clash后Epicgames登录弹验证码的解决方案"/></a><div class="content"><a class="title" href="/posts/8486/" title="【技巧】关于开启Clash后Epicgames登录弹验证码的解决方案">【技巧】关于开启Clash后Epicgames登录弹验证码的解决方案</a><time datetime="2023-08-03T14:39:05.000Z" title="发表于 2023-08-03 22:39:05">2023-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/57935/" title="【科学上网】跨越长城，走向世界"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.t3vc8awp7hc.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【科学上网】跨越长城，走向世界"/></a><div class="content"><a class="title" href="/posts/57935/" title="【科学上网】跨越长城，走向世界">【科学上网】跨越长城，走向世界</a><time datetime="2023-08-03T14:31:37.000Z" title="发表于 2023-08-03 22:31:37">2023-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/29105/" title="【小鸡测评】Wikihost-L1"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【小鸡测评】Wikihost-L1"/></a><div class="content"><a class="title" href="/posts/29105/" title="【小鸡测评】Wikihost-L1">【小鸡测评】Wikihost-L1</a><time datetime="2023-08-03T14:19:04.000Z" title="发表于 2023-08-03 22:19:04">2023-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/16107/" title="Hello World"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230624/tennoji-rina-2.38fxadaej4ow.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/posts/16107/" title="Hello World">Hello World</a><time datetime="2023-08-03T06:02:18.870Z" title="发表于 2023-08-03 14:02:18">2023-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/34948/" title="【日常】2023年7月新番开播！"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230624/%E5%9B%BE%E7%89%87.686m9v08vtkw.83rk1cs34o0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【日常】2023年7月新番开播！"/></a><div class="content"><a class="title" href="/posts/34948/" title="【日常】2023年7月新番开播！">【日常】2023年7月新番开播！</a><time datetime="2023-07-08T14:42:04.000Z" title="发表于 2023-07-08 22:42:04">2023-07-08</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.2zhy3smde88w.webp')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By OldcatY</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
