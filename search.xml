@@ -27,6 +27,7 @@
 <li><a href="https://github.com/klzgrad/naiveproxy/releases">NaiveProxy</a></li>
 <li><a href="https://github.com/apernet/hysteria/releases">Hysteria</a></li>
 <li><a href="https://github.com/EAimTY/tuic/releases">Tuic</a></li>
+<li><a href="https://github.com/juicity/juicity">Juicity(Tuic魔改)</a></li>
 <li><a href="https://github.com/enfein/mieru/releases">Mieru</a></li>
 </ul>
 </blockquote>
@@ -1424,21 +1425,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【技巧】Edge浏览器卸载工具</title>
-    <url>/posts/31996/</url>
-    <content><![CDATA[<p>分享 Edge 卸载器一个，以防还有的小可爱不知道这个东西：</p>
-<p><a href="https://github.com/ShadowWhisperer/Remove-MS-Edge/">https://github.com/ShadowWhisperer/Remove-MS-Edge/</a></p>
-<p>建议是使用 Remove-EdgeOnly.exe，WebView 还是有点用处的。<br>如果不小心搞错了删了 WebView 也不用担心，一些程序会自动补全（或者让你重新安装）。</p>
-<p>我已经用了半个多月，经历了一次 Windows Update，未见 Edge 回来。<br>但是删除 Edge 可能导致你无法通过另类方式启动 IE，或者在 Edge 内切换 IE 内核，所以有 IE 使用需求的还需三思~ 0_0</p>
-]]></content>
-      <categories>
-        <category>技巧</category>
-      </categories>
-      <tags>
-        <tag>edge,卸载,Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【技巧】如何删除services.msc中的任务</title>
     <url>/posts/39763/</url>
     <content><![CDATA[<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a><a href="#%E6%AD%A3%E6%96%87" title="正文"></a>正文</h2><ul>
@@ -1457,6 +1443,21 @@
       </categories>
       <tags>
         <tag>windows,技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【技巧】Edge浏览器卸载工具</title>
+    <url>/posts/31996/</url>
+    <content><![CDATA[<p>分享 Edge 卸载器一个，以防还有的小可爱不知道这个东西：</p>
+<p><a href="https://github.com/ShadowWhisperer/Remove-MS-Edge/">https://github.com/ShadowWhisperer/Remove-MS-Edge/</a></p>
+<p>建议是使用 Remove-EdgeOnly.exe，WebView 还是有点用处的。<br>如果不小心搞错了删了 WebView 也不用担心，一些程序会自动补全（或者让你重新安装）。</p>
+<p>我已经用了半个多月，经历了一次 Windows Update，未见 Edge 回来。<br>但是删除 Edge 可能导致你无法通过另类方式启动 IE，或者在 Edge 内切换 IE 内核，所以有 IE 使用需求的还需三思~ 0_0</p>
+]]></content>
+      <categories>
+        <category>技巧</category>
+      </categories>
+      <tags>
+        <tag>edge,卸载,Windows</tag>
       </tags>
   </entry>
   <entry>
