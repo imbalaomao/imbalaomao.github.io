@@ -153,6 +153,47 @@
       </tags>
   </entry>
   <entry>
+    <title>【技巧】自动调用本地播放器播放Emby流媒体</title>
+    <url>/posts/25bc1a25/</url>
+    <content><![CDATA[<h1 id="官方客户端-TUN"><a href="#官方客户端-TUN" class="headerlink" title="官方客户端 + TUN"></a>官方客户端 + TUN</h1><p>最初接触Emby是看的 “终点站” 服务器，使用Emby官方客户端破解验证服务器后，同时将 Clash for Windows的 TUN 模式打开。因当时校园网络速率极差（8Mbps），加之翻墙速率较低，因此几乎无法观看上面的流媒体。之后换到了移动300M之后，每次在看Emby开启 TUN 模式之后，有很多软件会由于分流规则以及DNS分配错误而导致奇奇怪怪的问题。于是我就想，如果能把Emby单独代理就好了。</p>
+<h1 id="官方客户端-Proxifier"><a href="#官方客户端-Proxifier" class="headerlink" title="官方客户端 + Proxifier"></a>官方客户端 + Proxifier</h1><p>之后接触到了Proxifier，不过用的是破解版，这时旧的问题得到解决，但是新的问题又出现了，Proxifier因为是破解版所以会经常性崩溃，所以终究不是一个好的解决方案</p>
+<h1 id="embyToLocalPlayer-mpv"><a href="#embyToLocalPlayer-mpv" class="headerlink" title="embyToLocalPlayer + mpv"></a>embyToLocalPlayer + mpv</h1><h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><p>相较于上两种方案，本方案有着以下优势：</p>
+<ul>
+<li>不存在破解软件，没有安全问题</li>
+<li>代理可以提前指定好，无需经过第二层代理软件转换</li>
+<li>mpv平时也可以作为本地播放器使用</li>
+</ul>
+<h2 id="正式安装"><a href="#正式安装" class="headerlink" title="正式安装"></a>正式安装</h2><ol>
+<li>需要以下安装以下几个项目：</li>
+</ol>
+<ul>
+<li><a href="https://www.python.org/downloads/">Python</a></li>
+<li><a href="https://github.com/kjtsune/embyToLocalPlayer">embyToLocalPlayer</a></li>
+<li><a href="https://github.com/diana7127/mpv.net-DW/releases">mpv.net-DW</a></li>
+</ul>
+<ol start="2">
+<li>配置<br>更改 <strong>embyToLocalPlayer</strong> 中的<code>.ini</code>文件</li>
+</ol>
+<ul>
+<li>播放器路径设置<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[exe]</span></span><br><span class="line"><span class="comment"># 各播放器路径，不要的可以随意删除。</span></span><br><span class="line"><span class="comment">#mpv = C:\Green\mpv\mpv.exe</span></span><br><span class="line"><span class="attr">mpve</span> = E:\[<span class="number">04</span>]MediaPlayers\mpv.net-DW\mpvnet.exe</span><br><span class="line"><span class="comment">#pot = C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe</span></span><br><span class="line"><span class="comment">#hc = C:\Program Files (x86)\K-Lite Codec Pack\MPC-HC64\mpc-hc64.exe</span></span><br><span class="line"><span class="comment">#be = D:\[04]MediaPlayers\MPC-BE\mpc-be64.exe</span></span><br><span class="line"><span class="comment">#vlc = C:\Green\vlc\vlc.exe</span></span><br><span class="line"><span class="comment">#iina = /Applications/IINA.app/Contents/MacOS/iina-cli</span></span><br><span class="line"><span class="comment">#mpvm = /Applications/mpv.app/Contents/MacOS/mpv</span></span><br><span class="line"><span class="comment">#vlcm = /Applications/VLC.app/Contents/MacOS/VLC</span></span><br><span class="line"><span class="comment">#linux_mpv = mpv</span></span><br><span class="line"><span class="comment">#linux_vlc = vlc</span></span><br><span class="line"><span class="comment">#others = 其他播放器一般也可以，只是不回传记录。</span></span><br><span class="line"></span><br><span class="line"><span class="section">[emby]</span></span><br><span class="line"><span class="comment"># 选择播放器</span></span><br><span class="line"><span class="attr">player</span> = mpve</span><br></pre></td></tr></table></figure></li>
+<li>配置代理方案（以Clash默认端口为例）<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 脚本的 http 代理，例如 http://127.0.0.1:7890。</span></span><br><span class="line"><span class="comment"># 若用 OpenClash 可能慢，原因未知，可尝试 CFW 或透明代理等。</span></span><br><span class="line"><span class="attr">script_proxy</span> = http://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">7890</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 播放器的 http 代理，限：mpv mpv.net iina。</span></span><br><span class="line"><span class="attr">player_proxy</span> = http://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">20810</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载时的代理，用不到就留空。 http://127.0.0.1:7890</span></span><br><span class="line"><span class="attr">http_proxy</span> = http://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">20810</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>更改好保存即可。</strong></p>
+<ol start="3">
+<li><p>Debug脚本<br>双击<code>.bat</code>文件，先选择1，从Chrome进入Emby服务器，然后点击视频播放，查看mpv会不会被自动拉起</p>
+</li>
+<li><p>正式启动脚本<br>双击<code>.bat</code>文件，选择2，关闭窗口，即可开机启动脚本</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技巧</category>
+      </categories>
+      <tags>
+        <tag>emby,mpv</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【小鸡测评】绿云SJC $25机测评</title>
     <url>/posts/c0a5a456/</url>
     <content><![CDATA[<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
