@@ -153,6 +153,29 @@
       </tags>
   </entry>
   <entry>
+    <title>【技巧】利用一行JS代码调出国区Steam成人限制复选框</title>
+    <url>/posts/4f238b34/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>近日，b站up主@Hope麻匪 发现Steam账号所属区域为中国大陆的用户在使用Wallpaper Engine的搜索功能时，其搜索结果会受到限制，无法展示全部内容，即使更改Wallpaper Engine内的限制选项也无济于事。</p>
+<p>网友分析发现，造成这一结果的原因是国区Steam账号中的“偏好设置”选项被阉割。由图可见，国区Steam账号中的“成人内容偏好设置”只有3个选项，而外区有5个选项。被隐藏的2个选项在国区账号中不能正常启用，间接导致了依赖创意工坊的Wallpaper Engine也受到该选项的限制。</p>
+<p><img src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230830/image.17oafp8i1o2k.webp" alt="国区小红车搜索结果"><br><img src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230830/image.1sy557ydylr4.webp" alt="外区小红车搜索结果"></p>
+<h2 id="处理方法"><a href="#处理方法" class="headerlink" title="处理方法"></a>处理方法</h2><ul>
+<li><p>方法1：使用<a href="https://www.bilibili.com/video/av362907331">本教程中的方法</a>处理</p>
+</li>
+<li><p>方法2：使用评论区的JS代码调出复选框<br>可以去控制台输入：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.preference_row.account_setting_not_customer_facing &#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">i</span> =&gt;</span> i.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&quot;account_setting_not_customer_facing&quot;</span>));</span><br></pre></td></tr></table></figure>
+<p>回车后就显示出来了。就是用JavaScript自动化了删除类名的操作</p>
+</li>
+</ul>
+<p><strong>处理后将复选框勾选上即可，刷新后会发现复选框没有勾选，实际不影响搜索结果，只要勾上一次就行了。</strong></p>
+]]></content>
+      <categories>
+        <category>技巧</category>
+      </categories>
+      <tags>
+        <tag>steam</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【小鸡测评】亚马逊 Lightsail 新加坡3.5刀鸡测评</title>
     <url>/posts/b5d7494b/</url>
     <content><![CDATA[<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
