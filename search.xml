@@ -153,6 +153,25 @@
       </tags>
   </entry>
   <entry>
+    <title>【技巧】解决MIUI每次重启都会自动将输入法更改为搜狗输入法的问题</title>
+    <url>/posts/b2c0830d/</url>
+    <content><![CDATA[<h2 id="Fuck-金凡"><a href="#Fuck-金凡" class="headerlink" title="Fuck 金凡"></a>Fuck 金凡</h2><p>MIUI每次重启都会将默认输入法更改为搜狗输入法，而搜狗输入法完全不适合我这种习惯原生输入法的人。MIUI13都没有这个问题，MIUI14突然就来了……</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="你需要有："><a href="#你需要有：" class="headerlink" title="你需要有："></a>你需要有：</h3><ul>
+<li>ADB</li>
+<li>打开ADB调试的MIUI手机&#x2F;平板</li>
+</ul>
+<h3 id="你需要做："><a href="#你需要做：" class="headerlink" title="你需要做："></a>你需要做：</h3><p>打开电脑的commander，输入以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adb shell pm uninstall --user 0 com.sohu.inputmethod.sogou.xiaomi</span><br></pre></td></tr></table></figure>
+<p>然后你手机&#x2F;平板内的小米输入法就没有了！EZPZ！</p>
+]]></content>
+      <categories>
+        <category>技巧</category>
+      </categories>
+      <tags>
+        <tag>MIUI,技巧</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【小鸡测评】CheapVirt 75HKD机测评</title>
     <url>/posts/d046065f/</url>
     <content><![CDATA[<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
