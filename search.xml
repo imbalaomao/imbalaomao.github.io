@@ -149,7 +149,12 @@
         <category>科学上网</category>
       </categories>
       <tags>
-        <tag>科学上网,vps,搭建,ss,xray,clash</tag>
+        <tag>vps</tag>
+        <tag>Clash</tag>
+        <tag>科学上网</tag>
+        <tag>ss</tag>
+        <tag>xray</tag>
+        <tag>搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -168,7 +173,8 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>MIUI,技巧</tag>
+        <tag>技巧</tag>
+        <tag>MIUI</tag>
       </tags>
   </entry>
   <entry>
@@ -189,7 +195,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,美国</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>美国</tag>
       </tags>
   </entry>
   <entry>
@@ -219,7 +227,9 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>日常,追番</tag>
+        <tag>动画</tag>
+        <tag>日常</tag>
+        <tag>追番</tag>
       </tags>
   </entry>
   <entry>
@@ -241,7 +251,8 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>steam</tag>
+        <tag>Windows</tag>
+        <tag>Steam</tag>
       </tags>
   </entry>
   <entry>
@@ -262,7 +273,10 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,aws,新加坡</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>aws</tag>
+        <tag>新加坡</tag>
       </tags>
   </entry>
   <entry>
@@ -283,7 +297,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,荷兰</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>荷兰</tag>
       </tags>
   </entry>
   <entry>
@@ -301,7 +317,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,德国,netcup</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>德国</tag>
       </tags>
   </entry>
   <entry>
@@ -322,7 +340,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,英国,kuroit</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>英国</tag>
       </tags>
   </entry>
   <entry>
@@ -363,7 +383,9 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>emby,mpv</tag>
+        <tag>Windows</tag>
+        <tag>emby</tag>
+        <tag>mpv</tag>
       </tags>
   </entry>
   <entry>
@@ -381,7 +403,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,美国</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>美国</tag>
       </tags>
   </entry>
   <entry>
@@ -396,7 +420,9 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>epic,clash,Windows</tag>
+        <tag>Windows</tag>
+        <tag>EPIC</tag>
+        <tag>Clash</tag>
       </tags>
   </entry>
   <entry>
@@ -440,7 +466,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,测评,日本</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>日本</tag>
       </tags>
   </entry>
   <entry>
@@ -485,7 +513,9 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>动画,日常</tag>
+        <tag>动画</tag>
+        <tag>日常</tag>
+        <tag>追番</tag>
       </tags>
   </entry>
   <entry>
@@ -498,7 +528,10 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,日本,甲骨文</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>日本</tag>
+        <tag>甲骨文</tag>
       </tags>
   </entry>
   <entry>
@@ -512,7 +545,10 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,日本,甲骨文</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>日本</tag>
+        <tag>甲骨文</tag>
       </tags>
   </entry>
   <entry>
@@ -595,7 +631,9 @@
         <category>转载</category>
       </categories>
       <tags>
-        <tag>mpv,播放器</tag>
+        <tag>Windows</tag>
+        <tag>mpv</tag>
+        <tag>播放器</tag>
       </tags>
   </entry>
   <entry>
@@ -613,7 +651,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,测评,美国</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>美国</tag>
       </tags>
   </entry>
   <entry>
@@ -700,10 +740,12 @@
 <h3 id="使用-ICC-profile-为-madVR-生成-3DLUT-文件实现色彩管理"><a href="#使用-ICC-profile-为-madVR-生成-3DLUT-文件实现色彩管理" class="headerlink" title="使用 ICC profile 为 madVR 生成 3DLUT 文件实现色彩管理"></a><a href="#%E4%BD%BF%E7%94%A8-ICC-profile-%E4%B8%BA-madVR-%E7%94%9F%E6%88%90-3DLUT-%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E8%89%B2%E5%BD%A9%E7%AE%A1%E7%90%86" title="使用 ICC profile 为 madVR 生成 3DLUT 文件实现色彩管理"></a>使用 ICC profile 为 madVR 生成 3DLUT 文件实现色彩管理</h3><p>我们需要用到校色软件 DisplayCAL 配套的一个小程序 3DLUT Maker。首先从 <a href="https://displaycal.net/">DisplayCAL 官网</a>下载安装（如果你还没有的话），然后运行 3DLUT Maker，“Destination profile”选择你显示器的 ICC profile 文件，确保“Apply calibration (vcgt)”不勾选，文件格式当然是“madVR (.3dlut)”，其余保持默认即可：<br><img src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.6hivfsf2i328.webp"><br>点击右下角按钮，选择保存位置，完成后，把得到的 .3dlut 文件放在一个合适的位置，然后打开 madVR 设置，按下图设置，确保“disable GPU gamma ramps”不勾选：<br><img src="https://cdn.staticaly.com/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.2f5roo7po800.webp"><br>然后保存设置即可。</p>
 ]]></content>
       <categories>
-        <category>技巧</category>
+        <category>转载</category>
       </categories>
       <tags>
-        <tag>mpc-hc,播放器</tag>
+        <tag>Windows</tag>
+        <tag>播放器</tag>
+        <tag>mpc-hc</tag>
       </tags>
   </entry>
   <entry>
@@ -722,7 +764,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,测评,美国</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>美国</tag>
       </tags>
   </entry>
   <entry>
@@ -741,7 +785,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,测评,美国</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>美国</tag>
       </tags>
   </entry>
   <entry>
@@ -761,7 +807,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,测评,日本</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>日本</tag>
       </tags>
   </entry>
   <entry>
@@ -843,7 +891,9 @@
         <category>科学上网</category>
       </categories>
       <tags>
-        <tag>tuic,科学上网,搭建</tag>
+        <tag>科学上网</tag>
+        <tag>tuic</tag>
+        <tag>搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -862,7 +912,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,测评,美国</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>美国</tag>
       </tags>
   </entry>
   <entry>
@@ -882,7 +934,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,测评,美国</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>美国</tag>
       </tags>
   </entry>
   <entry>
@@ -903,7 +957,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,测评,日本</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>日本</tag>
       </tags>
   </entry>
   <entry>
@@ -926,7 +982,9 @@
         <category>VPS</category>
       </categories>
       <tags>
-        <tag>vps,测评,美国</tag>
+        <tag>vps</tag>
+        <tag>测评</tag>
+        <tag>美国</tag>
       </tags>
   </entry>
   <entry>
@@ -966,7 +1024,8 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>apple music,Windows</tag>
+        <tag>Windows</tag>
+        <tag>Apple Music</tag>
       </tags>
   </entry>
   <entry>
@@ -1027,7 +1086,11 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>ffmpeg,FluidPlayer,streamlink,vps,服务器</tag>
+        <tag>vps</tag>
+        <tag>ffmpeg</tag>
+        <tag>FluidPlayer</tag>
+        <tag>streamlink</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -1141,7 +1204,9 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>动画,日常,观后感</tag>
+        <tag>动画</tag>
+        <tag>日常</tag>
+        <tag>观后感</tag>
       </tags>
   </entry>
   <entry>
@@ -1157,7 +1222,9 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>雏蜂,漫画,日常</tag>
+        <tag>日常</tag>
+        <tag>雏蜂</tag>
+        <tag>漫画</tag>
       </tags>
   </entry>
   <entry>
@@ -1173,7 +1240,8 @@
         <category>科学上网</category>
       </categories>
       <tags>
-        <tag>clash,Windows</tag>
+        <tag>Windows</tag>
+        <tag>Clash</tag>
       </tags>
   </entry>
   <entry>
@@ -1198,7 +1266,8 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>哪吒面板,美化</tag>
+        <tag>哪吒面板</tag>
+        <tag>美化</tag>
       </tags>
   </entry>
   <entry>
@@ -1300,6 +1369,7 @@
         <category>日常</category>
       </categories>
       <tags>
+        <tag>Windows</tag>
         <tag>远程桌面</tag>
       </tags>
   </entry>
@@ -1320,7 +1390,11 @@
         <category>科学上网</category>
       </categories>
       <tags>
-        <tag>nekobox,科学上网,ss,v2ray,规则</tag>
+        <tag>科学上网</tag>
+        <tag>nekobox</tag>
+        <tag>ss</tag>
+        <tag>xray</tag>
+        <tag>规则</tag>
       </tags>
   </entry>
   <entry>
@@ -1417,7 +1491,9 @@
         <category>推荐</category>
       </categories>
       <tags>
-        <tag>bilix,bilibili,下载</tag>
+        <tag>下载</tag>
+        <tag>bilix</tag>
+        <tag>哔哩哔哩</tag>
       </tags>
   </entry>
   <entry>
@@ -1430,7 +1506,9 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>edge,Windows</tag>
+        <tag>Edge</tag>
+        <tag>Windows</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -1450,7 +1528,8 @@
         <category>科学上网</category>
       </categories>
       <tags>
-        <tag>clash,规则,科学上网</tag>
+        <tag>Clash</tag>
+        <tag>科学上网</tag>
       </tags>
   </entry>
   <entry>
@@ -1465,7 +1544,8 @@
         <category>科学上网</category>
       </categories>
       <tags>
-        <tag>clash,规则,科学上网</tag>
+        <tag>Clash</tag>
+        <tag>科学上网</tag>
       </tags>
   </entry>
   <entry>
@@ -1480,7 +1560,8 @@
         <category>科学上网</category>
       </categories>
       <tags>
-        <tag>clash,规则,科学上网</tag>
+        <tag>Clash</tag>
+        <tag>科学上网</tag>
       </tags>
   </entry>
   <entry>
@@ -1494,7 +1575,8 @@
         <category>科学上网</category>
       </categories>
       <tags>
-        <tag>clash,科学上网,bypass</tag>
+        <tag>Clash</tag>
+        <tag>科学上网</tag>
       </tags>
   </entry>
   <entry>
@@ -1509,7 +1591,8 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>alist,宝塔</tag>
+        <tag>Alist</tag>
+        <tag>宝塔</tag>
       </tags>
   </entry>
   <entry>
@@ -1536,7 +1619,9 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>下载,pikpak,bt</tag>
+        <tag>下载</tag>
+        <tag>Pikpak</tag>
+        <tag>BT</tag>
       </tags>
   </entry>
   <entry>
@@ -1589,7 +1674,9 @@
         <category>转载</category>
       </categories>
       <tags>
-        <tag>film riot,电影,推荐</tag>
+        <tag>film riot</tag>
+        <tag>电影</tag>
+        <tag>推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -1622,7 +1709,8 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>刷机,安卓</tag>
+        <tag>刷机</tag>
+        <tag>安卓</tag>
       </tags>
   </entry>
   <entry>
@@ -1635,7 +1723,11 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>下载,idm,插件</tag>
+        <tag>Windows</tag>
+        <tag>下载</tag>
+        <tag>IDM</tag>
+        <tag>插件</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -1650,7 +1742,8 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>edge,卸载,Windows</tag>
+        <tag>Edge</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -1671,7 +1764,8 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>windows,技巧</tag>
+        <tag>Windows</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -1686,7 +1780,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>笑话,日常</tag>
+        <tag>日常</tag>
+        <tag>笑话</tag>
       </tags>
   </entry>
   <entry>
