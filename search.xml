@@ -255,8 +255,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>日常</tag>
         <tag>动画</tag>
+        <tag>日常</tag>
         <tag>追番</tag>
       </tags>
   </entry>
@@ -541,8 +541,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>日常</tag>
         <tag>动画</tag>
+        <tag>日常</tag>
         <tag>追番</tag>
       </tags>
   </entry>
@@ -1057,7 +1057,7 @@
       </tags>
   </entry>
   <entry>
-    <title>【技巧】利用ffmpeg/Streamlink+FluidPlayer做拉流中转</title>
+    <title>【技巧】利用ffmpeg/Streamlink+dplayer做拉流中转</title>
     <url>/posts/31992/</url>
     <content><![CDATA[<h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><hr>
 <blockquote>
@@ -1132,6 +1132,7 @@
 <p>这里是利用 <strong>yt-dlp</strong> 将YouTube直播链接解析为m3u8链接并传递给ffmpeg读取，且<code>buffer_size</code>设置较小似乎会报错（我也不知道为什么，反正调大就对了）。</p>
 <h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p><strong>感谢 yt-dlp、Streamlink、ffmpeg作者，没有他们就没有此篇教程。</strong></p>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="https://www.wevg.org/archives/nginx-mutli-rtmp/">Vigorous Pro —— 使用 Nginx 多平台同步直播</a></li>
 <li><a href="https://candinya.com/posts/build-a-rtmp-hls-stream-server/">糖菓·部落 —— 搭建自己的RTMP+HLS直播服务器</a></li>
 <li><a href="https://www.alittlefatdog.com/2022/07/29/%E3%80%90%E5%8E%9F%E5%88%9B%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%88%A9%E7%94%A8ffmpeg%E5%92%8Cyt-dlp%E4%BB%8Eyoutube%E7%88%AC%E5%8F%96%E7%9B%B4%E6%92%AD%E6%B5%81%E7%9A%84%E7%BB%8F%E8%BF%87/">灬小肥狗之家灬 ——【原创】记一次利用FFmpeg和yt-dlp从YouTube爬取直播流的经过</a></li>
 </ul>
@@ -1258,8 +1259,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>日常</tag>
         <tag>动画</tag>
+        <tag>日常</tag>
         <tag>观后感</tag>
       </tags>
   </entry>
@@ -1423,8 +1424,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>远程桌面</tag>
         <tag>Windows</tag>
+        <tag>远程桌面</tag>
       </tags>
   </entry>
   <entry>
@@ -1560,8 +1561,8 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Edge</tag>
+        <tag>Windows</tag>
         <tag>技巧</tag>
       </tags>
   </entry>
@@ -1796,8 +1797,8 @@
         <category>技巧</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Edge</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
