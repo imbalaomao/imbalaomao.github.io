@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>【备份】小鸡常用脚本备份 | 猫 の 窝</title><meta name="author" content="OldcatY"><meta name="copyright" content="OldcatY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="常用脚本大合集！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【备份】小鸡常用脚本备份">
+<meta property="og:url" content="https://nekoss.top/posts/6547649a/">
+<meta property="og:site_name" content="猫 の 窝">
+<meta property="og:description" content="常用脚本大合集！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp">
+<meta property="article:published_time" content="2023-10-25T16:58:30.000Z">
+<meta property="article:modified_time" content="2023-10-25T17:29:48.918Z">
+<meta property="article:author" content="OldcatY">
+<meta property="article:tag" content="vps">
+<meta property="article:tag" content="脚本">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp"><link rel="canonical" href="https://nekoss.top/posts/6547649a/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;b370e5e94cf04246a2de8e2687489b47&quot;}"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":470},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【备份】小鸡常用脚本备份',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-26 01:29:48'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">59</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">59</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/VPS/"><i class="fa-fw fas fa-server"></i><span> VPS</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E5%B7%A7/"><i class="fa-fw fas fa-lightbulb"></i><span> 技巧</span></a></li><li><a class="site-page child" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"><i class="fa-fw fas fa-paper-plane"></i><span> 科学上网</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E5%B8%B8/"><i class="fa-fw fas fa-heart"></i><span> 日常</span></a></li><li><a class="site-page child" href="/categories/%E6%8E%A8%E8%8D%90/"><i class="fa-fw fas fa-thumbs-up"></i><span> 推荐</span></a></li><li><a class="site-page child" href="/categories/%E8%BD%AC%E8%BD%BD/"><i class="fa-fw fas fa-globe"></i><span> 转载</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="猫 の 窝"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp"/><span class="site-name">猫 の 窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/VPS/"><i class="fa-fw fas fa-server"></i><span> VPS</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E5%B7%A7/"><i class="fa-fw fas fa-lightbulb"></i><span> 技巧</span></a></li><li><a class="site-page child" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"><i class="fa-fw fas fa-paper-plane"></i><span> 科学上网</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E5%B8%B8/"><i class="fa-fw fas fa-heart"></i><span> 日常</span></a></li><li><a class="site-page child" href="/categories/%E6%8E%A8%E8%8D%90/"><i class="fa-fw fas fa-thumbs-up"></i><span> 推荐</span></a></li><li><a class="site-page child" href="/categories/%E8%BD%AC%E8%BD%BD/"><i class="fa-fw fas fa-globe"></i><span> 转载</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【备份】小鸡常用脚本备份</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-25T16:58:30.000Z" title="发表于 2023-10-26 00:58:30">2023-10-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-25T17:29:48.918Z" title="更新于 2023-10-26 01:29:48">2023-10-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/VPS/">VPS</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/VPS/%E6%8A%80%E5%B7%A7/">技巧</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【备份】小鸡常用脚本备份"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Linux工具箱-科技Lion"><a href="#Linux工具箱-科技Lion" class="headerlink" title="Linux工具箱@科技Lion"></a>Linux工具箱@科技Lion</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh &amp;&amp; <span class="built_in">chmod</span> +x kejilion.sh &amp;&amp; ./kejilion.sh</span><br></pre></td></tr></table></figure>
+
+<h1 id="DD脚本"><a href="#DD脚本" class="headerlink" title="DD脚本"></a>DD脚本</h1><ul>
+<li><p>萌咖DD脚本（可DD Ubuntu&#x2F;Debian，默认密码：MoeClub.org）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget --no-check-certificate -qO- <span class="string">&#x27;https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh&#x27;</span>) -d 11 -v 64 -p 密码 -port 端口 -a -firmware</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>nodeseeek DD脚本（默认密码：<code>LeitboGi0ro</code>）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##### 更新系统并安装wget #####</span></span><br><span class="line"><span class="comment"># CentOS：dnf install wget -y</span></span><br><span class="line"><span class="comment"># AlpineLinux：apk update &amp;&amp; apk install wget bash &amp;&amp; sed -i &#x27;s/root:\/bin\/ash/root:\/bin\/bash/g&#x27; /etc/passwd</span></span><br><span class="line">apt update install wget -y </span><br><span class="line"></span><br><span class="line"><span class="comment">##### 下载DD脚本 #####</span></span><br><span class="line">wget --no-check-certificate -qO InstallNET.sh <span class="string">&#x27;https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh&#x27;</span> &amp;&amp; <span class="built_in">chmod</span> a+x InstallNET.sh</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 安装Debian #####</span></span><br><span class="line">bash InstallNET.sh -debian <span class="comment">#可选9-12</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 安装Ubuntu #####</span></span><br><span class="line">bash InstallNET.sh -ubuntu <span class="comment">#可选20.04/22.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 安装Kali rolling #####</span></span><br><span class="line">bash InstallNET.sh -kali</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 安装Fedora #####</span></span><br><span class="line">bash InstallNET.sh -fedora <span class="comment">#可选37/38</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 安装AlmaLinux #####</span></span><br><span class="line">bash InstallNET.sh -almalinux <span class="comment">#可选8/9</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 安装CentOS #####</span></span><br><span class="line">bash InstallNET.sh -centos <span class="comment">#可选7-9</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 安装Rockylinux #####</span></span><br><span class="line">bash InstallNET.sh -rocky <span class="comment">#可选8/9</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 安装Windows #####</span></span><br><span class="line">bash InstallNET.sh -windows <span class="comment">#支持 Windows 10 Enterprise LTSC, Windows 11 Pro for Workstation 22H2, Windows Server 2012 R2, Windows Server 2016, Windows Server 2019, Windows Server 2022，重装时输入对应系统的数字版本号即可，如果能通过VNC登录系统，可自动进行 IPv4 静态配置和自动扩展系统盘分区</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>快速DD Debian12系统（支持Oracle IPV6）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载脚本</span></span><br><span class="line">curl -fLO https://raw.githubusercontent.com/bohanyang/debi/master/debi.sh &amp;&amp; <span class="built_in">chmod</span> a+rx debi.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行脚本</span></span><br><span class="line">sudo ./debi.sh --cdn --network-console --ethx --bbr --user root --password &lt;新系统用户密码&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装后重启</span></span><br><span class="line">sudo shutdown -r now</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>–bbr 开启 BBR<br>–ethx 网卡名称使用传统形式，如 eth0 而不是 ens3<br>–cloud-kernel 安装占用空间较小的 cloud 内核，但可能会导致 UEFI 启动的机器（如 Oracle、Azure 及 Hyper-V、Google Cloud 等）VNC 黑屏。BIOS 启动的普通 VPS 则没有此问题。<br>默认时区为 UTC，添加 –timezone Asia&#x2F;Shanghai 可使用中国时区。<br>默认使用 Debian 官方 CDN 镜像源（deb.debian.org），添加 –china 可使用阿里云镜像源。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="安装宝塔面板-7-7-0"><a href="#安装宝塔面板-7-7-0" class="headerlink" title="安装宝塔面板 7.7.0"></a>安装宝塔面板 7.7.0</h1><ul>
+<li><p>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSO https://raw.githubusercontent.com/8838/btpanel-v7.7.0/main/install/install_panel.sh &amp;&amp; bash install_panel.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>转为开心版</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1，屏蔽手机号</span></span><br><span class="line">sed -i <span class="string">&quot;s|bind_user == &#x27;True&#x27;|bind_user == &#x27;XXXX&#x27;|&quot;</span> /www/server/panel/BTPanel/static/js/index.js</span><br><span class="line"></span><br><span class="line"><span class="comment">#2，删除强制绑定手机js文件</span></span><br><span class="line"><span class="built_in">rm</span> -f /www/server/panel/data/bind.pl</span><br><span class="line"></span><br><span class="line"><span class="comment">#3，手动解锁宝塔所有付费插件为永不过期</span></span><br><span class="line"><span class="comment">#文件路径：/www/server/panel/data/plugin.json</span></span><br><span class="line"><span class="comment">#搜索字符串：&quot;endtime&quot;: -1全部替换为&quot;endtime&quot;: 999999999999</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#4，给plugin.json文件上锁防止自动修复为免费版</span></span><br><span class="line">chattr +i /www/server/panel/data/plugin.json</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="BBR-优化脚本"><a href="#BBR-优化脚本" class="headerlink" title="BBR &amp; 优化脚本"></a>BBR &amp; 优化脚本</h1><ul>
+<li><p>开启原版BBR（建议Linux内核 ≥ 5.0）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;net.core.default_qdisc=fq&quot;</span> &gt;&gt; /etc/sysctl.conf</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;net.ipv4.tcp_congestion_control=bbr&quot;</span> &gt;&gt; /etc/sysctl.conf</span><br><span class="line">sysctl -p</span><br><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br><span class="line">lsmod | grep bbr</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>BBR优化脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -Ls https://github.com/lanziii/bbr-/releases/download/123/tools.sh)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="小鸡测评脚本"><a href="#小鸡测评脚本" class="headerlink" title="小鸡测评脚本"></a>小鸡测评脚本</h1><h2 id="融合怪测试脚本"><a href="#融合怪测试脚本" class="headerlink" title="融合怪测试脚本"></a>融合怪测试脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- bash.spiritlhl.net/ecs)</span><br></pre></td></tr></table></figure>
+
+<h2 id="流媒体测试脚本"><a href="#流媒体测试脚本" class="headerlink" title="流媒体测试脚本"></a>流媒体测试脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)</span><br></pre></td></tr></table></figure>
+
+<h2 id="GB5测试脚本"><a href="#GB5测试脚本" class="headerlink" title="GB5测试脚本"></a>GB5测试脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -sL bash.icu/gb5)</span><br></pre></td></tr></table></figure>
+
+<h2 id="测速脚本"><a href="#测速脚本" class="headerlink" title="测速脚本"></a>测速脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -sL bash.icu/speedtest)</span><br></pre></td></tr></table></figure>
+
+<h2 id="四网回程脚本（待更新）"><a href="#四网回程脚本（待更新）" class="headerlink" title="四网回程脚本（待更新）"></a>四网回程脚本（待更新）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="三网仅显示回程线路脚本"><a href="#三网仅显示回程线路脚本" class="headerlink" title="三网仅显示回程线路脚本"></a>三网仅显示回程线路脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- git.io/besttrace | bash</span><br></pre></td></tr></table></figure>
+
+<h2 id="一键更换SSH端口脚本（默认2222）"><a href="#一键更换SSH端口脚本（默认2222）" class="headerlink" title="一键更换SSH端口脚本（默认2222）"></a>一键更换SSH端口脚本（默认2222）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i <span class="string">&#x27;s/#Port\ 22/Port\ 2222/&#x27;</span> /etc/ssh/sshd_config &amp;&amp; systemctl reload ssh</span><br></pre></td></tr></table></figure>
+
+<h2 id="剑皇脚本"><a href="#剑皇脚本" class="headerlink" title="剑皇脚本"></a>剑皇脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/maintell/webBenchmark/releases/download/0.6/webBenchmark_linux_x64</span><br><span class="line"><span class="built_in">chmod</span> +x webBenchmark_linux_x64</span><br><span class="line">./webBenchmark_linux_x64 -c 32 -s https://target.url</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker安装与卸载"><a href="#Docker安装与卸载" class="headerlink" title="Docker安装与卸载"></a>Docker安装与卸载</h2><ul>
+<li><p>Docker安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.docker.com/ | sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Docker卸载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove docker docker-engine -y</span><br><span class="line">sudo apt-get autoremove -y</span><br><span class="line"><span class="built_in">rm</span> -fr /var/lib/docker/</span><br></pre></td></tr></table></figure></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://nekoss.top">OldcatY</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nekoss.top/posts/6547649a/">https://nekoss.top/posts/6547649a/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nekoss.top" target="_blank">猫 の 窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/vps/">vps</a><a class="post-meta__tags" href="/tags/%E8%84%9A%E6%9C%AC/">脚本</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/43189b9b/" title="【小鸡测评】hostEONS 5刀VDS测评-5950X"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【小鸡测评】hostEONS 5刀VDS测评-5950X</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/57935/" title="【科学上网】跨越长城，走向世界"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.t3vc8awp7hc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-03</div><div class="title">【科学上网】跨越长城，走向世界</div></div></a></div><div><a href="/posts/43189b9b/" title="【小鸡测评】hostEONS 5刀VDS测评-5950X"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-24</div><div class="title">【小鸡测评】hostEONS 5刀VDS测评-5950X</div></div></a></div><div><a href="/posts/b8d3a9bc/" title="【小鸡测评】wap.ac 1刀美国鸡测评"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-24</div><div class="title">【小鸡测评】wap.ac 1刀美国鸡测评</div></div></a></div><div><a href="/posts/ccb6d08b/" title="【小鸡测评】谷歌GCP台湾鸡测试"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-23</div><div class="title">【小鸡测评】谷歌GCP台湾鸡测试</div></div></a></div><div><a href="/posts/7985eb28/" title="【小鸡测评】hostEONS 5刀VDS测评-3950X"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-23</div><div class="title">【小鸡测评】hostEONS 5刀VDS测评-3950X</div></div></a></div><div><a href="/posts/c8a841b0/" title="【小鸡测评】艾云4837转GIA绝版小鸡测评"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-17</div><div class="title">【小鸡测评】艾云4837转GIA绝版小鸡测评</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">OldcatY</div><div class="author-info__description">猫窝：介绍国外各类云服、VPS、机场搭建方法论，and more...</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">59</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">59</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/imbalaomao" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%B7%A5%E5%85%B7%E7%AE%B1-%E7%A7%91%E6%8A%80Lion"><span class="toc-number">1.</span> <span class="toc-text">Linux工具箱@科技Lion</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DD%E8%84%9A%E6%9C%AC"><span class="toc-number">2.</span> <span class="toc-text">DD脚本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF-7-7-0"><span class="toc-number">3.</span> <span class="toc-text">安装宝塔面板 7.7.0</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BBR-%E4%BC%98%E5%8C%96%E8%84%9A%E6%9C%AC"><span class="toc-number">4.</span> <span class="toc-text">BBR &amp; 优化脚本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E9%B8%A1%E6%B5%8B%E8%AF%84%E8%84%9A%E6%9C%AC"><span class="toc-number">5.</span> <span class="toc-text">小鸡测评脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9E%8D%E5%90%88%E6%80%AA%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC"><span class="toc-number">5.1.</span> <span class="toc-text">融合怪测试脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E5%AA%92%E4%BD%93%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC"><span class="toc-number">5.2.</span> <span class="toc-text">流媒体测试脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GB5%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC"><span class="toc-number">5.3.</span> <span class="toc-text">GB5测试脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E9%80%9F%E8%84%9A%E6%9C%AC"><span class="toc-number">5.4.</span> <span class="toc-text">测速脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E7%BD%91%E5%9B%9E%E7%A8%8B%E8%84%9A%E6%9C%AC%EF%BC%88%E5%BE%85%E6%9B%B4%E6%96%B0%EF%BC%89"><span class="toc-number">5.5.</span> <span class="toc-text">四网回程脚本（待更新）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E7%BD%91%E4%BB%85%E6%98%BE%E7%A4%BA%E5%9B%9E%E7%A8%8B%E7%BA%BF%E8%B7%AF%E8%84%9A%E6%9C%AC"><span class="toc-number">5.6.</span> <span class="toc-text">三网仅显示回程线路脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E6%9B%B4%E6%8D%A2SSH%E7%AB%AF%E5%8F%A3%E8%84%9A%E6%9C%AC%EF%BC%88%E9%BB%98%E8%AE%A42222%EF%BC%89"><span class="toc-number">5.7.</span> <span class="toc-text">一键更换SSH端口脚本（默认2222）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%91%E7%9A%87%E8%84%9A%E6%9C%AC"><span class="toc-number">5.8.</span> <span class="toc-text">剑皇脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD"><span class="toc-number">5.9.</span> <span class="toc-text">Docker安装与卸载</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/6547649a/" title="【备份】小鸡常用脚本备份"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【备份】小鸡常用脚本备份"/></a><div class="content"><a class="title" href="/posts/6547649a/" title="【备份】小鸡常用脚本备份">【备份】小鸡常用脚本备份</a><time datetime="2023-10-25T16:58:30.000Z" title="发表于 2023-10-26 00:58:30">2023-10-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/43189b9b/" title="【小鸡测评】hostEONS 5刀VDS测评-5950X"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【小鸡测评】hostEONS 5刀VDS测评-5950X"/></a><div class="content"><a class="title" href="/posts/43189b9b/" title="【小鸡测评】hostEONS 5刀VDS测评-5950X">【小鸡测评】hostEONS 5刀VDS测评-5950X</a><time datetime="2023-10-24T15:02:32.000Z" title="发表于 2023-10-24 23:02:32">2023-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b8d3a9bc/" title="【小鸡测评】wap.ac 1刀美国鸡测评"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【小鸡测评】wap.ac 1刀美国鸡测评"/></a><div class="content"><a class="title" href="/posts/b8d3a9bc/" title="【小鸡测评】wap.ac 1刀美国鸡测评">【小鸡测评】wap.ac 1刀美国鸡测评</a><time datetime="2023-10-24T14:01:09.000Z" title="发表于 2023-10-24 22:01:09">2023-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f11e6e95/" title="【技巧】使用二进制文件解决 N1 Openwrt 下哪吒面板运行的问题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230624/you.4jub0e7x5yf4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【技巧】使用二进制文件解决 N1 Openwrt 下哪吒面板运行的问题"/></a><div class="content"><a class="title" href="/posts/f11e6e95/" title="【技巧】使用二进制文件解决 N1 Openwrt 下哪吒面板运行的问题">【技巧】使用二进制文件解决 N1 Openwrt 下哪吒面板运行的问题</a><time datetime="2023-10-24T13:11:45.000Z" title="发表于 2023-10-24 21:11:45">2023-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ccb6d08b/" title="【小鸡测评】谷歌GCP台湾鸡测试"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【小鸡测评】谷歌GCP台湾鸡测试"/></a><div class="content"><a class="title" href="/posts/ccb6d08b/" title="【小鸡测评】谷歌GCP台湾鸡测试">【小鸡测评】谷歌GCP台湾鸡测试</a><time datetime="2023-10-23T02:49:49.000Z" title="发表于 2023-10-23 10:49:49">2023-10-23</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By OldcatY</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
