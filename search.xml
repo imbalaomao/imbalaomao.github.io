@@ -1727,7 +1727,7 @@
   <entry>
     <title>【科学上网】跨越长城，走向世界</title>
     <url>/posts/57935/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><a href="#%E5%89%8D%E8%A8%80" title="前言"></a>前言</h2><p><strong>自2012年接触翻墙以来，我大约用过以下各类软件：</strong></p>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>自2012年接触翻墙以来，我大约用过以下各类软件：</strong></p>
 <blockquote>
 <ul>
 <li>VPN系列：PPTP、L2TP类软件（类似GreenVPN等）</li>
@@ -1739,7 +1739,7 @@
 </ul>
 </blockquote>
 <p>在这分享（记录）一下，方便后续查阅。</p>
-<h2 id="软件归类"><a href="#软件归类" class="headerlink" title="软件归类"></a><a href="#%E8%BD%AF%E4%BB%B6%E5%BD%92%E7%B1%BB" title="软件归类"></a>软件归类</h2><h3 id="各类核心"><a href="#各类核心" class="headerlink" title="各类核心"></a><a href="#%E5%90%84%E7%B1%BB%E6%A0%B8%E5%BF%83" title="各类核心"></a>各类核心</h3><p><strong>请注意：本处仅存放平时本人可能会用到的核心，以外的完全不涉及</strong></p>
+<h2 id="软件归类"><a href="#软件归类" class="headerlink" title="软件归类"></a>软件归类</h2><h3 id="各类核心"><a href="#各类核心" class="headerlink" title="各类核心"></a>各类核心</h3><p><strong>请注意：本处仅存放平时本人可能会用到的核心，以外的完全不涉及</strong></p>
 <blockquote>
 <ul>
 <li><a href="https://github.com/v2fly/v2ray-core/releases">v2ray&#x2F;v2fly</a></li>
@@ -1751,121 +1751,130 @@
 <li><a href="https://github.com/klzgrad/naiveproxy/releases">NaiveProxy</a></li>
 <li><a href="https://github.com/apernet/hysteria/releases">Hysteria</a></li>
 <li><a href="https://github.com/EAimTY/tuic/releases">Tuic</a></li>
-<li><a href="https://github.com/juicity/juicity">Juicity(Tuic魔改)</a></li>
 <li><a href="https://github.com/enfein/mieru/releases">Mieru</a></li>
 </ul>
 </blockquote>
-<h3 id="Windows-GUI"><a href="#Windows-GUI" class="headerlink" title="Windows GUI"></a><a href="#Windows-GUI" title="Windows GUI"></a>Windows GUI</h3><h4 id="Clash系"><a href="#Clash系" class="headerlink" title="Clash系"></a><a href="#Clash%E7%B3%BB" title="Clash系"></a>Clash系</h4><blockquote>
+<h3 id="Windows-GUI"><a href="#Windows-GUI" class="headerlink" title="Windows GUI"></a>Windows GUI</h3><h4 id="Clash系"><a href="#Clash系" class="headerlink" title="Clash系"></a>Clash系</h4><blockquote>
 <ul>
-<li><a href="https://github.com/Fndroid/clash_for_windows_pkg/releases/latest">Clash for Windows（软件较大，功能齐全，方便调试）</a></li>
-<li><a href="https://github.com/ender-zhao/Clash-for-Windows_Chinese/releases/latest">Clash for Windows汉化版</a></li>
+<li><a href="https://github.com/imbalaomao/fireware/releases/tag/cfw">Clash for Windows（已删库，此链接为最终汉化备份版）</a></li>
+<li><a href="https://github.com/Z-Siqi/Clash-for-Windows_Chinese/releases/tag/CFW-V0.20.39_CN">Clash for Windows汉化版</a></li>
 <li><a href="https://github.com/zzzgydi/clash-verge/releases">Clash Verge（需要EdgeRuntime2，轻量好用）</a></li>
+<li><a href="https://github.com/dream7180/ClashWarden">ClashWarden（使用C++编写的小巧客户端，许久不更新了）</a></li>
+<li><a href="https://github.com/2dust/clashN/releases/latest">ClashN（V2rayN作者做的同界面客户端，许久不更新了）</a></li>
 <li><a href="https://github.com/Fclash/Fclash/release/latest">Fclash（使用Flutter编写的跨平台GUI）</a></li>
-<li><a href="https://github.com/2dust/clashN">ClashN（V2rayN作者做的同界面客户端）</a></li>
-<li><a href="https://github.com/Clash-Mini/Clash.Mini/releases/latest">Clash.Mini（使用Go语言编写的简洁版UI，集成了Meta内核）</a></li>
-<li><a href="https://github.com/bulianglin/demo/blob/main/EasyClash.rar">EasyClash（不良林编写，仅包含基本设置及核心，适合极简强迫症使用）</a></li>
-<li><a href="https://github.com/dream7180/ClashWarden">ClashWarden（使用C++编写的小巧客户端）</a></li>
-<li><a href="https://github.com/ClashrAuto/Clashr-Auto-Desktop/releases/latest">ClashR Auto（基于CFW魔改，更适合小白使用）</a></li>
 <li><a href="https://github.com/mapleafgo/clash-for-flutter/releases/latest">clash-for-flutter（使用谷歌Flutter框架编写）</a></li>
+<li><a href="https://github.com/Clash-Mini/Clash.Mini/releases/latest">Clash.Mini（使用Go语言编写的简洁版UI，集成了Meta内核，许久不更新了）</a></li>
+<li><a href="https://github.com/ClashrAuto/Clashr-Auto-Desktop/releases/latest">ClashR Auto（基于CFW魔改）</a></li>
 <li><a href="https://github.com/SpongeNobody/Clashy">Clashy（桌面全平台）</a></li>
 </ul>
 </blockquote>
-<h4 id="V2ray系"><a href="#V2ray系" class="headerlink" title="V2ray系"></a><a href="#V2ray%E7%B3%BB" title="V2ray系"></a>V2ray系</h4><blockquote>
+<h4 id="V2ray系"><a href="#V2ray系" class="headerlink" title="V2ray系"></a>V2ray系</h4><blockquote>
 <ul>
 <li><a href="https://matsuridayo.github.io/download/">Nekoray（魔改Qv2Ray，增加hysteria等新协议支持）</a></li>
-<li><a href="https://github.com/2dust/v2rayN">V2rayN（已使用.NET 6.0更新UI）</a></li>
-<li><a href="https://github.com/Shadowsocks-NET/Qv2ray">Qv2ray（原维护者弃坑，备份在此）</a></li>
+<li><a href="https://github.com/2dust/v2rayN">V2rayN（老牌*ray系软件，近期已用.NET 6.0重写）</a></li>
+<li><a href="https://github.com/Shadowsocks-NET/Qv2ray">Qv2ray（原维护者弃坑，新仓库为RELEASE备份）</a></li>
 </ul>
 </blockquote>
-<h4 id="Sing-Box"><a href="#Sing-Box" class="headerlink" title="Sing-Box"></a><a href="#Sing-Box" title="Sing-Box"></a>Sing-Box</h4><blockquote>
+<h4 id="Sing-Box"><a href="#Sing-Box" class="headerlink" title="Sing-Box"></a>Sing-Box</h4><blockquote>
 <ul>
 <li><a href="https://github.com/daodao97/SingBox/releases">Sing-box 托盘GUI</a></li>
 </ul>
 </blockquote>
-<h3 id="iOS-MacOS-GUI"><a href="#iOS-MacOS-GUI" class="headerlink" title="iOS&#x2F;MacOS GUI"></a><a href="#iOS-x2F-MacOS-GUI" title="iOS/MacOS GUI"></a>iOS&#x2F;MacOS GUI</h3><blockquote>
+<h3 id="iOS-MacOS-GUI"><a href="#iOS-MacOS-GUI" class="headerlink" title="iOS&#x2F;MacOS GUI"></a>iOS&#x2F;MacOS GUI</h3><blockquote>
 <ul>
 <li><a href="https://itunes.apple.com/us/app/shadowrocket/id932747118?mt=8">Shadowrocket(仅限iOS系统，不支持intel Mac，一般定价：<strong>2.99USD</strong>)</a></li>
 <li><a href="https://apps.apple.com/us/app/quantumult-x/id1443988620">QuantumultX(iOS&#x2F;MacOS授权通用，支持Intel-Mac&#x2F;M1-Mac，一般定价：<strong>4.99USD</strong>)</a></li>
-<li><a href="https://www.nssurge.com/">Surge(iOS&#x2F;MacOS授权分离，定价超高，一般不推荐)</a></li>
+<li><a href="https://www.nssurge.com/">Surge(iOS&#x2F;MacOS授权分离，定价超高，土豪专用)</a></li>
 <li><a href="https://apps.apple.com/us/app/loon/id1373567447">Loon(iOS&#x2F;MacOS授权通用)</a></li>
-<li><a href="https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349">Stash(iOS可用，<strong>2.99USD</strong>)</a></li>
+<li><a href="https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349">Stash(iOS可用，与Clash premium核心共享配置文件，<strong>2.99USD</strong>)</a></li>
 <li><a href="https://github.com/yichengchen/clashX">ClashX（仅限Mac使用）</a></li>
 <li><a href="https://github.com/MetaCubeX/ClashX.Meta">ClashX Meta（仅限Mac使用）</a></li>
 <li><a href="https://github.com/Cenmrev/V2RayX">V2rayX（仅限Mac使用）</a></li>
 <li><a href="https://github.com/daodao97/SingBox/releases">Sing-box 托盘GUI（仅限Mac使用）</a></li>
 </ul>
 </blockquote>
-<h3 id="Android-GUI"><a href="#Android-GUI" class="headerlink" title="Android GUI"></a><a href="#Android-GUI" title="Android GUI"></a>Android GUI</h3><h4 id="V2ray系-1"><a href="#V2ray系-1" class="headerlink" title="V2ray系"></a><a href="#V2ray%E7%B3%BB-1" title="V2ray系"></a>V2ray系</h4><blockquote>
+<h3 id="Android-GUI"><a href="#Android-GUI" class="headerlink" title="Android GUI"></a>Android GUI</h3><h4 id="V2ray系-1"><a href="#V2ray系-1" class="headerlink" title="V2ray系"></a>V2ray系</h4><blockquote>
 <ul>
-<li><a href="https://github.com/SagerNet/SagerNet/releases">SagerNet（兼容SSR、v2ray、clash配置，带很多插件）</a></li>
+<li><a href="https://github.com/SagerNet/SagerNet/releases">SagerNet（兼容SSR、v2ray、clash配置，带很多插件，已停更）</a></li>
 <li><a href="https://matsuridayo.github.io/download/">Matsuri（魔改版Sagernet，与原版差距不大，兼容原版插件）</a></li>
 <li><a href="https://github.com/2dust/v2rayNG">V2rayNG（Xray社区钦定）</a></li>
 </ul>
 </blockquote>
-<h4 id="Clash系-1"><a href="#Clash系-1" class="headerlink" title="Clash系"></a><a href="#Clash%E7%B3%BB-1" title="Clash系"></a>Clash系</h4><blockquote>
+<h4 id="Clash系-1"><a href="#Clash系-1" class="headerlink" title="Clash系"></a>Clash系</h4><blockquote>
 <ul>
 <li><a href="https://github.com/Kr328/ClashForAndroid/releases/latest">Clash for Android</a></li>
 <li><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases/tag/Prerelease-alpha">Clash Meta for Android</a></li>
 <li><a href="https://github.com/kalasutra/Clash_For_Magisk">Clash for Magisk（需ROOT）</a></li>
 </ul>
 </blockquote>
-<h4 id="Surfboard（兼容Surge4配置文件）"><a href="#Surfboard（兼容Surge4配置文件）" class="headerlink" title="Surfboard（兼容Surge4配置文件）"></a><a href="#Surfboard%EF%BC%88%E5%85%BC%E5%AE%B9Surge4%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%89" title="Surfboard（兼容Surge4配置文件）"></a><a href="https://github.com/getsurfboard/surfboard/releases">Surfboard（兼容Surge4配置文件）</a></h4><h2 id="搭建脚本归类"><a href="#搭建脚本归类" class="headerlink" title="搭建脚本归类"></a><a href="#%E6%90%AD%E5%BB%BA%E8%84%9A%E6%9C%AC%E5%BD%92%E7%B1%BB" title="搭建脚本归类"></a>搭建脚本归类</h2><p><strong>所有脚本我本人都使用过，无好坏之分，只有适合你自己的才是最好的</strong></p>
-<h3 id="v2ray-xray脚本"><a href="#v2ray-xray脚本" class="headerlink" title="v2ray&#x2F;xray脚本"></a><a href="#v2ray-x2F-xray%E8%84%9A%E6%9C%AC" title="v2ray/xray脚本"></a>v2ray&#x2F;xray脚本</h3><blockquote>
+<h4 id="Surfboard（兼容Surge4配置文件）"><a href="#Surfboard（兼容Surge4配置文件）" class="headerlink" title="Surfboard（兼容Surge4配置文件）"></a><a href="https://github.com/getsurfboard/surfboard/releases">Surfboard（兼容Surge4配置文件）</a></h4><h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><blockquote>
 <ul>
-<li><a href="https://233boy.com/v2ray/v2ray-script/">233boy经典脚本</a></li>
-<li><a href="https://233boy.com/xray/xray-script/">233boy的xray一键脚本（推荐）</a></li>
-<li><a href="https://www.v2ray-agent.com/archives/1680104902581">mack-a 编写的八合一脚本，简单易用（目前本人正在使用）</a></li>
-<li><a href="https://github.com/yeahwu/v2ray-wss">1024.day站长自编简易wss+ss安装脚本，脚本足够安全</a></li>
-<li><a href="https://blog.misaka.rest/2023/04/07/singbox-reality-script/">基于Sing-box的Vless+Reality节点搭建脚本</a></li>
-<li><a href="https://github.com/chika0801/Xray-install/blob/main/REALITY.md">vless+XTLS_VISION&#x2F;gRPC+REALITY 手动搭建方法</a></li>
+<li><a href="https://github.com/hq450/fancyss">fancyss(梅林&#x2F;华硕固件经典插件)</a></li>
+<li><a href="https://github.com/zhangkuang/Merlinclash">MerlinClash(使用ClashPremium&#x2F;ClashMeta内核)</a></li>
+<li><a href="https://github.com/vernesong/OpenClash">OpenClash(OpenWRT经典插件)</a></li>
+<li><a href="https://github.com/juewuy/ShellClash">ShellClash(只要能SSH就能Clash！)</a></li>
 </ul>
 </blockquote>
-<h3 id="Trojan脚本"><a href="#Trojan脚本" class="headerlink" title="Trojan脚本"></a><a href="#Trojan%E8%84%9A%E6%9C%AC" title="Trojan脚本"></a>Trojan脚本</h3><p><strong>Trojan存在明显且可探测的 TLS in TLS 特征，因此不推荐自建使用</strong></p>
-<h3 id="小众协议脚本-教程"><a href="#小众协议脚本-教程" class="headerlink" title="小众协议脚本&#x2F;教程"></a><a href="#%E5%B0%8F%E4%BC%97%E5%8D%8F%E8%AE%AE%E8%84%9A%E6%9C%AC-x2F-%E6%95%99%E7%A8%8B" title="小众协议脚本/教程"></a>小众协议脚本&#x2F;教程</h3><p><em><strong>本Part中很少会出现一键脚本，大多为分步骤教学，需要对Linux有一定基础知识。同时大多数小众协议并无图形化UI，因此请使用v2rayN或Nekoray添加自定义核心后使用，具体使用方法请参考<a href="https://matsuridayo.github.io/n-extra_core/">此处</a></strong></em></p>
+<h2 id="搭建脚本归类"><a href="#搭建脚本归类" class="headerlink" title="搭建脚本归类"></a>搭建脚本归类</h2><p><strong>所有脚本我本人都使用过，无好坏之分，只有适合你自己的才是最好的</strong></p>
+<hr>
+<h3 id="v2ray-xray脚本"><a href="#v2ray-xray脚本" class="headerlink" title="v2ray&#x2F;xray脚本"></a>v2ray&#x2F;xray脚本</h3><blockquote>
+<ul>
+<li><a href="https://233boy.com/v2ray/v2ray-script/">233boy的v2ray一键脚本</a></li>
+<li><a href="https://233boy.com/xray/xray-script/">233boy的xray一键脚本</a></li>
+<li><a href="https://www.v2ray-agent.com/archives/1680104902581">mack-a 编写的八合一脚本，简单易用</a></li>
+<li><a href="https://blog.r1m.us/1024day-v2ray">1024.day站长自编简易wss+ss安装脚本，脚本足够安全</a></li>
+</ul>
+</blockquote>
+<h3 id="sing-box脚本"><a href="#sing-box脚本" class="headerlink" title="sing-box脚本"></a>sing-box脚本</h3><blockquote>
+<ul>
+<li><a href="https://github.com/fscarmen/sing-box">fscarmen的一键脚本</a></li>
+<li><a href="https://github.com/FranzKafkaYu/sing-box-yes">FranzKafkaYu的一键脚本</a></li>
+<li><a href="https://github.com/yuehen7/scripts">yuehen7的一键脚本</a></li>
+</ul>
+</blockquote>
+<h3 id="Trojan脚本"><a href="#Trojan脚本" class="headerlink" title="Trojan脚本"></a>Trojan脚本</h3><p><em><strong>请注意：Trojan原版核心已两年多未更新，Trojan-go核心已一年多未更新，因此存在被探测可能性，保稳定性推荐使用v2ray&#x2F;xray脚本或使用下方的小众协议</strong></em></p>
 <blockquote>
 <ul>
-<li><a href="https://github.com/emptysuns/Hi_Hysteria">Hi-Hysteria一键安装脚本</a></li>
-<li><a href="https://github.com/imbalaomao/tuic-install">Tuic安装指南（目前本人主要使用）</a></li>
-<li><a href="https://blog.misaka.rest/2023/04/08/naiveproxy-script/">Naiveproxy一键安装脚本</a></li>
+<li><a href="https://github.com/maplecool/easytrojan">世界上最简单的Trojan一键部署脚本，无需域名申请（目前本人正在使用）</a></li>
+<li><a href="https://github.com/yuehen7/scripts">BBR + Trojan-go + 其他脚本合集</a></li>
+<li><a href="https://github.com/xyanrch/overplus">Overplus，IP裸连（基于trojan，域名sniffer为bing搜索，但客户端跳过证书验证，目前稳定性尚佳）</a></li>
+<li><a href="https://github.com/Jrohy/trojan">Jrohy的Trojan一键脚本，但卸载部分无法完全删除安装时产生的文件，不是很推荐</a></li>
+</ul>
+</blockquote>
+<h3 id="小众协议脚本-教程"><a href="#小众协议脚本-教程" class="headerlink" title="小众协议脚本&#x2F;教程"></a>小众协议脚本&#x2F;教程</h3><p><em><strong>本Part中很少会出现一键脚本，大多为分步骤教学，需要对Linux有一定基础知识。同时大多数小众协议并无图形化UI，因此请使用v2rayN或Nekoray添加自定义核心后使用，具体使用方法请参考<a href="https://matsuridayo.github.io/n-extra_core/">此处</a></strong></em></p>
+<blockquote>
+<ul>
+<li><a href="https://blog.misaka.rest/2023/04/08/naiveproxy-script/">Naiveproxy安装脚本 by MisakaBlog</a></li>
+<li><a href="https://github.com/emptysuns/Hi_Hysteria">Hi-Hysteria一键安装脚本（未适配Hysteria 2.0）</a></li>
+<li><a href="https://blog.misaka.rest/2023/09/02/hysteria2-script/">Hysteria 2.0安装脚本 by MisakaBlog</a></li>
+<li><a href="https://github.com/QIN2DIM/hy2">Hysteria 2.0安装脚本 by Qin2DIM(本脚本依赖python 3.8+)</a></li>
+<li><a href="https://blog.misaka.rest/2023/06/10/tuic-v5-script/">Tuic安装脚本 by MisakaBlog</a></li>
 <li><a href="https://github.com/enfein/mieru">mieru官方教程（分步骤且为英文，非脚本）</a></li>
 <li><a href="https://sunpma.com/724.html">socks5代理搭建</a></li>
 </ul>
 </blockquote>
-<h4 id="小众协议补充："><a href="#小众协议补充：" class="headerlink" title="小众协议补充："></a><a href="#%E5%B0%8F%E4%BC%97%E5%8D%8F%E8%AE%AE%E8%A1%A5%E5%85%85%EF%BC%9A" title="小众协议补充："></a>小众协议补充：</h4><ol>
-<li>目前对于如Racknerd、virmach这类无药可救的机器，可以使用Hysteria协议，如有CN2GIA、CU4837、CU9929等优秀线路的机器推荐优先考虑Tuic、Naiveproxy等有流控的协议（Hysteria搭建在Racknerd机器上易断流）。</li>
+<h4 id="小众协议补充："><a href="#小众协议补充：" class="headerlink" title="小众协议补充："></a>小众协议补充：</h4><ol>
+<li>目前对于如Racknerd、virmach这类无药可救的机器，可以使用Hysteria协议，如有CN2GIA、CU4837、CU9929等优秀线路的机器推荐优先考虑Tuic、Naiveproxy等有流控的协议（Hysteria无法搭建在Racknerd机器上）。</li>
 <li><a href="https://docs.metacubex.one/">Clash.meta</a>目前已对Tuic、Hysteria做了较为完善的支持，不想添加自定义配置和核心的可以使用此软件（关于替换核心可以看<a href="https://www.youtube.com/watch?v=V5v3eBi-sXo">本人教程</a>）</li>
 </ol>
-<h3 id="面板搭建"><a href="#面板搭建" class="headerlink" title="面板搭建"></a><a href="#%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA" title="面板搭建"></a>面板搭建</h3><blockquote>
+<h3 id="面板搭建"><a href="#面板搭建" class="headerlink" title="面板搭建"></a>面板搭建</h3><blockquote>
 <ul>
 <li><a href="https://github.com/vaxilu/x-ui">原版X-UI（很久不更新了）</a></li>
 <li><a href="https://github.com/FranzKafkaYu/x-ui">魔改X-UI</a></li>
 </ul>
 </blockquote>
-<h2 id="VPS测试脚本"><a href="#VPS测试脚本" class="headerlink" title="VPS测试脚本"></a><a href="#VPS%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC" title="VPS测试脚本"></a>VPS测试脚本</h2><ul>
-<li>bin大佬的DD重装脚本（使用官方重装，非第三方DD镜像）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">下载:</span>  </span><br><span class="line">curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh  </span><br><span class="line"><span class="meta prompt_">  </span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装 Linux:</span>   </span><br><span class="line">bash reinstall.sh centos-7 (或其他系统)  </span><br><span class="line"><span class="meta prompt_">  </span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装 Windows:</span>  </span><br><span class="line">bash reinstall.sh windows --iso=https://example.com/zh-cn_windows_10_enterprise_ltsc_2021_x64_dvd_033b7312.iso --image-name=&#x27;Windows 10 Enterprise LTSC 2021&#x27;  </span><br><span class="line"><span class="meta prompt_">  </span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">重启:</span>  </span><br><span class="line">reboot  </span><br></pre></td></tr></table></figure></li>
-<li>萌咖大佬的DD脚本（如VPS为甲骨文ARM，则需要加 <code>-firmware</code>）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash &lt;(wget --no-check-certificate -qO- &#x27;https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh&#x27;) -d 11 -v 64 -p p@ssw0rd -a  </span><br></pre></td></tr></table></figure></li>
-<li>宝塔面板开心版7.7.0（无后台监控）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -sSO https://raw.githubusercontent.com/8838/btpanel-v7.7.0/main/install/install_panel.sh &amp;&amp; bash install_panel.sh  </span><br><span class="line"><span class="meta prompt_">  </span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1，屏蔽手机号</span>  </span><br><span class="line">sed -i &quot;s|bind_user == &#x27;True&#x27;|bind_user == &#x27;XXXX&#x27;|&quot; /www/server/panel/BTPanel/static/js/index.js  </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2，删除强制绑定手机js文件</span>  </span><br><span class="line">rm -f /www/server/panel/data/bind.pl  </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3，手动解锁宝塔所有付费插件为永不过期</span>  </span><br><span class="line">文件路径：/www/server/panel/data/plugin.json  </span><br><span class="line">搜索字符串：&quot;endtime&quot;: -1全部替换为&quot;endtime&quot;: 999999999999  </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4，给plugin.json文件上锁防止自动修复为免费版</span>  </span><br><span class="line">chattr +i /www/server/panel/data/plugin.json  </span><br></pre></td></tr></table></figure></li>
-<li>集大成一键测试脚本<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash &lt;(wget -qO- bash.spiritlhl.net/ecs)  </span><br></pre></td></tr></table></figure></li>
-<li>常规解锁测试<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -qO- https://github.com/yeahwu/check/raw/main/check.sh | bash  </span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -L -s check.unlock.media)  </span><br></pre></td></tr></table></figure></li>
-<li>开启 BBR + fq<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf  </span><br><span class="line">echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf  </span><br><span class="line">sysctl -p  </span><br><span class="line">sysctl net.ipv4.tcp_available_congestion_control  </span><br><span class="line">lsmod | grep bbr  </span><br></pre></td></tr></table></figure></li>
-<li>BBR 脚本（KVM架构）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate -O /opt/bbr.sh https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x /opt/bbr.sh &amp;&amp; bash /opt/bbr.sh  </span><br></pre></td></tr></table></figure></li>
-<li>BBR 脚本（OpenVZ架构），需要开启TUN&#x2F;TAP<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget --no-cache -O lkl-haproxy.sh https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy.sh &amp;&amp; bash lkl-haproxy.sh  </span><br></pre></td></tr></table></figure></li>
-<li>测速脚本<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -Lso- https://git.io/superspeed_uxh)  </span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -qO- network-speed.xyz | bash  </span><br></pre></td></tr></table></figure></li>
+<h2 id="VPS测试脚本"><a href="#VPS测试脚本" class="headerlink" title="VPS测试脚本"></a>VPS测试脚本</h2><ul>
+<li>萌咖大佬的DD脚本（如VPS为甲骨文ARM，则需要加 <code>-firmware</code>）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash &lt;(wget --no-check-certificate -qO- &#x27;https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh&#x27;) -d 11 -v 64 -p p@ssw0rd -a</span><br></pre></td></tr></table></figure></li>
+<li>宝塔面板开心版7.7.0（无后台监控）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -sSO https://raw.githubusercontent.com/8838/btpanel-v7.7.0/main/install/install_panel.sh &amp;&amp; bash install_panel.sh</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1，屏蔽手机号</span></span><br><span class="line">sed -i &quot;s|bind_user == &#x27;True&#x27;|bind_user == &#x27;XXXX&#x27;|&quot; /www/server/panel/BTPanel/static/js/index.js</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2，删除强制绑定手机js文件</span></span><br><span class="line">rm -f /www/server/panel/data/bind.pl</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3，手动解锁宝塔所有付费插件为永不过期</span></span><br><span class="line">文件路径：/www/server/panel/data/plugin.json</span><br><span class="line">搜索字符串：&quot;endtime&quot;: -1全部替换为&quot;endtime&quot;: 999999999999</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4，给plugin.json文件上锁防止自动修复为免费版</span></span><br><span class="line">chattr +i /www/server/panel/data/plugin.json</span><br></pre></td></tr></table></figure></li>
+<li>开启BBR+FQ<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">sysctl -p</span><br><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br><span class="line">lsmod | grep bbr</span><br></pre></td></tr></table></figure></li>
+<li>另一开启BBR脚本（秋水逸冰大佬）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate -O /opt/bbr.sh https://github.com/teddysun/across/raw/master/bbr.sh</span><br><span class="line">chmod 755 /opt/bbr.sh</span><br><span class="line">/opt/bbr.sh</span><br></pre></td></tr></table></figure></li>
+<li>三网测速<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -Lso- https://git.io/superspeed_uxh)</span><br></pre></td></tr></table></figure></li>
+<li>解锁测试<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -Lso- https://git.io/superspeed_uxh)  </span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -Lso- https://bench.im/hyperspeed)  </span><br></pre></td></tr></table></figure>
-<ul>
-<li>回程测试<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bash  </span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -qO- git.io/besttrace | bash  </span><br></pre></td></tr></table></figure></li>
-<li>Warp脚本<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -N https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh &amp;&amp; bash warp-go.sh [option] [lisence]  </span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">自动配置 WARP WireGuard 双栈全局网络（所有出站流量走 WARP 网络）</span>  </span><br><span class="line">bash &lt;(curl -fsSL git.io/warp.sh) d  </span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="机场"><a href="#机场" class="headerlink" title="机场"></a><a href="#%E6%9C%BA%E5%9C%BA" title="机场"></a>机场</h2><p><strong>对于小白且对于翻墙IP要求低的用户来说，机场是最好的选择，以下推荐的都是本人现在在用的机场，可以放心购买：</strong></p>
+<h2 id="机场"><a href="#机场" class="headerlink" title="机场"></a>机场</h2><p><strong>对于小白且对于翻墙IP要求低的用户来说，机场是最好的选择。但由于最近的 <a href="https://www.cnblogs.com/arrdres/p/16986407.html">v2board群体脱库事件</a> 导致很多人不敢买机场，以下推荐的机场都是没有使用v2board的，因此可以放心购买：</strong></p>
 <ul>
 <li><a href="https://oxycontin.top/aff.php?aff=1637">YToo（歪兔：极稳定、贵、速度很快）</a></li>
-<li><a href="https://dhh.moe/#/register?code=kpdCWSEs">大航海（自带超高质量Emby服务器）</a></li>
+<li><a href="https://saikiowo.com/#/register?code=7jLTQUSD">Saiki（新开机场，低价大流量速度快）</a></li>
 <li><a href="https://temp-linshidizhi-1.very-fast.net:666/register?aff=20158">X-air（稳定、快速、便宜）</a></li>
 </ul>
 ]]></content>
