@@ -1,181 +1,293 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>【科学上网】Clash GEOSITE分流规则 | 猫 の 窝</title><meta name="author" content="OldcatY"><meta name="copyright" content="OldcatY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="本方式仅适用于clash meta新版本内核">
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://jsd.cdn.zzko.cn/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp">
+  
+  <title>【科学上网】Clash GEOSITE分流规则 | 猫 の 窝</title>
+  
+  <meta name="author" content="OldcatY" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Clash, 科学上网" />
+  
+  <meta name="description" content="本方式仅适用于clash meta新版本内核">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【科学上网】Clash GEOSITE分流规则">
 <meta property="og:url" content="https://nekoss.top/posts/11709/">
 <meta property="og:site_name" content="猫 の 窝">
 <meta property="og:description" content="本方式仅适用于clash meta新版本内核">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.285lp4muspxc.webp">
+<meta property="og:image" content="https://nekoss.top/posts/11709/https:/gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.285lp4muspxc.webp">
 <meta property="article:published_time" content="2023-03-26T12:35:13.000Z">
-<meta property="article:modified_time" content="2024-01-07T14:30:13.316Z">
+<meta property="article:modified_time" content="2024-01-11T09:18:52.658Z">
 <meta property="article:author" content="OldcatY">
 <meta property="article:tag" content="Clash">
 <meta property="article:tag" content="科学上网">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.285lp4muspxc.webp"><link rel="shortcut icon" href="https://jsd.cdn.zzko.cn/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp"><link rel="canonical" href="https://nekoss.top/posts/11709/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;b370e5e94cf04246a2de8e2687489b47&quot;}"></script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":470},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyload: true,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '【科学上网】Clash GEOSITE分流规则',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2024-01-07 22:30:13'
-}</script><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
+<meta name="twitter:image" content="https://nekoss.top/posts/11709/https:/gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.285lp4muspxc.webp">
+  
+  <!-- 站点验证相关 -->
+  
     
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+  
+  <style>
+    
+    
+  </style>
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
 
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
 
-        document.head.appendChild(script)
-      })
-    
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-        if (t === 'dark') activateDarkMode()
-        else if (t === 'light') activateLightMode()
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })(window)</script><script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
-  const $loadingBox = document.getElementById('loading-box')
-  const $body = document.body
-  const preloader = {
-    endLoading: () => {
-      $body.style.overflow = ''
-      $loadingBox.classList.add('loaded')
-    },
-    initLoading: () => {
-      $body.style.overflow = 'hidden'
-      $loadingBox.classList.remove('loaded')
-    }
-  }
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/archives/">
+                                            
+                                                
+                                                    <i class="fa fa-file"></i>
+                                                
+                                                归档
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-folder-open"></i>
+                                                
+                                                分类
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a href="/categories/VPS/">
+                                                                
+                                                                    <i class="fa fa-hdd-o"></i>
+                                                                
+                                                                VPS
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E6%8A%80%E5%B7%A7/">
+                                                                
+                                                                    <i class="fa fa-lightbulb-o"></i>
+                                                                
+                                                                技巧
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
+                                                                
+                                                                    <i class="fa fa-paper-plane"></i>
+                                                                
+                                                                科学上网
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E6%97%A5%E5%B8%B8/">
+                                                                
+                                                                    <i class="fa fa-heart"></i>
+                                                                
+                                                                日常
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E6%8E%A8%E8%8D%90/">
+                                                                
+                                                                    <i class="fa fa-thumbs-up"></i>
+                                                                
+                                                                推荐
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E8%BD%AC%E8%BD%BD/">
+                                                                
+                                                                    <i class="fa fa-globe"></i>
+                                                                
+                                                                转载
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-link"></i>
+                                                
+                                                外链
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://xlog.laomao.icu">
+                                                                
+                                                                    <i class="fa fa-bullseye"></i>
+                                                                
+                                                                xLog博客
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://nezha.314520.xyz">
+                                                                
+                                                                    <i class="fa fa-server"></i>
+                                                                
+                                                                哪吒探针
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">猫 の 窝</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>猫 の 窝</h2> <br />
+                        <span>Hexo博客同好交流会</span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-  preloader.initLoading()
-  window.addEventListener('load',() => { preloader.endLoading() })
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
 
-  if (false) {
-    document.addEventListener('pjax:send', () => { preloader.initLoading() })
-    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-  }
-})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://jsd.cdn.zzko.cn/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">70</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">65</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/VPS/"><i class="fa-fw fas fa-server"></i><span> VPS</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E5%B7%A7/"><i class="fa-fw fas fa-lightbulb"></i><span> 技巧</span></a></li><li><a class="site-page child" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"><i class="fa-fw fas fa-paper-plane"></i><span> 科学上网</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E5%B8%B8/"><i class="fa-fw fas fa-heart"></i><span> 日常</span></a></li><li><a class="site-page child" href="/categories/%E6%8E%A8%E8%8D%90/"><i class="fa-fw fas fa-thumbs-up"></i><span> 推荐</span></a></li><li><a class="site-page child" href="/categories/%E8%BD%AC%E8%BD%BD/"><i class="fa-fw fas fa-globe"></i><span> 转载</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.285lp4muspxc.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="猫 の 窝"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://jsd.cdn.zzko.cn/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp"/><span class="site-name">猫 の 窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/VPS/"><i class="fa-fw fas fa-server"></i><span> VPS</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E5%B7%A7/"><i class="fa-fw fas fa-lightbulb"></i><span> 技巧</span></a></li><li><a class="site-page child" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"><i class="fa-fw fas fa-paper-plane"></i><span> 科学上网</span></a></li><li><a class="site-page child" href="/categories/%E6%97%A5%E5%B8%B8/"><i class="fa-fw fas fa-heart"></i><span> 日常</span></a></li><li><a class="site-page child" href="/categories/%E6%8E%A8%E8%8D%90/"><i class="fa-fw fas fa-thumbs-up"></i><span> 推荐</span></a></li><li><a class="site-page child" href="/categories/%E8%BD%AC%E8%BD%BD/"><i class="fa-fw fas fa-globe"></i><span> 转载</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【科学上网】Clash GEOSITE分流规则</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-26T12:35:13.000Z" title="发表于 2023-03-26 20:35:13">2023-03-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-07T14:30:13.316Z" title="更新于 2024-01-07 22:30:13">2024-01-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">科学上网</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【科学上网】Clash GEOSITE分流规则"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://nekoss.top/posts/11709/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">【科学上网】Clash GEOSITE分流规则</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2023-03-26T12:35:13.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2023-03-26</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">OldcatY</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~3.84K
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1704964732658"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#geox-url%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">geox-url设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99"><span class="toc-number">2.</span> <span class="toc-text">规则</span></a></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><blockquote>
 <p>本方式仅适用于clash meta新版本内核，且要在配置的 <strong><a target="_blank" rel="noopener" href="https://github.com/MetaCubeX/Clash.Meta/wiki/Configuring-example#general">General</a></strong> 部分设置 <code>geox-url</code>。</p>
 </blockquote>
 <ul>
@@ -184,22 +296,435 @@
 </ul>
 <h2 id="geox-url设置"><a href="#geox-url设置" class="headerlink" title="geox-url设置"></a><a href="#geox-url%E8%AE%BE%E7%BD%AE" title="geox-url设置"></a>geox-url设置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">geox-url:</span>  </span><br><span class="line">  <span class="attr">geoip:</span> <span class="string">&quot;https://gcore.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat&quot;</span>  </span><br><span class="line">  <span class="attr">geosite:</span> <span class="string">&quot;https://gcore.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat&quot;</span>  </span><br><span class="line">  <span class="attr">mmdb:</span> <span class="string">&quot;https://gcore.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb&quot;</span>  </span><br></pre></td></tr></table></figure>
 <h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a><a href="#%E8%A7%84%E5%88%99" title="规则"></a>规则</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">rules:</span>  </span><br><span class="line">  <span class="comment"># &gt; Personal Rules</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,adobe,REJECT</span> <span class="comment"># 屏蔽ADOBE本地更新</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,sogou,REJECT</span> <span class="comment"># 屏蔽搜狗输入法联网更新</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,wpad,🔰</span> <span class="string">选择节点</span>  <span class="comment"># wpad本地DNS查询请求走代理</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,lanjingtiyu.com,DIRECT</span> <span class="comment"># 蓝鲸TV网页</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,jike.live,DIRECT</span> <span class="comment"># 蓝鲸TV CDN1</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,haizao.live,DIRECT</span> <span class="comment"># 蓝鲸TV CDN2</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,lanjingtv.club,DIRECT</span> <span class="comment"># 蓝鲸TV CDN3</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,hujing.pub,DIRECT</span> <span class="comment"># 蓝鲸TV CDN4</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,cjjd18.com,DIRECT</span> <span class="comment"># 123盘 CDN地址</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,cjjd15.com,DIRECT</span> <span class="comment"># 123盘 CDN地址</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,epicgames,DIRECT</span> <span class="comment"># EpicGames走直连不弹验证码</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,hcaptcha,DIRECT</span> <span class="comment"># hCaptcha走直连验证容易过</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-KEYWORD,unrealengine,DIRECT</span> <span class="comment"># Epic国外静态文件CDN</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,masuit.org,DIRECT</span> <span class="comment"># 懒得勤快网站</span></span><br><span class="line">  <span class="comment"># &gt; STEAM CHINA</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,cm.steampowered.com,DIRECT</span> <span class="comment">#Steam Logon Server 01</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,steamserver.net,DIRECT</span> <span class="comment">#Steam Logon Server 02</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,store.steampowered.com,DIRECT</span> <span class="comment">#Steam Store</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,steampipe.steamcontent.tnkjmec.com,DIRECT</span> <span class="comment">#华为云</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,st.dl.eccdnx.com,DIRECT</span> <span class="comment">#白山云</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,st.dl.bscstorage.net,DIRECT</span> <span class="comment">#白山云</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,st.dl.pinyuncloud.com,DIRECT</span> <span class="comment">#白山云</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,dl.steam.clngaa.com,DIRECT</span> <span class="comment">#金山云</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,cdn.mileweb.cs.steampowered.com.8686c.com,DIRECT</span> <span class="comment">#网宿云</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,cdn-ws.content.steamchina.com,DIRECT</span> <span class="comment">#网宿云</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,cdn-qc.content.steamchina.com,DIRECT</span> <span class="comment">#腾讯云</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,cdn-ali.content.steamchina.com,DIRECT</span> <span class="comment">#阿里云</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,xz.pphimalayanrt.com,DIRECT</span> <span class="comment">#阿里云</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,lv.queniujq.cn,DIRECT</span> <span class="comment">#阿里云</span></span><br><span class="line">  <span class="comment"># &gt; 划词翻译相关网站</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,hs-api.limingkai.cn,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,fanyi-api.baidu.com,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,tmt.ap-shanghai.tencentcloudapi.com,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,api.interpreter.caiyunai.com,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,mt.cn-hangzhou.aliyuncs.com,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,aip.baidubce.com,DIRECT</span></span><br><span class="line">  <span class="comment"># &gt; 防止DNS泄露</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🔰</span> <span class="string">选择节点</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN-SUFFIX,services.googleapis.cn,🔰</span> <span class="string">选择节点</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,120.232.181.162/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,120.241.147.226/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,120.253.253.226/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,120.253.255.162/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,120.253.255.34/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,120.253.255.98/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,180.163.150.162/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,180.163.150.34/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,180.163.151.162/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,180.163.151.34/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,203.208.39.0/24,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,203.208.40.0/24,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,203.208.41.0/24,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,203.208.43.0/24,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,203.208.50.0/24,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,220.181.174.162/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,220.181.174.226/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">IP-CIDR,220.181.174.34/32,🔰</span> <span class="string">选择节点</span> <span class="string">,no-resolve</span> </span><br><span class="line">  <span class="comment"># &gt; GEOSITE  </span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOSITE,category-ads-all,REJECT</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOSITE,category-games@cn,DIRECT</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOSITE,apple@cn,DIRECT</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOSITE,netflix,🔰</span> <span class="string">选择节点</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOSITE,disney,🔰</span> <span class="string">选择节点</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOSITE,youtube,🔰</span> <span class="string">选择节点</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOSITE,google,🔰</span> <span class="string">选择节点</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOSITE,microsoft@cn,DIRECT</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOSITE,microsoft,🔰</span> <span class="string">选择节点</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOSITE,geolocation-!cn,🔰</span> <span class="string">选择节点</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOSITE,cn,DIRECT</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOIP,telegram,🔰</span> <span class="string">选择节点,no-resolve</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOIP,netflix,🔰</span> <span class="string">选择节点,no-resolve</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOIP,private,DIRECT,no-resolve</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOIP,CN,DIRECT,no-resolve</span>  </span><br><span class="line">  <span class="bullet">-</span> <span class="string">MATCH,🔰</span> <span class="string">选择节点</span></span><br></pre></td></tr></table></figure>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://nekoss.top">OldcatY</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://nekoss.top/posts/11709/">https://nekoss.top/posts/11709/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nekoss.top" target="_blank">猫 の 窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Clash/">Clash</a><a class="post-meta__tags" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">科学上网</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/1657/" title="【技巧】修复按下ALT+TAB键后会显示多个Edge窗口"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230624/%E5%9B%BE%E7%89%87.686m9v08vtkw.83rk1cs34o0.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【技巧】修复按下ALT+TAB键后会显示多个Edge窗口</div></div></a></div><div class="next-post pull-right"><a href="/posts/731/" title="【科学上网】Clash分流规则（Rule-Provider版）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.285lp4muspxc.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【科学上网】Clash分流规则（Rule-Provider版）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/731/" title="【科学上网】Clash分流规则（Rule-Provider版）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.285lp4muspxc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-26</div><div class="title">【科学上网】Clash分流规则（Rule-Provider版）</div></div></a></div><div><a href="/posts/57935/" title="【科学上网】跨越长城，走向世界"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.t3vc8awp7hc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-03</div><div class="title">【科学上网】跨越长城，走向世界</div></div></a></div><div><a href="/posts/35728/" title="【科学上网】Clash 绕过中国大陆地址与规则"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.285lp4muspxc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-26</div><div class="title">【科学上网】Clash 绕过中国大陆地址与规则</div></div></a></div><div><a href="/posts/41655/" title="【科学上网】Clash分流配置（无需rule-provider）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.285lp4muspxc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-26</div><div class="title">【科学上网】Clash分流配置（无需rule-provider）</div></div></a></div><div><a href="/posts/8486/" title="【技巧】关于开启Clash后Epicgames登录弹验证码的解决方案"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230803/hexo-image.5refyxshy500.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-03</div><div class="title">【技巧】关于开启Clash后Epicgames登录弹验证码的解决方案</div></div></a></div><div><a href="/posts/38320/" title="【科学上网】使用Clash for windows的Parsers功能实现对所有机场进行订阅转换"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.285lp4muspxc.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-26</div><div class="title">【科学上网】使用Clash for windows的Parsers功能实现对所有机场进行订阅转换</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#geox-url%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">geox-url设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99"><span class="toc-number">2.</span> <span class="toc-text">规则</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/f2a71413/" title="【小鸡测评】Netcup VPS piko G11S测评"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【小鸡测评】Netcup VPS piko G11S测评"/></a><div class="content"><a class="title" href="/posts/f2a71413/" title="【小鸡测评】Netcup VPS piko G11S测评">【小鸡测评】Netcup VPS piko G11S测评</a><time datetime="2024-01-07T14:24:43.000Z" title="发表于 2024-01-07 22:24:43">2024-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/892d5ece/" title="【日常】2023年10月追番感想"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/ai" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【日常】2023年10月追番感想"/></a><div class="content"><a class="title" href="/posts/892d5ece/" title="【日常】2023年10月追番感想">【日常】2023年10月追番感想</a><time datetime="2023-12-28T13:59:17.000Z" title="发表于 2023-12-28 21:59:17">2023-12-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/33551e6f/" title="【科学上网】在Clash Verge中达成Clash for Windows的Parsers功能"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.285lp4muspxc.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【科学上网】在Clash Verge中达成Clash for Windows的Parsers功能"/></a><div class="content"><a class="title" href="/posts/33551e6f/" title="【科学上网】在Clash Verge中达成Clash for Windows的Parsers功能">【科学上网】在Clash Verge中达成Clash for Windows的Parsers功能</a><time datetime="2023-12-23T15:21:01.000Z" title="发表于 2023-12-23 23:21:01">2023-12-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/98e33f66/" title="【小鸡测评】TechnoVM LAX三期测评"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.5k1a2wxts9z4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【小鸡测评】TechnoVM LAX三期测评"/></a><div class="content"><a class="title" href="/posts/98e33f66/" title="【小鸡测评】TechnoVM LAX三期测评">【小鸡测评】TechnoVM LAX三期测评</a><time datetime="2023-11-19T07:51:44.000Z" title="发表于 2023-11-19 15:51:44">2023-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d95ae3e2/" title="【技巧】如何调出已经隐藏的iOS开发者模式(Windows下)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/image.6gjiw71fdfc0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【技巧】如何调出已经隐藏的iOS开发者模式(Windows下)"/></a><div class="content"><a class="title" href="/posts/d95ae3e2/" title="【技巧】如何调出已经隐藏的iOS开发者模式(Windows下)">【技巧】如何调出已经隐藏的iOS开发者模式(Windows下)</a><time datetime="2023-11-17T13:08:36.000Z" title="发表于 2023-11-17 21:08:36">2023-11-17</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20230623/%E5%9B%BE%E7%89%87.285lp4muspxc.webp')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By OldcatY</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
-  if (typeof pangu === 'object') pangu.autoSpacingPage()
-  else {
-    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
-      .then(() => {
-        pangu.autoSpacingPage()
-      })
-  }
-}
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/Clash/" rel="tag">Clash</a>, <a class="tag-none-link" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="tag">科学上网</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2024-01-11T09:18:52.658Z" itemprop="dateModified">最后编辑：2024-01-11</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 【科学上网】Clash分流规则（Rule-Provider版）" href="/posts/731/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" 【技巧】修复按下ALT+TAB键后会显示多个Edge窗口" href="/posts/1657/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+</article>
 
-function panguInit () {
-  if (false){
-    GLOBAL_CONFIG_SITE.isPost && panguFn()
-  } else {
-    panguFn()
-  }
-}
+        
 
-document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://jsd.cdn.zzko.cn/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                70
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                7
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                65
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#geox-url%E8%AE%BE%E7%BD%AE"><span class="toc-text">geox-url设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99"><span class="toc-text">规则</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/VPS/">VPS</a><span class="category-list-count">29</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/VPS/%E6%8A%80%E5%B7%A7/">技巧</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E5%B7%A7/">技巧</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A8%E8%8D%90/">推荐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">科学上网</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a><span class="category-list-count">4</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Alist/" style="font-size: 0.6em;">Alist</a> <a href="/tags/Apple-Music/" style="font-size: 0.6em;">Apple Music</a> <a href="/tags/BT/" style="font-size: 0.6em;">BT</a> <a href="/tags/Clash/" style="font-size: 0.73em;">Clash</a> <a href="/tags/EPIC/" style="font-size: 0.6em;">EPIC</a> <a href="/tags/Edge/" style="font-size: 0.67em;">Edge</a> <a href="/tags/FluidPlayer/" style="font-size: 0.6em;">FluidPlayer</a> <a href="/tags/IDM/" style="font-size: 0.6em;">IDM</a> <a href="/tags/MIUI/" style="font-size: 0.6em;">MIUI</a> <a href="/tags/Pikpak/" style="font-size: 0.6em;">Pikpak</a> <a href="/tags/Steam/" style="font-size: 0.6em;">Steam</a> <a href="/tags/Windows/" style="font-size: 0.8em;">Windows</a> <a href="/tags/aws/" style="font-size: 0.6em;">aws</a> <a href="/tags/bilix/" style="font-size: 0.6em;">bilix</a> <a href="/tags/emby/" style="font-size: 0.6em;">emby</a> <a href="/tags/ffmpeg/" style="font-size: 0.67em;">ffmpeg</a> <a href="/tags/film-riot/" style="font-size: 0.6em;">film riot</a> <a href="/tags/hexo/" style="font-size: 0.6em;">hexo</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/posts/f2a71413/"><i class="fa  fa-book"></i> 【小鸡测评】Netcup VPS piko G11S测评</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/892d5ece/"><i class="fa  fa-book"></i> 【日常】2023年10月追番感想</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/33551e6f/"><i class="fa  fa-book"></i> 【科学上网】在Clash Verge中达成Clash for Windows的Parsers功能</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/98e33f66/"><i class="fa  fa-book"></i> 【小鸡测评】TechnoVM LAX三期测评</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/d95ae3e2/"><i class="fa  fa-book"></i> 【技巧】如何调出已经隐藏的iOS开发者模式(Windows下)</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- New links -->
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://weibo.com/pamire">
+                                    
+                                        <i class="fa fa-weibo"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://twitter.com/oldcatY_meng">
+                                    
+                                        <i class="fa fa-twitter"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://steamcommunity.com/id/loveinwind">
+                                    
+                                        <i class="fa fa-steam"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://github.com/imbalaomao">
+                                    
+                                        <i class="fa fa-github"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2024 猫 の 窝 版权所有.</li>
+                            <li>本站已在风雨中艰难运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by OldcatY.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="snow-switch">
+                        <span class="fa fa-snowflake-o"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async src="/js/snow.min.js"></script>
+    </div>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
