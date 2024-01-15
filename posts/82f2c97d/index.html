@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://jsd.cdn.zzko.cn/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp">
+  
+  <title>【技巧】搭建一个自己的deepl翻译 | 猫 の 窝</title>
+  
+  <meta name="author" content="OldcatY" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="技巧" />
+  
+  <meta name="description" content="为什么搭建DeepLX现在市面上可选的翻译软件多种多样，传统的翻译软件有网易的有道翻译、字节跳动的火山翻译、谷歌的谷歌翻译、微软的Bing翻译等……基于LLM大模型的翻译可以调用Gemini、OpenAI等的API进行翻译，那么为什么要选择DeepL呢？  快速且准确的翻译（对比传统翻译器）在我使用有道等进行翻译时，最常遇到的问题就是翻译准度不高（尤以非英文 to 中文翻译为甚），且通常存在漏翻问">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【技巧】搭建一个自己的deepl翻译">
+<meta property="og:url" content="https://nekoss.top/posts/82f2c97d/">
+<meta property="og:site_name" content="猫 の 窝">
+<meta property="og:description" content="为什么搭建DeepLX现在市面上可选的翻译软件多种多样，传统的翻译软件有网易的有道翻译、字节跳动的火山翻译、谷歌的谷歌翻译、微软的Bing翻译等……基于LLM大模型的翻译可以调用Gemini、OpenAI等的API进行翻译，那么为什么要选择DeepL呢？  快速且准确的翻译（对比传统翻译器）在我使用有道等进行翻译时，最常遇到的问题就是翻译准度不高（尤以非英文 to 中文翻译为甚），且通常存在漏翻问">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jsd.cdn.zzko.cn/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp">
+<meta property="article:published_time" content="2024-01-15T04:22:30.000Z">
+<meta property="article:modified_time" content="2024-01-15T04:41:33.480Z">
+<meta property="article:author" content="OldcatY">
+<meta property="article:tag" content="技巧">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jsd.cdn.zzko.cn/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+  
+  <style>
+    
+    
+  </style>
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/archives/">
+                                            
+                                                
+                                                    <i class="fa fa-file"></i>
+                                                
+                                                归档
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-folder-open"></i>
+                                                
+                                                分类
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a href="/categories/VPS/">
+                                                                
+                                                                    <i class="fa fa-hdd-o"></i>
+                                                                
+                                                                VPS
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E6%8A%80%E5%B7%A7/">
+                                                                
+                                                                    <i class="fa fa-lightbulb-o"></i>
+                                                                
+                                                                技巧
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E8%AF%84%E6%B5%8B/">
+                                                                
+                                                                    <i class="fa fa-info-circle"></i>
+                                                                
+                                                                评测
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E6%97%A5%E5%B8%B8/">
+                                                                
+                                                                    <i class="fa fa-heart"></i>
+                                                                
+                                                                日常
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E6%8E%A8%E8%8D%90/">
+                                                                
+                                                                    <i class="fa fa-thumbs-up"></i>
+                                                                
+                                                                推荐
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E8%BD%AC%E8%BD%BD/">
+                                                                
+                                                                    <i class="fa fa-globe"></i>
+                                                                
+                                                                转载
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
+                                                                
+                                                                    <i class="fa fa-paper-plane-o"></i>
+                                                                
+                                                                科学上网
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-link"></i>
+                                                
+                                                外链
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://xlog.laomao.icu">
+                                                                
+                                                                    <i class="fa fa-bullseye"></i>
+                                                                
+                                                                xLog博客
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://nezha.314520.xyz">
+                                                                
+                                                                    <i class="fa fa-server"></i>
+                                                                
+                                                                哪吒探针
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">猫 の 窝</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>猫 の 窝</h2> <br />
+                        <span>Hexo博客交流同好会</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://nekoss.top/posts/82f2c97d/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">【技巧】搭建一个自己的deepl翻译</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2024-01-15T04:22:30.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-01-15</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">OldcatY</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            956
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1705293693480"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%90%AD%E5%BB%BADeepLX"><span class="toc-number">1.</span> <span class="toc-text">为什么搭建DeepLX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BADeepLX"><span class="toc-number">2.</span> <span class="toc-text">如何搭建DeepLX</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Docker"><span class="toc-number">2.1.</span> <span class="toc-text">安装Docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E5%8F%96%E6%9C%80%E6%96%B0%E9%95%9C%E5%83%8F"><span class="toc-number">2.2.</span> <span class="toc-text">拉取最新镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BE%E8%A1%8C1188%E7%AB%AF%E5%8F%A3"><span class="toc-number">2.3.</span> <span class="toc-text">放行1188端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">2.4.</span> <span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E9%87%8C%E4%BD%BF%E7%94%A8%EF%BC%88%E4%BB%A5%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">在翻译插件里使用（以沉浸式翻译为例）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%B8%A3%E8%B0%A2"><span class="toc-number">4.</span> <span class="toc-text">鸣谢</span></a></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><h2 id="为什么搭建DeepLX"><a href="#为什么搭建DeepLX" class="headerlink" title="为什么搭建DeepLX"></a>为什么搭建DeepLX</h2><p>现在市面上可选的翻译软件多种多样，传统的翻译软件有网易的有道翻译、字节跳动的火山翻译、谷歌的谷歌翻译、微软的Bing翻译等……基于LLM大模型的翻译可以调用Gemini、OpenAI等的API进行翻译，那么为什么要选择DeepL呢？</p>
+<ul>
+<li><p>快速且准确的翻译（对比传统翻译器）<br>在我使用有道等进行翻译时，最常遇到的问题就是翻译准度不高（尤以非英文 to 中文翻译为甚），且通常存在漏翻问题（如碰到较为口语化的表达时）<br><img src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20240115/image.2dhb8rc1vfb4.webp" alt="有道翻译例图"><br>那么DeepL作为最先使用AI进行翻译模型训练的翻译器，自然相较于通用翻译会更加准确<br><img src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20240115/image.8zv4wt8t9e4.webp" alt="DeepL翻译例图"></p>
+</li>
+<li><p>翻译速度较快，且基本不受并发数限制（对比LLM大模型翻译）<br>基于Gemini、OpenAI的翻译固然准确，可是其受限于API调用次数，不能在并发数较高的环境下完成翻译（如使用沉浸式翻译插件自动翻译推特）。相比之下，DeepL可以在保证一定的翻译准度的前提下，拥有不输传统翻译器的翻译速度。</p>
+</li>
+</ul>
+<p>然而其官方DeepL由于自身速度较慢，且有额度限制，不提供API等等缺点，容易劝退很多用户，DeepLX 在 GitHub开源，不限制请求次数（但 DeepL 可能会限制 IP）默认情况下监听本地 1188 端口。提供多种安装方式。</p>
+<h2 id="如何搭建DeepLX"><a href="#如何搭建DeepLX" class="headerlink" title="如何搭建DeepLX"></a>如何搭建DeepLX</h2><blockquote>
+<p>本安装方法基于 Debian 12 系统，其他系统请自行寻找方法</p>
+</blockquote>
+<h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line">sudo sh get-docker.sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="拉取最新镜像"><a href="#拉取最新镜像" class="headerlink" title="拉取最新镜像"></a>拉取最新镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd -p 1188:1188 missuo/deeplx:latest</span><br></pre></td></tr></table></figure>
+
+<h3 id="放行1188端口"><a href="#放行1188端口" class="headerlink" title="放行1188端口"></a>放行1188端口</h3><p>这一步在你的VPS服务商后台完成，各服务商放行方式不同，请自行搜索</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>访问 <code>ip:1188</code> 来进行测试，若返回 <code>code: 200 ok</code> 则表示搭建成功<br><img src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20240115/image.5i4nffbg5ww0.webp" alt="搭建完成示例"></p>
+<h2 id="在翻译插件里使用（以沉浸式翻译为例）"><a href="#在翻译插件里使用（以沉浸式翻译为例）" class="headerlink" title="在翻译插件里使用（以沉浸式翻译为例）"></a>在翻译插件里使用（以沉浸式翻译为例）</h2><ul>
+<li><p>在沉浸式翻译的插件设置中，点击 <strong>开发者设置</strong> ，并开启Beta测试特性<br><img src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20240115/image.3f3l3r20pe60.webp"><br><img src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20240115/image.4ngh46id7da0.webp"></p>
+</li>
+<li><p>然后回到基础设置，翻译服务选择DeepLX（Beta），URL中填入自己搭建的服务URL，也就是 <code>[ip]:1188/translate</code><br><img src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20240115/image.4proa2c6bbo.webp"><br><img src="https://cdn.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/20240115/image.2z6bu4aclxo0.webp"></p>
+</li>
+</ul>
+<h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.puresys.net/8777.html">来搭建免费不限量的DeepLX翻译服务吧！ - Puresys</a></li>
+</ul>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2024-01-15T04:41:33.480Z" itemprop="dateModified">最后编辑：2024-01-15</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 【小鸡测评】Netcup VPS piko G11S测评" href="/posts/f2a71413/">&lt; 上一篇</a>
+            </div>
+            
+            
+        </nav>
+    
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://jsd.cdn.zzko.cn/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                71
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                7
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                65
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%90%AD%E5%BB%BADeepLX"><span class="toc-text">为什么搭建DeepLX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BADeepLX"><span class="toc-text">如何搭建DeepLX</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Docker"><span class="toc-text">安装Docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E5%8F%96%E6%9C%80%E6%96%B0%E9%95%9C%E5%83%8F"><span class="toc-text">拉取最新镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BE%E8%A1%8C1188%E7%AB%AF%E5%8F%A3"><span class="toc-text">放行1188端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6%E9%87%8C%E4%BD%BF%E7%94%A8%EF%BC%88%E4%BB%A5%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-text">在翻译插件里使用（以沉浸式翻译为例）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%B8%A3%E8%B0%A2"><span class="toc-text">鸣谢</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/VPS/">VPS</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E5%B7%A7/">技巧</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A8%E8%8D%90/">推荐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">科学上网</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%84%E6%B5%8B/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a><span class="category-list-count">4</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Alist/" style="font-size: 0.6em;">Alist</a> <a href="/tags/Apple-Music/" style="font-size: 0.6em;">Apple Music</a> <a href="/tags/BT/" style="font-size: 0.6em;">BT</a> <a href="/tags/Clash/" style="font-size: 0.73em;">Clash</a> <a href="/tags/EPIC/" style="font-size: 0.6em;">EPIC</a> <a href="/tags/Edge/" style="font-size: 0.67em;">Edge</a> <a href="/tags/FluidPlayer/" style="font-size: 0.6em;">FluidPlayer</a> <a href="/tags/IDM/" style="font-size: 0.6em;">IDM</a> <a href="/tags/MIUI/" style="font-size: 0.6em;">MIUI</a> <a href="/tags/Pikpak/" style="font-size: 0.6em;">Pikpak</a> <a href="/tags/Steam/" style="font-size: 0.6em;">Steam</a> <a href="/tags/Windows/" style="font-size: 0.8em;">Windows</a> <a href="/tags/aws/" style="font-size: 0.6em;">aws</a> <a href="/tags/bilix/" style="font-size: 0.6em;">bilix</a> <a href="/tags/emby/" style="font-size: 0.6em;">emby</a> <a href="/tags/ffmpeg/" style="font-size: 0.67em;">ffmpeg</a> <a href="/tags/film-riot/" style="font-size: 0.6em;">film riot</a> <a href="/tags/hexo/" style="font-size: 0.6em;">hexo</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/posts/82f2c97d/"><i class="fa  fa-book"></i> 【技巧】搭建一个自己的deepl翻译</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/f2a71413/"><i class="fa  fa-book"></i> 【小鸡测评】Netcup VPS piko G11S测评</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/892d5ece/"><i class="fa  fa-book"></i> 【日常】2023年10月追番感想</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/33551e6f/"><i class="fa  fa-book"></i> 【科学上网】在Clash Verge中达成Clash for Windows的Parsers功能</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/98e33f66/"><i class="fa  fa-book"></i> 【小鸡测评】TechnoVM LAX三期测评</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- New links -->
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://weibo.com/pamire">
+                                    
+                                        <i class="fa fa-weibo"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://twitter.com/oldcatY_meng">
+                                    
+                                        <i class="fa fa-twitter"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://steamcommunity.com/id/loveinwind">
+                                    
+                                        <i class="fa fa-steam"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://github.com/imbalaomao">
+                                    
+                                        <i class="fa fa-github"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2024 猫 の 窝 版权所有.</li>
+                            <li>本站已在风雨中艰难运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by OldcatY.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            <li><a href="https://beian.miit.gov.cn" rel="external nofollow" target="_blank"><a href="https://icp.gov.moe/?keyword=20240422" target="_blank">萌ICP备20240422号</a></a></li>
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="snow-switch">
+                        <span class="fa fa-snowflake-o"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async src="/js/snow.min.js"></script>
+    </div>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
