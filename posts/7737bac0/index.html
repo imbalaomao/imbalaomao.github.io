@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp">
+  
+  <title>【教程】Emby Windows端使用概论 | 猫 の 窝</title>
+  
+  <meta name="author" content="OldcatY" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Emby, Windows, 教程" />
+  
+  <meta name="description" content="1. 浏览器观看 ⚠️注意：  浏览器本身的解码较弱，播放时会出现「没有兼容的流」提示，本方法仅介绍结合脚本调用本地播放器进行观看，除此以外不推荐使用浏览器进行观看任何 Emby 服务器内容。 本方法仅在 Windows 平台测试成功，MacOS 请查询项目主页介绍   1.1 环境准备你需要安装以下工具：  Python 3.10 （需要勾选 Add to path） 一个本地播放器，如 MPV">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【教程】Emby Windows端使用概论">
+<meta property="og:url" content="https://nekoss.top/posts/7737bac0/">
+<meta property="og:site_name" content="猫 の 窝">
+<meta property="og:description" content="1. 浏览器观看 ⚠️注意：  浏览器本身的解码较弱，播放时会出现「没有兼容的流」提示，本方法仅介绍结合脚本调用本地播放器进行观看，除此以外不推荐使用浏览器进行观看任何 Emby 服务器内容。 本方法仅在 Windows 平台测试成功，MacOS 请查询项目主页介绍   1.1 环境准备你需要安装以下工具：  Python 3.10 （需要勾选 Add to path） 一个本地播放器，如 MPV">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://nekoss.top/posts/7737bac0/https:/gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/GFxEfWvXIAAS5Zx.7ljr3vpkyi.png">
+<meta property="article:published_time" content="2024-03-20T10:52:48.000Z">
+<meta property="article:modified_time" content="2024-03-20T10:58:26.647Z">
+<meta property="article:author" content="OldcatY">
+<meta property="article:tag" content="Emby">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nekoss.top/posts/7737bac0/https:/gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/GFxEfWvXIAAS5Zx.7ljr3vpkyi.png">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('../images/banner_transparent.png');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('../images/Llsif2_unit3.webp');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/archives/">
+                                            
+                                                
+                                                    <i class="fa fa-file"></i>
+                                                
+                                                归档
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-folder-open"></i>
+                                                
+                                                分类
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a href="/categories/VPS/">
+                                                                
+                                                                    <i class="fa fa-hdd-o"></i>
+                                                                
+                                                                VPS
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E6%8A%80%E5%B7%A7/">
+                                                                
+                                                                    <i class="fa fa-lightbulb-o"></i>
+                                                                
+                                                                技巧
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E8%AF%84%E6%B5%8B/">
+                                                                
+                                                                    <i class="fa fa-info-circle"></i>
+                                                                
+                                                                评测
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E6%97%A5%E5%B8%B8/">
+                                                                
+                                                                    <i class="fa fa-heart"></i>
+                                                                
+                                                                日常
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E6%8E%A8%E8%8D%90/">
+                                                                
+                                                                    <i class="fa fa-thumbs-up"></i>
+                                                                
+                                                                推荐
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E8%BD%AC%E8%BD%BD/">
+                                                                
+                                                                    <i class="fa fa-globe"></i>
+                                                                
+                                                                转载
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
+                                                                
+                                                                    <i class="fa fa-paper-plane-o"></i>
+                                                                
+                                                                科学上网
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-link"></i>
+                                                
+                                                外链
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://xlog.laomao.icu">
+                                                                
+                                                                    <i class="fa fa-bullseye"></i>
+                                                                
+                                                                xLog博客
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://nezha.314520.xyz">
+                                                                
+                                                                    <i class="fa fa-server"></i>
+                                                                
+                                                                哪吒探针
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/friends/">
+                                            
+                                                
+                                                    <i class="fa fa-user"></i>
+                                                
+                                                友链
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">猫 の 窝</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>猫 の 窝</h2> <br />
+                        <span>Hexo博客交流同好会</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://nekoss.top/posts/7737bac0/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">【教程】Emby Windows端使用概论</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2024-03-20T10:52:48.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-03-20</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">OldcatY</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~5.09K
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1710932306647"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%82%E7%9C%8B"><span class="toc-number">1.</span> <span class="toc-text">1. 浏览器观看</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 环境准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0%E8%84%9A%E6%9C%AC"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 配置本地脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%AE%89%E8%A3%85%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 安装油猴脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E6%B5%8B%E8%AF%95"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 进行视频播放测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E6%AD%A3%E5%BC%8F%E9%85%8D%E7%BD%AE%E5%BC%80%E5%90%AF%E8%87%AA%E5%90%AF%E9%A1%B9"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 正式配置开启自启项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E3%80%90%E5%8F%AF%E9%80%89%E3%80%91%E5%8D%B8%E8%BD%BD%E6%9C%AC%E6%96%B9%E6%B3%95%E4%B8%AD%E7%9A%84%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.6.</span> <span class="toc-text">1.6 【可选】卸载本方法中的软件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Windows-%E4%B8%8A%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">2. Windows 上使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E4%BD%BF%E7%94%A8-Emby-Windows-%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 使用 Emby Windows 客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.1.1 下载安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.1.2 登录服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3-%E8%AE%BE%E7%BD%AE-Emby"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.1.3 设置 Emby</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-4-%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91"><span class="toc-number">2.1.4.</span> <span class="toc-text">2.1.4 播放视频</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E4%BD%BF%E7%94%A8-Terminus-Player"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 使用 Terminus Player</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.2.1 安装软件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2.2 登录服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-3-%E6%92%AD%E6%94%BE%E5%99%A8%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.2.3.</span> <span class="toc-text">2.2.3 播放器设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-4-%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91"><span class="toc-number">2.2.4.</span> <span class="toc-text">2.2.4 播放视频</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">3. 代理配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E3%80%90%E8%BF%9B%E9%98%B6%E3%80%91Clash-Proxifier-%E6%96%B9%E6%A1%88"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 【进阶】Clash + Proxifier 方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-Proxifier"><span class="toc-number">3.1.1.</span> <span class="toc-text">3.1.1 下载安装 Proxifier</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-%E8%AE%BE%E7%BD%AE-Proxifier"><span class="toc-number">3.1.2.</span> <span class="toc-text">3.1.2 设置 Proxifier</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-%E8%AE%BE%E7%BD%AE%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E7%AD%96%E7%95%A5"><span class="toc-number">3.1.3.</span> <span class="toc-text">3.1.3 设置域名解析策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-%E6%92%AD%E6%94%BE%E6%B5%8B%E8%AF%95"><span class="toc-number">3.1.4.</span> <span class="toc-text">3.1.4 播放测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E3%80%90%E7%AE%80%E6%98%93%E3%80%91TUN-%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 【简易】TUN 模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E4%B8%8B%E8%BD%BD%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7"><span class="toc-number">3.2.1.</span> <span class="toc-text">3.2.1 下载代理工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.2.2.</span> <span class="toc-text">3.2.2 软件设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-%E5%BC%80%E5%90%AF-TUN-%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.2.3.</span> <span class="toc-text">3.2.3 开启 TUN 模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4-%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91"><span class="toc-number">3.2.4.</span> <span class="toc-text">3.2.4 播放视频</span></a></li></ol></li></ol></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><h2 id="1-浏览器观看"><a href="#1-浏览器观看" class="headerlink" title="1. 浏览器观看"></a>1. 浏览器观看</h2><blockquote>
+<p>⚠️注意：</p>
+<ol>
+<li>浏览器本身的解码较弱，播放时会出现「没有兼容的流」提示，本方法仅介绍结合脚本调用本地播放器进行观看，除此以外不推荐使用浏览器进行观看任何 Emby 服务器内容。</li>
+<li>本方法仅在 Windows 平台测试成功，MacOS 请查询项目主页介绍</li>
+</ol>
+</blockquote>
+<h3 id="1-1-环境准备"><a href="#1-1-环境准备" class="headerlink" title="1.1 环境准备"></a>1.1 环境准备</h3><p>你需要安装以下工具：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe">Python 3.10</a> （需要勾选 <code>Add to path</code>）</li>
+<li>一个本地播放器，如 <a target="_blank" rel="noopener" href="https://github.com/hooke007/mpv.net_CM/releases/download/6032/mpvnet-CM-20221014.exe">MPVnet</a></li>
+<li>Tampermonkey浏览器插件：<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo">Chrome</a> <a target="_blank" rel="noopener" href="https://microsoftedge.microsoft.com/addons/detail/iikmkjmpaadaobahmlepeloendndfphd">Edge</a> <a target="_blank" rel="noopener" href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/">Firefox</a></li>
+</ul>
+<h3 id="1-2-配置本地脚本"><a href="#1-2-配置本地脚本" class="headerlink" title="1.2 配置本地脚本"></a>1.2 配置本地脚本</h3><ol>
+<li><p><strong>下载脚本文件</strong></p>
+<p>前往 <a target="_blank" rel="noopener" href="https://github.com/kjtsune/embyToLocalPlayer/releases/latest">embyToLocalPlayer Release主页</a> 下载最新版本压缩包并解压</p>
+</li>
+<li><p><strong>修改配置文件</strong></p>
+<p>修改 <code>embyToLocalPlayer_config.ini</code> 中的播放器路径、调用的播放器以及代理等，部分修改示例如下：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[exe]</span></span><br><span class="line"><span class="comment"># 各播放器路径，不要的可以随意删除。记得选择哪种播放器是在下一项设置里。</span></span><br><span class="line"><span class="attr">mpve</span> = C:\Green\mpvnet\mpvnet.exe</span><br><span class="line"></span><br><span class="line"><span class="section">[emby]</span></span><br><span class="line"><span class="comment"># 选择播放器，填写上方的播放器名称，比如 mpv</span></span><br><span class="line"><span class="attr">player</span> = mpve</span><br><span class="line"><span class="comment"># 是否回传进度</span></span><br><span class="line"><span class="attr">update_progress</span> = <span class="literal">yes</span></span><br><span class="line"><span class="comment"># 尝试自动全屏</span></span><br><span class="line"><span class="attr">fullscreen</span> = <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="section">[dev]</span></span><br><span class="line"><span class="comment"># 脚本的 http 代理，例如 http://127.0.0.1:7890。</span></span><br><span class="line"><span class="comment"># 若用 OpenClash 可能慢，原因未知，可尝试 CFW 或透明代理等。</span></span><br><span class="line"><span class="attr">script_proxy</span> = http://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">7890</span></span><br><span class="line"><span class="comment"># 播放器的 http 代理，支持的播放器有：mpv、mpv.net、iina。</span></span><br><span class="line"><span class="attr">player_proxy</span> = http://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">7890</span></span><br><span class="line"><span class="comment"># 上述的代理建议都填</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>开启脚本测试</strong></p>
+<p>双击 <code>embyToLocalPlayer_debug.bat</code> ，并选择 <code>1: run in console</code> ，看到有如图提示时即为本地脚本开启成功<strong>（先不要关闭 CMD 窗口！）</strong> <img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8701.png"></p>
+</li>
+</ol>
+<h3 id="1-3-安装油猴脚本"><a href="#1-3-安装油猴脚本" class="headerlink" title="1.3 安装油猴脚本"></a>1.3 安装油猴脚本</h3><p>到 <a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/448648-embytolocalplayer">Greasyfork项目地址</a> 安装油猴脚本即可。</p>
+<h3 id="1-4-进行视频播放测试"><a href="#1-4-进行视频播放测试" class="headerlink" title="1.4 进行视频播放测试"></a>1.4 进行视频播放测试</h3><ul>
+<li><p>浏览器打开服务器地址：<a target="_blank" rel="noopener" href="https://pornemby.club,输入用户名、密码登录/">https://pornemby.club，输入用户名、密码登录</a></p>
+</li>
+<li><p>打开一个视频进行播放，会在转圈后看到一个窗口闪过，这是脚本自动关闭了「没有兼容的流」提示，无视即可</p>
+</li>
+<li><p>之后本地配置好的播放器会自动打开，并自动进行播放（如果本地播放器是mpv、mpvnet 或 iina 的话，可以通过配置文件内设置的代理执行播放操作）</p>
+<blockquote>
+<p>⚠️注意：</p>
+<ol>
+<li><p>这一个步骤中，如果窗口闪过后设置好的播放器未打开，请检查以下项是否设置正确：调用播放器是否已提供了绝对路径；非 mpv 系播放器是否设置好了对于播放器本身的代理</p>
+</li>
+<li><p>请注意不要多次点击播放键，否则会出现多个播放器同时播放，可能会被服务器判定为下载行为导致账号封禁</p>
+</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<h3 id="1-5-正式配置开启自启项"><a href="#1-5-正式配置开启自启项" class="headerlink" title="1.5 正式配置开启自启项"></a>1.5 正式配置开启自启项</h3><ul>
+<li>若上一步骤没有任何问题，则关闭 1.2 步骤打开的 CMD 窗口，重新打开<code>embyToLocalPlayer_debug.bat</code> ，选择 <code>2: run in background and add to startup folder</code> （若有防火墙或杀毒软件提示请允许，本步骤仅是向启动文件夹内放入一个 vbs 文件，用于开机自动启动本地脚本）</li>
+<li>当有提示 <code>close this window manually</code> 时即可关闭 CMD 窗口</li>
+<li>执行一次 1.4 步骤，播放一个视频进行配置文件测试，若播放无问题则本操作全部完成</li>
+</ul>
+<h3 id="1-6-【可选】卸载本方法中的软件"><a href="#1-6-【可选】卸载本方法中的软件" class="headerlink" title="1.6 【可选】卸载本方法中的软件"></a>1.6 【可选】卸载本方法中的软件</h3><ol>
+<li><p><strong>卸载开机自启脚本</strong></p>
+<p>前往 <code>%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup</code> 路径（复制粘贴至文件夹的地址栏并回车即可），删除 <code>embyToLocalPlayer.vbs</code></p>
+</li>
+<li><p><strong>删除本地 Python 脚本</strong></p>
+<p>找到你解压 <code>embyToLocalPlayer</code> 的文件夹并将里面的内容都删除即可</p>
+</li>
+<li><p><strong>删除 Python</strong></p>
+<p>前往「设置」中卸载 Python 即可</p>
+</li>
+</ol>
+<h2 id="2-Windows-上使用"><a href="#2-Windows-上使用" class="headerlink" title="2. Windows 上使用"></a>2. Windows 上使用</h2><h3 id="2-1-使用-Emby-Windows-客户端"><a href="#2-1-使用-Emby-Windows-客户端" class="headerlink" title="2.1 使用 Emby Windows 客户端"></a>2.1 使用 Emby Windows 客户端</h3><blockquote>
+<p>⚠️注意：本客户端支持调用外部播放器进行播放，但操作较复杂，仅推荐进阶用户 &amp; 对播放质量有要求的用户选择，若您本地播放器是 Potplayer，则推荐使用 Emby 自带播放器进行播放，画质会优于 Potplayer</p>
+</blockquote>
+<h4 id="2-1-1-下载安装"><a href="#2-1-1-下载安装" class="headerlink" title="2.1.1 下载安装"></a>2.1.1 下载安装</h4><p>前往 <a target="_blank" rel="noopener" href="https://t.me/EmbyNoisyX">Emby学习小秘</a> 频道，下载 <a target="_blank" rel="noopener" href="https://t.me/EmbyNoisyX/113">最新版客户端</a> 并双击安装（安装时会自动创建一个名为 <code>Emby Theater</code> 的客户端，无需自己再创建。安装结束后会自动打开一个文件夹，请认真阅读里面的 **注意事项 **并在稍后的设置中按照推荐设置进行）</p>
+<h4 id="2-1-2-登录服务器"><a href="#2-1-2-登录服务器" class="headerlink" title="2.1.2 登录服务器"></a>2.1.2 登录服务器</h4><ol>
+<li><p>打开桌面的 Emby 图标后，不会弹出需要登录 Emby 账号的提示，直接选择 <strong>添加服务器</strong> 即可<img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8702.png"></p>
+</li>
+<li><p>在<strong>「主机地址」</strong>输入 <code>https://pornemby.club</code>，在<strong>「端口」</strong>输入 <code>443</code> 并点击<strong>「连接」</strong>进行登录操作<img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8703.png"></p>
+</li>
+</ol>
+<h4 id="2-1-3-设置-Emby"><a href="#2-1-3-设置-Emby" class="headerlink" title="2.1.3 设置 Emby"></a>2.1.3 设置 Emby</h4><ol>
+<li><p>进入设置</p>
+<p>登录后点击右上角<strong>「齿轮⚙️样式」</strong>图标进入设置<img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8704.png"></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8705.png"></p>
+</li>
+<li><p>播放设置</p>
+<p>本页请确认：</p>
+<ul>
+<li><strong>「视频」</strong>下的<strong>「局域网传输质量」</strong>与<strong>「广域网传输质量」</strong>均设置为<strong>「媒体源直接传输」</strong>；<img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8706.png"></li>
+</ul>
+</li>
+<li><p>字幕设置</p>
+<p>本页请确认：</p>
+<ul>
+<li><strong>「首选字幕语言」</strong>设置为你的偏好语言（一般为 <strong>Chinese Simplified</strong>，也即简体中文；或设置为 <strong>Chinese Traditional</strong> 也即繁体中文）</li>
+</ul>
+</li>
+<li><p>视频设置</p>
+<p>本页请认真按照安装目录下的<strong>「注意事项」</strong>进行设置，下图为示例配置：</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8707.png"></p>
+</li>
+<li><p>【可选】外部播放器设置</p>
+<blockquote>
+<p>💡 此处以设置 mpvnet 播放器为例，如你的本地播放器是 Potplayer，请不要设置这里！Potplayer 的解码能力与播放画质逊于小秘 Emby 内置的播放器</p>
+</blockquote>
+<p>点击<strong>「添加」</strong>，修改以下配置：</p>
+<ul>
+<li><strong>媒体类型：</strong>不动</li>
+<li><strong>路径（媒体类型下方的空行）：</strong>你的播放器绝对路径，无需输入转义符</li>
+<li>勾选<strong>「视频文件」</strong>与<strong>「互联网流」</strong></li>
+<li><strong>命令行参数：</strong>无特殊需求或不知道填什么，就不用填写</li>
+<li><strong>【重要】：</strong>记得将页面拉至最下方，点击<strong>「保存」</strong>，你的配置才算保存成功</li>
+</ul>
+<p>示例配置如下图：</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8708.png"></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8709.png"></p>
+<p>💡 保存后效果：<img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8710.png"></p>
+</li>
+</ol>
+<h4 id="2-1-4-播放视频"><a href="#2-1-4-播放视频" class="headerlink" title="2.1.4 播放视频"></a>2.1.4 播放视频</h4><p>随意选择影片播放即可。若配置了外置播放器，在播放时会自动调用</p>
+<h3 id="2-2-使用-Terminus-Player"><a href="#2-2-使用-Terminus-Player" class="headerlink" title="2.2 使用 Terminus Player"></a>2.2 使用 Terminus Player</h3><blockquote>
+<p>⚠️注意：</p>
+<ul>
+<li><p>本软件基于 <a target="_blank" rel="noopener" href="https://github.com/jellyfin/jellyfin-media-player">Jellyfin-media-player</a> 修改，若出现杀毒软件报毒请自行判断是否有害。</p>
+</li>
+<li><p>请使用 Windows 10 及以上系统运行，低版本系统报错请自行寻找解决方案。</p>
+</li>
+<li><p>本软件无法调用外部播放器进行播放，请有需求的用户选择 Emby 小秘客户端，并按照上方的教程进行设置。</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="2-2-1-安装软件"><a href="#2-2-1-安装软件" class="headerlink" title="2.2.1 安装软件"></a>2.2.1 安装软件</h4><ul>
+<li><p>从 <a target="_blank" rel="noopener" href="https://github.com/Terminus-Media/jellyfin-media-player/releases/tag/v221122">github release 页面</a> 下载安装包，请下载以 <code>.exe</code> 为后缀名的文件（如同时有x86、x64的文件，请下载文件名中含有 <code>x64</code> 的文件）</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8711.png"></p>
+</li>
+<li><p>找到安装包并双击运行</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8712.png"></p>
+<p>若有弹窗警告请按确认</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8713.png"></p>
+</li>
+<li><p>安装界面请自行更改安装路径及是否需要创建桌面快捷方式</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8714.png"></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8715.png"></p>
+<p>安装完毕后，点击 <strong>Launch</strong> 启动软件</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8716.png"></p>
+</li>
+</ul>
+<h4 id="2-2-2-登录服务器"><a href="#2-2-2-登录服务器" class="headerlink" title="2.2.2 登录服务器"></a>2.2.2 登录服务器</h4><ul>
+<li><p>打开 Terminus Player，点击 <strong>Add Server</strong> 添加服务器</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8717.png"></p>
+</li>
+<li><p>输入服务器地址</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8718.png"></p>
+</li>
+<li><p>输入账号密码进行登录</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8719.png"></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8720.png"></p>
+</li>
+</ul>
+<h4 id="2-2-3-播放器设置"><a href="#2-2-3-播放器设置" class="headerlink" title="2.2.3 播放器设置"></a>2.2.3 播放器设置</h4><p>登录服务器后，点击主界面右上角的人头标志进入设置界面</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8721.png"></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8722.png"></p>
+<ol>
+<li><p><strong>【重要】语言设置</strong></p>
+<ul>
+<li><p>点击设置页面的 <strong>Display</strong> 进入界面设置，点击 <strong>Display Language</strong> (界面语言)，选择 <strong>Chinese Simplified</strong> (简体中文) 或 <strong>Chinese Traditional</strong> (繁体中文)</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8723.png"></p>
+</li>
+<li><p>拉到页面最下方点击 <strong>Save</strong> 保存设置</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8724.png"></p>
+<blockquote>
+<p> ⚠️<strong>注意：本操作之后界面语言不会实时变更，需要重启软件才能看到修改后的样式</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>字幕设置</strong></p>
+<ul>
+<li><p>点击设置中的 <strong>字幕</strong> 进入字幕设置</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8725.png"></p>
+</li>
+<li><p>点击 <strong>字幕语言偏好</strong> 更改为 <strong>Chinese Simplified</strong> (简体中文) 或 <strong>Chinese Traditional</strong> (繁体中文) 并点击下方 <strong>保存</strong></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8726.png"></p>
+</li>
+</ul>
+<ol>
+<li><p>杂项设置</p>
+<ul>
+<li><p>点击 <strong>客户端设置</strong> 进入杂项设置菜单</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8727.png"></p>
+</li>
+<li><p>取消勾选 <strong>ChechForUpdates</strong> (检测更新)。因为此功能是 Jellyfin 官方的，如果不慎更新则会覆盖 Terminus Player 修改的部分，造成无法观看 Emby 资源</p>
+</li>
+<li><p>取消勾选 <strong>Audio</strong> (音频设置) 下的 <strong>Normalize</strong> (音量规格化)。此功能主要是将声音小的部分增大、将声音大的部分减小，以达到响度平衡的功能，但在视频安静的场景中增大音量会导致不必要的底噪，因此需要将此功能关闭。</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8728.png"></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="2-2-4-播放视频"><a href="#2-2-4-播放视频" class="headerlink" title="2.2.4 播放视频"></a>2.2.4 播放视频</h4><p>此时所有设置已完成，点击喜欢的视频进行播放即可。</p>
+<h2 id="3-代理配置"><a href="#3-代理配置" class="headerlink" title="3. 代理配置"></a>3. 代理配置</h2><h3 id="3-1-【进阶】Clash-Proxifier-方案"><a href="#3-1-【进阶】Clash-Proxifier-方案" class="headerlink" title="3.1 【进阶】Clash + Proxifier 方案"></a>3.1 【进阶】Clash + Proxifier 方案</h3><h4 id="3-1-1-下载安装-Proxifier"><a href="#3-1-1-下载安装-Proxifier" class="headerlink" title="3.1.1 下载安装 Proxifier"></a>3.1.1 下载安装 Proxifier</h4><p>前往 <a target="_blank" rel="noopener" href="https://www.proxifier.com/">Proxifier官网</a> 下载最新版并安装（此软件无中文，请确认你可以看懂部分英文），安装成功后会弹出激活窗口，这里不提供破解版，请自行谷歌「Proxifier 注册码」，并点击图示位置后输入，即可激活</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8729.png"></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8730.png"></p>
+<h4 id="3-1-2-设置-Proxifier"><a href="#3-1-2-设置-Proxifier" class="headerlink" title="3.1.2 设置 Proxifier"></a>3.1.2 设置 Proxifier</h4><ol>
+<li><p>代理服务器设置</p>
+<ul>
+<li><p>打开 proxifier，依次在 <strong>“Profile” —&gt; “Proxy Server…”</strong></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8731.png"></p>
+</li>
+<li><p>点击 <code>Add</code> 添加代理服务器 ip、port、授权用户名、密码，如下图（以 Clash for Windows 为例）</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8732.png"></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8733.png"></p>
+</li>
+<li><p>点击 <code>Check</code> 检查代理可用性，当出现如图字样则表示代理可用，之后点击 <strong>OK</strong> 保存即可</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8734.png"></p>
+</li>
+<li><p>⚠ 若保存后会提示流量存在回环，请一定点击 <strong>OK</strong> 添加自动规则！！！设置完毕后则可以删除该条自动规则</p>
+</li>
+</ul>
+</li>
+<li><p>添加代理规则</p>
+<ul>
+<li><p>依次点击<strong>“Profile” —&gt; “Proxification Rules..”</strong></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8735.png"></p>
+</li>
+<li><p>在打开的窗口里点击 <strong>Add…</strong> 添加规则</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8736.png"></p>
+</li>
+<li><p>在 <strong>Name</strong> 栏填写规则名称（随意命名）、在 <strong>Applications</strong> 里添加需要代理的软件，在 <strong>Action</strong> 里选择代理流向（如存在多代理情况），点击 <strong>OK</strong> 保存</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8737.png"></p>
+<blockquote>
+<p>💡 部分播放器工具进程名：</p>
+<ul>
+<li>Emby：emby.theater.exe; electron.exe</li>
+<li>Terminus Player：QtWebEngineProcess.exe; TerminusPlayer.exe</li>
+<li>mpvnet：mpvnet.exe</li>
+<li>PotPlayer：PotPlayerMini64.exe</li>
+<li>VLC：vlc.exe</li>
+</ul>
+<p>⚠️请注意：本工具匹配进程名时是无视路径的，也就是说如果你代理了 Terminus Player，那么 Windows 原神启动器这类软件的流量同样会被代理（因为进程名都是 QtWebEngineProcess.exe）</p>
+</blockquote>
+</li>
+<li><p>添加好播放器代理策略后，请保持与如图类似的设置</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8738.png"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-1-3-设置域名解析策略"><a href="#3-1-3-设置域名解析策略" class="headerlink" title="3.1.3 设置域名解析策略"></a>3.1.3 设置域名解析策略</h4><p><strong>请保持此设置，否则电脑上其他软件的流量会自动被代理</strong></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8739.png"></p>
+<h4 id="3-1-4-播放测试"><a href="#3-1-4-播放测试" class="headerlink" title="3.1.4 播放测试"></a>3.1.4 播放测试</h4><p>播放时可以看到仅有 Emby 与播放器的流量进入 Proxifier，说明设置正常</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8740.png"></p>
+<h3 id="3-2-【简易】TUN-模式"><a href="#3-2-【简易】TUN-模式" class="headerlink" title="3.2 【简易】TUN 模式"></a>3.2 【简易】TUN 模式</h3><blockquote>
+<p>本教程以 Clash Nyanpasu 为例，Clash Verge 及其衍生工具均适用。其余客户端请自行搜索教程</p>
+</blockquote>
+<h4 id="3-2-1-下载代理工具"><a href="#3-2-1-下载代理工具" class="headerlink" title="3.2.1 下载代理工具"></a>3.2.1 下载代理工具</h4><p>在 <a target="_blank" rel="noopener" href="https://github.com/LibNyanpasu/clash-nyanpasu/releases/latest">Github Release</a> 中下载最新版工具，请自行选择下载安装包还是绿色版。本教程以绿色版为例进行介绍</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8741.png"></p>
+<h4 id="3-2-2-软件设置"><a href="#3-2-2-软件设置" class="headerlink" title="3.2.2 软件设置"></a>3.2.2 软件设置</h4><ul>
+<li><p>使用 <strong>管理员模式</strong> 打开 <code>Clash Nyanpasu.exe</code> ，进入 <strong>设置</strong> 菜单，找到 <strong>系统设置——服务模式</strong></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8742.png"></p>
+</li>
+<li><p>点击 <strong>服务模式</strong> 旁的图标，点击 <strong>INSTALL</strong> 安装，出现绿色成功提示后，打开 <strong>服务模式</strong> 的开关即可</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8743.png"></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8744.png"></p>
+</li>
+</ul>
+<h4 id="3-2-3-开启-TUN-模式"><a href="#3-2-3-开启-TUN-模式" class="headerlink" title="3.2.3 开启 TUN 模式"></a>3.2.3 开启 TUN 模式</h4><p>打开 <strong>系统设置——Tun 模式</strong> 的开关即可启动，请确认右下角联网图标处出现 <strong>Meta Internet访问</strong> 字样就是开启成功</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8745.png"></p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8746.png"></p>
+<h4 id="3-2-4-播放视频"><a href="#3-2-4-播放视频" class="headerlink" title="3.2.4 播放视频"></a>3.2.4 播放视频</h4><p>播放时查看日志，发现有来自 <code>198.18.0.1</code> 的流量就是 Tun 模式代理到的部分</p>
+<p><img src="/upload/post_img/emby/%E5%9B%BE%E7%89%8747.png"></p>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/Emby/" rel="tag">Emby</a>, <a class="tag-none-link" href="/tags/Windows/" rel="tag">Windows</a>, <a class="tag-none-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2024-03-20T10:58:26.647Z" itemprop="dateModified">最后编辑：2024-03-20</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 【科学上网】关于YAML文件对齐的那些事" href="/posts/e57a291e/">&lt; 上一篇</a>
+            </div>
+            
+            
+        </nav>
+    
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://gcore.jsdelivr.net/gh/imbalaomao/picx-images-hosting@master/touxiang.4aye9nuxxos0.webp" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                75
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                7
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                68
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%82%E7%9C%8B"><span class="toc-text">1. 浏览器观看</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-text">1.1 环境准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0%E8%84%9A%E6%9C%AC"><span class="toc-text">1.2 配置本地脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%AE%89%E8%A3%85%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC"><span class="toc-text">1.3 安装油猴脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E6%B5%8B%E8%AF%95"><span class="toc-text">1.4 进行视频播放测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E6%AD%A3%E5%BC%8F%E9%85%8D%E7%BD%AE%E5%BC%80%E5%90%AF%E8%87%AA%E5%90%AF%E9%A1%B9"><span class="toc-text">1.5 正式配置开启自启项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E3%80%90%E5%8F%AF%E9%80%89%E3%80%91%E5%8D%B8%E8%BD%BD%E6%9C%AC%E6%96%B9%E6%B3%95%E4%B8%AD%E7%9A%84%E8%BD%AF%E4%BB%B6"><span class="toc-text">1.6 【可选】卸载本方法中的软件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Windows-%E4%B8%8A%E4%BD%BF%E7%94%A8"><span class="toc-text">2. Windows 上使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E4%BD%BF%E7%94%A8-Emby-Windows-%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">2.1 使用 Emby Windows 客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="toc-text">2.1.1 下载安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">2.1.2 登录服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3-%E8%AE%BE%E7%BD%AE-Emby"><span class="toc-text">2.1.3 设置 Emby</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-4-%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91"><span class="toc-text">2.1.4 播放视频</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E4%BD%BF%E7%94%A8-Terminus-Player"><span class="toc-text">2.2 使用 Terminus Player</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-text">2.2.1 安装软件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">2.2.2 登录服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-3-%E6%92%AD%E6%94%BE%E5%99%A8%E8%AE%BE%E7%BD%AE"><span class="toc-text">2.2.3 播放器设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-4-%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91"><span class="toc-text">2.2.4 播放视频</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE"><span class="toc-text">3. 代理配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E3%80%90%E8%BF%9B%E9%98%B6%E3%80%91Clash-Proxifier-%E6%96%B9%E6%A1%88"><span class="toc-text">3.1 【进阶】Clash + Proxifier 方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-Proxifier"><span class="toc-text">3.1.1 下载安装 Proxifier</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-%E8%AE%BE%E7%BD%AE-Proxifier"><span class="toc-text">3.1.2 设置 Proxifier</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-%E8%AE%BE%E7%BD%AE%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E7%AD%96%E7%95%A5"><span class="toc-text">3.1.3 设置域名解析策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-%E6%92%AD%E6%94%BE%E6%B5%8B%E8%AF%95"><span class="toc-text">3.1.4 播放测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E3%80%90%E7%AE%80%E6%98%93%E3%80%91TUN-%E6%A8%A1%E5%BC%8F"><span class="toc-text">3.2 【简易】TUN 模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E4%B8%8B%E8%BD%BD%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7"><span class="toc-text">3.2.1 下载代理工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE"><span class="toc-text">3.2.2 软件设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-%E5%BC%80%E5%90%AF-TUN-%E6%A8%A1%E5%BC%8F"><span class="toc-text">3.2.3 开启 TUN 模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4-%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91"><span class="toc-text">3.2.4 播放视频</span></a></li></ol></li></ol></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/VPS/">VPS</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E5%B7%A7/">技巧</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A8%E8%8D%90/">推荐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">科学上网</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%84%E6%B5%8B/">评测</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a><span class="category-list-count">4</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Alist/" style="font-size: 0.6em;">Alist</a> <a href="/tags/Apple-Music/" style="font-size: 0.6em;">Apple Music</a> <a href="/tags/BT/" style="font-size: 0.6em;">BT</a> <a href="/tags/Clash/" style="font-size: 0.73em;">Clash</a> <a href="/tags/EPIC/" style="font-size: 0.6em;">EPIC</a> <a href="/tags/Edge/" style="font-size: 0.67em;">Edge</a> <a href="/tags/Emby/" style="font-size: 0.6em;">Emby</a> <a href="/tags/FluidPlayer/" style="font-size: 0.6em;">FluidPlayer</a> <a href="/tags/IDM/" style="font-size: 0.6em;">IDM</a> <a href="/tags/MIUI/" style="font-size: 0.6em;">MIUI</a> <a href="/tags/Pikpak/" style="font-size: 0.6em;">Pikpak</a> <a href="/tags/Steam/" style="font-size: 0.6em;">Steam</a> <a href="/tags/VPS/" style="font-size: 0.6em;">VPS</a> <a href="/tags/Windows/" style="font-size: 0.8em;">Windows</a> <a href="/tags/aws/" style="font-size: 0.6em;">aws</a> <a href="/tags/bilix/" style="font-size: 0.6em;">bilix</a> <a href="/tags/emby/" style="font-size: 0.6em;">emby</a> <a href="/tags/ffmpeg/" style="font-size: 0.67em;">ffmpeg</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/posts/7737bac0/"><i class="fa  fa-book"></i> 【教程】Emby Windows端使用概论</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/e57a291e/"><i class="fa  fa-book"></i> 【科学上网】关于YAML文件对齐的那些事</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/50d9b0e4/"><i class="fa  fa-book"></i> 【日常】AWS涨价记录</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/4cc3b6e9/"><i class="fa  fa-book"></i> 【日常】2024年1月追番列表</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/82f2c97d/"><i class="fa  fa-book"></i> 【技巧】搭建一个自己的deepl翻译</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- New links -->
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://weibo.com/pamire">
+                                    
+                                        <i class="fa fa-weibo"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://twitter.com/oldcatY_meng">
+                                    
+                                        <i class="fa fa-twitter"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://steamcommunity.com/id/loveinwind">
+                                    
+                                        <i class="fa fa-steam"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" rel="nofollow" href="https://github.com/imbalaomao">
+                                    
+                                        <i class="fa fa-github"></i>
+                                    
+                                </a>
+                            </li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2024 猫 の 窝 版权所有.</li>
+                            <li>本站已在风雨中艰难运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by OldcatY.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            <li><a href="https://beian.miit.gov.cn" rel="external nofollow" target="_blank"><a href="https://icp.gov.moe/?keyword=20240422" target="_blank">萌ICP备20240422号</a></a></li>
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="snow-switch">
+                        <span class="fa fa-snowflake-o"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async src="/js/snow.min.js"></script>
+    </div>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
