@@ -1,0 +1,391 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>
+  【转载】Backblaze 2024 年硬盘健康情况报告 | 猫の博客
+</title>
+
+<link rel="shortcut icon" href="https://blog.laomao.icu/favicon.ico?v=1768043901498">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.laomao.icu/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+  integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            猫の博客
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    分类
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1768043901498"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    【转载】Backblaze 2024 年硬盘健康情况报告
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2025-02-12 ·
+                    </time>
+                    
+                        <a href="https://blog.laomao.icu/tag/jt3q8SBOeU/" class="post-tags">
+                            # 转载
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <blockquote>
+<p><a href="https://www.backblaze.com/blog/backblaze-drive-stats-for-2024/">原文地址</a>，本文原发表于 2025年2月11日，转载结合使用零一万物、智谱 GLM AI 进行翻译</p>
+</blockquote>
+<h2 id="2024-年的-backblaze-硬盘统计数据">2024 年的 Backblaze 硬盘统计数据</h2>
+<p>截至 2024 年 12 月 31 日，我们管理着 305,180 个驱动器。其中，有 4,060 个启动盘和 301,120 个数据盘。本报告将专注于这些数据盘，因为我们检查了 2024 年第四季度的年化故障率（AFR），2024 年的故障率和截至 2024 年底仍在服务中的硬盘型号的使用寿命故障率。在讨论过程中，我们将分享我们对数据的观察和见解，并一如既往地期待您在文章末尾的评论部分分享您的见解。</p>
+<h3 id="2024-年第四季度的硬盘故障率">2024 年第四季度的硬盘故障率</h3>
+<p>截至 2024 年底，Backblaze 正在监控用于存储数据的 301,120 块硬盘。在我们的评估中，我们排除了 487 块硬盘，因为它们不符合被纳入的条件。我们将在本报告的下一节中讨论我们使用的标准。移除这些硬盘后，我们剩下 300,633 块硬盘进行分析。下表显示了该系列硬盘 2024 年第四季度的年度化故障率。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739892040-1-Quarterly-AFR-table-Q4-2024.png" alt="1739892040-1-Quarterly-AFR-table-Q4-2024" loading="lazy"></p>
+<h4 id="记录和观察情况">记录和观察情况</h4>
+<ul>
+<li>
+<p>24TB 硬盘已到货。希捷 24TB 硬盘（型号：ST24000NM002H）已于 12 月初抵达。这 1200 块硬盘装满了一个 Backblaze Vault，整个第四季度末都没有出现任何故障。24TB 的希捷硬盘与 20TB 的东芝和 22TB 的西部数据硬盘一起，成为了 20TB 以上容量硬盘的行列，我们在增加存储容量的同时，也在优化现有的存储服务器空间。</p>
+</li>
+<li>
+<p>本季度零故障。上述提到的 24TB 希捷驱动器型号为首，共有五种驱动器型号在本季度实现零故障。包括 4TB HGST（型号：HMS5C4040ALE640）、8TB 希捷（型号：ST8000NM000A）、14TB 希捷（型号：ST14000NM000J）和 16TB 希捷（型号：ST16000NM002J）。尽管这些零故障都伴随着驱动器和驱动天数相对较少的情况，但本季度零故障仍然是个好消息。</p>
+</li>
+<li>
+<p>4TB 硬盘几乎绝迹。在第四季度，4TB 硬盘的数量减少了 1774 块。如果您想详细了解我们是如何迁移它们的，<a href="https://www.backblaze.com/blog/how-backblaze-scales-our-storage-cloud/">这里有更详细的说明（Backblaze官网）</a>。预计剩余的约 4000 块硬盘将在 2025 年第一季度末被淘汰。届时，它们将被即将到来的 20TB、22TB 和 24TB 硬盘所替代。值得一提的是，在第四季度运行的 4TB 硬盘中，只有一块硬盘出现故障，因此这些超过 20TB 的硬盘在可靠性方面还有很大的提升空间。</p>
+</li>
+<li>
+<p>季度故障率有所下降。第四季度的平均故障率（AFR）从第三季度的 1.89%降至 1.35%。尽管所有驱动器容量在第三季度到第四季度都有所提升，但主要原因是新增了超过 14,000 台 20TB 以上的驱动器。这些驱动器在季度内的 AFR 仅为 0.77%，表现突出。</p>
+</li>
+</ul>
+<h4 id="硬盘型号评价标准">硬盘型号评价标准</h4>
+<p>我们之前提到，在制作涵盖 2024 年第四季度的表格时，我们排除了 487 个硬盘。未考虑这些硬盘型号主要有两个原因。</p>
+<ul>
+<li>
+<p>仍在测试。这些是我们正在监控并收集统计数据的硬盘，但截至目前它们还不算作生产环境中的型号。例如，正在接受认证测试以确定其性能是否满足我们环境要求的型号，不包括在硬盘统计数据计算之内。</p>
+</li>
+<li>
+<p>数据点不足。在计算特定时间段（季度、年度或终身）内驱动器模型的年化故障率时，我们希望确保有足够的数据进行可靠计算。因此，我们为特定时间段内表格和图表中包含的驱动器模型设定了标准。不符合这些标准的模型将不会被纳入该时间段内的表格和图表中。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>硬盘数量</th>
+<th>硬盘运行天数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每季度</td>
+<td>&gt;100</td>
+<td>&gt;10000</td>
+</tr>
+<tr>
+<td>每年</td>
+<td>&gt;250</td>
+<td>&gt;50000</td>
+</tr>
+<tr>
+<td>生命周期</td>
+<td>&gt;500</td>
+<td>&gt;100000</td>
+</tr>
+</tbody>
+</table>
+<p>无论特定的硬盘型号是否出现在最终统计图表中，我们收集的所有硬盘数据都已包含在我们的硬盘统计数据集中，您可以在我们的<a href="https://www.backblaze.com/cloud-storage/resources/hard-drive-test-data">硬盘统计数据页面（Backblaze官网）</a>上免费下载。<br>
+就像第四季度的季度报告一样，我们将这些标准应用于本报告后续的年度和硬盘服役全时间段统计图表中。</p>
+<h3 id="2024年的年度硬盘故障率">2024年的年度硬盘故障率</h3>
+<p>截至 2024 年底，Backblaze 正在监控用于存储数据的 301,120 块硬盘。由于它们未达到我们设定的年度标准，我们已排除 9 个型号的 2,012 块硬盘。目前，我们有 298,954 块硬盘，分布在 27 个不同的型号中。下表展示了这些硬盘在 2024 年的平均故障率（AFR）：<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739893598-2-Annual-AFR-table-for-2024.png" alt="1739893598-2-Annual-AFR-table-for-2024" loading="lazy"></p>
+<h4 id="记录和观察情况-2">记录和观察情况</h4>
+<ul>
+<li>
+<p>2024 年没有出现零故障的驱动器型号。尽管如此，16TB 的希捷硬盘（型号：ST16000NM002J）在第三季度仅出现了一次故障，年度故障率（AFR）仅为 0.22%，表现相当接近零故障。</p>
+</li>
+<li>
+<p>忙碌的数据中心技术人员。2024 年，我们的数据中心技术人员共安装了 53,337 个硬盘。以每年 2,080 个工作小时（52 周乘以 40 小时）来计算，就是平均每小时安装 26 个硬盘。真是忙得不可开交！</p>
+</li>
+<li>
+<p>希捷 24TB 硬盘怎么样？尽管 2024 年新增了 1200 块 24TB 希捷硬盘，但它们是在 12 月初安装的，由于使用天数不足，未能计入年度或终身统计。该批次 24TB 希捷硬盘也未能进入年度统计表，以下是未能进入统计表的硬盘型号列表。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>制造商</th>
+<th>型号</th>
+<th>硬盘数量</th>
+<th>硬盘运行天数</th>
+<th>2024年年化故障率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>希捷</td>
+<td>ST8000NM000A</td>
+<td>247</td>
+<td>22,684</td>
+<td>0.84%</td>
+</tr>
+<tr>
+<td>希捷</td>
+<td>ST14000NM000J</td>
+<td>232</td>
+<td>19,696</td>
+<td>1.32%</td>
+</tr>
+<tr>
+<td>希捷</td>
+<td>ST24000NM002H</td>
+<td>1,200</td>
+<td>18,000</td>
+<td>0.00%</td>
+</tr>
+</tbody>
+</table>
+<p>提醒各位，到本季度末，一个型号必须拥有超过 250 块硬盘，并在 2024 年累计至少 50,000 个硬盘运行天数，才能被包含在年度统计表中。</p>
+<h3 id="对比-2022-年-2023-年和-2024-年的驱动统计数据">对比 2022 年、2023 年和 2024 年的驱动统计数据</h3>
+<p>下表展示了过去三年中各型号硬盘的年度故障率。仅包含截至 2024 年底符合年度标准的硬盘型号。每年数据仅涵盖当年年底正在运行的硬盘型号。表格按硬盘容量大小排序，并在此基础上按 AFR 排序。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739895151-3-Annual-three-year-comparison.png" alt="1739895151-3-Annual-three-year-comparison" loading="lazy"></p>
+<h4 id="记录与观察情况">记录与观察情况</h4>
+<ul>
+<li>每年 AFR 有所下降。2024 年所有列出的驱动器的 AFR 为 1.57%，较 2023 年的 1.70%有所降低。预计整体故障率将在 2025 年继续下降，我们将密切关注以下指标以观察变化。
+<ul>
+<li>8TB 和 12TB 硬盘型号的故障率。所有型号都将超过其五年的使用寿命。通常情况下，当硬盘使用年限超过五年后，故障率会显著上升。尽管存在像当前 HGST 4TB 硬盘这样的个别异常情况，但您不能据此认为这种情况会普遍发生。</li>
+<li>14TB 和 16TB 硬盘型号的故障率。这些型号已接近中年——运行了三到五年。根据<a href="https://www.backblaze.com/blog/drive-failure-over-time-the-bathtub-curve-is-leaking/">浴盆曲线</a>，它们的故障率可能会逐渐上升——但不会像超过五年后那样急剧。</li>
+<li>20TB、22TB 和 24TB 型号硬盘的故障率。这些硬盘将进入浴盆曲线的平稳段，那里它们的故障率应该最低。</li>
+</ul>
+</li>
+</ul>
+<h3 id="硬盘容量与年化故障率的相关性">硬盘容量与年化故障率的相关性</h3>
+<p>现在，我们可以深入分析数据，看看还能发现哪些有趣的信息。我们将从过去三年不同容量驱动器的季度年化故障率入手。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739895295-4-Quarterly-3-Year-AFR-by-Drive-Size.png" alt="1739895295-4-Quarterly-3-Year-AFR-by-Drive-Size" loading="lazy"></p>
+<p>让我们来探讨不同硬盘容量及其对整体年度故障率随时间变化的影响。</p>
+<p><strong>故障影响极小。</strong> 过去一年里，4TB（蓝色线）硬盘和 10TB（金色线）硬盘对整体故障率的影响微乎其微，因为每个硬盘在年底时数量都相对较少。尽管如此，10TB 硬盘带来的陡峭曲线仍让我们的数据中心技术人员时刻保持警惕。</p>
+<p><strong>旧硬盘仍然可用。</strong> 8TB（灰色线）硬盘和 12TB（紫色线）硬盘的使用年限在五到八年之间，因此它们的整体故障率应会随着时间的推移而增加。12TB 硬盘的故障率从 2021 年的约 1%上升到 2024 年的约 3%，符合这一趋势。而 8TB 硬盘的故障率虽然季度间波动较大，但在同一时期内的趋势线几乎保持平稳。</p>
+<p><strong>主力硬盘依旧强劲。</strong> 14TB（绿色线）和 16TB（天蓝色线）驱动器占在用驱动器总数的 57%，平均使用年限在 2 到 4 年之间。它们正处于最佳工作状态。因此，它们的故障率应该低且稳定，正如您所看到的，情况确实如此。</p>
+<p><em>°可能天蓝色并不完全合适，但用知更鸟蛋蓝去表示似乎有些炫耀。</em></p>
+<p><strong>存储块上了新的硬盘。</strong> 22TB（橙色线）硬盘驱动器刚刚开始投入使用，我们正在持续定期增加更多硬盘驱动器。随着驱动器数量的稳定，我们将对 AFR 趋势有更深入的了解。尽管如此，目前的结果依然令人满意，终身 AFR 仅为 1.06%。</p>
+<h3 id="制造商与年化故障率的相关性">制造商与年化故障率的相关性</h3>
+<p>我们可以按制造商归类这些数据，这是下面我们所做的更受欢迎的方法之一。这样的方式可以让我们更直观地了解数据。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739895746-5-Quarterly-3-Year-AFR-by-MFG.png" alt="1739895746-5-Quarterly-3-Year-AFR-by-MFG" loading="lazy"></p>
+<p>为了完整呈现，下方的图表采用了相同的数据，但仅展示了各制造商在相同三年间的线性趋势线，使内容更加自然易懂。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739895775-6-Quarterly-3-year-Trendlines-by-MFG.png" alt="1739895775-6-Quarterly-3-year-Trendlines-by-MFG" loading="lazy"></p>
+<p><strong>HGST（日立）。</strong> 尽管 HGST 的趋势线看起来并不理想，但这并不能完全反映整个情况。从第一张图表来看，截至 2023 年第四季度，HGST 的硬盘在所有制造商的硬盘故障率中，都处于平均水平或以下。在那之后，HGST 的硬盘故障率已经开始超过平均水平，并且还有所上升。下表列出了 2024 年 HGST 驱动器的具体结果，我们已根据 2024 年的 AFR 值从高到低进行了排序。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739895948-7-HGST-2024-AFR.png" alt="1739895948-7-HGST-2024-AFR" loading="lazy"><br>
+如您所见，有两个 12TB 硬盘型号导致了 HGST 硬盘的高年化故障率。HUH721212ALN604 型号从 2023 年第一季度开始显示出季度 AFR 上升的迹象，而 HUH721212ALE604 型号则在 2024 年第三季度也呈现上升势态。若没有这些硬盘型号，HGST 硬盘在 2024 年的 AFR 将降至 0.55%。</p>
+<p><strong>希捷。</strong> 2022 年至 2024 年间，希捷硬盘的季度 AFR 趋势线有所下降。尽管下降幅度不大，从 2.25%降至 2.0%，但希捷公司是唯一一家实现这一变化的硬盘制造商。这种下降至少部分原因是在该期间移除了 4TB 容量的硬盘。</p>
+<p><strong>东芝。</strong> 在 2022 年至 2024 年期间，东芝驱动器型号的季度 AFR 值在 0.80%至 1.52%之间波动，大多数季度略高于 1.2%。最关键的是，没有任何一个型号出现异常，东芝硬盘整体的最高季度 AFR 仅为 1.58%。我们喜欢这种稳定性。</p>
+<p><strong>西部数据。</strong> 尽管西部数据的硬盘与东芝的在一致性水平上相当，它们每个季度都达到了更低的 AFR 值。2022 年至 2024 年间，西部数据硬盘整体的季度 AFR 值波动在 0.0%至 0.85%之间。2022 年第一季度，AFR 值为 0.0%，当时服役中的 12,207 个 西部数据硬盘在该季度均未出现故障。</p>
+<h3 id="硬盘服役全时间段统计数据">硬盘服役全时间段统计数据</h3>
+<p>截至 2024 年底，Backblaze 正在监控用于存储数据的 301,120 块硬盘。根据上述硬盘寿命标准，我们排除了 11 个型号的 2,736 块硬盘，因为它们不符合我们设定的寿命标准。这样，我们剩下 298,230 块硬盘，分布在 25 个不同的硬盘型号中。下表展示了这些硬盘的全时间段的年化平均故障率（AFR）。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739896349-8-Lifetime-AFR.png" alt="1739896349-8-Lifetime-AFR" loading="lazy"></p>
+<p>当前所有在役硬盘的平均年化故障率（AFR）为 1.31%，较 2023 年的 1.46%有所下降。这种下降主要是由于 2024 年完成了 4TB 希捷驱动器的迁移，截至 2024 年底，我们仅剩两个此类型号的硬盘仍在服役。因此，截至 2023 年底，4TB 希捷驱动器累计的 7900 万驱动器日和超过 5600 次驱动器故障并未体现在上述 2024 年寿命表中。</p>
+<p>在下方的最终表格中，我们根据服役全周期的 AFR 值在 1.50%或以下的标准，对图表进行了排序，并按硬盘容量对硬盘型号进行倒序整理。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739896469-9-Best-Lifetime-AFR.png" alt="1739896469-9-Best-Lifetime-AFR" loading="lazy"></p>
+<p>在您审阅表格时，请注意以下几点：</p>
+<ul>
+<li>每个型号都有足够的数据表明 AFR 值是稳定的。然而，一切都有可能随时改变。通常，硬盘的故障率会随着硬盘的衰老而遵循浴盆曲线，除了个别型号。有些硬盘在老化过程中不会出现故障，例如 4TB 的 HGST 硬盘。而有些硬盘一开始表现不错，但最终“触底”并迅速拉高故障率曲线。</li>
+<li>一款年化故障率为 1%的硬盘意味着在一年内，每 100 个硬盘中有 1 个可能会出现故障。如果你是个人用户，那么这个可能故障的硬盘可能是你的。如果你只有一台硬盘，那么你的个人年化故障率就是 100%。换句话说，一定要备份，并且别忘了检查备份是否可用。</li>
+</ul>
+<h3 id="该转变了">该转变了</h3>
+<p>我（Andy Klein，该报告原作者）已连续十年撰写各种硬盘统计数据报告，这将是我的最后一篇。我将退休，或许用硬盘数据的话来说，就是“该迁移数据了”。无论如何，在美军空军服役 10 年以及硅谷科技界 30 多年后，现在是时候了。从 2025 年第一季度报告起，硬盘统计报告将由 Stephanie Doyle 和 David Johnson 接任。我祝愿他们一切顺利。</p>
+<p>我想对每一位抽出宝贵时间阅读和参与过去 10 年硬盘统计报告和数据的人表示衷心感谢。同时，也要感谢大家在各个关心硬盘这样既普通又伟大事物的社区中展开的评论、提问和讨论。这是一段非常精彩的旅程——再次感谢！</p>
+<h3 id="硬盘统计数据信息">硬盘统计数据信息</h3>
+<p>本报告创建表格和图表所使用的完整数据集可在我们的硬盘测试数据页面免费获取。您可免费下载并用于个人用途。我们仅提三点要求：1）若您使用数据，请将 Backblaze 列为数据来源；2）您需自行承担数据使用的责任；3）不得将数据本身出售给他人；数据免费。</p>
+<p>祝你一切顺利，如果有什么有趣的发现，别忘了告诉我们哦。</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.laomao.icu/post/2024-07-new-bangumi/" class="post-title gt-a-link">
+                    【看番】2024年7月追番列表
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">致你，也致我</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        <footer class="footer">
+    <div>
+        当前博客已在风雨中运行了：<span id="run-time"></span>
+    </div>
+    <div>
+<a href="https://icp.gov.moe/?keyword=20240422" target="_blank">萌ICP备20240422号</a>
+    </div>
+    <div>
+        <a href="https://anilive.nekoss.cn" target="_blank">AniLive放映室</a>
+        <span class="footer-line">|</span>
+        <a href="https://docs.qq.com/sheet/DQkxpQWxNbUVjQ1pE?tab=w90ppb" target="_blank">AniLive资料库</a>
+    </div>
+</footer>
+<script>
+    function updateRunTime() {
+        // 设置建站时间 (2020年4月21日15时22分00秒)
+        const startDate = new Date('2020-04-21T15:22:00');
+        const now = new Date();
+
+        // 计算时间差
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        // 处理借位
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+        if (days < 0) {
+            // 获取上一个月的总天数
+            const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += lastMonth.getDate();
+            months--;
+        }
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        // 将结果显示到页面上
+        const runTimeSpan = document.getElementById('run-time');
+        if (runTimeSpan) { // 检查元素是否存在
+             runTimeSpan.textContent = `${years}年${months}月${days}日${hours}时${minutes}分${seconds}秒`;
+        }
+    }
+
+    // 每秒钟更新一次时间
+    setInterval(updateRunTime, 1000);
+
+    // 页面加载时立即执行一次，避免初始空白
+    document.addEventListener('DOMContentLoaded', updateRunTime);
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d469c8abcec4b3e8c08c104d727b9b1"}'></script><!-- End Cloudflare Web Analytics -->
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://blog.laomao.icu/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

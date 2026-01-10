@@ -1,0 +1,402 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>
+  【转载】FFMpeg 耻辱柱 | 猫の博客
+</title>
+
+<link rel="shortcut icon" href="https://blog.laomao.icu/favicon.ico?v=1768043901498">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.laomao.icu/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+  integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            猫の博客
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    分类
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1768043901498"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    【转载】FFMpeg 耻辱柱
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-03-25 ·
+                    </time>
+                    
+                        <a href="https://blog.laomao.icu/tag/jt3q8SBOeU/" class="post-tags">
+                            # 转载
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <blockquote>
+<p>FFmpeg是一套可以用来记录、转换数字音频、视频，并能将其转化为流的开源计算机程序。采用LGPL或GPL许可证。</p>
+</blockquote>
+<!-- more -->
+<p>可能很多朋友知道，现在市面上很多视频编辑软件、本地播放器、浏览器、甚至是编码格式等等都使用到了FFmpeg。<br>
+FFmpeg被许多开源项目采用，比如ffmpeg2theora,VLC, MPlayer, HandBrake, Blender, Google Chrome等。还有DirectShow/VFW的ffdshow(external project)和QuickTime的Perian (external project)也采用了FFmpeg。<br>
+也可能有朋友知道FFmpeg官方有个叫“耻辱柱(Hall Of Shame)”的东西，FFmpeg官方会将发现的那些不遵守开源协议（LGPL或GPL许可证）的软件或其母公司公诸于世。<br>
+由于FFmpeg是在LGPL/GPL协议下发布的（如果使用了其中一些使用GPL协议发布的模块则必须使用GPL协议），任何人都可以自由使用，但必须严格遵守LGPL/GPL协议。有很多播放软件都使用了FFmpeg的代码，但它们并没有遵守LGPL/GPL协议，没有公开任何源代码。我们应该对这种侵权行为表示耻辱。<br>
+虽然没有物质上的惩罚，FFmpeg耻辱柱更多的是一种精神层面的降维打击。这东西虽然对于普罗大众来说没什么用处，但是在这里我还是想来做个记录者……</p>
+<ul>
+<li><a href="https://github.com/FFmpeg/web/blob/master/src/shame">官方Github</a></li>
+</ul>
+<h2 id="官方正文">官方正文</h2>
+<p>Shame page will be offline until entries are updated.</p>
+<p>This is a list of projects or companies violating FFmpeg’s license. The list<br>
+is part of an effort to get them to comply with the licensing terms by shaming<br>
+them in public.</p>
+<p>A good way to help us is to link to this page, thereby boosting its<br>
+pagerank, possibly near or past the homepage of the offender. We discourage<br>
+you from using or buying the software listed here, unless you do so to pester<br>
+its producers and demand that they comply with the license of FFmpeg.</p>
+<p>Our issue tracker also contains a list of<br>
+<a href="https://trac.ffmpeg.org/report/1">license violations</a>.<br>
+If you become aware of license infringements, please notify us on the<br>
+<a href="contact.html">ffmpeg-devel mailing list</a> and/or add<br>
+it to our<br>
+<a href="https://trac.ffmpeg.org/">issue tracker</a>.</p>
+<p>(in alphabetical order)</p>
+<ul>
+<li><a href="http://www.alivemedia.net/">alive</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1160">issue tracker entry</a></li>
+<li><a href="http://www.alloksoft.com/">Alloksoft</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue438">issue tracker entry</a></li>
+<li><a href="http://www.amrplayer.com/">AMR Player</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1070">issue tracker entry</a></li>
+<li><a href="http://anvsoft.com/">AnvSoft</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1246">issue tracker entry</a>,<br>
+reproduced 2009-11-03</li>
+<li><a href="http://www.any-video-converter.com/">Any DVD/Video Converter</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue922">issue tracker entry</a>,<br>
+reproduced 2009-11-03</li>
+<li><a href="http://www.aone-media.com/">Aone</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1308">issue tracker entry</a>,<br>
+reproduced 2009-11-14</li>
+<li><a href="http://www.tomp4.com/html/videoconverter.html">Aplus Video Converter</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1213">issue tracker entry</a></li>
+<li><a href="http://applian.com/replay-converter/index.php">Applian Replay Converter</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue110">issue tracker entry</a></li>
+<li><a href="http://www.avcware.com/">AVCWare</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue932">issue tracker entry</a></li>
+<li><a href="http://www.avs4you.com/AVS-Video-Converter.aspx">AVS Video Converter</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue733">issue tracker entry</a></li>
+<li><a href="http://www.alltoaudio.com/">Aya Media Techologies</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue930">issue tracker entry</a></li>
+<li><a href="http://www.baofeng.com/">Baofeng Storm(暴风影音)</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue866">issue tracker entry</a>,<br>
+reproduced 2009-11-03</li>
+<li><a href="http://www.cinemaforge.com/">CinemaForge</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue933">issue tracker entry</a></li>
+<li><a href="http://potplayer.daum.net/">Daum tv PotPlayer(姜龙喜“力作”)</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue2112">issue tracker entry</a>,<br>
+reproduced 2010-11-03</li>
+<li><a href="http://www.doremilabs.com/v1control.html">Doremi Asset Manager</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue727">issue tracker entry</a></li>
+<li><a href="http://www.downloadhelper.net/install-converter.php">DownloadHelper ConvertHelper</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1096">issue tracker entry</a>,<br>
+reproduced 2009-11-04</li>
+<li><a href="http://www.dvdfab.com/">DVDFab</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue382">issue tracker entry</a></li>
+<li><a href="http://www.dvdxdv.com/">DVDxDV</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1105">issue tracker entry</a></li>
+<li><a href="http://www.eatcam.com/">EatCam</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1513">issue tracker entry</a>,<br>
+reproduced 2009-11-03</li>
+<li><a href="http://www.effectmatrix.com/">EffectMatrix Software</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue456">issue tracker entry</a></li>
+<li><a href="http://www.eztoosoft.com/">Eztoo</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue828">issue tracker entry</a></li>
+<li><a href="http://www.formatoz.com/">Format Factory(格式工厂)</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1214">issue tracker entry</a></li>
+<li><a href="http://www.winxdvd.com/">FreeTime Soft</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue722">issue tracker entry</a></li>
+<li><a href="http://www.sourcemac.com/?page=fstream&amp;lang=en">FStream</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1471">issue tracker entry</a>,<br>
+reproduced 2009-11-03</li>
+<li><a href="http://www.geovid.com/">GeoVid</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue918">issue tracker entry</a></li>
+<li><a href="http://www.getflv.net/index.html">GetFLV</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1085">issue tracker entry</a></li>
+<li><a href="http://www.gomlab.com/">GOM Player</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue112">issue tracker entry</a></li>
+<li><a href="http://www.h264encoder.com/">H264Encoder.com</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue787">issue tracker entry</a></li>
+<li><a href="http://www.imtoo.com/">ImTOO</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1311">issue tracker entry</a>,<br>
+reproduced 2009-11-14</li>
+<li><a href="http://www.iskysoft.net/">iSkysoft</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue927">issue tracker entry</a></li>
+<li><a href="http://www.kmplayer.com/forums/">The KMPlayer(姜龙喜在PotPlayer之前的作品)</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue820">issue tracker entry</a></li>
+<li><a href="http://www.koyotesoft.com/">Koyote Software</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue931">issue tracker entry</a></li>
+<li><a href="www.livestation.com">Livestation</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue920">issue tracker entry</a></li>
+<li><a href="http://www.alldj.com/">MasterSoft Inc.</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue723">issue tracker entry</a></li>
+<li><a href="http://mediacoderhq.com/">MediaCoder(国外知名格式转换工具)</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1162">issue tracker entry</a></li>
+<li><a href="http://www.moyea.com/">Moyea</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue926">issue tracker entry</a></li>
+<li><a href="http://www.mp4converter.net/dvd-to-appletv-converter-mac.html">MP4Converter</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue111">issue tracker entry</a></li>
+<li><a href="http://www.netgem.com/">Netgem</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue678">issue tracker entry</a></li>
+<li><a href="http://www.opellsoft.com/">Opell Video Converter Pro</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue493">issue tracker entry</a></li>
+<li><a href="http://liveradio.orange.fr/">Orange Liveradio</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1502">issue tracker entry</a></li>
+<li><a href="http://www.themediamall.com/playon/">PlayOn</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1403">issue tracker entry</a></li>
+<li><a href="http://www.powerpoint-dvd-converter.com/">PowerPoint DVD Converter(著名DVD文件提取工具)</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue924">issue tracker entry</a></li>
+<li><a href="http://www.presentersoft.com/">PresenterSoft</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue925">issue tracker entry</a></li>
+<li><a href="http://player.qzone.qq.com/">QQPlayer(QQ影音)</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1519">issue tracker entry</a>,<br>
+reproduced 2009-11-04</li>
+<li><a href="http://www.redkawa.com/">Red Kawa</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue923">issue tracker entry</a></li>
+<li><a href="http://www.riptiger.com/">RipTiger</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1450">issue tracker entry</a>,<br>
+reproduced 2009-11-03</li>
+<li><a href="http://www.rhozet.com/carbon_coder.html">Rhozet Carbon Coder</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue484">issue tracker entry</a>,<br>
+reproduced 2009-09-18</li>
+<li><a href="http://sagetv.com/">SageTV</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue2375">issue tracker entry</a>,<br>
+reproduced 2011-01-03</li>
+<li><a href="http://www.cctvhw.com/english/">ShenZhen Hawell</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue513">issue tracker entry</a></li>
+<li><a href="http://www.skypecap.com/">SkypeCap</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue321">issue tracker entry</a></li>
+<li><a href="http://www.softservice.org/products_flashcam.html">Soft Service, Ltd. FlashCam</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue559">issue tracker entry</a></li>
+<li><a href="http://www.sothinkmedia.com/">SourceTec Software</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1158">issue tracker entry</a>,<br>
+reproduced 2009-11-04</li>
+<li><a href="http://www.video-convert-master.com/index.htm">Video Convert Master</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue413">issue tracker entry</a></li>
+<li><a href="http://vio.thepiratebay.org/">ViO mobile video converter</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue763">issue tracker entry</a></li>
+<li><a href="http://www.virtualdj.com/">VirtualDJ</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1412">issue tracker entry</a>,<br>
+reproduced 2009-11-04</li>
+<li><a href="http://www.mzys.cn/">WisMencoder</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1133">issue tracker entry</a></li>
+<li><a href="http://www.wondershare.com/">Wondershare(万兴格式转换工具)</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue928">issue tracker entry</a>,<br>
+reproduced 2009-11-14</li>
+<li><a href="http://www.xilisoft.com/">Xilisoft Video Converter</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue929">issue tracker entry</a>,<br>
+reproduced 2010-03-08</li>
+<li><a href="http://www.xlinksoft.com/">XlinkSoft</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1509">issue tracker entry</a>,<br>
+reproduced 2009-11-03</li>
+<li><a href="http://www.xmedia-recode.de/">XMedia Recode</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1144">issue tracker entry</a></li>
+<li><a href="http://www.zoiper.com/">ZoIPer</a>,<br>
+<a href="http://roundup.ffmpeg.org/roundup/ffmpeg/issue1045">issue tracker entry</a></li>
+</ul>
+<p>The companies below are not yet in full compliance, but we are in negotiations<br>
+with them and making good progress towards compliance.</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.laomao.icu/post/my-first-blog/" class="post-title gt-a-link">
+                    【日常】My First Blog
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">致你，也致我</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        <footer class="footer">
+    <div>
+        当前博客已在风雨中运行了：<span id="run-time"></span>
+    </div>
+    <div>
+<a href="https://icp.gov.moe/?keyword=20240422" target="_blank">萌ICP备20240422号</a>
+    </div>
+    <div>
+        <a href="https://anilive.nekoss.cn" target="_blank">AniLive放映室</a>
+        <span class="footer-line">|</span>
+        <a href="https://docs.qq.com/sheet/DQkxpQWxNbUVjQ1pE?tab=w90ppb" target="_blank">AniLive资料库</a>
+    </div>
+</footer>
+<script>
+    function updateRunTime() {
+        // 设置建站时间 (2020年4月21日15时22分00秒)
+        const startDate = new Date('2020-04-21T15:22:00');
+        const now = new Date();
+
+        // 计算时间差
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        // 处理借位
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+        if (days < 0) {
+            // 获取上一个月的总天数
+            const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += lastMonth.getDate();
+            months--;
+        }
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        // 将结果显示到页面上
+        const runTimeSpan = document.getElementById('run-time');
+        if (runTimeSpan) { // 检查元素是否存在
+             runTimeSpan.textContent = `${years}年${months}月${days}日${hours}时${minutes}分${seconds}秒`;
+        }
+    }
+
+    // 每秒钟更新一次时间
+    setInterval(updateRunTime, 1000);
+
+    // 页面加载时立即执行一次，避免初始空白
+    document.addEventListener('DOMContentLoaded', updateRunTime);
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d469c8abcec4b3e8c08c104d727b9b1"}'></script><!-- End Cloudflare Web Analytics -->
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://blog.laomao.icu/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

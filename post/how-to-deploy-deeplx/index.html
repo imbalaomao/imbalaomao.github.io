@@ -1,0 +1,274 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>
+  【技巧】搭建一个自己的deepl翻译 | 猫の博客
+</title>
+
+<link rel="shortcut icon" href="https://blog.laomao.icu/favicon.ico?v=1768043901498">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.laomao.icu/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+  integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            猫の博客
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    分类
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1768043901498"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    【技巧】搭建一个自己的deepl翻译
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-01-15 ·
+                    </time>
+                    
+                        <a href="https://blog.laomao.icu/tag/PgSXMmms6o/" class="post-tags">
+                            # 技巧
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="为什么搭建deeplx">为什么搭建DeepLX</h2>
+<p>现在市面上可选的翻译软件多种多样，传统的翻译软件有网易的有道翻译、字节跳动的火山翻译、谷歌的谷歌翻译、微软的Bing翻译等……基于LLM大模型的翻译可以调用Gemini、OpenAI等的API进行翻译，那么为什么要选择DeepL呢？</p>
+<ul>
+<li>
+<p>快速且准确的翻译（对比传统翻译器）<br>
+在我使用有道等进行翻译时，最常遇到的问题就是翻译准度不高（尤以非英文 to 中文翻译为甚），且通常存在漏翻问题（如碰到较为口语化的表达时）<br>
+<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vj7uud6zj20gb0k7n1w.jpg" alt="有道翻译例图" loading="lazy"><br>
+那么DeepL作为最先使用AI进行翻译模型训练的翻译器，自然相较于通用翻译会更加准确<br>
+<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vj86356cj20g40k9tdl.jpg" alt="DeepL翻译例图" loading="lazy"></p>
+</li>
+<li>
+<p>翻译速度较快，且基本不受并发数限制（对比LLM大模型翻译）<br>
+基于Gemini、OpenAI的翻译固然准确，可是其受限于API调用次数，不能在并发数较高的环境下完成翻译（如使用沉浸式翻译插件自动翻译推特）。相比之下，DeepL可以在保证一定的翻译准度的前提下，拥有不输传统翻译器的翻译速度。</p>
+</li>
+</ul>
+<p>然而其官方DeepL由于自身速度较慢，且有额度限制，不提供API等等缺点，容易劝退很多用户，DeepLX 在 GitHub开源，不限制请求次数（但 DeepL 可能会限制 IP）默认情况下监听本地 1188 端口。提供多种安装方式。</p>
+<h2 id="如何搭建deeplx">如何搭建DeepLX</h2>
+<blockquote>
+<p>感谢原作者 <a href="https://github.com/OwO-Network/DeepLX">OwO-Network</a> 的辛勤付出</p>
+</blockquote>
+<h3 id="一键安装">一键安装</h3>
+<pre><code class="language-shell">bash &lt;(curl -Ls https://raw.githubusercontent.com/OwO-Network/DeepLX/main/install.sh)
+</code></pre>
+<p><strong>或者</strong></p>
+<pre><code class="language-shell">bash &lt;(curl -Ls https://owo.nz/deeplx)
+</code></pre>
+<h3 id="放行1188端口">放行1188端口</h3>
+<p>这一步在你的VPS服务商后台完成，各服务商放行方式不同，请自行搜索</p>
+<h3 id="测试">测试</h3>
+<p>访问 <code>ip:1188</code> 来进行测试，若返回 <code>code: 200 ok</code> 则表示搭建成功<br>
+<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vj8eol4uj20qs09ldhr.jpg" alt="搭建完成示例" loading="lazy"></p>
+<h2 id="在翻译插件里使用以沉浸式翻译为例">在翻译插件里使用（以沉浸式翻译为例）</h2>
+<ul>
+<li>
+<p>在沉浸式翻译的插件设置中，点击 <strong>开发者设置</strong> ，并开启Beta测试特性<br>
+<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vj8pvcbij20x20prafh.jpg" alt="" loading="lazy"><br>
+<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vj8yf9y6j20x60ntdkg.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>然后回到基础设置，翻译服务选择DeepLX（Beta），URL中填入自己搭建的服务URL，也就是 <code>[ip]:1188/translate</code><br>
+<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vj9i5kf5j20zk0pkqaq.jpg" alt="" loading="lazy"><br>
+<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vj9rrt99j20wq0nidkw.jpg" alt="" loading="lazy"></p>
+</li>
+</ul>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.laomao.icu/post/2023-10-bangumi-review/" class="post-title gt-a-link">
+                    【看番】2023年10月追番感想
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">致你，也致我</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        <footer class="footer">
+    <div>
+        当前博客已在风雨中运行了：<span id="run-time"></span>
+    </div>
+    <div>
+<a href="https://icp.gov.moe/?keyword=20240422" target="_blank">萌ICP备20240422号</a>
+    </div>
+    <div>
+        <a href="https://anilive.nekoss.cn" target="_blank">AniLive放映室</a>
+        <span class="footer-line">|</span>
+        <a href="https://docs.qq.com/sheet/DQkxpQWxNbUVjQ1pE?tab=w90ppb" target="_blank">AniLive资料库</a>
+    </div>
+</footer>
+<script>
+    function updateRunTime() {
+        // 设置建站时间 (2020年4月21日15时22分00秒)
+        const startDate = new Date('2020-04-21T15:22:00');
+        const now = new Date();
+
+        // 计算时间差
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        // 处理借位
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+        if (days < 0) {
+            // 获取上一个月的总天数
+            const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += lastMonth.getDate();
+            months--;
+        }
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        // 将结果显示到页面上
+        const runTimeSpan = document.getElementById('run-time');
+        if (runTimeSpan) { // 检查元素是否存在
+             runTimeSpan.textContent = `${years}年${months}月${days}日${hours}时${minutes}分${seconds}秒`;
+        }
+    }
+
+    // 每秒钟更新一次时间
+    setInterval(updateRunTime, 1000);
+
+    // 页面加载时立即执行一次，避免初始空白
+    document.addEventListener('DOMContentLoaded', updateRunTime);
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d469c8abcec4b3e8c08c104d727b9b1"}'></script><!-- End Cloudflare Web Analytics -->
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://blog.laomao.icu/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

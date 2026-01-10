@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.laomao.icu</id>
+    <title>猫の博客</title>
+    <updated>2026-01-10T11:18:26.460Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.laomao.icu"/>
+    <link rel="self" href="https://blog.laomao.icu/atom.xml"/>
+    <subtitle>致你，也致我</subtitle>
+    <logo>https://blog.laomao.icu/images/avatar.png</logo>
+    <icon>https://blog.laomao.icu/favicon.ico</icon>
+    <rights>All rights reserved 2026, 猫の博客</rights>
+    <entry>
+        <title type="html"><![CDATA[【科学上网】个人推荐的软件]]></title>
+        <id>https://blog.laomao.icu/post/recommended-proxy-software/</id>
+        <link href="https://blog.laomao.icu/post/recommended-proxy-software/">
+        </link>
+        <updated>2026-01-10T09:04:13.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本推荐从 <a href="https://www.haitunt.org/app.html">海豚机场测速</a> 结合本人使用情况修改而来，不求多但求精，如需要多软件对比，请查看原文章。</p>
+</blockquote>
+<h2 id="windows">🪟 Windows</h2>
+<p><strong>FlClash</strong></p>
+<ul>
+<li>优点：
+<blockquote>
+<ul>
+<li>✅Flutter 编写</li>
+<li>✅UI 简单易上手</li>
+<li>✅运行轻量稳定</li>
+<li>✅完整覆盖基础功能和基本覆写（仅支持 javascript 语言）</li>
+<li>✅自带配置编辑器、DNS 覆写、规则覆写（图形化添加规则）</li>
+<li>✅支持 WebDAV 配置多端同步功能</li>
+</ul>
+</blockquote>
+</li>
+<li>缺点：
+<blockquote>
+<ul>
+<li>❌UI风格偏手机化，部分操作反桌面端直觉（如策略组过多时，需拖动切换策略组，或点击最右侧小箭头才可快速切换）</li>
+<li>❌无法替换内核（采用 flclash 自编译内核）</li>
+<li>❌不支持 Smart 规则组（由于原版 Mihomo 内核不支持）</li>
+<li>❌不支持 YAML 覆写（但可以让 AI 将 YAML 覆写修改为 JS 格式）</li>
+<li>❌不支持便携化（默认配置存放在 <code>%appdata%\com.follow\clash</code> ）</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>下载地址：<a href="https://github.com/chen08209/FlClash/releases/latest">https://github.com/chen08209/FlClash/releases/latest</a></p>
+<p><strong>Clash Mi</strong></p>
+<ul>
+<li>优点：
+<blockquote>
+<ul>
+<li>✅小白友好软件（无覆写功能，主打开箱导入即用）</li>
+<li>✅支持便携模式（配置文件存放在程序目录中，可以打包带走）</li>
+</ul>
+</blockquote>
+</li>
+<li>缺点：
+<blockquote>
+<ul>
+<li>❌无法直观看到各策略组对应使用节点情况</li>
+<li>❌不支持覆写功能，想自定义规则只能采用节点转换工具</li>
+<li>❌无法替换内核（内核与主程序写死在一起）</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>下载地址：<a href="https://github.com/KaringX/clashmi/releases/latest">https://github.com/KaringX/clashmi/releases/latest</a></p>
+<h2 id="android-安卓">🤖 Android 安卓</h2>
+<p><strong>FlClash</strong></p>
+<ul>
+<li>优点：
+<blockquote>
+<ul>
+<li>✅UI简单易上手</li>
+<li>✅运行轻量稳定</li>
+<li>✅支持 Javascript 语言覆写功能（相对于 CMFA 等老牌软件）</li>
+<li>✅自带配置编辑器、DNS覆写、规则覆写（图形化添加规则）</li>
+<li>✅支持 WebDAV 配置多端同步功能，可实现电脑修改配置、手机同步应用</li>
+</ul>
+</blockquote>
+</li>
+<li>缺点：
+<blockquote>
+<ul>
+<li>❌不支持 YAML 覆写（但可以让 AI 将 YAML 覆写修改为 JS 格式）</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>下载地址：<a href="https://github.com/chen08209/FlClash/releases/latest">https://github.com/chen08209/FlClash/releases/latest</a></p>
+<h2 id="ios">🍎 iOS</h2>
+<p><strong>Loon</strong></p>
+<ul>
+<li>优点：
+<blockquote>
+<ul>
+<li>✅生态较为良好，去广告插件齐全（但主要为可莉大佬编写）</li>
+<li>✅拥有“逻辑分流规则（AND/OR）”，对于复杂规则兼容性强</li>
+<li>✅UI较为直观，许多配置可通过图形化界面直接配置</li>
+</ul>
+</blockquote>
+</li>
+<li>缺点：
+<blockquote>
+<ul>
+<li>❌多数插件较为封闭，无法用于其他软件中（lpx后缀）</li>
+<li>❌相对QX、Shadowrocket等软件较容易出现断流问题（尤其是开启IPV6后），目前无解</li>
+<li>❌对于新协议（AnyTLS、XHTTP等）跟进速度慢，适合机场党</li>
+<li>❌价格相对较高（$7.99），对比Shadowrocket无明显</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>购买地址：<a href="https://apps.apple.com/app/loon/id1373567447">https://apps.apple.com/app/loon/id1373567447</a></p>
+<p><strong>Shadowrocket</strong></p>
+<ul>
+<li>优点：
+<blockquote>
+<ul>
+<li>✅新手最友好的软件，上手非常简单</li>
+<li>✅最便宜的 iOS 代理工具（$2.99），且支持多人共享</li>
+<li>✅代理协议追新速度最快，已支持 XHTTP、AnyTLS 等新协议</li>
+<li>✅兼容大部分 Surge 模块</li>
+<li>✅可通过导入配置等方式修改软件皮肤</li>
+</ul>
+</blockquote>
+</li>
+<li>缺点：
+<blockquote>
+<ul>
+<li>❌模块规则设置逻辑略反直觉（尤其是配置中包含增强脚本的情况下）</li>
+<li>❌多配置 MITM 无法共用证书，需重新配置</li>
+<li>❌设置较为繁琐，每一步做完都需要转一会圈，因此建议自行改写好配置后直接导入，不然调整设置很累</li>
+<li>❌模块和插件并不算丰富，且一些 Surge 插件无法完美兼容</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>购买地址：<a href="https://apps.apple.com/app/shadowrocket/id932747118">https://apps.apple.com/app/shadowrocket/id932747118</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【科学上网】个人使用机场推荐]]></title>
+        <id>https://blog.laomao.icu/post/airport-recommendation/</id>
+        <link href="https://blog.laomao.icu/post/airport-recommendation/">
+        </link>
+        <updated>2026-01-09T15:13:57.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>从2016年以来也陆续用过不少机场和VPN，但是我记性又很差，经常重复踩坑，所以在这里记录一下，也是给来者的推荐吧。排序按照推荐度进行。<br>
+另外，一定要先搞清自己的需求（高速稳定、使用频率、线路解锁情况），再看自己的预算，酌情购买。所有机场均推荐月付，推荐月付，推荐月付！</p>
+<h1 id="机场推荐">机场推荐</h1>
+<h2 id="红杏"><a href="https://wwd.h86x.com/#/register?code=zD2z16Jf">红杏</a></h2>
+<p><strong>评</strong><br>
+开了17年的老机场（截止2026，机场主是这么说的），目前整体为深电113线路（与奶昔入口一致），属于高端配置中端价格。但TOS较为严格，不得安装任何国产安全软件（包括360、金山、火绒等），有自主客户端（基于Clash Foss内核）</p>
+<p><strong>价</strong></p>
+<table>
+<thead>
+<tr>
+<th>套餐名</th>
+<th>价格/付款周期</th>
+<th>流量/周期</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>轻量版</td>
+<td>￥29.99/月</td>
+<td>128G/月</td>
+<td>无</td>
+</tr>
+<tr>
+<td>专业版</td>
+<td>￥49.99/月</td>
+<td>256G/月</td>
+<td>无</td>
+</tr>
+<tr>
+<td>旗舰版</td>
+<td>￥69.99/月</td>
+<td>512G/月</td>
+<td>无</td>
+</tr>
+<tr>
+<td>企业版</td>
+<td>￥899.99/季</td>
+<td>1024G/月</td>
+<td>无</td>
+</tr>
+<tr>
+<td>迷你版</td>
+<td>￥59.99/季</td>
+<td>32G/月</td>
+<td>无</td>
+</tr>
+<tr>
+<td>传家宝X</td>
+<td>￥899.99/三年</td>
+<td>170G/月</td>
+<td>2026年最后一次销售，流量为“周年数 * 10G”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prprcloud"><a href="https://prpr.96110.cn.com/aff.php?aff=13527">PrPrCloud</a></h2>
+<p><strong>评</strong><br>
+2018年开始运营的机场，机场主肉身在香港，人称“港仔”，会经常在群内发女装照片，整体质量还是不错，属于平价机场中质量很高的一档（懒人节点经常挂，建议使用台湾、新加坡等节点，避免线路拥挤）。套餐流量从250G到1000G可随意调整，价格会跟随变化的。</p>
+<p><strong>价</strong></p>
+<table>
+<thead>
+<tr>
+<th>套餐名</th>
+<th>价格/付款周期</th>
+<th>流量/周期</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ordinary Access</td>
+<td>15/月</td>
+<td>250G/月</td>
+<td>可调整</td>
+</tr>
+</tbody>
+</table>
+<h2 id="守候网络"><a href="https://ncdn1.sntp.uk/auth/register?code=5CeJVDnW">守候网络</a></h2>
+<p><strong>评</strong><br>
+性价比机场的另一个高质量推荐（相对低价机场来说还是会贵一点，但整体质量不错），还带自有Emby服务器，资源量尚可，曾有很多限时限量套餐，但我入手较晚所以知晓不全面。</p>
+<p><strong>价</strong></p>
+<table>
+<thead>
+<tr>
+<th>套餐名</th>
+<th>价格/付款周期</th>
+<th>流量/周期</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lite Connect</td>
+<td>￥18/月</td>
+<td>100G/月</td>
+<td>带普通Emby</td>
+</tr>
+<tr>
+<td>Core Essentials</td>
+<td>￥28/月</td>
+<td>200G/月</td>
+<td>带普通Emby</td>
+</tr>
+<tr>
+<td>Plus Advantage</td>
+<td>￥38/月</td>
+<td>350G/月</td>
+<td>带普通Emby</td>
+</tr>
+<tr>
+<td>Max Infinity</td>
+<td>￥48/月</td>
+<td>500G/月</td>
+<td>带普通Emby</td>
+</tr>
+<tr>
+<td>Premium</td>
+<td>￥968/年</td>
+<td>1000G/月</td>
+<td>带Pre Emby</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong><br>
+守候的Pre套餐并非传说中那么神奇，只是相对其他机场来说比较稳定而已，为了高端线路其实不如去买TAG、Imm等</p>
+<h2 id="bitznet">Bitznet</h2>
+<p><strong>评</strong><br>
+从DuangKS的机场推荐网站中看到的，整体用下来还算稳定，价格也还合理，且有自己的客户端（基于Clash Premium内核）。只是IP质量比较差，甚至存在香港IP被Cloudflare经常弹人机验证的问题。</p>
+<p><strong>价</strong></p>
+<table>
+<thead>
+<tr>
+<th>套餐名</th>
+<th>价格/付款周期</th>
+<th>流量/周期</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>核心访问</td>
+<td>￥119.99/季</td>
+<td>400G/月</td>
+<td>最推荐</td>
+</tr>
+<tr>
+<td>边缘访问</td>
+<td>￥69.99/季</td>
+<td>80G/月</td>
+<td>不常用</td>
+</tr>
+<tr>
+<td>深度访问</td>
+<td>￥199.99/季</td>
+<td>1000G/月</td>
+<td>重度用推荐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ytoo">YToo</h2>
+<p><strong>评</strong><br>
+2019年开始运营，整体还不错的一家机场，拥有0.2倍率节点和不少冷门节点，解锁也相对全面，速度不算特别快，但贵在稳定</p>
+<p><strong>价</strong></p>
+<table>
+<thead>
+<tr>
+<th>套餐名</th>
+<th>价格/付款周期</th>
+<th>流量/周期</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AIR</td>
+<td>￥98/年</td>
+<td>15GB/月</td>
+<td>仅年付</td>
+</tr>
+<tr>
+<td>BASIC</td>
+<td>￥36/月</td>
+<td>200GB/月</td>
+<td>可月付</td>
+</tr>
+<tr>
+<td>PLUS</td>
+<td>￥54/月</td>
+<td>400GB/月</td>
+<td>可月付</td>
+</tr>
+<tr>
+<td>PRO</td>
+<td>￥108/月</td>
+<td>1000GB/月</td>
+<td>可月付</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【分享】IDM的替代品们]]></title>
+        <id>https://blog.laomao.icu/post/fen-xiang-idm-de-ti-dai-pin-men/</id>
+        <link href="https://blog.laomao.icu/post/fen-xiang-idm-de-ti-dai-pin-men/">
+        </link>
+        <updated>2025-08-24T13:45:28.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>IDM目前国内的代理商据说已变成 <a href="https://www.zhihu.com/question/46746200">思杰马克丁</a>，其流氓级的代理和对盗版的坚决打击闻名遐迩，因此我们需要有一个IDM的替代来更好的下载文件</p>
+<h1 id="仅下载">仅下载</h1>
+<blockquote>
+<p>如果您只有多线程下载需求，而无IDM的嗅探功能需求，则这里的几个软件比较适合您</p>
+</blockquote>
+<ul>
+<li>
+<p>Chrome（打开多线程下载）<br>
+根据 <a href="https://iknow.lenovo.com.cn/spider/detail/kd/206448">这个教程</a>，打开Edge或Chrome的多线程下载功能</p>
+</li>
+<li>
+<p>Gopeed<br>
+官网：https://gopeed.com/zh-CN<br>
+Go语言写的下载器，支持自行开发插件（如B站下载插件、YouTube下载插件、百度网盘下载插件等）</p>
+</li>
+<li>
+<p>XDown<br>
+官网：https://xdown.org/<br>
+UI很像qbittorrent的下载器，支持BT下载，支持配合百度网盘插件实现高速下载</p>
+</li>
+</ul>
+<h1 id="需要嗅探功能">需要嗅探功能</h1>
+<blockquote>
+<p>如果你需要音视频嗅探功能，则这个软件一定很适合你</p>
+</blockquote>
+<ul>
+<li>文件蜈蚣<br>
+官网：https://w.filecxx.com/40776<br>
+支持HTTP下载、BitTorrent客户端、WebDAV客户端、FTP客户端、和SSH客户端，和网页浏览器进行集成, 你可以从网页上下载音频和视频, 甚至是加密视频.<br>
+高级版注册码也是可以免费领取的，后续付费我觉得也要比IDM良心一些。</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【AniLive】安卓系统使用“雨见浏览器”教程]]></title>
+        <id>https://blog.laomao.icu/post/yujian-browser/</id>
+        <link href="https://blog.laomao.icu/post/yujian-browser/">
+        </link>
+        <updated>2025-06-29T13:48:33.000Z</updated>
+        <content type="html"><![CDATA[<p>请移步 <a href="https://nekoss.cn/anilive-faq">AniLive教程</a> 页面</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【技巧】如何调整irfanview的窗口位置]]></title>
+        <id>https://blog.laomao.icu/post/ji-qiao-ru-he-diao-zheng-irfanview-de-chuang-kou-wei-zhi/</id>
+        <link href="https://blog.laomao.icu/post/ji-qiao-ru-he-diao-zheng-irfanview-de-chuang-kou-wei-zhi/">
+        </link>
+        <updated>2025-06-29T13:46:35.000Z</updated>
+        <content type="html"><![CDATA[<p>由于IrfanView默认设置，每次打开图片窗口都会在屏幕最左边，其实还是挺烦的，不过根据 <strong><a href="https://www.irfanview.net/faq.htm">官方FAQ</a></strong>，在设置中点击“查看”--“窗口模式”--“使图像适合窗口”即可</p>
+<figure data-type="image" tabindex="1"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i94ts4x6asj20vn02k77d.jpg" alt="image.png" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【转载】使用Winsw部署Windows服务]]></title>
+        <id>https://blog.laomao.icu/post/winsw-deploy-server/</id>
+        <link href="https://blog.laomao.icu/post/winsw-deploy-server/">
+        </link>
+        <updated>2025-03-24T13:56:49.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>转载自<a href="https://segmentfault.com/a/1190000019520072">segmentfault - bluesbruce</a><br>
+软件仓库地址：https://github.com/kohsuke/winsw</p>
+</blockquote>
+<h2 id="安装说明">安装说明</h2>
+<ol>
+<li>下载winsw程序，选择对应版本。（WinSW.NET2.exe 或 WinSW.NET4.exe）</li>
+<li>安装.NET Framework。</li>
+<li>将WinSW.exe复制到自定义的目录，并重命名为test.exe</li>
+<li>同目录下创建test.xml。特别注意，xml和exe必须同名</li>
+<li>使用test.exe install安装服务。</li>
+<li>使用test.exe uninstall卸载服务。</li>
+</ol>
+<h3 id="示例以部署springboot程序为例">示例（以部署SpringBoot程序为例）</h3>
+<pre><code>&lt;configuration&gt;
+  &lt;id&gt;lance&lt;/id&gt;
+  &lt;name&gt;lance(winsw)&lt;/name&gt;
+  &lt;description&gt;java&lt;/description&gt;
+  &lt;executable&gt;java&lt;/executable&gt;
+  &lt;arguments&gt;-server -Xms400m -Xmx400m -Xmn100m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xverify:none -XX:+DisableExplicitGC -Djava.awt.headless=true -jar &quot;lance-1.2.0.jar&quot;&lt;/arguments&gt;
+  &lt;log mode=&quot;reset&quot;/&gt;
+&lt;/configuration&gt;
+</code></pre>
+<h2 id="命令说明">命令说明</h2>
+<pre><code>E:\service&gt;test.exe /?
+A wrapper binary that can be used to host executables as Windows services
+
+Usage: winsw [/redirect file] &lt;command&gt; [&lt;args&gt;]
+       Missing arguments trigger the service mode
+
+Available commands:
+- 'install'   - install the service to Windows Service Controller
+- 'uninstall' - uninstall the service
+- 'start'     - start the service (must be installed before)
+- 'stop'      - stop the service
+- 'restart'   - restart the service
+- 'restart!'  - self-restart (can be called from child processes)
+- 'status'    - check the current status of the service
+- 'test'      - check if the service can be started and then stopped
+- 'testwait'  - starts the service and waits until a key is pressed then stops the service
+- 'version'   - print the version info
+- 'help'      - print the help info (aliases: -h,--help,-?,/?)
+
+Extra options:
+- '/redirect' - redirect the wrapper's STDOUT and STDERR to the specified file
+
+WinSW 2.2.0.0
+More info: https://github.com/kohsuke/winsw
+Bug tracker: https://github.com/kohsuke/winsw/issues
+</code></pre>
+<h2 id="配置说明">配置说明</h2>
+<p>https://github.com/winsw/winsw/blob/master/doc/installation.md</p>
+<pre><code>&lt;!--
+ 这是Windows服务包装器的一个配置示例。
+ 此配置文件应放在WinSW.exe同目录，名称应相同。
+ 例如，对于myapp.exe，配置文件名应为myapp.xml。
+
+ 更多信息：https://github.com/kohsuke/winsw/blob/master/doc/xmlconfigfile.md
+--&gt;
+&lt;configuration&gt;
+  
+&lt;!-- 
+SECTION: 必填项
+--&gt;
+  
+  &lt;!-- 服务ID，在windows系统中必须唯一 --&gt;
+  &lt;id&gt;myapp&lt;/id&gt;
+  &lt;!-- 服务显示名称，只能英文和数字 --&gt;
+  &lt;name&gt;MyApp Service (powered by WinSW)&lt;/name&gt;
+  &lt;!-- 服务描述，只能英文和数字 --&gt;
+  &lt;description&gt;This service is a service cratead from a sample configuration&lt;/description&gt;
+  
+  &lt;!-- 启动可执行文件的路径 --&gt;
+  &lt;executable&gt;%BASE%\myExecutable.exe&lt;/executable&gt;
+
+&lt;!--
+SECTION: 安装
+这些选项仅在安装时有效。修改配置后，必须重新安装服务才能生效。
+--&gt;
+
+  &lt;!--
+    OPTION: serviceaccount
+    定义运行服务的账号。
+  --&gt;
+  &lt;!--
+  &lt;serviceaccount&gt;
+    &lt;domain&gt;YOURDOMAIN&lt;/domain&gt;
+    &lt;user&gt;useraccount&lt;/user&gt;
+    &lt;password&gt;Pa55w0rd&lt;/password&gt;
+    &lt;allowservicelogon&gt;true&lt;/allowservicelogon&gt;
+  &lt;/serviceaccount&gt;
+  --&gt;
+  
+  &lt;!--
+    OPTION: onfailure
+    定义一系列操作，如果托管的可执行文件失败，则顺序执行这些操作。
+    支持的操作：restart，reboot，none
+  --&gt;
+  &lt;!--
+  &lt;onfailure action=&quot;restart&quot; delay=&quot;10 sec&quot;/&gt;
+  &lt;onfailure action=&quot;restart&quot; delay=&quot;20 sec&quot;/&gt;
+  &lt;onfailure action=&quot;reboot&quot; /&gt;
+  --&gt;
+  
+  &lt;!--
+    OPTION: resetfailure
+    windows服务重置故障状态的时间。
+    默认值 1 day
+  --&gt;
+  &lt;!--
+  &lt;resetfailure&gt;1 hour&lt;/resetfailure&gt;
+  --&gt;
+
+&lt;!--
+SECTION: 执行管理配置
+--&gt;
+
+  &lt;!-- 
+    OPTION: arguments
+    传递给可执行文件的参数。
+  --&gt;
+  &lt;!--
+  &lt;arguments&gt;-classpath c:\cygwin\home\kohsuke\ws\hello-world\out\production\hello-world test.Main&lt;/arguments&gt;
+  --&gt;
+
+  &lt;!-- 
+    OPTION: startarguments
+    可执行文件启动参数。
+    如果配置，则覆盖&quot;arguments&quot;
+  --&gt;
+  &lt;!--
+  &lt;startarguments&gt;&lt;/startarguments&gt;
+  --&gt;
+  
+  &lt;!--
+    OPTION: workingdirectory
+    如果指定，则设置可执行文件的默认工作目录。
+    默认值：服务包装的可执行文件的目录
+  --&gt;
+  &lt;!--
+  &lt;workingdirectory&gt;C:\myApp\work&lt;/workingdirectory&gt;
+--&gt;
+  
+  &lt;!--
+    OPTION: priority
+    所需的进程优先级。
+    可设置的值：Normal, Idle, High, RealTime, BelowNormal, AboveNormal
+    默认值：Normal
+  --&gt;
+  &lt;priority&gt;Normal&lt;/priority&gt;
+  
+  &lt;!-- 
+    OPTION: stoptimeout
+    强制终止可执行文件之前，尝试正常关闭的等待时间。
+    默认值：15 seconds
+  --&gt;
+  &lt;stoptimeout&gt;15 sec&lt;/stoptimeout&gt;
+    
+  &lt;!--
+    OPTION: stopparentprocessfirst
+    如果设置为true，在停止子进程之前终止父进程。
+    默认值：false
+  --&gt;
+  &lt;stopparentprocessfirst&gt;false&lt;/stopparentprocessfirst&gt;
+
+  &lt;!-- 
+    OPTION: stopexecutable
+    执行关闭服务的可执行文件路径。
+    只有配置了&quot;stoparguments&quot;时，才使用此配置。如果没有则用&quot;executable&quot;关闭服务
+  --&gt;
+  &lt;!--
+  &lt;stopexecutable&gt;%BASE%\stop.exe&lt;/stopexecutable&gt;
+  --&gt;
+
+  &lt;!-- 
+    OPTION: stoparguments
+    终止服务时，传递给&quot;stopexecutable&quot;的附加参数
+    此选项还允许通过停止可执行文件终止可执行文件
+  --&gt;
+  &lt;!--
+  &lt;stoparguments&gt;-stop true&lt;/stoparguments&gt;
+  --&gt;
+&lt;!-- 
+SECTION: 服务管理
+--&gt;
+    &lt;!--
+      OPTION: startmode
+      定义服务的启动模式
+      支持的模式：Automatic, Manual, Boot, System (latter ones are supported for driver services only)
+      默认模式：Automatic
+    --&gt;
+    &lt;startmode&gt;Automatic&lt;/startmode&gt;
+    
+    &lt;!--
+      OPTION: delayedAutoStart
+      如果在&quot;startmode&quot;配置了&quot;Automatic&quot;，则启用延迟自动启动。
+      请参阅Winsw文档以获取有关支持的平台版本和限制的信息。
+    --&gt;
+    &lt;!--
+        &lt;delayedAutoStart/&gt;
+    --&gt;
+    
+    &lt;!-- 
+      OPTION: depend
+      在本服务启动之前启动的服务。
+    --&gt;
+    &lt;!--
+    &lt;depend&gt;Eventlog&lt;/depend&gt;
+    &lt;depend&gt;W32Time&lt;/depend&gt;
+    --&gt;
+    
+    &lt;!--
+      OPTION: waithint
+      挂起停止操作所需的时间
+      在指定的时间段过去之前，服务应该下次调用setServiceStatus函数。
+      否则服务将被标记为无响应
+      默认值：15 seconds
+    --&gt;
+    &lt;waithint&gt;15 sec&lt;/waithint&gt;
+    
+    &lt;!--
+      OPTION: sleeptime
+      服务下次调用setServiceStatus函数之前的时间。
+      不要超过&quot;waithint&quot;。建议间隔是&quot;waithint&quot;的十分之一，但不小于1秒，也不大于10秒。
+      默认值：1 second
+    --&gt;
+    &lt;sleeptime&gt;1 sec&lt;/sleeptime&gt;
+    
+    &lt;!--
+      OPTION: interactive
+      指示服务可以与桌面交互。
+    --&gt;
+    &lt;!--
+    &lt;interactive/&gt;
+    --&gt;
+    
+&lt;!-- 
+SECTION: 日志记录 
+--&gt;
+
+  &lt;!--
+    OPTION: logpath
+    为服务包装程序生成的所有日志设置自定义日志目录。
+    默认值：包含执行器的目录
+  --&gt;
+  &lt;!--
+    &lt;logpath&gt;%BASE%\logs&lt;/logpath&gt;
+  --&gt;
+  
+  &lt;!--
+    OPTION: log
+    为可执行文件生成的日志定义日志记录模式。
+    支持的模式：
+      * append - 追加到现有日志
+      * none - 不保存日志
+      * reset - 启动时擦除日志
+      * roll - 根据大小自动循环分割日志
+      * roll-by-time - 根据日期循环分割日志
+    默认模式: append
+    
+    每种模式都有不同的设置。https://github.com/kohsuke/winsw/blob/master/doc/loggingAndErrorReporting.md
+  --&gt;
+  &lt;log mode=&quot;append&quot;&gt;
+    &lt;!--
+    &lt;setting1/&gt;
+    &lt;setting2/&gt;
+  --&gt;
+  &lt;/log&gt;
+  
+&lt;!--
+SECTION: 环境设置
+--&gt;
+  &lt;!--
+    OPTION: env
+    设置或重写环境变量。
+    顶层可能配置了多个条目。
+  --&gt;
+  &lt;!--
+  &lt;env name=&quot;MY_TOOL_HOME&quot; value=&quot;C:\etc\tools\myTool&quot; /&gt;
+  &lt;env name=&quot;LM_LICENSE_FILE&quot; value=&quot;host1;host2&quot; /&gt;
+  --&gt;
+
+
+  &lt;!--
+    OPTION: download
+    启动前由包装器执行的下载列表。
+  --&gt;
+  &lt;!--
+  &lt;download from=&quot;http://www.google.com/&quot; to=&quot;%BASE%\index.html&quot; /&gt;
+  
+  下载并在出现错误时使服务启动失败：
+  &lt;download from=&quot;http://www.nosuchhostexists.com/&quot; to=&quot;%BASE%\dummy.html&quot; failOnError=&quot;true&quot;/&gt;
+
+  由于连接未加密而导致基本身份验证不安全的示例：
+  &lt;download from=&quot;http://example.com/some.dat&quot; to=&quot;%BASE%\some.dat&quot;
+            auth=&quot;basic&quot; unsecureAuth=“true”
+            username=&quot;aUser&quot; password=“aPassw0rd&quot; /&gt;
+
+  通过HTTPS安全基本身份验证
+  &lt;download from=&quot;https://example.com/some.dat&quot; to=&quot;%BASE%\some.dat&quot;
+            auth=&quot;basic&quot; username=&quot;aUser&quot; password=&quot;aPassw0rd&quot; /&gt;
+
+  当目标服务器和客户端是同一域的成员，并且客户端域属于具有信任的域时，安全身份验证：
+  &lt;download from=&quot;https://example.com/some.dat&quot; to=&quot;%BASE%\some.dat&quot; auth=&quot;sspi&quot; /&gt;
+  --&gt;
+
+&lt;!-- 
+SECTION: 其他选项
+--&gt;
+  
+  &lt;!--
+    OPTION: beeponshutdown
+    指示服务在关闭时（如果操作系统支持）应发出嘟嘟声。
+  --&gt;
+  &lt;!--
+  &lt;beeponshutdown/&gt; 
+  --&gt;
+  
+&lt;!--
+SECTION: 扩展
+此配置部分允许指定自定义扩展。
+更多信息请访问：https://github.com/kohsuke/winsw/blob/master/doc/extensions/extensions.md
+--&gt;
+
+&lt;!--
+&lt;extensions&gt;
+  Extension 1: id values must be unique
+  &lt;extension enabled=&quot;true&quot; id=&quot;extension1&quot; className=&quot;winsw.Plugins.SharedDirectoryMapper.SharedDirectoryMapper&quot;&gt;
+    &lt;mapping&gt;
+      &lt;map enabled=&quot;false&quot; label=&quot;N:&quot; uncpath=&quot;\\UNC&quot;/&gt;
+      &lt;map enabled=&quot;false&quot; label=&quot;M:&quot; uncpath=&quot;\\UNC2&quot;/&gt;
+    &lt;/mapping&gt;
+  &lt;/extension&gt;
+  ...
+&lt;/extensions&gt;
+--&gt;
+
+&lt;/configuration&gt;
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【转载】Win10 默认应用选择的时候出现了无效的选项如何删除？]]></title>
+        <id>https://blog.laomao.icu/post/delete-unused-apps/</id>
+        <link href="https://blog.laomao.icu/post/delete-unused-apps/">
+        </link>
+        <updated>2025-03-24T13:55:10.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="原问题">原问题</h2>
+<blockquote>
+<p>本来安装了一个chrome浏览器，但没想到下载的简体中文的版本都绑定了hao123主页无法更改，所以就删了。但更改默认应用里依然出现了chrome，不知如何删除。<br>
+<img src="https://pic1.zhimg.com/v2-dac8568c9039fed6f0be8cc473451764_r.jpg" alt="" loading="lazy"></p>
+</blockquote>
+<h2 id="高赞回答">高赞回答</h2>
+<p>到注册表里删除以下位置里的无效项:</p>
+<ul>
+<li><strong>HKEY_CURRENT_USER\SOFTWARE\Clients\StartMenuInternet</strong></li>
+<li><strong>HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet</strong></li>
+</ul>
+<p>参见: <a href="https://learn.microsoft.com/zh-cn/windows/win32/shell/start-menu-reg?redirectedfrom=MSDN">How to Register an Internet Browser or Email Client With the Windows Start Menu</a></p>
+<h2 id="举一反三">举一反三</h2>
+<p>其实可以在 <strong><code>HKEY_CURRENT_USER</code></strong> 与 <strong><code>HKEY_LOCAL_MACHINE</code></strong> 中搜索需要删除的打开方式软件名称（如 Chrome），然后清除 <strong><code>StartMenu***</code></strong> 这类项中的内容。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【转载】怎样清除打开方式中的无用项目]]></title>
+        <id>https://blog.laomao.icu/post/clear-openwith/</id>
+        <link href="https://blog.laomao.icu/post/clear-openwith/">
+        </link>
+        <updated>2025-03-24T13:53:49.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>以清理.doc的打开方式为例：</strong></p>
+<ul>
+<li>单击“开始→运行”，输入Regedit</li>
+<li>打开注册表编辑器，定位到如下分支：<strong><code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.doc\OpenWithList</code></strong>,右侧窗口即显示出 doc 文件“打开方式”中的各种应用程序，用鼠标右击要清除的项目，选择**“删除”**即可。其他类型文件的“打开方式”菜单也可做同样清理。</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhuxsebjj20nv0em7a2.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【转载】Backblaze 2024 年硬盘健康情况报告]]></title>
+        <id>https://blog.laomao.icu/post/backblaze-2024-review/</id>
+        <link href="https://blog.laomao.icu/post/backblaze-2024-review/">
+        </link>
+        <updated>2025-02-12T13:57:49.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p><a href="https://www.backblaze.com/blog/backblaze-drive-stats-for-2024/">原文地址</a>，本文原发表于 2025年2月11日，转载结合使用零一万物、智谱 GLM AI 进行翻译</p>
+</blockquote>
+<h2 id="2024-年的-backblaze-硬盘统计数据">2024 年的 Backblaze 硬盘统计数据</h2>
+<p>截至 2024 年 12 月 31 日，我们管理着 305,180 个驱动器。其中，有 4,060 个启动盘和 301,120 个数据盘。本报告将专注于这些数据盘，因为我们检查了 2024 年第四季度的年化故障率（AFR），2024 年的故障率和截至 2024 年底仍在服务中的硬盘型号的使用寿命故障率。在讨论过程中，我们将分享我们对数据的观察和见解，并一如既往地期待您在文章末尾的评论部分分享您的见解。</p>
+<h3 id="2024-年第四季度的硬盘故障率">2024 年第四季度的硬盘故障率</h3>
+<p>截至 2024 年底，Backblaze 正在监控用于存储数据的 301,120 块硬盘。在我们的评估中，我们排除了 487 块硬盘，因为它们不符合被纳入的条件。我们将在本报告的下一节中讨论我们使用的标准。移除这些硬盘后，我们剩下 300,633 块硬盘进行分析。下表显示了该系列硬盘 2024 年第四季度的年度化故障率。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739892040-1-Quarterly-AFR-table-Q4-2024.png" alt="1739892040-1-Quarterly-AFR-table-Q4-2024" loading="lazy"></p>
+<h4 id="记录和观察情况">记录和观察情况</h4>
+<ul>
+<li>
+<p>24TB 硬盘已到货。希捷 24TB 硬盘（型号：ST24000NM002H）已于 12 月初抵达。这 1200 块硬盘装满了一个 Backblaze Vault，整个第四季度末都没有出现任何故障。24TB 的希捷硬盘与 20TB 的东芝和 22TB 的西部数据硬盘一起，成为了 20TB 以上容量硬盘的行列，我们在增加存储容量的同时，也在优化现有的存储服务器空间。</p>
+</li>
+<li>
+<p>本季度零故障。上述提到的 24TB 希捷驱动器型号为首，共有五种驱动器型号在本季度实现零故障。包括 4TB HGST（型号：HMS5C4040ALE640）、8TB 希捷（型号：ST8000NM000A）、14TB 希捷（型号：ST14000NM000J）和 16TB 希捷（型号：ST16000NM002J）。尽管这些零故障都伴随着驱动器和驱动天数相对较少的情况，但本季度零故障仍然是个好消息。</p>
+</li>
+<li>
+<p>4TB 硬盘几乎绝迹。在第四季度，4TB 硬盘的数量减少了 1774 块。如果您想详细了解我们是如何迁移它们的，<a href="https://www.backblaze.com/blog/how-backblaze-scales-our-storage-cloud/">这里有更详细的说明（Backblaze官网）</a>。预计剩余的约 4000 块硬盘将在 2025 年第一季度末被淘汰。届时，它们将被即将到来的 20TB、22TB 和 24TB 硬盘所替代。值得一提的是，在第四季度运行的 4TB 硬盘中，只有一块硬盘出现故障，因此这些超过 20TB 的硬盘在可靠性方面还有很大的提升空间。</p>
+</li>
+<li>
+<p>季度故障率有所下降。第四季度的平均故障率（AFR）从第三季度的 1.89%降至 1.35%。尽管所有驱动器容量在第三季度到第四季度都有所提升，但主要原因是新增了超过 14,000 台 20TB 以上的驱动器。这些驱动器在季度内的 AFR 仅为 0.77%，表现突出。</p>
+</li>
+</ul>
+<h4 id="硬盘型号评价标准">硬盘型号评价标准</h4>
+<p>我们之前提到，在制作涵盖 2024 年第四季度的表格时，我们排除了 487 个硬盘。未考虑这些硬盘型号主要有两个原因。</p>
+<ul>
+<li>
+<p>仍在测试。这些是我们正在监控并收集统计数据的硬盘，但截至目前它们还不算作生产环境中的型号。例如，正在接受认证测试以确定其性能是否满足我们环境要求的型号，不包括在硬盘统计数据计算之内。</p>
+</li>
+<li>
+<p>数据点不足。在计算特定时间段（季度、年度或终身）内驱动器模型的年化故障率时，我们希望确保有足够的数据进行可靠计算。因此，我们为特定时间段内表格和图表中包含的驱动器模型设定了标准。不符合这些标准的模型将不会被纳入该时间段内的表格和图表中。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>硬盘数量</th>
+<th>硬盘运行天数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每季度</td>
+<td>&gt;100</td>
+<td>&gt;10000</td>
+</tr>
+<tr>
+<td>每年</td>
+<td>&gt;250</td>
+<td>&gt;50000</td>
+</tr>
+<tr>
+<td>生命周期</td>
+<td>&gt;500</td>
+<td>&gt;100000</td>
+</tr>
+</tbody>
+</table>
+<p>无论特定的硬盘型号是否出现在最终统计图表中，我们收集的所有硬盘数据都已包含在我们的硬盘统计数据集中，您可以在我们的<a href="https://www.backblaze.com/cloud-storage/resources/hard-drive-test-data">硬盘统计数据页面（Backblaze官网）</a>上免费下载。<br>
+就像第四季度的季度报告一样，我们将这些标准应用于本报告后续的年度和硬盘服役全时间段统计图表中。</p>
+<h3 id="2024年的年度硬盘故障率">2024年的年度硬盘故障率</h3>
+<p>截至 2024 年底，Backblaze 正在监控用于存储数据的 301,120 块硬盘。由于它们未达到我们设定的年度标准，我们已排除 9 个型号的 2,012 块硬盘。目前，我们有 298,954 块硬盘，分布在 27 个不同的型号中。下表展示了这些硬盘在 2024 年的平均故障率（AFR）：<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739893598-2-Annual-AFR-table-for-2024.png" alt="1739893598-2-Annual-AFR-table-for-2024" loading="lazy"></p>
+<h4 id="记录和观察情况-2">记录和观察情况</h4>
+<ul>
+<li>
+<p>2024 年没有出现零故障的驱动器型号。尽管如此，16TB 的希捷硬盘（型号：ST16000NM002J）在第三季度仅出现了一次故障，年度故障率（AFR）仅为 0.22%，表现相当接近零故障。</p>
+</li>
+<li>
+<p>忙碌的数据中心技术人员。2024 年，我们的数据中心技术人员共安装了 53,337 个硬盘。以每年 2,080 个工作小时（52 周乘以 40 小时）来计算，就是平均每小时安装 26 个硬盘。真是忙得不可开交！</p>
+</li>
+<li>
+<p>希捷 24TB 硬盘怎么样？尽管 2024 年新增了 1200 块 24TB 希捷硬盘，但它们是在 12 月初安装的，由于使用天数不足，未能计入年度或终身统计。该批次 24TB 希捷硬盘也未能进入年度统计表，以下是未能进入统计表的硬盘型号列表。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>制造商</th>
+<th>型号</th>
+<th>硬盘数量</th>
+<th>硬盘运行天数</th>
+<th>2024年年化故障率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>希捷</td>
+<td>ST8000NM000A</td>
+<td>247</td>
+<td>22,684</td>
+<td>0.84%</td>
+</tr>
+<tr>
+<td>希捷</td>
+<td>ST14000NM000J</td>
+<td>232</td>
+<td>19,696</td>
+<td>1.32%</td>
+</tr>
+<tr>
+<td>希捷</td>
+<td>ST24000NM002H</td>
+<td>1,200</td>
+<td>18,000</td>
+<td>0.00%</td>
+</tr>
+</tbody>
+</table>
+<p>提醒各位，到本季度末，一个型号必须拥有超过 250 块硬盘，并在 2024 年累计至少 50,000 个硬盘运行天数，才能被包含在年度统计表中。</p>
+<h3 id="对比-2022-年-2023-年和-2024-年的驱动统计数据">对比 2022 年、2023 年和 2024 年的驱动统计数据</h3>
+<p>下表展示了过去三年中各型号硬盘的年度故障率。仅包含截至 2024 年底符合年度标准的硬盘型号。每年数据仅涵盖当年年底正在运行的硬盘型号。表格按硬盘容量大小排序，并在此基础上按 AFR 排序。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739895151-3-Annual-three-year-comparison.png" alt="1739895151-3-Annual-three-year-comparison" loading="lazy"></p>
+<h4 id="记录与观察情况">记录与观察情况</h4>
+<ul>
+<li>每年 AFR 有所下降。2024 年所有列出的驱动器的 AFR 为 1.57%，较 2023 年的 1.70%有所降低。预计整体故障率将在 2025 年继续下降，我们将密切关注以下指标以观察变化。
+<ul>
+<li>8TB 和 12TB 硬盘型号的故障率。所有型号都将超过其五年的使用寿命。通常情况下，当硬盘使用年限超过五年后，故障率会显著上升。尽管存在像当前 HGST 4TB 硬盘这样的个别异常情况，但您不能据此认为这种情况会普遍发生。</li>
+<li>14TB 和 16TB 硬盘型号的故障率。这些型号已接近中年——运行了三到五年。根据<a href="https://www.backblaze.com/blog/drive-failure-over-time-the-bathtub-curve-is-leaking/">浴盆曲线</a>，它们的故障率可能会逐渐上升——但不会像超过五年后那样急剧。</li>
+<li>20TB、22TB 和 24TB 型号硬盘的故障率。这些硬盘将进入浴盆曲线的平稳段，那里它们的故障率应该最低。</li>
+</ul>
+</li>
+</ul>
+<h3 id="硬盘容量与年化故障率的相关性">硬盘容量与年化故障率的相关性</h3>
+<p>现在，我们可以深入分析数据，看看还能发现哪些有趣的信息。我们将从过去三年不同容量驱动器的季度年化故障率入手。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739895295-4-Quarterly-3-Year-AFR-by-Drive-Size.png" alt="1739895295-4-Quarterly-3-Year-AFR-by-Drive-Size" loading="lazy"></p>
+<p>让我们来探讨不同硬盘容量及其对整体年度故障率随时间变化的影响。</p>
+<p><strong>故障影响极小。</strong> 过去一年里，4TB（蓝色线）硬盘和 10TB（金色线）硬盘对整体故障率的影响微乎其微，因为每个硬盘在年底时数量都相对较少。尽管如此，10TB 硬盘带来的陡峭曲线仍让我们的数据中心技术人员时刻保持警惕。</p>
+<p><strong>旧硬盘仍然可用。</strong> 8TB（灰色线）硬盘和 12TB（紫色线）硬盘的使用年限在五到八年之间，因此它们的整体故障率应会随着时间的推移而增加。12TB 硬盘的故障率从 2021 年的约 1%上升到 2024 年的约 3%，符合这一趋势。而 8TB 硬盘的故障率虽然季度间波动较大，但在同一时期内的趋势线几乎保持平稳。</p>
+<p><strong>主力硬盘依旧强劲。</strong> 14TB（绿色线）和 16TB（天蓝色线）驱动器占在用驱动器总数的 57%，平均使用年限在 2 到 4 年之间。它们正处于最佳工作状态。因此，它们的故障率应该低且稳定，正如您所看到的，情况确实如此。</p>
+<p><em>°可能天蓝色并不完全合适，但用知更鸟蛋蓝去表示似乎有些炫耀。</em></p>
+<p><strong>存储块上了新的硬盘。</strong> 22TB（橙色线）硬盘驱动器刚刚开始投入使用，我们正在持续定期增加更多硬盘驱动器。随着驱动器数量的稳定，我们将对 AFR 趋势有更深入的了解。尽管如此，目前的结果依然令人满意，终身 AFR 仅为 1.06%。</p>
+<h3 id="制造商与年化故障率的相关性">制造商与年化故障率的相关性</h3>
+<p>我们可以按制造商归类这些数据，这是下面我们所做的更受欢迎的方法之一。这样的方式可以让我们更直观地了解数据。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739895746-5-Quarterly-3-Year-AFR-by-MFG.png" alt="1739895746-5-Quarterly-3-Year-AFR-by-MFG" loading="lazy"></p>
+<p>为了完整呈现，下方的图表采用了相同的数据，但仅展示了各制造商在相同三年间的线性趋势线，使内容更加自然易懂。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739895775-6-Quarterly-3-year-Trendlines-by-MFG.png" alt="1739895775-6-Quarterly-3-year-Trendlines-by-MFG" loading="lazy"></p>
+<p><strong>HGST（日立）。</strong> 尽管 HGST 的趋势线看起来并不理想，但这并不能完全反映整个情况。从第一张图表来看，截至 2023 年第四季度，HGST 的硬盘在所有制造商的硬盘故障率中，都处于平均水平或以下。在那之后，HGST 的硬盘故障率已经开始超过平均水平，并且还有所上升。下表列出了 2024 年 HGST 驱动器的具体结果，我们已根据 2024 年的 AFR 值从高到低进行了排序。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739895948-7-HGST-2024-AFR.png" alt="1739895948-7-HGST-2024-AFR" loading="lazy"><br>
+如您所见，有两个 12TB 硬盘型号导致了 HGST 硬盘的高年化故障率。HUH721212ALN604 型号从 2023 年第一季度开始显示出季度 AFR 上升的迹象，而 HUH721212ALE604 型号则在 2024 年第三季度也呈现上升势态。若没有这些硬盘型号，HGST 硬盘在 2024 年的 AFR 将降至 0.55%。</p>
+<p><strong>希捷。</strong> 2022 年至 2024 年间，希捷硬盘的季度 AFR 趋势线有所下降。尽管下降幅度不大，从 2.25%降至 2.0%，但希捷公司是唯一一家实现这一变化的硬盘制造商。这种下降至少部分原因是在该期间移除了 4TB 容量的硬盘。</p>
+<p><strong>东芝。</strong> 在 2022 年至 2024 年期间，东芝驱动器型号的季度 AFR 值在 0.80%至 1.52%之间波动，大多数季度略高于 1.2%。最关键的是，没有任何一个型号出现异常，东芝硬盘整体的最高季度 AFR 仅为 1.58%。我们喜欢这种稳定性。</p>
+<p><strong>西部数据。</strong> 尽管西部数据的硬盘与东芝的在一致性水平上相当，它们每个季度都达到了更低的 AFR 值。2022 年至 2024 年间，西部数据硬盘整体的季度 AFR 值波动在 0.0%至 0.85%之间。2022 年第一季度，AFR 值为 0.0%，当时服役中的 12,207 个 西部数据硬盘在该季度均未出现故障。</p>
+<h3 id="硬盘服役全时间段统计数据">硬盘服役全时间段统计数据</h3>
+<p>截至 2024 年底，Backblaze 正在监控用于存储数据的 301,120 块硬盘。根据上述硬盘寿命标准，我们排除了 11 个型号的 2,736 块硬盘，因为它们不符合我们设定的寿命标准。这样，我们剩下 298,230 块硬盘，分布在 25 个不同的硬盘型号中。下表展示了这些硬盘的全时间段的年化平均故障率（AFR）。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739896349-8-Lifetime-AFR.png" alt="1739896349-8-Lifetime-AFR" loading="lazy"></p>
+<p>当前所有在役硬盘的平均年化故障率（AFR）为 1.31%，较 2023 年的 1.46%有所下降。这种下降主要是由于 2024 年完成了 4TB 希捷驱动器的迁移，截至 2024 年底，我们仅剩两个此类型号的硬盘仍在服役。因此，截至 2023 年底，4TB 希捷驱动器累计的 7900 万驱动器日和超过 5600 次驱动器故障并未体现在上述 2024 年寿命表中。</p>
+<p>在下方的最终表格中，我们根据服役全周期的 AFR 值在 1.50%或以下的标准，对图表进行了排序，并按硬盘容量对硬盘型号进行倒序整理。<br>
+<img src="https://image.baidu.com/search/down?url=https://www.nekoss.cn/wp-content/uploads/2025/02/1739896469-9-Best-Lifetime-AFR.png" alt="1739896469-9-Best-Lifetime-AFR" loading="lazy"></p>
+<p>在您审阅表格时，请注意以下几点：</p>
+<ul>
+<li>每个型号都有足够的数据表明 AFR 值是稳定的。然而，一切都有可能随时改变。通常，硬盘的故障率会随着硬盘的衰老而遵循浴盆曲线，除了个别型号。有些硬盘在老化过程中不会出现故障，例如 4TB 的 HGST 硬盘。而有些硬盘一开始表现不错，但最终“触底”并迅速拉高故障率曲线。</li>
+<li>一款年化故障率为 1%的硬盘意味着在一年内，每 100 个硬盘中有 1 个可能会出现故障。如果你是个人用户，那么这个可能故障的硬盘可能是你的。如果你只有一台硬盘，那么你的个人年化故障率就是 100%。换句话说，一定要备份，并且别忘了检查备份是否可用。</li>
+</ul>
+<h3 id="该转变了">该转变了</h3>
+<p>我（Andy Klein，该报告原作者）已连续十年撰写各种硬盘统计数据报告，这将是我的最后一篇。我将退休，或许用硬盘数据的话来说，就是“该迁移数据了”。无论如何，在美军空军服役 10 年以及硅谷科技界 30 多年后，现在是时候了。从 2025 年第一季度报告起，硬盘统计报告将由 Stephanie Doyle 和 David Johnson 接任。我祝愿他们一切顺利。</p>
+<p>我想对每一位抽出宝贵时间阅读和参与过去 10 年硬盘统计报告和数据的人表示衷心感谢。同时，也要感谢大家在各个关心硬盘这样既普通又伟大事物的社区中展开的评论、提问和讨论。这是一段非常精彩的旅程——再次感谢！</p>
+<h3 id="硬盘统计数据信息">硬盘统计数据信息</h3>
+<p>本报告创建表格和图表所使用的完整数据集可在我们的硬盘测试数据页面免费获取。您可免费下载并用于个人用途。我们仅提三点要求：1）若您使用数据，请将 Backblaze 列为数据来源；2）您需自行承担数据使用的责任；3）不得将数据本身出售给他人；数据免费。</p>
+<p>祝你一切顺利，如果有什么有趣的发现，别忘了告诉我们哦。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【看番】2024年7月追番列表]]></title>
+        <id>https://blog.laomao.icu/post/2024-07-new-bangumi/</id>
+        <link href="https://blog.laomao.icu/post/2024-07-new-bangumi/">
+        </link>
+        <updated>2024-06-11T15:04:58.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="追番列表截图">追番列表截图</h2>
+<figure data-type="image" tabindex="1"><img src="https://img14.360buyimg.com/ddimg/jfs/t1/309987/23/4818/62664/6836f801Fdec6f443/40deec1eb1e52f08.jpg" alt="" loading="lazy"></figure>
+<h3 id="前辈是男孩子">前辈是男孩子</h3>
+<p>（就看南梁就看南梁！！！）</p>
+<h3 id="鹿乃子乃子乃子虎视眈眈">鹿乃子乃子乃子虎视眈眈</h3>
+<p>看PV就知道非常神经病了，很需要对电波的一部番，但我还是很喜欢这类的（比如 Pop 子）</p>
+<blockquote>
+<p>更新：已弃坑，PV已经把动画里所有有趣的内容都看完了</p>
+</blockquote>
+<h3 id="擅长逃跑的殿下">擅长逃跑的殿下</h3>
+<p>（我是声豚！）中村悠一 + 矢野妃菜喜 + 铃代纱弓 + 悠木碧 + 户谷菊之介，爽就完事了！</p>
+<h3 id="我推的孩子-第二季">我推的孩子 第二季</h3>
+<p>第一季爆炸好评之后，我去把漫画追到了最新话，可以给各位下一个结论，就是第二季的整体质量如果在制作水平依然保证的情况下一定会比第一季更爽。这就够了。</p>
+<h3 id="败犬女主太多了">败犬女主太多了</h3>
+<p>看着PV真的挺有意思的，不过有一定概率会暴雷</p>
+<h3 id="不时轻声地以俄语遮羞的邻座艾莉同学">不时轻声地以俄语遮羞的邻座艾莉同学</h3>
+<p>我摊牌了，我就是冲着政委去的！！</p>
+<blockquote>
+<p>更新：不好意思，政委来了也救不了</p>
+</blockquote>
+<h3 id="小市民系列">小市民系列</h3>
+<p>冰菓原作者的新作品。女主是我们的龟本羊贵妃出演，这种柔弱的声线确实还挺适合这类片子的，不过毕竟是类冰菓，所以很有可能会看睡着</p>
+<h3 id="25次元的诱惑">2.5次元的诱惑</h3>
+<p>擦边球拉满的福利番，期待一把就完事了</p>
+<h3 id="尼尔自动人形-ver11a-第2部分">尼尔：自动人形 Ver1.1a 第2部分</h3>
+<p>如果你没有玩过游戏、且只想了解剧情（比如我）那么这部番一定适合你。如果你玩过游戏，那不要看番了，游戏讲的比番好</p>
+]]></content>
+    </entry>
+</feed>

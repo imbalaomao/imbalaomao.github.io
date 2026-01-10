@@ -1,0 +1,930 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>
+  【技巧】哪吒面板后台美化 | 猫の博客
+</title>
+
+<link rel="shortcut icon" href="https://blog.laomao.icu/favicon.ico?v=1768043901498">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.laomao.icu/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+  integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            猫の博客
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    分类
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1768043901498"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    【技巧】哪吒面板后台美化
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-03-26 ·
+                    </time>
+                    
+                        <a href="https://blog.laomao.icu/tag/PgSXMmms6o/" class="post-tags">
+                            # 技巧
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>是抄别人的。</p>
+<p>修改后的效果如下：</p>
+<figure data-type="image" tabindex="1"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vi9aui7jj21z4140qv5.jpg" alt="image" loading="lazy"></figure>
+<h2 id="后台自定义css">后台自定义CSS：</h2>
+<pre><code class="language-css">&lt;style&gt;  
+  
+/\* 屏幕适配 \*/  
+@media only screen and (min-width: 1200px) {  
+    .ui.container {  
+        width: 90% !important;  
+    }  
+}
+  
+@media only screen and (max-width: 767px) {  
+  
+    .ui.card\&gt;.content\&gt;.header:not(.ui),  
+    .ui.cards\&gt;.card\&gt;.content\&gt;.header:not(.ui) {  
+        margin-top: 0.4em !important;  
+    }  
+}  
+  
+/\* 整体图标 \*/  
+i.icon {  
+    color: #000;  
+    width: 1.2em !important;  
+}  
+  
+/\* 背景图片 \*/  
+body {  
+    content: &quot; &quot; !important;  
+    background: fixed !important;  
+    z-index: -1 !important;  
+    top: 0 !important;  
+    right: 0 !important;  
+    bottom: 0 !important;  
+    left: 0 !important;  
+    background-position: top !important;  
+    background-repeat: no-repeat !important;  
+    background-size: pic !important;  
+    background-image: url(https://s1.locimg.com/2023/04/25/4d8a5ab26c352.jpg) !important;  
+    font-family: Arial, Helvetica, sans-serif !important;  
+}  
+  
+/\* 导航栏 \*/  
+.ui.large.menu {  
+    border: 0 !important;  
+    border-radius: 0px !important;  
+    background-color: rgba(29, 29, 29, 0.55) !important;  
+}  
+  
+/\* 首页按钮 \*/  
+.ui.menu .active.item {  
+    background-color: transparent !important;  
+}  
+  
+/\* 导航栏下拉框 \*/  
+.ui.dropdown .menu {  
+    border: 0 !important;  
+    border-radius: 0 !important;  
+    background-color: rgba(29, 29, 29, 0.8) !important;  
+}  
+  
+/\* 登陆按钮 \*/  
+.nezha-primary-btn {  
+    background-color: transparent !important;  
+    color: #fff !important;  
+}  
+  
+/\* 大卡片 \*/  
+#app .ui.fluid.accordion {  
+    background-color: #3030301f !important;  
+    border-radius: 0.4rem !important;  
+}  
+  
+/\* 小卡片 \*/  
+.ui.four.cards\&gt;.card {  
+    border-radius: 0.6rem !important;  
+    background-color: #272526a3 !important;  
+}  
+  
+/\* 小鸡名 \*/  
+.status.cards .flag {  
+    margin-right: 0.5rem !important;  
+}  
+  
+/\* 弹出卡片图标 \*/  
+.status.cards .header\&gt;.info.icon {  
+    margin-right: 0 !important;  
+}  
+  
+.nezha-secondary-font {  
+    color: #21ba45 !important;  
+}  
+  
+/\* 进度条 \*/  
+.ui.progress {  
+    border-radius: 50rem !important;  
+}  
+  
+.ui.progress .bar {  
+    min-width: 1.8em !important;  
+    border-radius: 15px !important;  
+    line-height: 1.65em !important;  
+    color: black  
+}  
+  
+.ui.fine.progress\&gt;.bar {  
+    background-color: #ba45ac !important;  
+}  
+  
+.ui.progress\&gt;.bar {  
+    background-color: #000 !important;  
+}  
+  
+.ui.progress.fine .bar {  
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);  
+    !important;  
+}  
+  
+.ui.progress.warning .bar {  
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);  
+    !important;  
+}  
+  
+.ui.progress.error .bar {  
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);  
+    important;  
+}  
+  
+.ui.progress.offline .bar {  
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);  
+    !important;  
+}  
+  
+/\* 上传下载 \*/  
+.status.cards .outline.icon {  
+    margin-right: 1px !important;  
+}  
+  
+i.arrow.alternate.circle.down.outline.icon {  
+    color: #21ba45 !important;  
+}  
+  
+i.arrow.alternate.circle.up.outline.icon {  
+    color: red !important;  
+}  
+  
+/\* 弹出卡片小箭头 \*/  
+.ui.right.center.popup {  
+    margin: -3px 0 0 0.914286em !important;  
+    -webkit-transform-origin: left 50% !important;  
+    transform-origin: left 50% !important;  
+}  
+  
+.ui.bottom.left.popup {  
+    margin-left: 1px !important;  
+    margin-top: 3px !important;  
+}  
+  
+.ui.top.left.popup {  
+    margin-left: 0 !important;  
+    margin-bottom: 10px !important;  
+}  
+  
+.ui.top.right.popup {  
+    margin-right: 0 !important;  
+    margin-bottom: 8px !important;  
+}  
+  
+.ui.left.center.popup {  
+    margin: -3px .91428571em 0 0 !important;  
+    -webkit-transform-origin: right 50% !important;  
+    transform-origin: right 50% !important;  
+}  
+  
+.ui.right.center.popup:before,  
+.ui.left.center.popup:before {  
+    border: 0px solid #272526eb !important;  
+    background: #272526eb !important;  
+}  
+  
+.ui.top.popup:before {  
+    border-color: #272526eb transparent transparent !important;  
+}  
+  
+.ui.popup:before {  
+    border-color: #272526eb transparent transparent !important;  
+}  
+  
+.ui.bottom.left.popup:before {  
+    border-radius: 0 !important;  
+    border: 1px solid transparent !important;  
+    border-color: #272526eb transparent transparent !important;  
+    background: #272526eb !important;  
+    -webkit-box-shadow: 0px 0px 0 0 #272526eb !important;  
+    box-shadow: 0px 0px 0 0 #272526eb !important;  
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;  
+}  
+  
+.ui.bottom.right.popup:before {  
+    border-radius: 0 !important;  
+    border: 1px solid transparent !important;  
+    border-color: #272526eb transparent transparent !important;  
+    background: #272526eb !important -webkit-box-shadow: 0px 0px 0 0 #272526eb !important;  
+    box-shadow: 0px 0px 0 0 #272526eb !important;  
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;  
+}  
+  
+.ui.top.left.popup:before {  
+    border-radius: 0 !important;  
+    border: 1px solid transparent !important;  
+    border-color: #272526eb transparent transparent !important;  
+    background: #272526eb !important;  
+    -webkit-box-shadow: 0px 0px 0 0 #272526eb !important;  
+    box-shadow: 0px 0px 0 0 #272526eb !important;  
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;  
+}  
+  
+.ui.top.right.popup:before {  
+    border-radius: 0 !important;  
+    border: 1px solid transparent !important;  
+    border-color: #272526eb transparent transparent !important;  
+    background: #272526eb !important;  
+    -webkit-box-shadow: 0px 0px 0 0 #272526eb !important;  
+    box-shadow: 0px 0px 0 0 #272526eb !important;  
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;  
+}  
+  
+.ui.left.center.popup:before {  
+    border-radius: 0 !important;  
+    border: 1px solid transparent !important;  
+    border-color: #272526eb transparent transparent !important;  
+    background: #272526eb !important;  
+    -webkit-box-shadow: 0px 0px 0 0 #272526eb !important;  
+    box-shadow: 0px 0px 0 0 #272526eb !important;  
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;  
+}  
+  
+/\* 弹出卡片 \*/  
+.status.cards .ui.content.popup {  
+    min-width: 20rem !important;  
+    line-height: 2rem !important;  
+    border-radius: 5px !important;  
+    border: 1px solid transparent !important;  
+    background-color: #272526eb !important;  
+    font-family: Arial, Helvetica, sans-serif !important;  
+}  
+  
+.ui.content {  
+    margin: 0 !important;  
+    padding: 1em !important;  
+}  
+  
+/\* 服务页 \*/  
+.ui.table {  
+    background: RGB(225, 225, 225, 0.6) !important;  
+}  
+  
+.ui.table thead th {  
+    background: transparent !important;  
+}  
+  
+/\* 服务页进度条 \*/  
+  
+/\* 版权 \*/  
+.ui.inverted.segment,  
+.ui.primary.inverted.segment {  
+    color: #000 !important;  
+    font-weight: bold !important;  
+    background-color: #272526a3 !important;  
+}  
+  
+&lt;/style&gt;  
+</code></pre>
+<h2 id="关于黑色背景与显示服务器cpu信息显示等效果">关于黑色背景与显示服务器CPU信息显示等效果：</h2>
+<p>需更改Docker容器（比如我的路径为<code>/var/lib/docker/overlay2/6fa7db6cd487ae00e3d516e0873141030526aa69a4d783100547590e94ce2f77/merged/dashboard/resource/template</code>）中<code>/common/</code>文件夹中的<code>header.html</code>与<code>menu.html</code>；同时需要更改<code>/theme-default/</code>文件夹中的<code>home.html</code>。大致修改思路如下：</p>
+<blockquote>
+<p><code>&lt;i class=&quot;dropdown icon&quot;&gt;&lt;/i&gt;</code> 修改为 <code>&lt;i class=&quot;dropdown icon&quot; style=&quot;color:#ffffff&quot;&gt;&lt;/i&gt;</code></p>
+</blockquote>
+<p>以及</p>
+<blockquote>
+<p><code>@#server.Name + (server.live?'':'[{{tr &quot;Offline&quot;}}]')#@</code> 修改为 <code>&lt;font color=&quot;#dddddd&quot;&gt;@#server.Name + (server.live?'':'[{{tr &quot;Offline&quot;}}]')#@&lt;/font&gt;</code></p>
+</blockquote>
+<p>大致就是需要将文字显示部分更改为白色、将背景与顶部菜单更改为黑色。</p>
+<h3 id="示例html">示例HTML：</h3>
+<h4 id="headerhtml">header.html</h4>
+<pre><code class="language-html">{{define &quot;theme-default/home&quot;}}  
+{{template &quot;common/header&quot; .}}  
+{{if ts .CustomCode}} {{.CustomCode|safe}} {{end}}  
+{{template &quot;common/menu&quot; .}}  
+&lt;div class\=&quot;nb-container&quot;\&gt;  
+  &lt;div class\=&quot;ui container&quot;\&gt;  
+    &lt;div id\=&quot;app&quot;\&gt;  
+      &lt;div class\=&quot;ui styled fluid accordion&quot; v-for\=&quot;group in groups&quot;\&gt;  
+        &lt;div class\=&quot;active title&quot;\&gt;  
+          &lt;i class\=&quot;dropdown icon&quot;\&gt;&lt;/i\&gt;  
+          &lt;font color\=&quot;#dddddd&quot;\&gt;@#(group.Tag!==''?group.Tag:'{{tr &quot;Default&quot;}}')#@&lt;/font\&gt;  
+        &lt;/div\&gt;  
+        &lt;div class\=&quot;active content&quot;\&gt;  
+          &lt;div class\=&quot;ui four stackable status cards&quot;\&gt;  
+            &lt;div v-for\=&quot;server in group.data&quot; :id\=&quot;server.ID&quot; class\=&quot;ui card&quot;\&gt;  
+              &lt;div class\=&quot;content&quot; v-if\=&quot;server.Host&quot; style\=&quot;margin-top: 10px; padding-bottom: 5px&quot;\&gt;  
+                &lt;div class\=&quot;header&quot;\&gt;  
+                  &lt;i :class\=&quot;server.Host.CountryCode + ' flag'&quot;\&gt;&lt;/i\&gt;&amp;nbsp;&lt;i v-if\='server.Host.Platform == &quot;darwin&quot;'  
+                    class\=&quot;apple icon&quot; style\=&quot;color:#ffffff&quot;\&gt;&lt;/i\&gt;&lt;i v-else-if\='isWindowsPlatform(server.Host.Platform)'  
+                    class\=&quot;windows icon&quot; style\=&quot;color:#ffffff&quot;\&gt;&lt;/i\&gt;&lt;i v-else  
+                    :class\=&quot;'fl-' + getFontLogoClass(server.Host.Platform)&quot; style\=&quot;color:#ffffff&quot;\&gt;&lt;/i\&gt;  
+                  &lt;font color\=&quot;#dddddd&quot;\&gt;@#server.Name + (server.live?'':'\[{{tr &quot;Offline&quot;}}\]')#@&lt;/font\&gt;  
+                  &lt;i class\=&quot;nezha-secondary-font info circle icon&quot; style\=&quot;height: 28px&quot;\&gt;&lt;/i\&gt;  
+                  &lt;div class\=&quot;ui content popup&quot; style\=&quot;margin-bottom: 0 ;color:#ffffff&quot;\&gt;  
+                    &lt;font color\=&quot;#dddddd&quot;\&gt;{{tr &quot;Platform&quot;}}: @#server.Host.Platform#@-@#server.Host.PlatformVersion#@  
+                    &lt;/font\&gt;  
+                    \[&lt;span  
+                      v-if\=&quot;server.Host.Virtualization&quot;\&gt;@#server.Host.Virtualization#@:&lt;/span\&gt;@#server.Host.Arch#@\]&lt;br /&gt;  
+                    &lt;font color\=&quot;#dddddd&quot;\&gt;CPU: @#server.Host.CPU#@&lt;/font\&gt;&lt;br /&gt;  
+                    &lt;font color\=&quot;#dddddd&quot;\&gt;{{tr &quot;DiskUsed&quot;}}:  
+                      @#formatByteSize(server.State.DiskUsed)#@/@#formatByteSize(server.Host.DiskTotal)#@&lt;/font\&gt;&lt;br /&gt;  
+                    &lt;font color\=&quot;#dddddd&quot;\&gt;{{tr &quot;MemUsed&quot;}}:  
+                      @#formatByteSize(server.State.MemUsed)#@/@#formatByteSize(server.Host.MemTotal)#@&lt;/font\&gt;&lt;br /&gt;  
+                    &lt;font color\=&quot;#dddddd&quot;\&gt;{{tr &quot;SwapUsed&quot;}}:  
+                      @#formatByteSize(server.State.SwapUsed)#@/@#formatByteSize(server.Host.SwapTotal)#@&lt;/font\&gt;&lt;br /&gt;  
+                    &lt;font color\=&quot;#dddddd&quot;\&gt;{{tr &quot;NetTransfer&quot;}}: &lt;i class\=&quot;arrow alternate circle down outline icon&quot;  
+                        style\=&quot;color:#ffffff&quot;\&gt;&lt;/i\&gt;@#formatByteSize(server.State.NetInTransfer)#@&lt;i  
+                        class\=&quot;arrow alternate circle up outline icon&quot;  
+                        style\=&quot;color:#ffffff&quot;\&gt;&lt;/i\&gt;@#formatByteSize(server.State.NetOutTransfer)#@&lt;/font\&gt;&lt;br /&gt;  
+                    &lt;font color\=&quot;#dddddd&quot;\&gt;{{tr &quot;Load&quot;}}: @# toFixed2(server.State.Load1) #@/@#  
+                      toFixed2(server.State.Load5) #@/@#  
+                      toFixed2(server.State.Load15) #@&lt;/font\&gt;&lt;br /&gt;  
+                    &lt;font color\=&quot;#dddddd&quot;\&gt;{{tr &quot;ProcessCount&quot;}}: @# server.State.ProcessCount #@&lt;/font\&gt;&lt;br /&gt;  
+                    &lt;font color\=&quot;#dddddd&quot;\&gt;{{tr &quot;ConnCount&quot;}}: TCP @# server.State.TcpConnCount #@ / UDP @#  
+                      server.State.UdpConnCount #@&lt;/font\&gt;&lt;br /&gt;  
+                    &lt;font color\=&quot;#dddddd&quot;\&gt;{{tr &quot;BootTime&quot;}}: @# formatTimestamp(server.Host.BootTime) #@&lt;/font\&gt;&lt;br /&gt;  
+                    &lt;font color\=&quot;#dddddd&quot;\&gt;{{tr &quot;LastActive&quot;}}: @# new Date(server.LastActive).toLocaleString() #@&lt;/font\&gt;  
+                    &lt;br /&gt;  
+                    &lt;font color\=&quot;#dddddd&quot;\&gt;{{tr &quot;Version&quot;}}: @#server.Host.Version#@&lt;/font\&gt;&lt;br /&gt;  
+                  &lt;/div\&gt;  
+                  &lt;div class\=&quot;ui divider&quot; style\=&quot;margin-bottom: 5px&quot;\&gt;&lt;/div\&gt;  
+                &lt;/div\&gt;  
+                &lt;div class\=&quot;description&quot;\&gt;  
+                  &lt;div class\=&quot;ui grid&quot;\&gt;  
+                    &lt;div class\=&quot;three wide column&quot; style\=&quot;color:#ffffff&quot;\&gt;CPU&lt;/div\&gt;  
+                    &lt;div class\=&quot;thirteen wide column&quot;\&gt;  
+                      &lt;div :class\=&quot;formatPercent(server.live,server.State.CPU, 100).class&quot;\&gt;  
+                        &lt;div class\=&quot;bar&quot; :style\=&quot;formatPercent(server.live,server.State.CPU, 100).style&quot;\&gt;  
+                          &lt;small\&gt;  
+                            @#formatPercent(server.live,server.State.CPU,100).percent#@%  
+                          &lt;/small\&gt;  
+                        &lt;/div\&gt;  
+                      &lt;/div\&gt;  
+                    &lt;/div\&gt;  
+                    &lt;div class\=&quot;three wide column&quot; style\=&quot;color:#ffffff&quot;\&gt;{{tr &quot;MemUsed&quot;}}&lt;/div\&gt;  
+                    &lt;div class\=&quot;thirteen wide column&quot;\&gt;  
+                      &lt;div :class\=&quot;formatPercent(server.live,server.State.MemUsed, server.Host.MemTotal).class&quot;\&gt;  
+                        &lt;div class\=&quot;bar&quot;  
+                          :style\=&quot;formatPercent(server.live,server.State.MemUsed, server.Host.MemTotal).style&quot;\&gt;  
+                          &lt;small\&gt;  
+                            @#parseInt(server.State?server.State.MemUsed/server.Host.MemTotal\*100:0)#@%  
+                          &lt;/small\&gt;  
+                        &lt;/div\&gt;  
+                      &lt;/div\&gt;  
+                    &lt;/div\&gt;  
+                    &lt;div class\=&quot;three wide column&quot; style\=&quot;color:#ffffff&quot;\&gt;{{tr &quot;SwapUsed&quot;}}&lt;/div\&gt;  
+                    &lt;div class\=&quot;thirteen wide column&quot;\&gt;  
+                      &lt;div :class\=&quot;formatPercent(server.live,server.State.SwapUsed, server.Host.SwapTotal).class&quot;\&gt;  
+                        &lt;div class\=&quot;bar&quot;  
+                          :style\=&quot;formatPercent(server.live,server.State.SwapUsed, server.Host.SwapTotal).style&quot;\&gt;  
+                          &lt;small\&gt;  
+                            @#parseInt(server.State?server.State.SwapUsed/server.Host.SwapTotal\*100:0)#@%  
+                          &lt;/small\&gt;  
+                        &lt;/div\&gt;  
+                      &lt;/div\&gt;  
+                    &lt;/div\&gt;  
+                    &lt;div class\=&quot;three wide column&quot; style\=&quot;color:#ffffff&quot;\&gt;{{tr &quot;DiskUsed&quot;}}&lt;/div\&gt;  
+                    &lt;div class\=&quot;thirteen wide column&quot;\&gt;  
+                      &lt;div :class\=&quot;formatPercent(server.live,server.State.DiskUsed, server.Host.DiskTotal).class&quot;\&gt;  
+                        &lt;div class\=&quot;bar&quot;  
+                          :style\=&quot;formatPercent(server.live,server.State.DiskUsed, server.Host.DiskTotal).style&quot;\&gt;  
+                          &lt;small\&gt;  
+                            @#parseInt(server.State?server.State.DiskUsed/server.Host.DiskTotal\*100:0)#@%  
+                          &lt;/small\&gt;  
+                        &lt;/div\&gt;  
+                      &lt;/div\&gt;  
+                    &lt;/div\&gt;  
+                    &lt;div class\=&quot;three wide column&quot; style\=&quot;color:#ffffff&quot;\&gt;{{tr &quot;NetSpeed&quot;}}&lt;/div\&gt;  
+                    &lt;div class\=&quot;thirteen wide column&quot;\&gt;  
+                      &lt;i class\=&quot;arrow alternate circle down outline icon&quot;\&gt;&lt;/i\&gt;  
+                      &lt;font color\=&quot;#dddddd&quot;\&gt;@#formatByteSize(server.State.NetInSpeed)#@/s&lt;/font\&gt;  
+                      &lt;i class\=&quot;arrow alternate circle up outline icon&quot;\&gt;&lt;/i\&gt;  
+                      &lt;font color\=&quot;#dddddd&quot;\&gt;@#formatByteSize(server.State.NetOutSpeed)#@/s&lt;/font\&gt;  
+                    &lt;/div\&gt;  
+                    &lt;div class\=&quot;three wide column&quot; style\=&quot;color:#ffffff&quot;\&gt;流量&lt;/div\&gt;  
+                    &lt;div class\=&quot;thirteen wide column&quot;\&gt;  
+                      &lt;i class\=&quot;arrow circle down icon&quot; style\=&quot;color:#ffffff&quot;\&gt;&lt;/i\&gt;  
+                      &lt;font color\=&quot;#dddddd&quot;\&gt;@#formatByteSize(server.State.NetInTransfer)#@&lt;/font\&gt;  
+                      &amp;nbsp;  
+                      &lt;i class\=&quot;arrow circle up icon&quot; style\=&quot;color:#ffffff&quot;\&gt;&lt;/i\&gt;  
+                      &lt;font color\=&quot;#dddddd&quot;\&gt;@#formatByteSize(server.State.NetOutTransfer)#@&lt;/font\&gt;  
+                    &lt;/div\&gt;  
+                    &lt;div class\=&quot;three wide column&quot; style\=&quot;color:#ffffff&quot;\&gt;信息&lt;/div\&gt;  
+                    &lt;div class\=&quot;thirteen wide column&quot;\&gt;  
+                      &lt;i class\=&quot;bi bi-cpu-fill&quot; style\=&quot;font-size: 1.1rem; color: #4a86e8;&quot;\&gt;&lt;/i\&gt;  
+                      &lt;font color\=&quot;#dddddd&quot;\&gt;@#getCoreAndGHz(server.Host.CPU)#@&lt;/font\&gt;  
+                      &amp;nbsp;  
+                      &lt;i class\=&quot;bi bi-memory&quot; style\=&quot;font-size: 1.1rem; color: #00ac0d;&quot;\&gt;&lt;/i\&gt;  
+                      &lt;font color\=&quot;#dddddd&quot;\&gt;@#getK2Gb(server.Host.MemTotal)#@&lt;/font\&gt;  
+                      &amp;nbsp;  
+                      &lt;i class\=&quot;bi bi-hdd-rack-fill&quot; style\=&quot;font-size: 1.1rem; color: #980000&quot;\&gt;&lt;/i\&gt;  
+                      &lt;font color\=&quot;#dddddd&quot;\&gt;@#getK2Gb(server.Host.DiskTotal)#@&lt;/font\&gt;  
+                    &lt;/div\&gt;  
+                    &lt;div class\=&quot;three wide column&quot; style\=&quot;color:#ffffff&quot;\&gt;{{tr &quot;Uptime&quot;}}&lt;/div\&gt;  
+                    &lt;div class\=&quot;thirteen wide column&quot;\&gt;  
+                      &lt;i class\=&quot;clock icon&quot; style\=&quot;color:#ffffff&quot;\&gt;&lt;/i\&gt;  
+                      &lt;font color\=&quot;#dddddd&quot;\&gt;@#secondToDate(server.State.Uptime)#@&lt;/font\&gt;  
+                    &lt;/div\&gt;  
+                  &lt;/div\&gt;  
+                &lt;/div\&gt;  
+              &lt;/div\&gt;  
+              &lt;div class\=&quot;content&quot; v-else\&gt;  
+                &lt;p\&gt;  
+                  &lt;font color\=&quot;#dddddd&quot;\&gt;@#server.Name#@&lt;/font\&gt;  
+                &lt;/p\&gt;  
+                &lt;p\&gt;  
+                  &lt;font color\=&quot;#dddddd&quot;\&gt;{{tr &quot;ServerIsOffline&quot;}}&lt;/font\&gt;  
+                &lt;/p\&gt;  
+              &lt;/div\&gt;  
+            &lt;/div\&gt;  
+          &lt;/div\&gt;  
+        &lt;/div\&gt;  
+      &lt;/div\&gt;  
+    &lt;/div\&gt;  
+  &lt;/div\&gt;  
+&lt;/div\&gt;  
+{{template &quot;common/footer&quot; .}}  
+&lt;script\&gt;  
+  const initData = JSON.parse('{{.Servers}}').servers;  
+  var statusCards = new Vue({  
+    el: '#app',  
+    delimiters: \['@#', '#@'\],  
+    data: {  
+      data: initData,  
+      groups: \[\],  
+      cache: \[\],  
+    },  
+    created() {  
+      this.group()  
+    },  
+    mounted() {  
+      $('.nezha-secondary-font.info.icon').popup({  
+        popup: '.ui.content.popup',  
+        exclusive: true,  
+      });  
+    },  
+    methods: {  
+      toFixed2(f) {  
+        return f.toFixed(2)  
+      },  
+      isWindowsPlatform(str) {  
+        return str.includes('Windows')  
+      },  
+      getFontLogoClass(str) {  
+        if (\[&quot;almalinux&quot;,  
+          &quot;alpine&quot;,  
+          &quot;aosc&quot;,  
+          &quot;apple&quot;,  
+          &quot;archlinux&quot;,  
+          &quot;archlabs&quot;,  
+          &quot;artix&quot;,  
+          &quot;budgie&quot;,  
+          &quot;centos&quot;,  
+          &quot;coreos&quot;,  
+          &quot;debian&quot;,  
+          &quot;deepin&quot;,  
+          &quot;devuan&quot;,  
+          &quot;docker&quot;,  
+          &quot;elementary&quot;,  
+          &quot;fedora&quot;,  
+          &quot;ferris&quot;,  
+          &quot;flathub&quot;,  
+          &quot;freebsd&quot;,  
+          &quot;gentoo&quot;,  
+          &quot;gnu-guix&quot;,  
+          &quot;illumos&quot;,  
+          &quot;kali-linux&quot;,  
+          &quot;linuxmint&quot;,  
+          &quot;mageia&quot;,  
+          &quot;mandriva&quot;,  
+          &quot;manjaro&quot;,  
+          &quot;nixos&quot;,  
+          &quot;openbsd&quot;,  
+          &quot;opensuse&quot;,  
+          &quot;pop-os&quot;,  
+          &quot;raspberry-pi&quot;,  
+          &quot;redhat&quot;,  
+          &quot;rocky-linux&quot;,  
+          &quot;sabayon&quot;,  
+          &quot;slackware&quot;,  
+          &quot;snappy&quot;,  
+          &quot;solus&quot;,  
+          &quot;tux&quot;,  
+          &quot;ubuntu&quot;,  
+          &quot;void&quot;,  
+          &quot;zorin&quot;\].indexOf(str)  
+          &gt; -1) {  
+          return str;  
+        }  
+        if (\['openwrt', 'linux'\].indexOf(str) &gt; -1) {  
+          return 'tux';  
+        }  
+        if (str == 'amazon') {  
+          return 'redhat';  
+        }  
+        if (str == 'arch') {  
+          return 'archlinux';  
+        }  
+        return '';  
+      },  
+      group() {  
+        this.groups = groupingData(this.data, &quot;Tag&quot;)  
+      },  
+      formatPercent(live, used, total) {  
+        const percent = live ? (parseInt(used / total \* 100) || 0) : -1  
+        if (!this.cache\[percent\]) {  
+          this.cache\[percent\] = {  
+            class: {  
+              ui: true,  
+              progress: true,  
+            },  
+            style: {  
+              'transition-duration': '300ms',  
+              'min-width': 'unset',  
+              width: percent + '% !important',  
+            },  
+            percent,  
+          }  
+          if (percent &lt; 0) {  
+            this.cache\[percent\].style\['background-color'\] = 'slategray'  
+            this.cache\[percent\].class.offline = true  
+          } else if (percent &lt; 51) {  
+            this.cache\[percent\].style\['background-color'\] = '#0a94f2'  
+            this.cache\[percent\].class.fine = true  
+          } else if (percent &lt; 81) {  
+            this.cache\[percent\].style\['background-color'\] = 'orange'  
+            this.cache\[percent\].class.warning = true  
+          } else {  
+            this.cache\[percent\].style\['background-color'\] = 'crimson'  
+            this.cache\[percent\].class.error = true  
+          }  
+        }  
+        return this.cache\[percent\]  
+      },  
+      secondToDate(s) {  
+        var d = Math.floor(s / 3600 / 24);  
+        if (d &gt; 0) {  
+          return d + &quot; {{tr &quot;Day&quot;}}&quot;  
+        }  
+        var h = Math.floor(s / 3600 % 24);  
+        var m = Math.floor(s / 60 % 60);  
+        var s = Math.floor(s % 60);  
+        return h + &quot;:&quot; + (&quot;0&quot; + m).slice(-2) + &quot;:&quot; + (&quot;0&quot; + s).slice(-2);  
+      },  
+      formatTimestamp(t) {  
+        return new Date(t \* 1000).toLocaleString()  
+      },  
+      formatByteSize(bs) {  
+        const x = readableBytes(bs)  
+        return x != &quot;NaN undefined&quot; ? x : '0B'  
+      },  
+      getCoreAndGHz(str) {  
+        if ((str || \[\]).hasOwnProperty(0) === false) {  
+          return '';  
+        }  
+        str = str\[0\];  
+        let GHz = str.match(/(\\d|\\.)+GHz/g);  
+        let Core = str.match(/(\\d|\\.)+ Physical/g);  
+        GHz = GHz !== null ? GHz.hasOwnProperty(0) === false ? '' : GHz\[0\] : ''  
+        Core = Core !== null ? Core.hasOwnProperty(0) === false ? '?' : Core\[0\] : '?'  
+        if (Core === '?') {  
+          let Core = str.match(/(\\d|\\.)+ Virtual/g);  
+          Core = Core !== null ? Core.hasOwnProperty(0) === false ? '?' : Core\[0\] : '?'  
+          return Core.replace('Virtual', 'Core')  
+        }  
+        return Core.replace('Physical', 'Core');  
+  
+      },  
+      getK2Gb(bs) {  
+        bs = bs / 1024 / 1024 / 1024;  
+        return Math.ceil(bs.toFixed(2)) + 'GB';  
+      },  
+      listTipsMouseenter(obj, strs, tipsNum = 1) {  
+        this.layerIndex = layer.tips(strs, '#' + obj, { tips: \[tipsNum, 'rgb(0 0 0 / 85%)'\], time: 0 });  
+        $('#' + obj).attr('layerIndex', this.layerIndex)  
+      },  
+      listTipsMouseleave(obj) {  
+        layer.close(this.layerIndex)  
+      }  
+    }  
+  })  
+  
+  function groupingData(data, field) {  
+    let map = {};  
+    let dest = \[\];  
+    data.forEach(item =&gt; {  
+      if (!map\[item\[field\]\]) {  
+        dest.push({  
+          \[field\]: item\[field\],  
+          data: \[item\]  
+        });  
+        map\[item\[field\]\] = item;  
+      } else {  
+        dest.forEach(dItem =&gt; {  
+          if (dItem\[field\] == item\[field\]) {  
+            dItem.data.push(item);  
+          }  
+        });  
+      }  
+    })  
+    return dest;  
+  }  
+  
+  let canShowError = true;  
+  function connect() {  
+    const wsProtocol = window.location.protocol == &quot;https:&quot; ? &quot;wss&quot; : &quot;ws&quot;  
+    const ws = new WebSocket(wsProtocol + '://' + window.location.host + '/ws');  
+    ws.onopen = function (evt) {  
+      canShowError = true;  
+      $.suiAlert({  
+        title: '{{tr &quot;RealtimeChannelEstablished&quot;}}',  
+        description: '{{tr &quot;GetTheLatestMonitoringDataInRealTime&quot;}}',  
+        type: 'success',  
+        time: '2',  
+        position: 'top-center',  
+      });  
+    }  
+    ws.onmessage = function (evt) {  
+      const oldServers = statusCards.servers  
+      const data = JSON.parse(evt.data)  
+      statusCards.servers = data.servers  
+      for (let i = 0; i &lt; statusCards.servers.length; i++) {  
+        const ns = statusCards.servers\[i\];  
+        if (!ns.Host) ns.live = false  
+        else {  
+          const lastActive = new Date(ns.LastActive).getTime()  
+          if (data.now - lastActive &gt; 10 \* 1000) {  
+            ns.live = false  
+          } else {  
+            ns.live = true  
+          }  
+        }  
+      }  
+      statusCards.groups = groupingData(statusCards.servers, &quot;Tag&quot;)  
+    }  
+    ws.onclose = function () {  
+      if (canShowError) {  
+        canShowError = false;  
+        $.suiAlert({  
+          title: '{{tr &quot;RealtimeChannelDisconnect&quot;}}',  
+          description: '{{tr &quot;CanNotGetTheLatestMonitoringDataInRealTime&quot;}}',  
+          type: 'warning',  
+          time: '2',  
+          position: 'top-center',  
+        });  
+      }  
+      setTimeout(function () {  
+        connect()  
+      }, 3000);  
+    }  
+    ws.onerror = function () {  
+      ws.close()  
+    }  
+  }  
+  
+  connect();  
+  
+  $('.ui.accordion').accordion({ &quot;exclusive&quot;: false });  
+&lt;/script\&gt;  
+{{end}}  
+</code></pre>
+<h4 id="headerhtml-2">header.html</h4>
+<pre><code class="language-html">{{define &quot;common/header&quot;}}  
+&lt;!DOCTYPE html\&gt;  
+&lt;html lang\=&quot;{{.Conf.Language}}&quot;\&gt;  
+  
+&lt;head\&gt;  
+    &lt;meta charset\=&quot;UTF-8&quot;\&gt;  
+    &lt;meta name\=&quot;viewport&quot; content\=&quot;width=device-width, initial-scale=1.0&quot;\&gt;  
+    &lt;meta http-equiv\=&quot;X-UA-Compatible&quot; content\=&quot;ie=edge&quot;\&gt;  
+    &lt;meta content\=&quot;telephone=no&quot; name\=&quot;format-detection&quot;\&gt;  
+    &lt;title\&gt;{{.Title}}&lt;/title\&gt;  
+    &lt;link rel\=&quot;stylesheet&quot; type\=&quot;text/css&quot; href\=&quot;https://cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.css&quot;\&gt;  
+    &lt;link href\=&quot;https://cdn.staticfile.org/font-logos/0.17/font-logos.min.css&quot; type\=&quot;text/css&quot; rel\=&quot;stylesheet&quot; /&gt;  
+    &lt;link href\=&quot;https://cdn.staticfile.org/bootstrap-icons/1.10.3/font/bootstrap-icons.css&quot; type\=&quot;text/css&quot;  
+        rel\=&quot;stylesheet&quot; /&gt;  
+    &lt;link rel\=&quot;stylesheet&quot; type\=&quot;text/css&quot; href\=&quot;/static/semantic-ui-alerts.min.css&quot;\&gt;  
+    &lt;link rel\=&quot;stylesheet&quot; type\=&quot;text/css&quot; href\=&quot;/static/main.css?v2022042314&quot;\&gt;  
+    &lt;link rel\=&quot;shortcut icon&quot; type\=&quot;image/png&quot; href\=&quot;/static/logo.svg?v20210804&quot; /&gt;  
+&lt;/head\&gt;  
+  
+&lt;body\&gt;  
+    {{end}}
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.laomao.icu/post/remote-control-software/" class="post-title gt-a-link">
+                    【评测】远程桌面工具小横评
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">致你，也致我</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        <footer class="footer">
+    <div>
+        当前博客已在风雨中运行了：<span id="run-time"></span>
+    </div>
+    <div>
+<a href="https://icp.gov.moe/?keyword=20240422" target="_blank">萌ICP备20240422号</a>
+    </div>
+    <div>
+        <a href="https://anilive.nekoss.cn" target="_blank">AniLive放映室</a>
+        <span class="footer-line">|</span>
+        <a href="https://docs.qq.com/sheet/DQkxpQWxNbUVjQ1pE?tab=w90ppb" target="_blank">AniLive资料库</a>
+    </div>
+</footer>
+<script>
+    function updateRunTime() {
+        // 设置建站时间 (2020年4月21日15时22分00秒)
+        const startDate = new Date('2020-04-21T15:22:00');
+        const now = new Date();
+
+        // 计算时间差
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        // 处理借位
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+        if (days < 0) {
+            // 获取上一个月的总天数
+            const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += lastMonth.getDate();
+            months--;
+        }
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        // 将结果显示到页面上
+        const runTimeSpan = document.getElementById('run-time');
+        if (runTimeSpan) { // 检查元素是否存在
+             runTimeSpan.textContent = `${years}年${months}月${days}日${hours}时${minutes}分${seconds}秒`;
+        }
+    }
+
+    // 每秒钟更新一次时间
+    setInterval(updateRunTime, 1000);
+
+    // 页面加载时立即执行一次，避免初始空白
+    document.addEventListener('DOMContentLoaded', updateRunTime);
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d469c8abcec4b3e8c08c104d727b9b1"}'></script><!-- End Cloudflare Web Analytics -->
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://blog.laomao.icu/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

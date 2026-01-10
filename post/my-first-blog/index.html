@@ -1,0 +1,257 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>
+  【日常】My First Blog | 猫の博客
+</title>
+
+<link rel="shortcut icon" href="https://blog.laomao.icu/favicon.ico?v=1768043901498">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.laomao.icu/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+  integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            猫の博客
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    分类
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1768043901498"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    【日常】My First Blog
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-03-23 ·
+                    </time>
+                    
+                        <a href="https://blog.laomao.icu/tag/hfh886Jn79/" class="post-tags">
+                            # 日常
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="re0-从零开始">Re:0 从零开始</h1>
+<p>自从2018年我接触到服务器之后，就一直想要搭建一个完全属于自己的博客，最初的想法是作为自己的一个树洞，把不想在公众面前发布的内容 （或者是一些法律禁止的东西） 发表在这里。于是我也尝试了不少解决方案：Wordpress、Typecho、Zblog等传统博客系统；以及Hugo、Jekyll等静态博客，包括本次选择的Hexo。在折腾的时候发现这些系统都多少存在一些问题，也导致我在各种系统间反复跳跃。</p>
+<ul>
+<li>
+<p>传统博客<br>
+传统博客存在的问题众所周知，即“臃肿”、“功能复杂”、“依赖服务器环境运行”等……不过在我拥有甲骨文永久免费服务器之后，这些问题就没有那么严重了。于是我用了比较长时间的Typecho，并写了不少文章。但是永久免费终究是不知道能用多久，因此我一直在寻找其他的托管平台。</p>
+</li>
+<li>
+<p>静态博客<br>
+在使用静态博客的时候，对我来说最大的问题就是环境配置。上网找了许多教程，基本都是说“先这样、再这样，然后就好了”，到我实操就变成 “这样就报错，那样还是报错,到底该怎么样”。所以我上面说使用Typecho其实就是在【易用】与【可持续】之间做了个取舍。</p>
+</li>
+<li>
+<p>xLog &amp; Gridea<br>
+这两者是主打“托管 + 写作”一体的平台，xLog是基于区块链 (韭菜园) 存储，Gridea是传统服务器托管 + 付费的模式。<br>
+xLog我用了一下，发现一个对我来说比较大的痛点，那就是它的markdown编辑器容易崩溃，且使用时需要登录区块链钱包……我只是想写写东西，并不想扯上什么区块链、虚拟货币之类的东西。同时xLog的分类功能堪称鸡肋，页面整体属于信息流模式，也不能搜索，对我来说使用起来比较麻烦。<br>
+Gridea就算了，付费写博客我是真干不出来，毕竟也不做站，免费的话又是需要服务器托管……</p>
+</li>
+</ul>
+<h1 id="hello-world">Hello World</h1>
+<p>兜兜转转，这些年也看了不少人的博客，发现 <strong>Hexo + Github + Cloudflare Pages</strong> 的配置真的非常好用省心，于是最终还是回来尝试一下。如果各位能看到这篇文章，那么就代表我成功配置了这套系统。借助Cloudflare的全球基础建设，相信本博客也能活的更久。</p>
+<h1 id="改变">改变</h1>
+<p>Hexo 固然有数据在本地的安心感，但对我这种经常折腾系统的人来说，nodejs + hexo + vscode + 设置proxy 的配置意味着提高了每次装机的设置难度，再加上我手里的服务器又这么多，因此最终还是决定回归初心，将博客放在甲骨文的服务器上了。</p>
+<h1 id="更新">更新</h1>
+<ul>
+<li><strong>2025/05/28：</strong> 由于Github对于IP封控趋于严格，导致博客中许多图片报错429，故正在将博客中所有图片替换为微博图床链接。</li>
+<li><strong>2026/01/09：</strong> 开始尝试使用Gridea写作，直接同步到Github Pages，避免了各种同步问题</li>
+</ul>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.laomao.icu/post/ri-chang-2022-nian-zhong-zong-jie/" class="post-title gt-a-link">
+                    【日常】2022年终总结
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">致你，也致我</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        <footer class="footer">
+    <div>
+        当前博客已在风雨中运行了：<span id="run-time"></span>
+    </div>
+    <div>
+<a href="https://icp.gov.moe/?keyword=20240422" target="_blank">萌ICP备20240422号</a>
+    </div>
+    <div>
+        <a href="https://anilive.nekoss.cn" target="_blank">AniLive放映室</a>
+        <span class="footer-line">|</span>
+        <a href="https://docs.qq.com/sheet/DQkxpQWxNbUVjQ1pE?tab=w90ppb" target="_blank">AniLive资料库</a>
+    </div>
+</footer>
+<script>
+    function updateRunTime() {
+        // 设置建站时间 (2020年4月21日15时22分00秒)
+        const startDate = new Date('2020-04-21T15:22:00');
+        const now = new Date();
+
+        // 计算时间差
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        // 处理借位
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+        if (days < 0) {
+            // 获取上一个月的总天数
+            const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += lastMonth.getDate();
+            months--;
+        }
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        // 将结果显示到页面上
+        const runTimeSpan = document.getElementById('run-time');
+        if (runTimeSpan) { // 检查元素是否存在
+             runTimeSpan.textContent = `${years}年${months}月${days}日${hours}时${minutes}分${seconds}秒`;
+        }
+    }
+
+    // 每秒钟更新一次时间
+    setInterval(updateRunTime, 1000);
+
+    // 页面加载时立即执行一次，避免初始空白
+    document.addEventListener('DOMContentLoaded', updateRunTime);
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d469c8abcec4b3e8c08c104d727b9b1"}'></script><!-- End Cloudflare Web Analytics -->
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://blog.laomao.icu/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

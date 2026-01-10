@@ -1,0 +1,569 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>
+  【转载】使用Winsw部署Windows服务 | 猫の博客
+</title>
+
+<link rel="shortcut icon" href="https://blog.laomao.icu/favicon.ico?v=1768043901498">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.laomao.icu/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+  integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            猫の博客
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    分类
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1768043901498"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    【转载】使用Winsw部署Windows服务
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2025-03-24 ·
+                    </time>
+                    
+                        <a href="https://blog.laomao.icu/tag/jt3q8SBOeU/" class="post-tags">
+                            # 转载
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <blockquote>
+<p>转载自<a href="https://segmentfault.com/a/1190000019520072">segmentfault - bluesbruce</a><br>
+软件仓库地址：https://github.com/kohsuke/winsw</p>
+</blockquote>
+<h2 id="安装说明">安装说明</h2>
+<ol>
+<li>下载winsw程序，选择对应版本。（WinSW.NET2.exe 或 WinSW.NET4.exe）</li>
+<li>安装.NET Framework。</li>
+<li>将WinSW.exe复制到自定义的目录，并重命名为test.exe</li>
+<li>同目录下创建test.xml。特别注意，xml和exe必须同名</li>
+<li>使用test.exe install安装服务。</li>
+<li>使用test.exe uninstall卸载服务。</li>
+</ol>
+<h3 id="示例以部署springboot程序为例">示例（以部署SpringBoot程序为例）</h3>
+<pre><code>&lt;configuration&gt;
+  &lt;id&gt;lance&lt;/id&gt;
+  &lt;name&gt;lance(winsw)&lt;/name&gt;
+  &lt;description&gt;java&lt;/description&gt;
+  &lt;executable&gt;java&lt;/executable&gt;
+  &lt;arguments&gt;-server -Xms400m -Xmx400m -Xmn100m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xverify:none -XX:+DisableExplicitGC -Djava.awt.headless=true -jar &quot;lance-1.2.0.jar&quot;&lt;/arguments&gt;
+  &lt;log mode=&quot;reset&quot;/&gt;
+&lt;/configuration&gt;
+</code></pre>
+<h2 id="命令说明">命令说明</h2>
+<pre><code>E:\service&gt;test.exe /?
+A wrapper binary that can be used to host executables as Windows services
+
+Usage: winsw [/redirect file] &lt;command&gt; [&lt;args&gt;]
+       Missing arguments trigger the service mode
+
+Available commands:
+- 'install'   - install the service to Windows Service Controller
+- 'uninstall' - uninstall the service
+- 'start'     - start the service (must be installed before)
+- 'stop'      - stop the service
+- 'restart'   - restart the service
+- 'restart!'  - self-restart (can be called from child processes)
+- 'status'    - check the current status of the service
+- 'test'      - check if the service can be started and then stopped
+- 'testwait'  - starts the service and waits until a key is pressed then stops the service
+- 'version'   - print the version info
+- 'help'      - print the help info (aliases: -h,--help,-?,/?)
+
+Extra options:
+- '/redirect' - redirect the wrapper's STDOUT and STDERR to the specified file
+
+WinSW 2.2.0.0
+More info: https://github.com/kohsuke/winsw
+Bug tracker: https://github.com/kohsuke/winsw/issues
+</code></pre>
+<h2 id="配置说明">配置说明</h2>
+<p>https://github.com/winsw/winsw/blob/master/doc/installation.md</p>
+<pre><code>&lt;!--
+ 这是Windows服务包装器的一个配置示例。
+ 此配置文件应放在WinSW.exe同目录，名称应相同。
+ 例如，对于myapp.exe，配置文件名应为myapp.xml。
+
+ 更多信息：https://github.com/kohsuke/winsw/blob/master/doc/xmlconfigfile.md
+--&gt;
+&lt;configuration&gt;
+  
+&lt;!-- 
+SECTION: 必填项
+--&gt;
+  
+  &lt;!-- 服务ID，在windows系统中必须唯一 --&gt;
+  &lt;id&gt;myapp&lt;/id&gt;
+  &lt;!-- 服务显示名称，只能英文和数字 --&gt;
+  &lt;name&gt;MyApp Service (powered by WinSW)&lt;/name&gt;
+  &lt;!-- 服务描述，只能英文和数字 --&gt;
+  &lt;description&gt;This service is a service cratead from a sample configuration&lt;/description&gt;
+  
+  &lt;!-- 启动可执行文件的路径 --&gt;
+  &lt;executable&gt;%BASE%\myExecutable.exe&lt;/executable&gt;
+
+&lt;!--
+SECTION: 安装
+这些选项仅在安装时有效。修改配置后，必须重新安装服务才能生效。
+--&gt;
+
+  &lt;!--
+    OPTION: serviceaccount
+    定义运行服务的账号。
+  --&gt;
+  &lt;!--
+  &lt;serviceaccount&gt;
+    &lt;domain&gt;YOURDOMAIN&lt;/domain&gt;
+    &lt;user&gt;useraccount&lt;/user&gt;
+    &lt;password&gt;Pa55w0rd&lt;/password&gt;
+    &lt;allowservicelogon&gt;true&lt;/allowservicelogon&gt;
+  &lt;/serviceaccount&gt;
+  --&gt;
+  
+  &lt;!--
+    OPTION: onfailure
+    定义一系列操作，如果托管的可执行文件失败，则顺序执行这些操作。
+    支持的操作：restart，reboot，none
+  --&gt;
+  &lt;!--
+  &lt;onfailure action=&quot;restart&quot; delay=&quot;10 sec&quot;/&gt;
+  &lt;onfailure action=&quot;restart&quot; delay=&quot;20 sec&quot;/&gt;
+  &lt;onfailure action=&quot;reboot&quot; /&gt;
+  --&gt;
+  
+  &lt;!--
+    OPTION: resetfailure
+    windows服务重置故障状态的时间。
+    默认值 1 day
+  --&gt;
+  &lt;!--
+  &lt;resetfailure&gt;1 hour&lt;/resetfailure&gt;
+  --&gt;
+
+&lt;!--
+SECTION: 执行管理配置
+--&gt;
+
+  &lt;!-- 
+    OPTION: arguments
+    传递给可执行文件的参数。
+  --&gt;
+  &lt;!--
+  &lt;arguments&gt;-classpath c:\cygwin\home\kohsuke\ws\hello-world\out\production\hello-world test.Main&lt;/arguments&gt;
+  --&gt;
+
+  &lt;!-- 
+    OPTION: startarguments
+    可执行文件启动参数。
+    如果配置，则覆盖&quot;arguments&quot;
+  --&gt;
+  &lt;!--
+  &lt;startarguments&gt;&lt;/startarguments&gt;
+  --&gt;
+  
+  &lt;!--
+    OPTION: workingdirectory
+    如果指定，则设置可执行文件的默认工作目录。
+    默认值：服务包装的可执行文件的目录
+  --&gt;
+  &lt;!--
+  &lt;workingdirectory&gt;C:\myApp\work&lt;/workingdirectory&gt;
+--&gt;
+  
+  &lt;!--
+    OPTION: priority
+    所需的进程优先级。
+    可设置的值：Normal, Idle, High, RealTime, BelowNormal, AboveNormal
+    默认值：Normal
+  --&gt;
+  &lt;priority&gt;Normal&lt;/priority&gt;
+  
+  &lt;!-- 
+    OPTION: stoptimeout
+    强制终止可执行文件之前，尝试正常关闭的等待时间。
+    默认值：15 seconds
+  --&gt;
+  &lt;stoptimeout&gt;15 sec&lt;/stoptimeout&gt;
+    
+  &lt;!--
+    OPTION: stopparentprocessfirst
+    如果设置为true，在停止子进程之前终止父进程。
+    默认值：false
+  --&gt;
+  &lt;stopparentprocessfirst&gt;false&lt;/stopparentprocessfirst&gt;
+
+  &lt;!-- 
+    OPTION: stopexecutable
+    执行关闭服务的可执行文件路径。
+    只有配置了&quot;stoparguments&quot;时，才使用此配置。如果没有则用&quot;executable&quot;关闭服务
+  --&gt;
+  &lt;!--
+  &lt;stopexecutable&gt;%BASE%\stop.exe&lt;/stopexecutable&gt;
+  --&gt;
+
+  &lt;!-- 
+    OPTION: stoparguments
+    终止服务时，传递给&quot;stopexecutable&quot;的附加参数
+    此选项还允许通过停止可执行文件终止可执行文件
+  --&gt;
+  &lt;!--
+  &lt;stoparguments&gt;-stop true&lt;/stoparguments&gt;
+  --&gt;
+&lt;!-- 
+SECTION: 服务管理
+--&gt;
+    &lt;!--
+      OPTION: startmode
+      定义服务的启动模式
+      支持的模式：Automatic, Manual, Boot, System (latter ones are supported for driver services only)
+      默认模式：Automatic
+    --&gt;
+    &lt;startmode&gt;Automatic&lt;/startmode&gt;
+    
+    &lt;!--
+      OPTION: delayedAutoStart
+      如果在&quot;startmode&quot;配置了&quot;Automatic&quot;，则启用延迟自动启动。
+      请参阅Winsw文档以获取有关支持的平台版本和限制的信息。
+    --&gt;
+    &lt;!--
+        &lt;delayedAutoStart/&gt;
+    --&gt;
+    
+    &lt;!-- 
+      OPTION: depend
+      在本服务启动之前启动的服务。
+    --&gt;
+    &lt;!--
+    &lt;depend&gt;Eventlog&lt;/depend&gt;
+    &lt;depend&gt;W32Time&lt;/depend&gt;
+    --&gt;
+    
+    &lt;!--
+      OPTION: waithint
+      挂起停止操作所需的时间
+      在指定的时间段过去之前，服务应该下次调用setServiceStatus函数。
+      否则服务将被标记为无响应
+      默认值：15 seconds
+    --&gt;
+    &lt;waithint&gt;15 sec&lt;/waithint&gt;
+    
+    &lt;!--
+      OPTION: sleeptime
+      服务下次调用setServiceStatus函数之前的时间。
+      不要超过&quot;waithint&quot;。建议间隔是&quot;waithint&quot;的十分之一，但不小于1秒，也不大于10秒。
+      默认值：1 second
+    --&gt;
+    &lt;sleeptime&gt;1 sec&lt;/sleeptime&gt;
+    
+    &lt;!--
+      OPTION: interactive
+      指示服务可以与桌面交互。
+    --&gt;
+    &lt;!--
+    &lt;interactive/&gt;
+    --&gt;
+    
+&lt;!-- 
+SECTION: 日志记录 
+--&gt;
+
+  &lt;!--
+    OPTION: logpath
+    为服务包装程序生成的所有日志设置自定义日志目录。
+    默认值：包含执行器的目录
+  --&gt;
+  &lt;!--
+    &lt;logpath&gt;%BASE%\logs&lt;/logpath&gt;
+  --&gt;
+  
+  &lt;!--
+    OPTION: log
+    为可执行文件生成的日志定义日志记录模式。
+    支持的模式：
+      * append - 追加到现有日志
+      * none - 不保存日志
+      * reset - 启动时擦除日志
+      * roll - 根据大小自动循环分割日志
+      * roll-by-time - 根据日期循环分割日志
+    默认模式: append
+    
+    每种模式都有不同的设置。https://github.com/kohsuke/winsw/blob/master/doc/loggingAndErrorReporting.md
+  --&gt;
+  &lt;log mode=&quot;append&quot;&gt;
+    &lt;!--
+    &lt;setting1/&gt;
+    &lt;setting2/&gt;
+  --&gt;
+  &lt;/log&gt;
+  
+&lt;!--
+SECTION: 环境设置
+--&gt;
+  &lt;!--
+    OPTION: env
+    设置或重写环境变量。
+    顶层可能配置了多个条目。
+  --&gt;
+  &lt;!--
+  &lt;env name=&quot;MY_TOOL_HOME&quot; value=&quot;C:\etc\tools\myTool&quot; /&gt;
+  &lt;env name=&quot;LM_LICENSE_FILE&quot; value=&quot;host1;host2&quot; /&gt;
+  --&gt;
+
+
+  &lt;!--
+    OPTION: download
+    启动前由包装器执行的下载列表。
+  --&gt;
+  &lt;!--
+  &lt;download from=&quot;http://www.google.com/&quot; to=&quot;%BASE%\index.html&quot; /&gt;
+  
+  下载并在出现错误时使服务启动失败：
+  &lt;download from=&quot;http://www.nosuchhostexists.com/&quot; to=&quot;%BASE%\dummy.html&quot; failOnError=&quot;true&quot;/&gt;
+
+  由于连接未加密而导致基本身份验证不安全的示例：
+  &lt;download from=&quot;http://example.com/some.dat&quot; to=&quot;%BASE%\some.dat&quot;
+            auth=&quot;basic&quot; unsecureAuth=“true”
+            username=&quot;aUser&quot; password=“aPassw0rd&quot; /&gt;
+
+  通过HTTPS安全基本身份验证
+  &lt;download from=&quot;https://example.com/some.dat&quot; to=&quot;%BASE%\some.dat&quot;
+            auth=&quot;basic&quot; username=&quot;aUser&quot; password=&quot;aPassw0rd&quot; /&gt;
+
+  当目标服务器和客户端是同一域的成员，并且客户端域属于具有信任的域时，安全身份验证：
+  &lt;download from=&quot;https://example.com/some.dat&quot; to=&quot;%BASE%\some.dat&quot; auth=&quot;sspi&quot; /&gt;
+  --&gt;
+
+&lt;!-- 
+SECTION: 其他选项
+--&gt;
+  
+  &lt;!--
+    OPTION: beeponshutdown
+    指示服务在关闭时（如果操作系统支持）应发出嘟嘟声。
+  --&gt;
+  &lt;!--
+  &lt;beeponshutdown/&gt; 
+  --&gt;
+  
+&lt;!--
+SECTION: 扩展
+此配置部分允许指定自定义扩展。
+更多信息请访问：https://github.com/kohsuke/winsw/blob/master/doc/extensions/extensions.md
+--&gt;
+
+&lt;!--
+&lt;extensions&gt;
+  Extension 1: id values must be unique
+  &lt;extension enabled=&quot;true&quot; id=&quot;extension1&quot; className=&quot;winsw.Plugins.SharedDirectoryMapper.SharedDirectoryMapper&quot;&gt;
+    &lt;mapping&gt;
+      &lt;map enabled=&quot;false&quot; label=&quot;N:&quot; uncpath=&quot;\\UNC&quot;/&gt;
+      &lt;map enabled=&quot;false&quot; label=&quot;M:&quot; uncpath=&quot;\\UNC2&quot;/&gt;
+    &lt;/mapping&gt;
+  &lt;/extension&gt;
+  ...
+&lt;/extensions&gt;
+--&gt;
+
+&lt;/configuration&gt;
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.laomao.icu/post/delete-unused-apps/" class="post-title gt-a-link">
+                    【转载】Win10 默认应用选择的时候出现了无效的选项如何删除？
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">致你，也致我</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        <footer class="footer">
+    <div>
+        当前博客已在风雨中运行了：<span id="run-time"></span>
+    </div>
+    <div>
+<a href="https://icp.gov.moe/?keyword=20240422" target="_blank">萌ICP备20240422号</a>
+    </div>
+    <div>
+        <a href="https://anilive.nekoss.cn" target="_blank">AniLive放映室</a>
+        <span class="footer-line">|</span>
+        <a href="https://docs.qq.com/sheet/DQkxpQWxNbUVjQ1pE?tab=w90ppb" target="_blank">AniLive资料库</a>
+    </div>
+</footer>
+<script>
+    function updateRunTime() {
+        // 设置建站时间 (2020年4月21日15时22分00秒)
+        const startDate = new Date('2020-04-21T15:22:00');
+        const now = new Date();
+
+        // 计算时间差
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        // 处理借位
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+        if (days < 0) {
+            // 获取上一个月的总天数
+            const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += lastMonth.getDate();
+            months--;
+        }
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        // 将结果显示到页面上
+        const runTimeSpan = document.getElementById('run-time');
+        if (runTimeSpan) { // 检查元素是否存在
+             runTimeSpan.textContent = `${years}年${months}月${days}日${hours}时${minutes}分${seconds}秒`;
+        }
+    }
+
+    // 每秒钟更新一次时间
+    setInterval(updateRunTime, 1000);
+
+    // 页面加载时立即执行一次，避免初始空白
+    document.addEventListener('DOMContentLoaded', updateRunTime);
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d469c8abcec4b3e8c08c104d727b9b1"}'></script><!-- End Cloudflare Web Analytics -->
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://blog.laomao.icu/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

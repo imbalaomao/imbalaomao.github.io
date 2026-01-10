@@ -1,0 +1,339 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>
+  【转载】跨平台播放器 mpv 配置入门 | 猫の博客
+</title>
+
+<link rel="shortcut icon" href="https://blog.laomao.icu/favicon.ico?v=1768043901498">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.laomao.icu/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+  integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            猫の博客
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    分类
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1768043901498"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    【转载】跨平台播放器 mpv 配置入门
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-06-23 ·
+                    </time>
+                    
+                        <a href="https://blog.laomao.icu/tag/jt3q8SBOeU/" class="post-tags">
+                            # 转载
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <blockquote>
+<h1 id="转载自-vcb-studio">转载自 <a href="https://vcb-s.com/archives/7594">VCB-Studio</a></h1>
+</blockquote>
+<p>mpv 是著名开源项目 MPlayer 的分支，因其对最新软硬件平台、视频标准以及各种高画质选项的支持而广受好评，也是目前非 Windows 平台上高画质播放器的不二选择。</p>
+<p>由于 mpv 本身没有图形界面，各种设置需要通过手动编写配置文件来完成，使很多不熟悉命令行的普通用户望而却步。本文的主要目的就是为普通用户提供一个 mpv 播放器的上手指南，手把手教你如何把 mpv 用起来。</p>
+<p>相比在图形界面中用鼠标勾勾点点，手写配置文件的方式固然不太符合普通用户的习惯，但是“一旦接受了这种设定”，你会逐渐体会到命令行的便利与灵活。</p>
+<p>如果你确实需要一个图形界面的 mpv 播放器前端，我们推荐：<br>
+– Windows 用户使用 <a href="https://github.com/mpvnet-player/mpv.net">mpv.net</a>，可以通过<a href="https://www.microsoft.com/store/productId/9N64SQZTB3LM">微软商店</a>或 <a href="https://github.com/mpvnet-player/mpv.net/releases">GitHub</a> 获取；<br>
+– macOS 用户使用 <a href="https://iina.io/">IINA</a>，可以直接从<a href="https://iina.io/download/">官方网站</a>下载。</p>
+<p>即使你选择使用以上两款图形界面的 mpv 前端，在配置时仍然可以参考本教程的内容。</p>
+<h2 id="安装">安装</h2>
+<p>Windows 用户可以到<a href="https://sourceforge.net/projects/mpv-player-windows/files/64bit/">这里</a>选择并下载最新版压缩包。mpv 是原生绿色软件，将压缩包内所有文件解压到你想要的位置即可，例如 <code>C:\mpv</code>。如果你希望双击就能用 mpv 打开媒体文件，请以管理员权限运行 <code>installer</code> 文件夹内的 <code>mpv-install.bat</code>。该软件仓库的维护者每周都会发布一个根据最新源代码编译的版本。</p>
+<p>macOS 用户可以到<a href="https://laboratory.stolendata.net/~djinn/mpv_osx/">这里</a>下载最新版的压缩包，解压后把得到的 <code>mpv.app</code> 直接拖进应用（Applications）文件夹内即可。如果你安装了 <a href="https://brew.sh/">Homebrew</a>，也可以直接运行 <code>brew cask install mpv</code> 来安装。安装之后首次运行时可能会被 macOS 安全设置阻止，需要到系统设置 – 安全与隐私中允许它。</p>
+<p>Linux 各主要发行版的官方软件源里都收录了 mpv，例如使用 apt 的系统可以直接用 <code>sudo apt install mpv</code> 来安装。不过因为这些软件源中的 mpv 版本经常过旧，建议另外找第三方的软件源来安装，或者参考 <a href="https://github.com/mpv-player/mpv-build">mpv-build</a> 自行编译。</p>
+<h2 id="设置文件类型关联">设置文件类型关联</h2>
+<p>Windows 下的文件类型关联应该已经由安装脚本完成。如果要手动设置，以 MKV 文件为例，在任意 MKV 文件上点击右键 – 属性 – 打开方式 – 更改，然后选择刚才安装目录下的 <code>mpv.exe</code> 即可。</p>
+<p>macOS 下和 Windows 类似，右键 – 显示简介 – 打开方式 – 全部更改，然后选择 mpv 即可。</p>
+<p>Linux 下取决于你使用的桌面环境，修改方式和上面大同小异。</p>
+<h2 id="简单的播放器控制界面">简单的播放器控制界面</h2>
+<p>mpv 在播放界面上提供了一些简单的控制功能。在视频画面上移动鼠标会在界面底部显示浮动控制栏。<br>
+<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vizhb707j21hg0vo4qp.jpg" alt="img" loading="lazy"><br>
+底部最左边的三个按钮分别是播放/暂停、跳转前后章节。进度条右边的几个按钮分别是切换音轨、切换字幕、调节音量和全屏/窗口显示。鼠标左键点击音轨和字幕按钮可以直接切换音轨或字幕，Shift + 左键则可以显示当前已加载的音轨或字幕列表。<br>
+常用快捷键</p>
+<p><code>→</code> 前进 5 秒<br>
+<code>←</code> 后退 5 秒<br>
+<code>↑</code> 前进 1 分钟<br>
+<code>↓</code> 后退 1 分钟<br>
+<code>PageUp</code> 跳转到下一章节<br>
+<code>PageDown</code> 跳转到前一章节<br>
+<code>Space</code> 播放/暂停<br>
+<code>9</code> 降低音量<br>
+<code>0</code> 提高音量<br>
+<code>j</code> 切换字幕<br>
+<code>#</code> 切换音轨<br>
+<code>m</code> 开启/关闭静音<br>
+<code>v</code> 显示/隐藏字幕<br>
+<code>f</code> 切换全屏/窗口显示<br>
+<code>s</code> 截图</p>
+<p>此外，快捷键 <code>i</code> 可以显示当前正在播放的文件的媒体信息以及解码、渲染的相关数据（如下图）。使用 <code>Shift + i</code> 则可以让这些信息保持显示或清除，显示时点击数字键 <code>1</code>、<code>2</code>、<code>3</code> 等等可以分别显示信息的第一、二、三……页。<br>
+<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vizr6do1j21hg0voe81.jpg" alt="img" loading="lazy"></p>
+<p>在完成本文的配置后，你可以打开一个码率较高的视频，按下 Shift + i 观察第一页显示的 Dropped Frames 以及 Mistimed 和 Delayed 这几项计数，如果播放一段时间后这几个数字都保持稳定没有增加，则基本可以确定视频播放没有什么问题了。</p>
+<h2 id="创建配置文件">创建配置文件</h2>
+<p>虽然 mpv 的默认设置已经足以正常播放绝大多数视频，为了达到更好的效果以及符合个人的使用习惯，我们仍然需要一些配置。</p>
+<p>Windows 下打开记事本（Notepad）或者任何你喜欢的纯文本编辑器，新建一个空白文档，写好配置命令（见下）后，在刚才 mpv 的解压目录下新建一个名为 <code>portable_config</code> 的新文件夹，例如 <code>C:\mpv\portable_config</code>，将配置文件命名为 <code>mpv.conf</code> 保存在该文件夹内（注意使用记事本的话，保存文件时“保存类型”要选择“所有文件 (<em>.</em>)”，否则文件名会被加上 <code>.txt</code> 扩展名，变成 <code>mpv.conf.txt</code>）。</p>
+<p>macOS 下首先打开配置文件要保存的位置，方法是在访达（Finder）的顶栏打开前往（Go）菜单下的前往文件夹（Go to Folder），然后输入：</p>
+<p><code>~/.config/mpv</code></p>
+<p>（因为这个文件夹默认是隐藏的，无法直接打开），然后打开 macOS 自带的文本编辑（TextEdit）应用，新建一个文档，在“格式”菜单中选择将文档转换为纯文本（Make Plain Text），写好配置命令（见下）后，将这个文件保存在刚才打开的 mpv 文件夹内，文件名为 <code>mpv.conf</code>。</p>
+<p>Linux 下的用户配置文件位置与 macOS 相同，也是 <code>~/.config/mpv/mpv.conf</code>。</p>
+<h2 id="建议添加的配置命令">建议添加的配置命令</h2>
+<p>– mpv 的默认渲染设置非常保守。如果你的显卡性能不是太差（近些年的集成显卡一般都已足够），建议启用一套预设的高质量渲染设置，方法是在 <code>mpv.conf</code> 中写上这么一行：</p>
+<p><code>profile=gpu-hq</code></p>
+<p>注意，使用高质量渲染设置可能会大大降低笔记本的电池续航时间，在近些年的高分辨率屏幕上（例如“视网膜显示屏”的 MacBook）尤其明显。</p>
+<p>– mpv 默认不对视频进行色彩管理。如果你使用校色仪对屏幕进行过校色，或者在用支持硬件校色的显示器，或者拥有厂商提供的颜色配置文件（即 ICC profile，比如近年来的所有 Mac 都自带，有些其他显示器或笔记本电脑厂家也会提供）的话，建议将色彩管理开启：</p>
+<p><code>icc-profile-auto</code></p>
+<p>– 设置将字幕渲染到视频源分辨率并随视频一起缩放并进行色彩管理，这样可以保证字幕的分辨率与画面始终一致（避免“画面模糊字幕高清”的情况），并保证字幕中“屏幕字”的颜色与画面一致：</p>
+<p><code>blend-subtitles=video</code></p>
+<p>– 如果你想进一步提高画面拉伸质量，可以将画面拉伸算法更改为 EWA Lanczos（即 madVR 中的 Jinc）：</p>
+<p><code>scale=ewa_lanczossharp</code></p>
+<p>注意，该选项会显著增加 GPU 负载，而画质的提升对于 720p 及以上的高清视频来说是很小的，一般来说 <code>profile=gpu-hq</code> 的默认设置已经足够。</p>
+<p>– 很多时候，我们的显示器刷新率不是片源帧率的整数倍（例如显示器刷新率通常为 60 Hz 而动画通常为 23.976 fps），此时在默认设置下会因每一帧实际在屏幕上的呈现时间不均等而造成卡顿感（俗称 3:2 pull down judder）。因此，建议启用 <code>interpolation</code> 来消除这个问题（此功能非常类似于 madVR 中的 smooth motion）：</p>
+<p><code>video-sync=display-resample</code><br>
+<code>interpolation</code><br>
+<code>tscale=oversample</code></p>
+<p>– 中文字幕组经常会在外挂字幕的文件名中用 chs/cht/sc/tc/gb/big5 等标记来区分简体或繁体字幕。这些“非标准”的写法不会被 mpv 识别为语言标记，因此 mpv 默认不会自动加载这些字幕文件。如果想让 mpv 能自动识别并加载这些外挂字幕的话：</p>
+<p><code>sub-auto=fuzzy</code></p>
+<p>– 如果你希望 mpv 启动后直接进入全屏模式：</p>
+<p><code>fs</code></p>
+<p>以上是我认为具有普适性的一些选项。其他可以定制的地方还有很多，具体可以参考<a href="https://mpv.io/manual/stable/">官方的文档</a>对于上百个设置的解释说明。此外，mpv 提供了第三方用户脚本支持，可以实现更多的功能（例如设置 profile 针对不同片源类型进行不同的处理），以及第三方 user shader 来实现更多的画面处理（例如 NNEDI3）。</p>
+<p><strong>关于 mpv 的配置方法可以另外参考：</strong></p>
+<ul>
+<li><a href="https://bbs.acgrip.com/thread-2730-1-1.html">字幕论坛上 cczzhh 的帖子</a></li>
+<li><a href="https://bbs.acgrip.com/thread-7443-1-1.html">字幕论坛上孤雨独火的帖子</a></li>
+<li><a href="https://github.com/haasn/gentoo-conf/blob/xor/home/nand/.mpv/config">mpv 开发者 hassn 的个人 mpv 配置</a></li>
+<li><a href="https://github.com/Argon-/mpv-config/blob/master/mpv.conf">mpv 开发者 Argon- 的个人 mpv 配置</a></li>
+</ul>
+<h2 id="补充说明">补充说明</h2>
+<h3 id="是否应该开启硬解硬件解码">是否应该开启硬解（硬件解码）？</h3>
+<p>近几年的主流 PC 对最常见的视频编码（H.264 和 H.265）硬解的支持已经有了一些提高，但出现各种问题的几率仍不算低。为了保证播放稳定可靠，我们一般建议只使用软件解码（这也是 mpv 的默认设置）。如果你有其他需求，例如希望降低笔记本电脑功耗、提高电池续航，可以尝试开启硬解：</p>
+<p><code>hwdec=auto-safe</code></p>
+<p>更多信息请参考 mpv 官方文档。</p>
+<p>一些 Linux 发行版（例如 Debian/Ubuntu）可能会自动生成一个系统全局 mpv 配置文件（<code>/etc/mpv/mpv.conf</code>）并开启了硬解：</p>
+<p><code>hwdec=vaapi</code></p>
+<p>如果播放时遇到问题，建议优先尝试在用户配置文件（<code>~/.config/mpv/mpv.conf</code>）中覆盖上述设置：</p>
+<p><code>hwdec=no</code></p>
+<h3 id="关于双显卡笔记本的设置">关于双显卡笔记本的设置</h3>
+<p>如果你使用的是集成显卡 + NVIDIA 独立显卡的 Windows 笔记本，默认设置下 mpv 只会调用集成显卡来进行渲染计算，性能有限。如果你发现播放时显卡性能成为瓶颈，可以尝试改用更高性能的独立显卡：在 NVIDIA 控制面板 – 3D 设置 – 管理 3D 设置 – 程序设置下，添加 mpv.exe，将首选图形处理器改为“高性能 NVIDIA 处理器”，并将电源管理模式改为“自适应”。</p>
+<p>如果你使用的是双显卡的 MacBook Pro，可以通过在配置文件中增加这样一行来强制 mpv 使用独立显卡：</p>
+<p><code>cocoa-force-dedicated-gpu=yes</code></p>
+<h3 id="iina-使用-mpv-配置文件">IINA 使用 mpv 配置文件</h3>
+<p>IINA 可以直接读取 mpv 的配置文件来共享设置，在偏好设置 – 高级选项卡底部勾选“使用配置目录”即可，默认的 <code>~/.config/mpv</code> 即为 mpv 的默认配置文件所在目录。值得注意的是，小部分 mpv 设置是对 IINA 不起作用的，详见<a href="https://github.com/iina/iina/wiki/MPV-Options-and-Properties">这里</a>。</p>
+<p>你也可以直接在 IINA 的高级选项卡下直接添加 mpv 的设置，只要将上文提到的设置里每一行 = 左右两边的内容分别填进“选项”和“值”中即可。</p>
+<h3 id="解决-linux-下-intel-集成显卡驱动可能导致卡顿的问题">解决 Linux 下 Intel 集成显卡驱动可能导致卡顿的问题</h3>
+<p>近些年很多 Linux 发行版不再建议安装 Intel 显示驱动（<code>xf86-video-intel</code>），只使用 modesetting 驱动。然而，modesetting 驱动可能存在 VSync 不稳定的问题，导致 mpv 在开启 <code>video-sync=display-resample</code> 时间歇性卡顿。解决办法是仍然安装并启用 Intel 显示驱动，可以参考这里。</p>
+<p>以 Ubuntu 系为例，首先确保 Intel 显示驱动已经安装：</p>
+<pre><code class="language-shell">sudo apt install xserver-xorg-video-intel
+</code></pre>
+<p>重启后确认 loaded display driver 已经是 intel，例如：</p>
+<pre><code class="language-shell">inxi -G
+</code></pre>
+<p>如果仍然显示 Display … loaded: modesetting，则需要手动添加配置，例如 <code>/etc/X11/xorg.conf.d/20-intel.conf</code>：</p>
+<pre><code>Section &quot;Device&quot;  
+    Identifier &quot;Intel Graphics&quot;  
+    Driver &quot;intel&quot;  
+EndSection  
+</code></pre>
+<p>重启即可。</p>
+<p>如果更换驱动后发现有画面撕裂现象，可以尝试在上述配置文件第三行后添加：</p>
+<pre><code>Option &quot;TearFree&quot; &quot;true&quot;
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.laomao.icu/post/vcb-mpc-madvr-tutorial/" class="post-title gt-a-link">
+                    【转载】基于 MPC-HC 和 madVR 的播放器配置入门
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">致你，也致我</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        <footer class="footer">
+    <div>
+        当前博客已在风雨中运行了：<span id="run-time"></span>
+    </div>
+    <div>
+<a href="https://icp.gov.moe/?keyword=20240422" target="_blank">萌ICP备20240422号</a>
+    </div>
+    <div>
+        <a href="https://anilive.nekoss.cn" target="_blank">AniLive放映室</a>
+        <span class="footer-line">|</span>
+        <a href="https://docs.qq.com/sheet/DQkxpQWxNbUVjQ1pE?tab=w90ppb" target="_blank">AniLive资料库</a>
+    </div>
+</footer>
+<script>
+    function updateRunTime() {
+        // 设置建站时间 (2020年4月21日15时22分00秒)
+        const startDate = new Date('2020-04-21T15:22:00');
+        const now = new Date();
+
+        // 计算时间差
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        // 处理借位
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+        if (days < 0) {
+            // 获取上一个月的总天数
+            const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += lastMonth.getDate();
+            months--;
+        }
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        // 将结果显示到页面上
+        const runTimeSpan = document.getElementById('run-time');
+        if (runTimeSpan) { // 检查元素是否存在
+             runTimeSpan.textContent = `${years}年${months}月${days}日${hours}时${minutes}分${seconds}秒`;
+        }
+    }
+
+    // 每秒钟更新一次时间
+    setInterval(updateRunTime, 1000);
+
+    // 页面加载时立即执行一次，避免初始空白
+    document.addEventListener('DOMContentLoaded', updateRunTime);
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d469c8abcec4b3e8c08c104d727b9b1"}'></script><!-- End Cloudflare Web Analytics -->
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://blog.laomao.icu/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

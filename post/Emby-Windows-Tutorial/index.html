@@ -1,0 +1,619 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>
+  【教程】Emby Windows端使用概论 | 猫の博客
+</title>
+
+<link rel="shortcut icon" href="https://blog.laomao.icu/favicon.ico?v=1768043901498">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.laomao.icu/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+  integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            猫の博客
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    分类
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1768043901498"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    【教程】Emby Windows端使用概论
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-03-20 ·
+                    </time>
+                    
+                        <a href="https://blog.laomao.icu/tag/NbebeL9nUV/" class="post-tags">
+                            # 教程
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="其他客户端推荐">其他客户端推荐</h1>
+<blockquote>
+<p>目前多数服务器已屏蔽该客户端，请换用其他客户端。排名不分先后：</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i95up4g2vqj20i807xwig.jpg" alt="Emby观影客户端推荐（来自守候网络）" loading="lazy"></figure>
+<p><strong>Windows：</strong></p>
+<ul>
+<li>Emby小秘版（已停止更新且多数服务器不支持，不再分享下载）</li>
+<li><a href="https://apps.microsoft.com/detail/9nxnzfrllwzx">Hills 桌面端（需微软商店，暂时免费）</a></li>
+<li><a href="https://apps.microsoft.com/detail/9NB0H051M4V4">小幻影视（需微软商店，付费解锁Emby功能）</a></li>
+</ul>
+<p><strong>Android（Android TV）：</strong></p>
+<ul>
+<li>Emby小秘版（已停止更新且多数服务器不支持，不再分享下载）</li>
+<li><a href="https://t.me/yamby_release">Yamby（会员收费）</a></li>
+<li><a href="https://github.com/AttemptD/AfuseKt-release">AfuseKt（会员收费）</a></li>
+</ul>
+<p><strong>iOS：</strong></p>
+<ul>
+<li>Emby官方版（已停止更新且多数服务器不支持，不再分享下载）</li>
+<li><a href="https://apps.apple.com/us/app/lenna-video-library-player/id6502967807">Lenna （暂时免费）</a></li>
+<li><a href="https://forward-2.gitbook.io/forward">Forward（一次性收费）</a></li>
+<li><a href="https://apps.apple.com/cn/app/id1136220934">Infuse（订阅付费）</a></li>
+<li><a href="https://apps.apple.com/cn/app-bundle/max-yybx-iemc-tvok-foxok-yyb/id1645687971">yybx（一次付费）</a></li>
+<li><a href="https://apps.apple.com/cn/app/fileball/id1558391784">Fileball（会员付费）</a></li>
+<li><a href="https://apps.apple.com/cn/app/id1659622164">VidHub（会员付费）</a></li>
+<li><a href="https://apps.apple.com/cn/app/id6450330892">Conflux（暂时免费）</a></li>
+<li><a href="https://apps.apple.com/cn/app/id6443975850">SenPlayer（暂时免费）</a></li>
+<li><a href="https://apps.apple.com/cn/app/id6458691598">HamHub（暂时免费）</a></li>
+<li><a href="https://apps.apple.com/cn/app/id1467462861">iemc（一次付费）</a></li>
+</ul>
+<h1 id="正文">正文</h1>
+<h2 id="1-浏览器观看">1. 浏览器观看</h2>
+<blockquote>
+<p>⚠️注意：</p>
+<ol>
+<li>浏览器本身的解码较弱，播放时会出现「没有兼容的流」提示，本方法仅介绍结合脚本调用本地播放器进行观看，除此以外不推荐使用浏览器进行观看任何 Emby 服务器内容。</li>
+<li>本方法仅在 Windows 平台测试成功，MacOS 请查询项目主页介绍</li>
+</ol>
+</blockquote>
+<h3 id="11-环境准备">1.1 环境准备</h3>
+<p>你需要安装以下工具：</p>
+<ul>
+<li><a href="https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe">Python 3.10</a> （需要勾选 <code>Add to path</code>）</li>
+<li>一个本地播放器，如 <a href="https://github.com/hooke007/mpv.net_CM/releases/download/6032/mpvnet-CM-20221014.exe">MPVnet</a></li>
+<li>Tampermonkey浏览器插件：<a href="https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo">Chrome</a> <a href="https://microsoftedge.microsoft.com/addons/detail/iikmkjmpaadaobahmlepeloendndfphd">Edge</a> <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/">Firefox</a></li>
+</ul>
+<h3 id="12-配置本地脚本">1.2 配置本地脚本</h3>
+<ol>
+<li>
+<p><strong>下载脚本文件</strong></p>
+<p>前往 <a href="https://github.com/kjtsune/embyToLocalPlayer/releases/latest">embyToLocalPlayer Release主页</a> 下载最新版本压缩包并解压</p>
+</li>
+<li>
+<p><strong>修改配置文件</strong></p>
+<p>修改 <code>embyToLocalPlayer_config.ini</code> 中的播放器路径、调用的播放器以及代理等，部分修改示例如下：</p>
+<pre><code>[exe]
+# 各播放器路径，不要的可以随意删除。记得选择哪种播放器是在下一项设置里。
+mpve = C:\Green\mpvnet\mpvnet.exe
+
+[emby]
+# 选择播放器，填写上方的播放器名称，比如 mpv
+player = mpve
+# 是否回传进度
+update_progress = yes
+# 尝试自动全屏
+fullscreen = no
+
+[dev]
+# 脚本的 http 代理，例如 http://127.0.0.1:7890。
+# 若用 OpenClash 可能慢，原因未知，可尝试 CFW 或透明代理等。
+script_proxy = http://127.0.0.1:7890
+# 播放器的 http 代理，支持的播放器有：mpv、mpv.net、iina。
+player_proxy = http://127.0.0.1:7890
+# 上述的代理建议都填
+</code></pre>
+</li>
+<li>
+<p><strong>开启脚本测试</strong></p>
+<p>双击 <code>embyToLocalPlayer_debug.bat</code> ，并选择 <code>1: run in console</code> ，看到有如图提示时即为本地脚本开启成功**（先不要关闭 CMD 窗口！）** <img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgnid7glj20nf016q49.jpg" alt="" loading="lazy"></p>
+</li>
+</ol>
+<h3 id="13-安装油猴脚本">1.3 安装油猴脚本</h3>
+<p>到 <a href="https://greasyfork.org/zh-CN/scripts/448648-embytolocalplayer">Greasyfork项目地址</a> 安装油猴脚本即可。</p>
+<h3 id="14-进行视频播放测试">1.4 进行视频播放测试</h3>
+<ul>
+<li>
+<p>浏览器打开服务器地址：<a href="https://pornemby.club/">https://pornemby.club</a>，输入用户名、密码登录</p>
+</li>
+<li>
+<p>打开一个视频进行播放，会在转圈后看到一个窗口闪过，这是脚本自动关闭了「没有兼容的流」提示，无视即可</p>
+</li>
+<li>
+<p>之后本地配置好的播放器会自动打开，并自动进行播放（如果本地播放器是mpv、mpvnet 或 iina 的话，可以通过配置文件内设置的代理执行播放操作）</p>
+<blockquote>
+<p>⚠️注意：</p>
+<ol>
+<li>
+<p>这一个步骤中，如果窗口闪过后设置好的播放器未打开，请检查以下项是否设置正确：调用播放器是否已提供了绝对路径；非 mpv 系播放器是否设置好了对于播放器本身的代理</p>
+</li>
+<li>
+<p>请注意不要多次点击播放键，否则会出现多个播放器同时播放，可能会被服务器判定为下载行为导致账号封禁</p>
+</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<h3 id="15-正式配置开启自启项">1.5 正式配置开启自启项</h3>
+<ul>
+<li>若上一步骤没有任何问题，则关闭 1.2 步骤打开的 CMD 窗口，重新打开<code>embyToLocalPlayer_debug.bat</code> ，选择 <code>2: run in background and add to startup folder</code> （若有防火墙或杀毒软件提示请允许，本步骤仅是向启动文件夹内放入一个 vbs 文件，用于开机自动启动本地脚本）</li>
+<li>当有提示 <code>close this window manually</code> 时即可关闭 CMD 窗口</li>
+<li>执行一次 1.4 步骤，播放一个视频进行配置文件测试，若播放无问题则本操作全部完成</li>
+</ul>
+<h3 id="16-可选卸载本方法中的软件">1.6 【可选】卸载本方法中的软件</h3>
+<ol>
+<li>
+<p><strong>卸载开机自启脚本</strong></p>
+<p>前往 <code>%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup</code> 路径（复制粘贴至文件夹的地址栏并回车即可），删除 <code>embyToLocalPlayer.vbs</code></p>
+</li>
+<li>
+<p><strong>删除本地 Python 脚本</strong></p>
+<p>找到你解压 <code>embyToLocalPlayer</code> 的文件夹并将里面的内容都删除即可</p>
+</li>
+<li>
+<p><strong>删除 Python</strong></p>
+<p>前往「设置」中卸载 Python 即可</p>
+</li>
+</ol>
+<h2 id="2-windows-上使用">2. Windows 上使用</h2>
+<h3 id="21-使用-emby-windows-客户端">2.1 使用 Emby Windows 客户端</h3>
+<blockquote>
+<p>⚠️注意：本客户端支持调用外部播放器进行播放，但操作较复杂，仅推荐进阶用户 &amp; 对播放质量有要求的用户选择，若您本地播放器是 Potplayer，则推荐使用 Emby 自带播放器进行播放，画质会优于 Potplayer</p>
+</blockquote>
+<h4 id="211-下载安装">2.1.1 下载安装</h4>
+<p>前往 <a href="https://t.me/EmbyNoisyX">Emby学习小秘</a> 频道，下载 <a href="https://t.me/EmbyNoisyX/113">最新版客户端</a> 并双击安装（安装时会自动创建一个名为 <code>Emby Theater</code> 的客户端，无需自己再创建。安装结束后会自动打开一个文件夹，请认真阅读里面的 **注意事项 **并在稍后的设置中按照推荐设置进行）</p>
+<h4 id="212-登录服务器">2.1.2 登录服务器</h4>
+<ol>
+<li>
+<p>打开桌面的 Emby 图标后，不会弹出需要登录 Emby 账号的提示，直接选择 <strong>添加服务器</strong> 即可<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgo4zv7mj218g0p07bz.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>在**「主机地址」<strong>输入 <code>https://pornemby.club</code>，在</strong>「端口」<strong>输入 <code>443</code> 并点击</strong>「连接」**进行登录操作<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgpd5c3vj218g0p046i.jpg" alt="" loading="lazy"></p>
+</li>
+</ol>
+<h4 id="213-设置-emby">2.1.3 设置 Emby</h4>
+<ol>
+<li>
+<p>进入设置</p>
+<p>登录后点击右上角**「齿轮⚙️样式」**图标进入设置<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgpswox6j218b0ozjzu.jpg" alt="" loading="lazy"></p>
+<figure data-type="image" tabindex="2"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgqcfwwlj207c09eaap.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>播放设置</p>
+<p>本页请确认：</p>
+<ul>
+<li><strong>「视频」<strong>下的</strong>「局域网传输质量」<strong>与</strong>「广域网传输质量」<strong>均设置为</strong>「媒体源直接传输」</strong>；<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgsfnsqlj20qf079ach.jpg" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>
+<p>字幕设置</p>
+<p>本页请确认：</p>
+<ul>
+<li>**「首选字幕语言」**设置为你的偏好语言（一般为 <strong>Chinese Simplified</strong>，也即简体中文；或设置为 <strong>Chinese Traditional</strong> 也即繁体中文）</li>
+</ul>
+</li>
+<li>
+<p>视频设置</p>
+<p>本页请认真按照安装目录下的**「注意事项」**进行设置，下图为示例配置：</p>
+<figure data-type="image" tabindex="3"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgsvw1fjj20q20hhgtu.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>【可选】外部播放器设置</p>
+<blockquote>
+<p>? 此处以设置 mpvnet 播放器为例，如你的本地播放器是 Potplayer，请不要设置这里！Potplayer 的解码能力与播放画质逊于小秘 Emby 内置的播放器</p>
+</blockquote>
+<p>点击**「添加」**，修改以下配置：</p>
+<ul>
+<li>**媒体类型：**不动</li>
+<li>**路径（媒体类型下方的空行）：**你的播放器绝对路径，无需输入转义符</li>
+<li>勾选**「视频文件」<strong>与</strong>「互联网流」**</li>
+<li>**命令行参数：**无特殊需求或不知道填什么，就不用填写</li>
+<li><strong>【重要】：<strong>记得将页面拉至最下方，点击</strong>「保存」</strong>，你的配置才算保存成功</li>
+</ul>
+<p>示例配置如下图：</p>
+<figure data-type="image" tabindex="4"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgtdlk3dj20g80cvadn.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgtqzh3oj218g0w7h18.jpg" alt="" loading="lazy"></figure>
+<p>? 保存后效果：<img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgu6nmrkj20px055t9l.jpg" alt="" loading="lazy"></p>
+</li>
+</ol>
+<h4 id="214-播放视频">2.1.4 播放视频</h4>
+<p>随意选择影片播放即可。若配置了外置播放器，在播放时会自动调用</p>
+<h3 id="22-使用-terminus-player">2.2 使用 Terminus Player</h3>
+<blockquote>
+<p>⚠️注意：</p>
+<ul>
+<li>
+<p>本软件基于 <a href="https://github.com/jellyfin/jellyfin-media-player">Jellyfin-media-player</a> 修改，若出现杀毒软件报毒请自行判断是否有害。</p>
+</li>
+<li>
+<p>请使用 Windows 10 及以上系统运行，低版本系统报错请自行寻找解决方案。</p>
+</li>
+<li>
+<p>本软件无法调用外部播放器进行播放，请有需求的用户选择 Emby 小秘客户端，并按照上方的教程进行设置。</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="221-安装软件">2.2.1 安装软件</h4>
+<ul>
+<li>
+<p>从 <a href="https://github.com/Terminus-Media/jellyfin-media-player/releases/tag/v221122">github release 页面</a> 下载安装包，请下载以 <code>.exe</code> 为后缀名的文件（如同时有x86、x64的文件，请下载文件名中含有 <code>x64</code> 的文件）</p>
+<figure data-type="image" tabindex="6"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgum4kpcj20vq08l433.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>找到安装包并双击运行</p>
+<figure data-type="image" tabindex="7"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vguxxx5sj20mv02d0tb.jpg" alt="" loading="lazy"></figure>
+<p>若有弹窗警告请按确认</p>
+<figure data-type="image" tabindex="8"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgvc68gwj20qo0zktvo.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>安装界面请自行更改安装路径及是否需要创建桌面快捷方式</p>
+<figure data-type="image" tabindex="9"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgvs27p9j20k80g9grh.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgw3n3e7j20k80g90vp.jpg" alt="" loading="lazy"></figure>
+<p>安装完毕后，点击 <strong>Launch</strong> 启动软件</p>
+<figure data-type="image" tabindex="11"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgwe6xqkj20go0dhq43.jpg" alt="" loading="lazy"></figure>
+</li>
+</ul>
+<h4 id="222-登录服务器">2.2.2 登录服务器</h4>
+<ul>
+<li>
+<p>打开 Terminus Player，点击 <strong>Add Server</strong> 添加服务器</p>
+<figure data-type="image" tabindex="12"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgxyv9t5j21z2156q74.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>输入服务器地址</p>
+<figure data-type="image" tabindex="13"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgynckpoj20zm0l0mzr.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>输入账号密码进行登录</p>
+<figure data-type="image" tabindex="14"><img src="https://image.baidu.com/search/down?url=https://iwx4.sinaimg.cn/large/a2cab50fly1i1vgz0miqkj20zm0l0tb0.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="15"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vgzf3e51j20zm0l27a0.jpg" alt="" loading="lazy"></figure>
+</li>
+</ul>
+<h4 id="223-播放器设置">2.2.3 播放器设置</h4>
+<p>登录服务器后，点击主界面右上角的人头标志进入设置界面</p>
+<figure data-type="image" tabindex="16"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vh0dk9p5j20zn0l47ae.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="17"><img src="https://wx4.sinaimg.cn/large/a2cab50fly1i1vh0vm33mj20zm0l0myn.jpg" alt="" loading="lazy"></figure>
+<ol>
+<li>
+<p><strong>【重要】语言设置</strong></p>
+<ul>
+<li>
+<p>点击设置页面的 <strong>Display</strong> 进入界面设置，点击 <strong>Display Language</strong> (界面语言)，选择 <strong>Chinese Simplified</strong> (简体中文) 或 <strong>Chinese Traditional</strong> (繁体中文)</p>
+<figure data-type="image" tabindex="18"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vh71ed7mj20zm0l00wx.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>拉到页面最下方点击 <strong>Save</strong> 保存设置</p>
+<figure data-type="image" tabindex="19"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vh7gtn1fj20zm0l0q6h.jpg" alt="" loading="lazy"></figure>
+<blockquote>
+<p>⚠️<strong>注意：本操作之后界面语言不会实时变更，需要重启软件才能看到修改后的样式</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>字幕设置</strong></p>
+<ul>
+<li>
+<p>点击设置中的 <strong>字幕</strong> 进入字幕设置</p>
+<figure data-type="image" tabindex="20"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vh7zmws9j20zm0l0myr.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>点击 <strong>字幕语言偏好</strong> 更改为 <strong>Chinese Simplified</strong> (简体中文) 或 <strong>Chinese Traditional</strong> (繁体中文) 并点击下方 <strong>保存</strong></p>
+<figure data-type="image" tabindex="21"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vh8cbpcsj20zm0l0n19.jpg" alt="" loading="lazy"></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>杂项设置</p>
+<ul>
+<li>
+<p>点击 <strong>客户端设置</strong> 进入杂项设置菜单</p>
+<figure data-type="image" tabindex="22"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vh98k4guj20l20ft74u.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>取消勾选 <strong>ChechForUpdates</strong> (检测更新)。因为此功能是 Jellyfin 官方的，如果不慎更新则会覆盖 Terminus Player 修改的部分，造成无法观看 Emby 资源</p>
+</li>
+<li>
+<p>取消勾选 <strong>Audio</strong> (音频设置) 下的 <strong>Normalize</strong> (音量规格化)。此功能主要是将声音小的部分增大、将声音大的部分减小，以达到响度平衡的功能，但在视频安静的场景中增大音量会导致不必要的底噪，因此需要将此功能关闭。</p>
+<figure data-type="image" tabindex="23"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vh9ksfaoj20la0fsdgk.jpg" alt="" loading="lazy"></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="224-播放视频">2.2.4 播放视频</h4>
+<p>此时所有设置已完成，点击喜欢的视频进行播放即可。</p>
+<h2 id="3-代理配置">3. 代理配置</h2>
+<h3 id="31-进阶clash-proxifier-方案">3.1 【进阶】Clash + Proxifier 方案</h3>
+<h4 id="311-下载安装-proxifier">3.1.1 下载安装 Proxifier</h4>
+<p>前往 <a href="https://www.proxifier.com/">Proxifier官网</a> 下载最新版并安装（此软件无中文，请确认你可以看懂部分英文），安装成功后会弹出激活窗口，这里不提供破解版，请自行谷歌「Proxifier 注册码」，并点击图示位置后输入，即可激活</p>
+<figure data-type="image" tabindex="24"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vh9zbrvpj20ay0dxacc.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="25"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhadys21j20ci09jmy5.jpg" alt="" loading="lazy"></figure>
+<h4 id="312-设置-proxifier">3.1.2 设置 Proxifier</h4>
+<ol>
+<li>
+<p>代理服务器设置</p>
+<ul>
+<li>
+<p>打开 proxifier，依次在 <strong>“Profile” —&gt; “Proxy Server…”</strong></p>
+<figure data-type="image" tabindex="26"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhaq0yfej20gq08y410.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>点击 <code>Add</code> 添加代理服务器 ip、port、授权用户名、密码，如下图（以 Clash for Windows 为例）</p>
+<figure data-type="image" tabindex="27"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhaxdnouj20eg09ytaf.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="28"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhb97re0j20c90dl0tw.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>点击 <code>Check</code> 检查代理可用性，当出现如图字样则表示代理可用，之后点击 <strong>OK</strong> 保存即可</p>
+<figure data-type="image" tabindex="29"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhbig28tj20gr0aon0u.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>⚠ 若保存后会提示流量存在回环，请一定点击 <strong>OK</strong> 添加自动规则！！！设置完毕后则可以删除该条自动规则</p>
+</li>
+</ul>
+</li>
+<li>
+<p>添加代理规则</p>
+<ul>
+<li>
+<p>依次点击**“Profile” —&gt; “Proxification Rules..”**</p>
+<figure data-type="image" tabindex="30"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhe52zelj205j03vdg9.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>在打开的窗口里点击 <strong>Add…</strong> 添加规则</p>
+<figure data-type="image" tabindex="31"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhebqnpuj20hm0baq52.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>在 <strong>Name</strong> 栏填写规则名称（随意命名）、在 <strong>Applications</strong> 里添加需要代理的软件，在 <strong>Action</strong> 里选择代理流向（如存在多代理情况），点击 <strong>OK</strong> 保存</p>
+<figure data-type="image" tabindex="32"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhfgncpbj20fh0i277r.jpg" alt="" loading="lazy"></figure>
+<blockquote>
+<p>部分播放器工具进程名：</p>
+<ul>
+<li>Emby：emby.theater.exe; electron.exe</li>
+<li>Terminus Player：QtWebEngineProcess.exe; TerminusPlayer.exe</li>
+<li>mpvnet：mpvnet.exe</li>
+<li>PotPlayer：PotPlayerMini64.exe</li>
+<li>VLC：vlc.exe</li>
+</ul>
+<p>⚠️请注意：本工具匹配进程名时是无视路径的，也就是说如果你代理了 Terminus Player，那么 Windows 原神启动器这类软件的流量同样会被代理（因为进程名都是 QtWebEngineProcess.exe）</p>
+</blockquote>
+</li>
+<li>
+<p>添加好播放器代理策略后，请保持与如图类似的设置</p>
+<figure data-type="image" tabindex="33"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhfvdnysj20n80eo79h.jpg" alt="" loading="lazy"></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="313-设置域名解析策略">3.1.3 设置域名解析策略</h4>
+<p><strong>请保持此设置，否则电脑上其他软件的流量会自动被代理</strong></p>
+<figure data-type="image" tabindex="34"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhgxlxwij20i90erwh8.jpg" alt="" loading="lazy"></figure>
+<h4 id="314-播放测试">3.1.4 播放测试</h4>
+<p>播放时可以看到仅有 Emby 与播放器的流量进入 Proxifier，说明设置正常</p>
+<figure data-type="image" tabindex="35"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhh727vfj21h60foqcr.jpg" alt="" loading="lazy"></figure>
+<h3 id="32-简易tun-模式">3.2 【简易】TUN 模式</h3>
+<blockquote>
+<p>本教程以 Clash Nyanpasu 为例，Clash Verge 及其衍生工具均适用。其余客户端请自行搜索教程</p>
+</blockquote>
+<h4 id="321-下载代理工具">3.2.1 下载代理工具</h4>
+<p>在 <a href="https://github.com/LibNyanpasu/clash-nyanpasu/releases/latest">Github Release</a> 中下载最新版工具，请自行选择下载安装包还是绿色版。本教程以绿色版为例进行介绍</p>
+<figure data-type="image" tabindex="36"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhhg5xq5j21610nok7z.jpg" alt="" loading="lazy"></figure>
+<h4 id="322-软件设置">3.2.2 软件设置</h4>
+<ul>
+<li>
+<p>使用 <strong>管理员模式</strong> 打开 <code>Clash Nyanpasu.exe</code> ，进入 <strong>设置</strong> 菜单，找到 <strong>系统设置——服务模式</strong></p>
+<figure data-type="image" tabindex="37"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhhuvozsj20rs0m3why.jpg" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>点击 <strong>服务模式</strong> 旁的图标，点击 <strong>INSTALL</strong> 安装，出现绿色成功提示后，打开 <strong>服务模式</strong> 的开关即可</p>
+<figure data-type="image" tabindex="38"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhi3syhuj20dz07hgm8.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="39"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhmjdyi2j20rs0m3dj9.jpg" alt="" loading="lazy"></figure>
+</li>
+</ul>
+<h4 id="323-开启-tun-模式">3.2.3 开启 TUN 模式</h4>
+<p>打开 <strong>系统设置——Tun 模式</strong> 的开关即可启动，请确认右下角联网图标处出现 <strong>Meta Internet访问</strong> 字样就是开启成功</p>
+<figure data-type="image" tabindex="40"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhmwq1xuj20rs0m3whs.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="41"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vhn2zuuvj203n03jq33.jpg" alt="" loading="lazy"></figure>
+<h4 id="324-播放视频">3.2.4 播放视频</h4>
+<p>播放时查看日志，发现有来自 <code>198.18.0.1</code> 的流量就是 Tun 模式代理到的部分</p>
+<figure data-type="image" tabindex="42"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vho00dhpj216x0n911r.jpg" alt="" loading="lazy"></figure>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.laomao.icu/post/aws-raise-price/" class="post-title gt-a-link">
+                    【日常】AWS涨价记录
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">致你，也致我</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        <footer class="footer">
+    <div>
+        当前博客已在风雨中运行了：<span id="run-time"></span>
+    </div>
+    <div>
+<a href="https://icp.gov.moe/?keyword=20240422" target="_blank">萌ICP备20240422号</a>
+    </div>
+    <div>
+        <a href="https://anilive.nekoss.cn" target="_blank">AniLive放映室</a>
+        <span class="footer-line">|</span>
+        <a href="https://docs.qq.com/sheet/DQkxpQWxNbUVjQ1pE?tab=w90ppb" target="_blank">AniLive资料库</a>
+    </div>
+</footer>
+<script>
+    function updateRunTime() {
+        // 设置建站时间 (2020年4月21日15时22分00秒)
+        const startDate = new Date('2020-04-21T15:22:00');
+        const now = new Date();
+
+        // 计算时间差
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        // 处理借位
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+        if (days < 0) {
+            // 获取上一个月的总天数
+            const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += lastMonth.getDate();
+            months--;
+        }
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        // 将结果显示到页面上
+        const runTimeSpan = document.getElementById('run-time');
+        if (runTimeSpan) { // 检查元素是否存在
+             runTimeSpan.textContent = `${years}年${months}月${days}日${hours}时${minutes}分${seconds}秒`;
+        }
+    }
+
+    // 每秒钟更新一次时间
+    setInterval(updateRunTime, 1000);
+
+    // 页面加载时立即执行一次，避免初始空白
+    document.addEventListener('DOMContentLoaded', updateRunTime);
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d469c8abcec4b3e8c08c104d727b9b1"}'></script><!-- End Cloudflare Web Analytics -->
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://blog.laomao.icu/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>
+  【技巧】利用ffmpeg/Streamlink+Artplayer做拉流中转 | 猫の博客
+</title>
+
+<link rel="shortcut icon" href="https://blog.laomao.icu/favicon.ico?v=1768043901498">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.laomao.icu/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+  integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            猫の博客
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    分类
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1768043901498"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    【技巧】利用ffmpeg/Streamlink+Artplayer做拉流中转
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-05-01 ·
+                    </time>
+                    
+                        <a href="https://blog.laomao.icu/tag/NbebeL9nUV/" class="post-tags">
+                            # 教程
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="环境搭建">环境搭建</h2>
+<blockquote>
+<p>本文使用Oracle日本东京提供的AMD免费服务器（Debian 11）进行搭建。<br>
+本文使用宝塔面板作为前端搭建方案。</p>
+</blockquote>
+<h2 id="正式搭建">正式搭建</h2>
+<h3 id="安装环境">安装环境</h3>
+<h4 id="安装宝塔">安装宝塔</h4>
+<pre><code>curl -sSO https://raw.githubusercontent.com/8838/btpanel-v7.7.0/main/install/install_panel.sh &amp;&amp; bash install_panel.sh
+</code></pre>
+<pre><code>#1, 隐藏手机号
+sed -i &quot;s|bind_user == 'True'|bind_user == 'XXXX'|&quot; /www/server/panel/BTPanel/static/js/index.js
+#2, 删除强制绑定手机js文件
+rm -f /www/server/panel/data/bind.pl
+</code></pre>
+<h4 id="安装nginx">安装Nginx</h4>
+<figure data-type="image" tabindex="1"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vigke5lkj20b208x3zf.jpg" alt="image" loading="lazy"></figure>
+<p><em><strong>注意：安装Nginx时选择“编译安装”并添加自定义模块：</strong></em></p>
+<blockquote>
+<ul>
+<li>模块名称：<code>nginx_rtmp_module</code></li>
+<li>描述：<code>nginx_rtmp_module</code></li>
+<li>参数：<code>--add-module=/www/server/nginx/src/nginx-rtmp-module</code></li>
+<li>预脚本：<code>git clone https://github.com/arut/nginx-rtmp-module.git</code></li>
+</ul>
+</blockquote>
+<h4 id="安装ffmpeg">安装ffmpeg</h4>
+<pre><code>apt-get -y install ffmpeg
+</code></pre>
+<h3 id="修改nginx配置">修改Nginx配置<a href="#user-content-modifying-nginx-configuration">#</a></h3>
+<figure data-type="image" tabindex="2"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vigtz7g8j20ku0ipq5y.jpg" alt="image" loading="lazy"></figure>
+<p>进入 <strong><code>软件商店 - Nginx 1.22.1 - 设置 - 配置修改</code></strong>，在<code>http</code>字段前添加以下内容（记得删除#及后面的内容）：</p>
+<pre><code>rtmp  {
+    server  {
+        listen 1935;                             ##这是RTMP协议的默认端口
+        chunk_size 4096;                         ##数据块大小
+        application live {                       ##项目名为“live”
+            live on;                             ##这是一个直播项目
+            hls on;                              ##启用HLS录制
+            wait_key on;                         ##从关键帧开始视频流
+            hls_path /www/wwwroot/site.com/hls;  ##保存HLS录制文件的目录，将/www/wwwroot/site.com/hls修改为你的网站目录
+            hls_fragment 5s;                     ##HLS生成的每个ts文件时长
+            hls_playlist_length 30s;             ##每个ts文件的保留时间
+            hls_continuous on;                   ##从上一个的结尾开始HLS编号
+            hls_cleanup on;                      ##自动清理过时的ts文件
+            hls_nested on;                       ##为每个HLS流项目创建一个新的子目录
+        }
+    }
+}
+</code></pre>
+<p>然后按<code>ctrl+s</code>保存，并在 <strong><code>软件商店 - Nginx 1.22.1 - 设置 - 服务</code></strong> 中点击 <strong><code>重载配置</code></strong>。</p>
+<h3 id="创建网站并修改相关设置">创建网站并修改相关设置</h3>
+<h4 id="创建网页">创建网页</h4>
+<figure data-type="image" tabindex="3"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vih4eiu3j20ku0g1tab.jpg" alt="image" loading="lazy"></figure>
+<p>填写域名及其他相关设置，选择是否启用SSL（海外服务器建议启用SSL并开启Cloudflare云图标）。</p>
+<h4 id="修改配置">修改配置</h4>
+<p>在<code>access_log</code>字段前添加以下内容：</p>
+<pre><code>location /live {
+  types {
+    application/vnd.apple.mpegurl m3u8;
+    video/mp2t ts;
+  }
+  alias /www/wwwroot/site.com/hls; # 与前面设置的hls目录一致
+  add_header Cache-Control no-cache;
+}
+</code></pre>
+<h3 id="设置dplayer播放器">设置Dplayer播放器</h3>
+<p>将默认的<code>index.html</code>修改为以下内容：</p>
+<pre><code>&lt;!DOCTYPE HTML&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;你的直播间名称&lt;/title&gt;
+    &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://smms.app/image/7vZXEYRjOiW1Ftb&quot;&gt;
+    &lt;link class=&quot;dplayer-css&quot; rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css&quot;&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js&quot;&gt;&lt;/script&gt;
+    &lt;style&gt;
+        html,body{margin:0px;padding:0px;width:100%;height:100%;}#dplayer{position:absolute;width:100%;height:100%;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;dplayer&quot; class=&quot;dplayer dplayer-no-danmaku dplayer-live dplayer-playing dplayer-loading&quot;&gt;&lt;/div&gt;
+    &lt;script&gt;
+        const dp = new DPlayer({
+            container: document.getElementById('dplayer'),
+            live: true,
+            danmaku: false,
+            autoplay: true,
+            video: {
+                url: 'hls/streaming_code/index.m3u8',
+                type: 'hls'
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h3 id="使用obs或其他软件开始直播">使用OBS或其他软件开始直播</h3>
+<p><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i1vihftw0hj20qv0bpjsa.jpg" alt="image" loading="lazy"><br>
+<strong>设置如下：</strong></p>
+<ul>
+<li>服务器：<code>rtmp://你的服务器地址:1935/live/</code></li>
+<li>串流密钥：<code>按需设置，但需与HTML代码中的流代码一致</code></li>
+</ul>
+<h3 id="使用ffmpeg拉流推流">使用ffmpeg拉流推流</h3>
+<p><strong>通用命令如下：</strong></p>
+<pre><code>ffmpeg -i 流地址 -c:v copy -c:a aac -b:a 192k -strict -2 -f flv rtmp://127.0.0.1:1935/live/流代码
+</code></pre>
+<p><strong>如需后台运行：</strong></p>
+<pre><code>nohup ffmpeg -i 流地址 -c:v copy -c:a aac -b:a 192k -strict -2 -f flv rtmp://127.0.0.1:1935/live/流代码 &amp;
+</code></pre>
+<h3 id="使用streamlink拉流推流">使用Streamlink拉流推流</h3>
+<h4 id="安装streamlink和screen">安装Streamlink和Screen</h4>
+<pre><code>apt-get install python3-pip screen
+pip3 install streamlink
+</code></pre>
+<h4 id="推送媒体流以youtube直播为例">推送媒体流（以YouTube直播为例）</h4>
+<pre><code>echo &quot;请输入YouTube网址:&quot;
+read URL
+streamlink $URL best -O | ffmpeg -re -i pipe:0 -c copy -bsf:a aac_adtstoasc -f flv rtmp://localhost:1935/live/youtube
+</code></pre>
+<h3 id="推送youtube非公开直播流">推送YouTube非公开直播流</h3>
+<p><em><strong>这东西真的难倒我了。看来推送公开直播流确实简单，但Streamlink由于保护机制无法推送非公开直播流，因此使用了一个变通方法。</strong></em></p>
+<p>此推送的前提是需要知道流地址，例如<code>https://youtu.be/abcdefg</code></p>
+<h4 id="安装screen">安装Screen</h4>
+<p>我只知道用screen来后台运行...我是新手...</p>
+<h4 id="下载并部署yt-dlp">下载并部署yt-dlp</h4>
+<pre><code>wget -O /usr/local/bin/yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+</code></pre>
+<h4 id="使用screen后台运行">使用Screen后台运行</h4>
+<pre><code class="language-shell">screen -S live
+</code></pre>
+<h4 id="推送youtube非公开直播流-2">推送YouTube非公开直播流</h4>
+<p><em><strong>这东西真的难倒我了...</strong></em></p>
+<pre><code>clear
+echo &quot;请输入YouTube网址:&quot;
+read URL
+ffmpeg -re -i $(yt-dlp -f best -g $URL) -c copy -bsf:a aac_adtstoasc -f flv -buffer_size 256M rtmp://localhost/live/youtube
+</code></pre>
+<p>这里通过<strong>yt-dlp</strong>将YouTube直播流链接解析为m3u8链接并传递给ffmpeg读取。设置<code>buffer_size</code>过小似乎会报错（不知道为什么，调大就好了）。</p>
+<h2 id="致谢">致谢</h2>
+<p><strong>感谢yt-dlp、Streamlink和ffmpeg的作者。没有他们，本教程就不会存在。</strong></p>
+<h3 id="参考链接">参考链接</h3>
+<ul>
+<li><a href="https://candinya.com/posts/build-a-rtmp-hls-stream-server/">Candinya - 搭建自己的RTMP+HLS流媒体服务器</a></li>
+<li><a href="https://www.alittlefatdog.com/2022/07/29/%E3%80%90%E5%8E%9F%E5%88%9B%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%88%A9%E7%94%A8ffmpeg%E5%92%8Cyt-dlp%E4%BB%8Eyoutube%E7%88%AC%E5%8F%96%E7%9B%B4%E6%92%AD%E6%B5%81%E7%9A%84%E7%BB%8F%E8%BF%87/">小胖狗的家 - 记一次使用ffmpeg和yt-dlp从youtube爬取直播流的过程</a></li>
+</ul>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.laomao.icu/post/2023-04-new-bangumi/" class="post-title gt-a-link">
+                    【日常】2023年4月新番初观感（主观）
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">致你，也致我</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        <footer class="footer">
+    <div>
+        当前博客已在风雨中运行了：<span id="run-time"></span>
+    </div>
+    <div>
+<a href="https://icp.gov.moe/?keyword=20240422" target="_blank">萌ICP备20240422号</a>
+    </div>
+    <div>
+        <a href="https://anilive.nekoss.cn" target="_blank">AniLive放映室</a>
+        <span class="footer-line">|</span>
+        <a href="https://docs.qq.com/sheet/DQkxpQWxNbUVjQ1pE?tab=w90ppb" target="_blank">AniLive资料库</a>
+    </div>
+</footer>
+<script>
+    function updateRunTime() {
+        // 设置建站时间 (2020年4月21日15时22分00秒)
+        const startDate = new Date('2020-04-21T15:22:00');
+        const now = new Date();
+
+        // 计算时间差
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        // 处理借位
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+        if (days < 0) {
+            // 获取上一个月的总天数
+            const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += lastMonth.getDate();
+            months--;
+        }
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        // 将结果显示到页面上
+        const runTimeSpan = document.getElementById('run-time');
+        if (runTimeSpan) { // 检查元素是否存在
+             runTimeSpan.textContent = `${years}年${months}月${days}日${hours}时${minutes}分${seconds}秒`;
+        }
+    }
+
+    // 每秒钟更新一次时间
+    setInterval(updateRunTime, 1000);
+
+    // 页面加载时立即执行一次，避免初始空白
+    document.addEventListener('DOMContentLoaded', updateRunTime);
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d469c8abcec4b3e8c08c104d727b9b1"}'></script><!-- End Cloudflare Web Analytics -->
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://blog.laomao.icu/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
