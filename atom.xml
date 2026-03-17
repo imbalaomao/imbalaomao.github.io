@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.laomao.icu</id>
+    <title>猫の博客</title>
+    <updated>2026-03-17T15:23:22.009Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.laomao.icu"/>
+    <link rel="self" href="https://blog.laomao.icu/atom.xml"/>
+    <subtitle>致你，也致我</subtitle>
+    <logo>https://blog.laomao.icu/images/avatar.png</logo>
+    <icon>https://blog.laomao.icu/favicon.ico</icon>
+    <rights>All rights reserved 2026, 猫の博客</rights>
+    <entry>
+        <title type="html"><![CDATA[【原创教程】如何关闭Microsoft Edge自带的快捷键]]></title>
+        <id>https://blog.laomao.icu/post/how-to-disable-edge-shortcuts/</id>
+        <link href="https://blog.laomao.icu/post/how-to-disable-edge-shortcuts/">
+        </link>
+        <updated>2026-03-17T14:43:47.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="why">Why</h2>
+<p>如<a href="https://learn.microsoft.com/zh-cn/answers/questions/2381480/microsoft-edge">这篇 Q&amp;A </a>中所说，Bitwarden 的页面自动填写快捷键 <code>Ctrl + Shift + L</code> 与 Microsoft Edge浏览器的自动前往剪贴板中的链接功能快捷键冲突了，在本 Q&amp;A 中，有网友推荐了一个扩展程序，但毕竟治标不治本，如果能彻底禁用这个快捷键，不就避免了扩展程序的供应链攻击吗？</p>
+<h2 id="how">How</h2>
+<p>根据微软官方的<a href="https://learn.microsoft.com/zh-cn/deployedge/edge-learnmore-configurable-edge-commands">这篇文章</a>，<code>Ctrl + Shift + L</code> 这个快捷键由名叫 <strong>ConfigureKeyboardShortcuts</strong> 的策略进行控制，其命令名称叫 <code>paste_and_go</code>。于是我们定位到有关 ConfigureKeyboardShortcuts 的<a href="https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/configurekeyboardshortcuts">介绍文章</a>中，它可以通过两个方式被控制：</p>
+<ol>
+<li>
+<p>组策略（需 Windows Pro / Enterprise 等版本可以使用，Family 版本无此功能）<br>
+具体操作方法：在【运行】窗口中输入 <code>gpedit.msc</code> 打开组策略编辑器，定位到 <strong>管理模板——Microsoft Edge</strong>，寻找名为 ConfigureKeyboardShortcuts（大致翻译为“配置键盘快捷键”）。但尝试一番后并没有找到该值，weird......</p>
+</li>
+<li>
+<p>注册表（全版本可用，但操作难度较高）<br>
+具体操作方法：</p>
+</li>
+</ol>
+<ul>
+<li>在【运行】窗口中输入 <code>regedit</code> 打开注册表编辑器，定位到 <code>HKEY_CURRENT_USER\Software\Policies\Microsoft\Edge</code> （<s>什么你说没有 Edge 这一项？手动添加一个就行了</s>）</li>
+<li>在这里创建一个【字符串值】，值的内容输入</li>
+</ul>
+<pre><code>{&quot;disabled&quot;: [&quot;paste_and_go&quot;]}
+</code></pre>
+<p>并保存即可。</p>
+<h2 id="bonus">Bonus</h2>
+<p>对于需要禁用其他快捷键的，请参考上一节内容中的 ConfigureKeyboardShortcuts 定义的快捷键，找到其名称后加在这后面，以英文逗号分隔即可。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【VPS测试】CCS双十一促销款（达拉斯机房）]]></title>
+        <id>https://blog.laomao.icu/post/vps-ccs-dallas/</id>
+        <link href="https://blog.laomao.icu/post/vps-ccs-dallas/">
+        </link>
+        <updated>2026-03-06T16:43:01.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="基本信息">💻基本信息</h1>
+<figure data-type="image" tabindex="1"><img src="https://i.111666.best/image/qC6G9ljI3NDm0UcV36GOAk.webp" alt="image" loading="lazy"></figure>
+<h1 id="ip质量">🎬IP质量</h1>
+<figure data-type="image" tabindex="2"><img src="https://i.111666.best/image/mLCC6GDl7yIxHNgbuN1CFv.webp" alt="image" loading="lazy"></figure>
+<h1 id="网络质量">🌐网络质量</h1>
+<figure data-type="image" tabindex="3"><img src="https://i.111666.best/image/EuJ0dcdoOhAGeyQmjHc3HK.webp" alt="image" loading="lazy"></figure>
+<h1 id="回程路由">📍回程路由</h1>
+<figure data-type="image" tabindex="4"><img src="https://i.111666.best/image/fCytF7jZIcNLvNLtgTjykO.webp" alt="image" loading="lazy"></figure>
+<p><a href="https://nodequality.com/r/nfWZMXl2pFXw8ZXBkumkj7LZ3TVfC0SS">NodeQuality链接</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【VPS测试】CCS美国双十一款（洛杉矶机房）]]></title>
+        <id>https://blog.laomao.icu/post/vps-ccs-double-eleven/</id>
+        <link href="https://blog.laomao.icu/post/vps-ccs-double-eleven/">
+        </link>
+        <updated>2026-03-05T16:08:58.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="基本信息">💻基本信息</h1>
+<figure data-type="image" tabindex="1"><img src="https://i.111666.best/image/upUiwHeLozIgfQw8lG0F7z.webp" alt="image" loading="lazy"></figure>
+<h1 id="ip质量">🎬IP质量</h1>
+<figure data-type="image" tabindex="2"><img src="https://i.111666.best/image/id8x5jD9IdJtDsN9Ui2nZW.webp" alt="image" loading="lazy"></figure>
+<h1 id="网络质量">🌐网络质量</h1>
+<figure data-type="image" tabindex="3"><img src="https://i.111666.best/image/nXYcehGhCnCwpaswRfOUgs.webp" alt="image" loading="lazy"></figure>
+<h1 id="回程路由">📍回程路由</h1>
+<figure data-type="image" tabindex="4"><img src="https://i.111666.best/image/HG4uCMVxrDgEU0LIrL6oTB.webp" alt="image" loading="lazy"></figure>
+<p><a href="https://nodequality.com/r/ANa6YJsAhCYSVNgou7FuTg5XVcCOhrG9">NodeQuality链接</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【转载】修复 Windows 11 24H2 下 Chromium/Electron 应用局部冻结与渲染异常问题]]></title>
+        <id>https://blog.laomao.icu/post/zhuan-zai-xiu-fu-windows-11-24h2-xia-chromiumelectron-ying-yong-ju-bu-dong-jie-yu-xuan-ran-yi-chang-wen-ti/</id>
+        <link href="https://blog.laomao.icu/post/zhuan-zai-xiu-fu-windows-11-24h2-xia-chromiumelectron-ying-yong-ju-bu-dong-jie-yu-xuan-ran-yi-chang-wen-ti/">
+        </link>
+        <updated>2026-02-21T07:02:17.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>Generated by Gemini 3.1 pro preview. Originally posted by <a href="https://www.reddit.com/user/Maliwolf/">Maliwolf</a> on <a href="https://www.reddit.com/r/Windows11/comments/1kgp7ar/cause_and_solution_to_windows_24h2_related/">Reddit(r/Windows11)</a></p>
+</blockquote>
+<h2 id="概要">📌 概要</h2>
+<p>近期，许多升级到 Windows 11 24H2 的用户发现，在使用基于 Chromium 或 Electron 的应用程序（如 Discord、VSCode 和 Google Chrome）时，会频繁遇到界面局部卡死或渲染异常的情况。本文将深入探讨该现象背后的真实原因，并提供一个官方底层的注册表修复方案——让你<strong>无需</strong>妥协去“关闭硬件加速”或“禁用 MPO（多平面叠加）”，就能彻底告别卡顿。</p>
+<hr>
+<h2 id="问题存在">🚨 问题存在</h2>
+<p><strong>1. 症状表现</strong><br>
+如果你是一个游戏玩家，你可能会发现在游戏中通过 <code>Alt-Tab</code> 切换到 Discord 或 Chrome 等应用时，界面会出现诡异的“半冻结”状态。例如：</p>
+<ul>
+<li>滚动聊天记录时，只有三分之一的屏幕画面在滚动，其余部分卡死不动。</li>
+<li>画面整体冻结，只有鼠标光标划过的周围区域才会更新刷新。</li>
+<li>切换到其他窗口再切回来，能短暂恢复正常。</li>
+<li>这种画面撕裂、闪烁或冻结的现象，通过系统录屏软件是<strong>无法录制</strong>下来的。</li>
+</ul>
+<p><strong>2. 以往解决方法的弊端</strong><br>
+这个问题在早期更新用户中已经存在了大约7个月，且无视你的显卡是 AMD 还是 NVIDIA。网上流传的常见“偏方”包括：关闭应用的硬件加速、彻底禁用系统 MPO，或者强制更改图形后端。但这都有明显的缺点：在如今使用纯软件渲染体验极差，而禁用系统 MPO 则会导致你在玩“无边框窗口模式（Borderless Windowed）”游戏时遭遇严重的输入延迟惩罚。</p>
+<p><strong>3. 根本原因解析</strong><br>
+经过排查，罪魁祸首是微软的 <strong>DWM（桌面窗口管理器）与 MPO 的交互逻辑</strong>出现了问题。<br>
+像 Discord 这种应用，如果画面没有变化，它就不需要渲染新帧，因此其实际帧率可能会很低。当你的鼠标去交互时，应用帧率产生波动，会导致 DWM 频繁在 <code>Composed: Flip</code> 和 <code>Hardware Composed: Independent Flip</code>（分配了 MPO 平面的模式）这两种显示模式之间来回切换，这种反复横跳直接导致了渲染崩溃。<em>(注：Firefox 火狐浏览器因为机制不同，不受此影响。)</em></p>
+<hr>
+<h2 id="️-解决方法">🛠️ 解决方法</h2>
+<p>微软实际上提供了一个隐藏的注册表键值。通过将 <code>OverlayMinFPS</code> 设置为 <code>0</code>，可以取消 DWM 对分配叠加平面的“最低帧率要求”。这能让低帧率的应用也稳定保持在“硬件组合”模式下，不再来回切换，从而完美解决冻结问题。</p>
+<p><strong>具体操作步骤如下：</strong></p>
+<p><strong>方法一：手动修改注册表</strong></p>
+<ol>
+<li>按下 <code>Win + R</code> 键，输入 <code>regedit</code> 打开注册表编辑器。</li>
+<li>导航至以下路径：<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm</code></li>
+<li>在右侧空白处右键，选择“新建” -&gt; <strong>DWORD (32位) 值</strong>。</li>
+<li>将其命名为 <code>OverlayMinFPS</code>，并双击将“数值数据”修改为 <code>0</code>。</li>
+<li>打开 <code>任务管理器</code>，找到名为 <strong>“桌面窗口管理器” (Desktop Window Manager)</strong> 的进程，右键点击<strong>结束任务</strong>。（不用担心，系统会自动将其重启生效）。</li>
+</ol>
+<p><strong>方法二：一键导入注册表（推荐）</strong><br>
+新建一个文本文档，将以下代码复制进去，然后将文件另存为 <code>dwm_mpo_fix.reg</code>。双击运行该文件导入注册表，随后同上述步骤 5 一样，在任务管理器中重启“桌面窗口管理器”即可。</p>
+<pre><code class="language-registry">Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
+&quot;OverlayMinFPS&quot;=dword:00000000
+
+</code></pre>
+<p><strong>💡 额外提醒：</strong> 如果你之前为了解决这个问题，在网上看教程<strong>禁用了 MPO</strong>，请千万记得重新启用它（在注册表中删除 <code>OverlayTestMode</code> 键值并重启电脑），这样你才能在无边框游戏模式下享受最低的画面延迟！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【VPS测试】美国艾云GGBOOM款]]></title>
+        <id>https://blog.laomao.icu/post/vps-aiyun-ggboom-csco/</id>
+        <link href="https://blog.laomao.icu/post/vps-aiyun-ggboom-csco/">
+        </link>
+        <updated>2026-01-12T15:19:19.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="基本信息">💻基本信息</h1>
+<pre><code>Basic System Information:
+---------------------------------
+Uptime     : 14 days, 17 hours, 5 minutes
+Processor  : Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.80GHz
+CPU cores  : 1 @ 2799.998 MHz
+AES-NI     : ✔ Enabled
+VM-x/AMD-V : ✔ Enabled
+RAM        : 978.6 MiB
+Swap       : 522.0 MiB
+Disk       : 21.0 GiB
+Distro     : Debian GNU/Linux 12 (bookworm)
+Kernel     : 5.18.3
+VM Type    : STANDARD PC (I440FX + PIIX, 1996)
+IPv4/IPv6  : ✔ Online / ❌ Offline
+
+IPv4 Network Information:
+---------------------------------
+ISP        : Aiyun (HK) Network
+ASN        : AS152672 Aiyun (HK) Network
+Host       : Aiyun Communications LLC
+Location   : Los Angeles, California (CA)
+Country    : United States
+
+fio Disk Speed Tests (Mixed R/W 50/50) (Partition -):
+---------------------------------
+Block Size | 4k            (IOPS) | 64k           (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 83.00 MB/s   (20.7k) | 253.56 MB/s   (3.9k)
+Write      | 83.22 MB/s   (20.8k) | 254.89 MB/s   (3.9k)
+Total      | 166.23 MB/s  (41.5k) | 508.46 MB/s   (7.9k)
+           |                      |                     
+Block Size | 512k          (IOPS) | 1m            (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 337.72 MB/s    (659) | 382.57 MB/s    (373)
+Write      | 355.66 MB/s    (694) | 408.05 MB/s    (398)
+Total      | 693.38 MB/s   (1.3k) | 790.63 MB/s    (771)
+
+Geekbench 5 Benchmark Test:
+---------------------------------
+Test            | Value                         
+                |                               
+Single Core     | 619                           
+Multi Core      | 611                           
+Full Test       | https://browser.geekbench.com/v5/cpu/23875850
+
+ SysBench CPU 测试 (Fast Mode, 1-Pass @ 5sec)
+---------------------------------
+ 1 线程测试(单核)得分:          778 Scores
+ SysBench 内存测试 (Fast Mode, 1-Pass @ 5sec)
+---------------------------------
+ 单线程读测试:          16584.60 MB/s
+ 单线程写测试:          14815.34 MB/s
+</code></pre>
+<h1 id="ip质量">🎬IP质量</h1>
+<figure data-type="image" tabindex="1"><img src="https://i.111666.best/image/tyA4YJpdJPNAI2vOiZHMiL.webp" alt="image" loading="lazy"></figure>
+<h1 id="网络质量">🌐网络质量</h1>
+<figure data-type="image" tabindex="2"><img src="https://i.111666.best/image/rWl9Xf7mRKSz9XNnQLi9U1.webp" alt="image" loading="lazy"></figure>
+<h1 id="回程路由">📍回程路由</h1>
+<figure data-type="image" tabindex="3"><img src="https://i.111666.best/image/dcGREDduuqtAqcqPGr3z0O.webp" alt="image" loading="lazy"></figure>
+<p><a href="https://nodequality.com/r/WlWbuoOyHBPrQ9PSbbt3UCQ5aMdefesH">NodeQuality链接</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【科学上网】个人推荐的软件]]></title>
+        <id>https://blog.laomao.icu/post/recommended-proxy-software/</id>
+        <link href="https://blog.laomao.icu/post/recommended-proxy-software/">
+        </link>
+        <updated>2026-01-10T09:04:13.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本推荐从 <a href="https://www.haitunt.org/app.html">海豚机场测速</a> 结合本人使用情况修改而来，不求多但求精，如需要多软件对比，请查看原文章。</p>
+</blockquote>
+<h2 id="windows">🪟 Windows</h2>
+<p><strong>FlClash</strong></p>
+<ul>
+<li>优点：
+<blockquote>
+<ul>
+<li>✅Flutter 编写</li>
+<li>✅UI 简单易上手</li>
+<li>✅运行轻量稳定</li>
+<li>✅完整覆盖基础功能和基本覆写（仅支持 javascript 语言）</li>
+<li>✅自带配置编辑器、DNS 覆写、规则覆写（图形化添加规则）</li>
+<li>✅支持 WebDAV 配置多端同步功能</li>
+</ul>
+</blockquote>
+</li>
+<li>缺点：
+<blockquote>
+<ul>
+<li>❌UI风格偏手机化，部分操作反桌面端直觉（如策略组过多时，需拖动切换策略组，或点击最右侧小箭头才可快速切换）</li>
+<li>❌无法替换内核（采用 flclash 自编译内核）</li>
+<li>❌不支持 Smart 规则组（由于原版 Mihomo 内核不支持）</li>
+<li>❌不支持 YAML 覆写（但可以让 AI 将 YAML 覆写修改为 JS 格式）</li>
+<li>❌不支持便携化（默认配置存放在 <code>%appdata%\com.follow\clash</code> ）</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>下载地址：<a href="https://github.com/chen08209/FlClash/releases/latest">https://github.com/chen08209/FlClash/releases/latest</a></p>
+<p><strong>Clash Mi</strong></p>
+<ul>
+<li>优点：
+<blockquote>
+<ul>
+<li>✅小白友好软件（无覆写功能，主打开箱导入即用）</li>
+<li>✅支持便携模式（配置文件存放在程序目录中，可以打包带走）</li>
+</ul>
+</blockquote>
+</li>
+<li>缺点：
+<blockquote>
+<ul>
+<li>❌无法直观看到各策略组对应使用节点情况</li>
+<li>❌不支持覆写功能，想自定义规则只能采用节点转换工具</li>
+<li>❌无法替换内核（内核与主程序写死在一起）</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>下载地址：<a href="https://github.com/KaringX/clashmi/releases/latest">https://github.com/KaringX/clashmi/releases/latest</a></p>
+<h2 id="android-安卓">🤖 Android 安卓</h2>
+<p><strong>FlClash</strong></p>
+<ul>
+<li>优点：
+<blockquote>
+<ul>
+<li>✅UI简单易上手</li>
+<li>✅运行轻量稳定</li>
+<li>✅支持 Javascript 语言覆写功能（相对于 CMFA 等老牌软件）</li>
+<li>✅自带配置编辑器、DNS覆写、规则覆写（图形化添加规则）</li>
+<li>✅支持 WebDAV 配置多端同步功能，可实现电脑修改配置、手机同步应用</li>
+</ul>
+</blockquote>
+</li>
+<li>缺点：
+<blockquote>
+<ul>
+<li>❌不支持 YAML 覆写（但可以让 AI 将 YAML 覆写修改为 JS 格式）</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>下载地址：<a href="https://github.com/chen08209/FlClash/releases/latest">https://github.com/chen08209/FlClash/releases/latest</a></p>
+<h2 id="ios">🍎 iOS</h2>
+<p><strong>Loon</strong></p>
+<ul>
+<li>优点：
+<blockquote>
+<ul>
+<li>✅生态较为良好，去广告插件齐全（但主要为可莉大佬编写）</li>
+<li>✅拥有“逻辑分流规则（AND/OR）”，对于复杂规则兼容性强</li>
+<li>✅UI较为直观，许多配置可通过图形化界面直接配置</li>
+</ul>
+</blockquote>
+</li>
+<li>缺点：
+<blockquote>
+<ul>
+<li>❌多数插件较为封闭，无法用于其他软件中（lpx后缀）</li>
+<li>❌相对QX、Shadowrocket等软件较容易出现断流问题（尤其是开启IPV6后），目前无解</li>
+<li>❌对于新协议（AnyTLS、XHTTP等）跟进速度慢，适合机场党</li>
+<li>❌价格相对较高（$7.99），对比Shadowrocket无明显</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>购买地址：<a href="https://apps.apple.com/app/loon/id1373567447">https://apps.apple.com/app/loon/id1373567447</a></p>
+<p><strong>Shadowrocket</strong></p>
+<ul>
+<li>优点：
+<blockquote>
+<ul>
+<li>✅新手最友好的软件，上手非常简单</li>
+<li>✅最便宜的 iOS 代理工具（$2.99），且支持多人共享</li>
+<li>✅代理协议追新速度最快，已支持 XHTTP、AnyTLS 等新协议</li>
+<li>✅兼容大部分 Surge 模块</li>
+<li>✅可通过导入配置等方式修改软件皮肤</li>
+</ul>
+</blockquote>
+</li>
+<li>缺点：
+<blockquote>
+<ul>
+<li>❌模块规则设置逻辑略反直觉（尤其是配置中包含增强脚本的情况下）</li>
+<li>❌多配置 MITM 无法共用证书，需重新配置</li>
+<li>❌设置较为繁琐，每一步做完都需要转一会圈，因此建议自行改写好配置后直接导入，不然调整设置很累</li>
+<li>❌模块和插件并不算丰富，且一些 Surge 插件无法完美兼容</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>购买地址：<a href="https://apps.apple.com/app/shadowrocket/id932747118">https://apps.apple.com/app/shadowrocket/id932747118</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【科学上网】个人使用机场推荐]]></title>
+        <id>https://blog.laomao.icu/post/airport-recommendation/</id>
+        <link href="https://blog.laomao.icu/post/airport-recommendation/">
+        </link>
+        <updated>2026-01-09T15:13:57.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>从2016年以来也陆续用过不少机场和VPN，但是我记性又很差，经常重复踩坑，所以在这里记录一下，也是给来者的推荐吧。排序按照推荐度进行。<br>
+另外，一定要先搞清自己的需求（高速稳定、使用频率、线路解锁情况），再看自己的预算，酌情购买。所有机场均推荐月付，推荐月付，推荐月付！</p>
+<h1 id="机场推荐">机场推荐</h1>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>从2016年以来也陆续用过不少机场和VPN，但是我记性又很差，经常重复踩坑，所以在这里记录一下，也是给来者的推荐吧。排序按照推荐度进行。<br>
+另外，一定要先搞清自己的需求（高速稳定、使用频率、线路解锁情况），再看自己的预算，酌情购买。所有机场均推荐月付，推荐月付，推荐月付！</p>
+<h1 id="机场推荐">机场推荐</h1>
+<!-- more -->
+<h2 id="红杏"><a href="https://wwd.h86x.com/#/register?code=zD2z16Jf">红杏</a></h2>
+<p><strong>评</strong><br>
+开了17年的老机场（截止2026，机场主是这么说的），目前整体为深电113线路（与奶昔入口一致），属于高端配置中端价格。但TOS较为严格，不得安装任何国产安全软件（包括360、金山、火绒等），有自主客户端（基于Clash Foss内核）</p>
+<p><strong>价</strong></p>
+<table>
+<thead>
+<tr>
+<th>套餐名</th>
+<th>价格/付款周期</th>
+<th>流量/周期</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>轻量版</td>
+<td>￥29.99/月</td>
+<td>128G/月</td>
+<td>无</td>
+</tr>
+<tr>
+<td>专业版</td>
+<td>￥49.99/月</td>
+<td>256G/月</td>
+<td>无</td>
+</tr>
+<tr>
+<td>旗舰版</td>
+<td>￥69.99/月</td>
+<td>512G/月</td>
+<td>无</td>
+</tr>
+<tr>
+<td>企业版</td>
+<td>￥899.99/季</td>
+<td>1024G/月</td>
+<td>无</td>
+</tr>
+<tr>
+<td>迷你版</td>
+<td>￥59.99/季</td>
+<td>32G/月</td>
+<td>无</td>
+</tr>
+<tr>
+<td>传家宝X</td>
+<td>￥899.99/三年</td>
+<td>170G/月</td>
+<td>2026年最后一次销售，流量为“周年数 * 10G”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="immtelecom">ImmTelecom</h2>
+<p><strong>评</strong><br>
+2021年新开机场，隶属于佩奇集团（Nexitally / AmyTelecom / ImmTelecom / Kuromis），整体素质较好，但最近被<a href="https://t.me/cvpnVITAS/2359">DDOS</a>盯上，质量下滑严重，希望能挺过去吧</p>
+<p><strong>价</strong></p>
+<table>
+<thead>
+<tr>
+<th>套餐名</th>
+<th>价格/付款周期</th>
+<th>流量/周期</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic (Personal)</td>
+<td>￥208.95/年</td>
+<td>300G/年</td>
+<td>允许 2 IP</td>
+</tr>
+<tr>
+<td>Basic Extended (Personal)</td>
+<td>￥129.99/季</td>
+<td>200G/月</td>
+<td>允许 2 IP</td>
+</tr>
+<tr>
+<td>Standard (Personal)</td>
+<td>￥72.45/月</td>
+<td>500G/月</td>
+<td>允许 2 IP</td>
+</tr>
+<tr>
+<td>Standard (Team Access)</td>
+<td>￥103.95/月</td>
+<td>500G/月</td>
+<td>允许 5 IP</td>
+</tr>
+<tr>
+<td>Standard Extended (Personal)</td>
+<td>￥143.85/月</td>
+<td>1000G/月</td>
+<td>允许 2 IP</td>
+</tr>
+<tr>
+<td>Standard Extended (Team Access)</td>
+<td>￥177.45/月</td>
+<td>1000G/月</td>
+<td>允许 10 IP</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prprcloud"><a href="https://prpr.96110.cn.com/aff.php?aff=13527">PrPrCloud</a></h2>
+<p><strong>评</strong><br>
+2018年开始运营的机场，机场主肉身在香港，人称“港仔”，会经常在群内发女装照片，整体质量还是不错，属于平价机场中质量很高的一档（懒人节点经常挂，建议使用台湾、新加坡等节点，避免线路拥挤）。套餐流量从250G到1000G可随意调整，价格会跟随变化的。</p>
+<p><strong>价</strong></p>
+<table>
+<thead>
+<tr>
+<th>套餐名</th>
+<th>价格/付款周期</th>
+<th>流量/周期</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ordinary Access</td>
+<td>15/月</td>
+<td>250G/月</td>
+<td>可调整</td>
+</tr>
+</tbody>
+</table>
+<h2 id="守候网络"><a href="https://ncdn1.sntp.uk/auth/register?code=5CeJVDnW">守候网络</a></h2>
+<p><strong>评</strong><br>
+性价比机场的另一个高质量推荐（相对低价机场来说还是会贵一点，但整体质量不错），还带自有Emby服务器，资源量尚可，曾有很多限时限量套餐，但我入手较晚所以知晓不全面。</p>
+<p><strong>价</strong></p>
+<table>
+<thead>
+<tr>
+<th>套餐名</th>
+<th>价格/付款周期</th>
+<th>流量/周期</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lite Connect</td>
+<td>￥18/月</td>
+<td>100G/月</td>
+<td>带普通Emby</td>
+</tr>
+<tr>
+<td>Core Essentials</td>
+<td>￥28/月</td>
+<td>200G/月</td>
+<td>带普通Emby</td>
+</tr>
+<tr>
+<td>Plus Advantage</td>
+<td>￥38/月</td>
+<td>350G/月</td>
+<td>带普通Emby</td>
+</tr>
+<tr>
+<td>Max Infinity</td>
+<td>￥48/月</td>
+<td>500G/月</td>
+<td>带普通Emby</td>
+</tr>
+<tr>
+<td>Premium</td>
+<td>￥968/年</td>
+<td>1000G/月</td>
+<td>带Pre Emby</td>
+</tr>
+</tbody>
+</table>
+<p><strong>备注</strong><br>
+守候的Pre套餐并非传说中那么神奇，只是相对其他机场来说比较稳定而已，为了高端线路其实不如去买TAG、Imm等</p>
+<h2 id="bitznet">Bitznet</h2>
+<p><strong>评</strong><br>
+从DuangKS的机场推荐网站中看到的，整体用下来还算稳定，价格也还合理，且有自己的客户端（基于Clash Premium内核）。只是IP质量比较差，甚至存在香港IP被Cloudflare经常弹人机验证的问题。</p>
+<p><strong>价</strong></p>
+<table>
+<thead>
+<tr>
+<th>套餐名</th>
+<th>价格/付款周期</th>
+<th>流量/周期</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>核心访问</td>
+<td>￥119.99/季</td>
+<td>400G/月</td>
+<td>最推荐</td>
+</tr>
+<tr>
+<td>边缘访问</td>
+<td>￥69.99/季</td>
+<td>80G/月</td>
+<td>不常用</td>
+</tr>
+<tr>
+<td>深度访问</td>
+<td>￥199.99/季</td>
+<td>1000G/月</td>
+<td>重度用推荐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ytoo">YToo</h2>
+<p><strong>评</strong><br>
+2019年开始运营，整体还不错的一家机场，拥有0.2倍率节点和不少冷门节点，解锁也相对全面，速度不算特别快，但贵在稳定</p>
+<p><strong>价</strong></p>
+<table>
+<thead>
+<tr>
+<th>套餐名</th>
+<th>价格/付款周期</th>
+<th>流量/周期</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AIR</td>
+<td>￥98/年</td>
+<td>15GB/月</td>
+<td>仅年付</td>
+</tr>
+<tr>
+<td>BASIC</td>
+<td>￥36/月</td>
+<td>200GB/月</td>
+<td>可月付</td>
+</tr>
+<tr>
+<td>PLUS</td>
+<td>￥54/月</td>
+<td>400GB/月</td>
+<td>可月付</td>
+</tr>
+<tr>
+<td>PRO</td>
+<td>￥108/月</td>
+<td>1000GB/月</td>
+<td>可月付</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【分享】IDM的替代品们]]></title>
+        <id>https://blog.laomao.icu/post/fen-xiang-idm-de-ti-dai-pin-men/</id>
+        <link href="https://blog.laomao.icu/post/fen-xiang-idm-de-ti-dai-pin-men/">
+        </link>
+        <updated>2025-08-24T13:45:28.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>IDM目前国内的代理商据说已变成 <a href="https://www.zhihu.com/question/46746200">思杰马克丁</a>，其流氓级的代理和对盗版的坚决打击闻名遐迩，因此我们需要有一个IDM的替代来更好的下载文件</p>
+<h1 id="仅下载">仅下载</h1>
+<blockquote>
+<p>如果您只有多线程下载需求，而无IDM的嗅探功能需求，则这里的几个软件比较适合您</p>
+</blockquote>
+<ul>
+<li>
+<p>Chrome（打开多线程下载）<br>
+根据 <a href="https://iknow.lenovo.com.cn/spider/detail/kd/206448">这个教程</a>，打开Edge或Chrome的多线程下载功能</p>
+</li>
+<li>
+<p>Gopeed<br>
+官网：https://gopeed.com/zh-CN<br>
+Go语言写的下载器，支持自行开发插件（如B站下载插件、YouTube下载插件、百度网盘下载插件等）</p>
+</li>
+<li>
+<p>XDown<br>
+官网：https://xdown.org/<br>
+UI很像qbittorrent的下载器，支持BT下载，支持配合百度网盘插件实现高速下载</p>
+</li>
+</ul>
+<h1 id="需要嗅探功能">需要嗅探功能</h1>
+<blockquote>
+<p>如果你需要音视频嗅探功能，则这个软件一定很适合你</p>
+</blockquote>
+<ul>
+<li>文件蜈蚣<br>
+官网：https://w.filecxx.com/40776<br>
+支持HTTP下载、BitTorrent客户端、WebDAV客户端、FTP客户端、和SSH客户端，和网页浏览器进行集成, 你可以从网页上下载音频和视频, 甚至是加密视频.<br>
+高级版注册码也是可以免费领取的，后续付费我觉得也要比IDM良心一些。</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【AniLive】安卓系统使用“雨见浏览器”教程]]></title>
+        <id>https://blog.laomao.icu/post/yujian-browser/</id>
+        <link href="https://blog.laomao.icu/post/yujian-browser/">
+        </link>
+        <updated>2025-06-29T13:48:33.000Z</updated>
+        <content type="html"><![CDATA[<p>请移步 <a href="https://nekoss.cn/anilive-faq">AniLive教程</a> 页面</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【技巧】如何调整irfanview的窗口位置]]></title>
+        <id>https://blog.laomao.icu/post/ji-qiao-ru-he-diao-zheng-irfanview-de-chuang-kou-wei-zhi/</id>
+        <link href="https://blog.laomao.icu/post/ji-qiao-ru-he-diao-zheng-irfanview-de-chuang-kou-wei-zhi/">
+        </link>
+        <updated>2025-06-29T13:46:35.000Z</updated>
+        <content type="html"><![CDATA[<p>由于IrfanView默认设置，每次打开图片窗口都会在屏幕最左边，其实还是挺烦的，不过根据 <strong><a href="https://www.irfanview.net/faq.htm">官方FAQ</a></strong>，在设置中点击“查看”--“窗口模式”--“使图像适合窗口”即可</p>
+<figure data-type="image" tabindex="1"><img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/a2cab50fly1i94ts4x6asj20vn02k77d.jpg" alt="image.png" loading="lazy"></figure>
+]]></content>
+    </entry>
+</feed>
