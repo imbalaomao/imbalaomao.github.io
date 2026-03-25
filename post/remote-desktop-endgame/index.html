@@ -1,0 +1,316 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>
+  【教程】我找到了最好用的远控方案 | 猫の博客
+</title>
+
+<link rel="shortcut icon" href="https://blog.laomao.icu/favicon.ico?v=1774455332126">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.laomao.icu/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+  integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            猫の博客
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    分类
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1774455332126"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    【教程】我找到了最好用的远控方案
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2026-03-23 ·
+                    </time>
+                    
+                        <a href="https://blog.laomao.icu/tag/NbebeL9nUV/" class="post-tags">
+                            # 教程
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="前言">前言</h2>
+<p>曾经尝试过很多远控方案，包括但不限于向日葵、Todesk、Anydesk、Anyviewer、连连控等，但所有的方案都回归到一个问题：<strong>钱</strong>。那有没有什么便宜又好用的方案呢？</p>
+<h2 id="免费方案">免费方案</h2>
+<p>目前市面上比较主流的方案有以下几种：</p>
+<ol>
+<li><strong>UU远程</strong>：真·免费，安装使用最简单，支持 UDP P2P 打洞，支持 4k120hz 显示，对于绝大多数人来说，这就是 Endgame。但对我并非如此，因为公司的网络是“对称型 NAT”，导致 P2P 打洞非常难成功（偶尔会成功），且目前由于推广使用的人数过多，导致网易的服务器不堪重负，经常出现只能使用720P-30帧或延迟飙升的情况。另外，这款软件不支持 Linux ，这让我的老电脑无所适从。</li>
+<li><strong>Sunshine + Moonlight</strong>：初衷为了玩游戏而设，但相对部署复杂，若多台电脑同时需要当作被控端与主控端时，就都需要安装 Sunshine 和 Moonlight。另外该软件本身不带 P2P 打洞功能，所以需要配合其他组网软件共同使用。组网设备少（2台）的时候尚可管理，超过3台就会出现许多重复节点，筛选去重还需要一段时间。</li>
+<li><strong>Rustdesk</strong>：属于开源版本的 Teamviewer，采用 ID + 中心服务器化管理，允许局域网内直接输入 IP 进行连接，且有第三方实现的 API ，可以自行创建账号。且这个软件自带打洞功能，如果网络条件不是特别恶劣的情况下都能打洞成功，但打洞失败的情况下只能通过国外的中转服务器连接，而近几年使用Rustdesk 实施诈骗的犯罪行为猖獗，也让官方直接封禁了中国大陆 IP 连接中转服务器的功能。不过只要能局域网输入 IP 直接连接，就为我们下面的方案提供了方便。</li>
+</ol>
+<h2 id="什么是-nat">什么是 NAT</h2>
+<blockquote>
+<p>在正式开始介绍方案之前，还需要介绍一下选择当前这套方案的原因，这就是 NAT 打洞<br>
+此处借<a href="https://astral.fan/troubleshooting/nat-types/">Astral 的教程</a>进行解释</p>
+</blockquote>
+<p>目前家用宽带普遍 NAT 类型为<strong>受限型 NAT</strong>或<strong>端口受限型NAT</strong>，相对于全开放NAT来说肯定连接性能要大打折扣，而我的公司网络 NAT 类型为<strong>对称型NAT</strong>，属于常见网络中最难实现 P2P 连接的网络类型（不过移动宽带常见此类型）</p>
+<table>
+<thead>
+<tr>
+<th>NAT 类型</th>
+<th>含义说明</th>
+<th>连接质量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开放网络（OpenInternet）</td>
+<td>设备直接连接互联网，无 NAT 转换</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>无PAT（NoPat）</td>
+<td>没有端口地址转换，类似开放网络</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>全锥形（FullCone）</td>
+<td>只要设备主动连接过外部，外部就能随时连接回来</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>受限锥形（Restricted）</td>
+<td>只有设备主动联系过的 IP 才能连接回来</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>端口受限锥形（PortRestricted）</td>
+<td>只有设备主动联系过的 IP 和端口才能连接回来</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>对称型（Symmetric）</td>
+<td>每次连接外部都使用不同端口，P2P 连接最困难</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>对称递增型（SymmetricEasyInc）</td>
+<td>端口号递增分配，穿透难度比普通对称型低</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>对称递减型（SymmetricEasyDec）</td>
+<td>端口号递减分配，穿透难度比普通对称型低</td>
+<td>⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<p><em>此处不讨论校园网专供的阻断UDP通信的防火墙</em></p>
+<h2 id="实施方案">实施方案</h2>
+<p>**最终决定的方案为：**easytier（组网穿透） + rustdesk（远程桌面）<br>
+**好处是：**部署简单（支持多端GUI部署），连接稳定（不会乱跳 IP 导致无法连接）<br>
+**坏处是：**一旦无法穿透则需要走公网中转，极慢</p>
+<p><strong>具体部署方案：</strong></p>
+<ol>
+<li>安装 <a href="https://astral.fan/quick-start/download-install/">Astral客户端</a>，包含Windows、MacOS、Linux（deb/rpm）的安装包</li>
+<li>安装 <a href="https://rustdesk.com/download">Rustdesk客户端</a>，可安装Windows、Linux等平台客户端</li>
+<li>在 Astral 中创建一个房间，用于私人连接（名称随意）<br>
+<img src="https://image.baidu.com/search/down?url=https://tvax3.sinaimg.cn/mw690/a2cab50fly1ibhb5izba5j20rr0kejtn.jpg" alt="" loading="lazy"></li>
+<li>点击“连接”<br>
+<img src="https://image.baidu.com/search/down?url=https://tvax1.sinaimg.cn/mw690/a2cab50fly1ibhb72sdqbj20rr0ke0xu.jpg" alt="" loading="lazy"></li>
+<li>在“房间中”寻找其他设备的“内网IP”（也可以在连接前在主页设定好），这时候可以查看一下与其他设备的连接状况，是直连还是中转<br>
+<img src="https://image.baidu.com/search/down?url=https://tvax2.sinaimg.cn/mw690/a2cab50fly1ibhb9lfmztj20rr0ke797.jpg" alt="" loading="lazy"></li>
+<li>在 Rustdesk 中输入需要连接设备的“内网IP”，点击连接并输入密码后，即可进行连接</li>
+</ol>
+<h2 id="最终效果">最终效果</h2>
+<p>如图，可以看到左上角连接是红色的盾牌，代表采用了 P2P 直连，而不是中转服务器<br>
+<img src="https://image.baidu.com/search/down?url=https://tvax1.sinaimg.cn/large/a2cab50fly1ibhbca4losj21z412cqv5.jpg" alt="效果图" loading="lazy"></p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.laomao.icu/post/how-to-disable-edge-shortcuts/" class="post-title gt-a-link">
+                    【原创教程】如何关闭Microsoft Edge自带的快捷键
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">致你，也致我</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        <footer class="footer">
+    <div>
+        当前博客已在风雨中运行了：<span id="run-time"></span>
+    </div>
+    <div>
+<a href="https://icp.gov.moe/?keyword=20240422" target="_blank">萌ICP备20240422号</a>
+    </div>
+    <div>
+        <a href="https://anilive.nekoss.cn" target="_blank">AniLive放映室</a>
+        <span class="footer-line">|</span>
+        <a href="https://docs.qq.com/sheet/DQkxpQWxNbUVjQ1pE?tab=w90ppb" target="_blank">AniLive资料库</a>
+    </div>
+</footer>
+<script>
+    function updateRunTime() {
+        // 设置建站时间 (2020年4月21日15时22分00秒)
+        const startDate = new Date('2020-04-21T15:22:00');
+        const now = new Date();
+
+        // 计算时间差
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        // 处理借位
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+        if (days < 0) {
+            // 获取上一个月的总天数
+            const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += lastMonth.getDate();
+            months--;
+        }
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        // 将结果显示到页面上
+        const runTimeSpan = document.getElementById('run-time');
+        if (runTimeSpan) { // 检查元素是否存在
+             runTimeSpan.textContent = `${years}年${months}月${days}日${hours}时${minutes}分${seconds}秒`;
+        }
+    }
+
+    // 每秒钟更新一次时间
+    setInterval(updateRunTime, 1000);
+
+    // 页面加载时立即执行一次，避免初始空白
+    document.addEventListener('DOMContentLoaded', updateRunTime);
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d469c8abcec4b3e8c08c104d727b9b1"}'></script><!-- End Cloudflare Web Analytics -->
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://blog.laomao.icu/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
